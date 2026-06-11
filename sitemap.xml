@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://verfix.ch/</loc><lastmod>2026-06-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://verfix.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://verfix.ch/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://verfix.ch/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://verfix.ch/"/>
+  </url>
+  <url><loc>https://verfix.ch/#gateway</loc><lastmod>2026-06-10</lastmod><priority>0.9</priority></url>
+  <url><loc>https://verfix.ch/#solutions</loc><lastmod>2026-06-10</lastmod><priority>0.9</priority></url>
+  <url><loc>https://verfix.ch/#industries</loc><lastmod>2026-06-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://verfix.ch/#trustcenter</loc><lastmod>2026-06-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://verfix.ch/#apidocs</loc><lastmod>2026-06-10</lastmod><priority>0.7</priority></url>
+  <url><loc>https://verfix.ch/#careers</loc><lastmod>2026-06-10</lastmod><priority>0.7</priority></url>
+  <url><loc>https://verfix.ch/#contact</loc><lastmod>2026-06-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://verfix.ch/#about</loc><lastmod>2026-06-10</lastmod><priority>0.6</priority></url>
+  <url><loc>https://verfix.ch/#privacy</loc><lastmod>2026-06-10</lastmod><priority>0.3</priority></url>
+  <url><loc>https://verfix.ch/#terms</loc><lastmod>2026-06-10</lastmod><priority>0.3</priority></url>
+</urlset>
