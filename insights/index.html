@@ -261,6 +261,9 @@
   
 </head>
 <body>
+<!-- Mega menu backdrop -->
+<div id="nav-backdrop" class="nav-backdrop" onclick="closeAll()"></div>
+
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- ════════════════════════════════════════════════════════
@@ -293,171 +296,149 @@
 <!-- ═══════════════════════════════════════
      NAVIGATION
 ═══════════════════════════════════════ -->
-<nav class="nav" id="main-nav">
-  <div class="nav-i">
-    <!-- Logo -->
-    <div class="logo" href="/">
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="VerfiX home">
       <picture>
-      <source srcset="/assets/images/verfix-logo--footer.webp 1x, /assets/images/verfix-logo--footer@2x.webp 2x" type="image/webp"/>
-      <img src="/assets/images/verfix-logo--footer.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
-    </picture>
-    </div>
-
-    <div class="nav-links" id="nav-links">
-      <!-- INDUSTRIES (most prominent, first) -->
-      <div class="ni" id="ni-ind">
-        <span onclick="toggleMenu('ind')"><span data-i18n="nav_industries">Industries</span> <i class="arr fas fa-chevron-down"></i></span>
+        <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+        <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="88" height="24" loading="eager"/>
+      </picture>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li class="ni" id="ni-ind">
+        <span onclick="toggleMenu('ind')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('ind')">
+          <span>Industries</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
         <div class="mega mega-ind" id="mega-ind">
           <div class="mi-left">
-            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')">
-              <div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div>
-            </div>
-            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')">
-              <div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div>
-            </div>
-            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')">
-              <div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div>
-            </div>
-            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')">
-              <div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div>
-            </div>
-            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')">
-              <div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div>
-            </div>
-            <div class="mi-item" data-ind="health" onmouseenter="showInd('health')">
-              <div class="mi-ico"><i class="fas fa-hospital"></i></div><div><h4>Healthcare</h4></div>
-            </div>
-            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')">
-              <div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div>
-            </div>
-            <div class="mi-item" data-ind="mobility" onmouseenter="showInd('mobility')">
-              <div class="mi-ico"><i class="fas fa-car"></i></div><div><h4>Mobility</h4></div>
-            </div>
-            <div class="mi-item" data-ind="mkt" onmouseenter="showInd('mkt')">
-              <div class="mi-ico"><i class="fas fa-store"></i></div><div><h4>Marketplaces</h4></div>
-            </div>
-            <div class="mi-item" data-ind="re" onmouseenter="showInd('re')">
-              <div class="mi-ico"><i class="fas fa-building"></i></div><div><h4>Real Estate</h4></div>
-            </div>
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div></div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div></div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div></div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div></div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div></div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div></div>
           </div>
           <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
         </div>
-      </div>
-
-      <!-- PRODUCTS (business-centric) -->
-      <div class="ni" id="ni-products">
-        <span onclick="toggleMenu('products')"><span data-i18n="nav_products">Products</span> <i class="arr fas fa-chevron-down"></i></span>
+      </li>
+      <li class="ni" id="ni-products">
+        <span onclick="toggleMenu('products')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('products')">
+          <span>Products</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
         <div class="mega mega-products" id="mega-products">
           <div class="mp-left">
             <div class="mp-col">
               <h5>Customer Onboarding</h5>
-              <div class="ml" href="/solutions"><i class="fas fa-id-card"></i>Document Verification</div>
-              <div class="ml" href="/solutions"><i class="fas fa-face-smile"></i>Face Verification</div>
-              <div class="ml" href="/solutions"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</div>
+              <a class="ml" href="/products/document-verification"><i class="fas fa-id-card"></i>Document Verification</a>
+              <a class="ml" href="/products/face-verification"><i class="fas fa-face-smile"></i>Face Verification</a>
+              <a class="ml" href="/products/aml-screening"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</a>
               <h5>Business Verification</h5>
-              <div class="ml" href="/solutions"><i class="fas fa-building"></i>KYB Verification</div>
-              <div class="ml" href="/solutions"><i class="fas fa-sitemap"></i>UBO Verification</div>
+              <a class="ml" href="/en/kyb/"><i class="fas fa-building"></i>KYB Verification</a>
+              <a class="ml" href="/products/ubo-verification"><i class="fas fa-sitemap"></i>UBO Verification</a>
               <h5>Age Verification</h5>
-              <div class="ml" href="/solutions"><i class="fas fa-user-check"></i>Age Validation</div>
-              <div class="ml" href="/solutions"><i class="fas fa-user"></i>Age Estimation</div>
+              <a class="ml" href="/products/age-validation"><i class="fas fa-user-check"></i>Age Validation</a>
+              <a class="ml" href="/products/age-estimation"><i class="fas fa-user"></i>Age Estimation</a>
             </div>
             <div class="mp-col">
               <h5>Telephone Banking</h5>
-              <div class="ml" href="/solutions"><i class="fas fa-waveform-lines"></i>Voice Biometrics</div>
-              <div class="ml" href="/solutions"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</div>
+              <a class="ml" href="/en/products/voice-verification/"><i class="fas fa-waveform-lines"></i>Voice Biometrics</a>
+              <a class="ml" href="/en/products/voice-verification/"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</a>
               <h5>Fraud Intelligence</h5>
-              <div class="ml" href="/solutions"><i class="fas fa-robot"></i>Deepfake Detection</div>
-              <div class="ml" href="/solutions"><i class="fas fa-user-slash"></i>Synthetic Identity Detection</div>
-              <div class="ml" href="/solutions"><i class="fas fa-file-shield"></i>Document Fraud Detection</div>
+              <a class="ml" href="/products/deepfake-detection"><i class="fas fa-robot"></i>Deepfake Detection</a>
+              <a class="ml" href="/products/synthetic-identity"><i class="fas fa-user-slash"></i>Synthetic Identity</a>
+              <a class="ml" href="/products/document-fraud"><i class="fas fa-file-shield"></i>Document Fraud</a>
               <h5>Infrastructure</h5>
-              <div class="ml" href="/"><i class="fas fa-gauge-high"></i>Trust Engine™</div>
-              <div class="ml" href="/solutions"><i class="fas fa-sliders"></i>Risk Rules Engine</div>
-              <div class="ml" href="/solutions"><i class="fas fa-shuffle"></i>Multi-Provider Orchestration</div>
+              <a class="ml" href="/solutions"><i class="fas fa-gauge-high"></i>Trust Engine&#8482;</a>
+              <a class="ml" href="/solutions"><i class="fas fa-sliders"></i>Risk Rules Engine</a>
             </div>
-          <div style="border-top:1px solid var(--bd);margin-top:.75rem;padding-top:.75rem;"><div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lt);margin-bottom:.5rem;">Produktseiten</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.25rem;"><a class="mc-lnk" href="/de/produkte/stimmverifikation/"><i class="fas fa-waveform-lines"></i>Stimmverifikation DE</a><a class="mc-lnk" href="/en/products/voice-verification/"><i class="fas fa-waveform-lines"></i>Voice Verification EN</a><a class="mc-lnk" href="/de/produkte/video-identifikation/"><i class="fas fa-video"></i>Video-Identifikation DE</a><a class="mc-lnk" href="/en/products/video-identification/"><i class="fas fa-video"></i>Video Identification EN</a><a class="mc-lnk" href="/de/kyb/"><i class="fas fa-building"></i>KYB DE</a><a class="mc-lnk" href="/en/kyb/"><i class="fas fa-building"></i>KYB EN</a>
-          <a class="mc-lnk" href="/de/whitepaper-nfadp/"><i class="fas fa-file-lines"></i>nFADP Whitepaper (DE)</a><a class="mc-lnk" href="/en/whitepaper-nfadp/"><i class="fas fa-file-lines"></i>nFADP Whitepaper (EN)</a></div></div></div>
+          </div>
           <div class="mp-right">
-            <h5>Trust Infrastructure</h5>
-            <div class="mp-feat"><h4>One API for all identity</h4><p>Document, face, voice, AML, KYB, and risk — orchestrated through a single endpoint.</p></div>
-            <div class="mp-feat"><h4>Swiss-first deployment</h4><p>SaaS, Swiss dedicated, private cloud, or on-premise.</p></div>
-            <div class="mp-gw">
-              <div class="mp-gw-tag">New Product</div>
-              <h4>VerfiX Gateway</h4>
-              <p>The trust layer between digital identity ecosystems and regulated organizations.</p>
-              <a href="/gateway" class="btn btn-r btn-sm">Explore Gateway</a>
+            <div class="mp-cta">
+              <div class="mp-cta-title">Swiss Trust Infrastructure</div>
+              <p class="mp-cta-desc">All products hosted in Switzerland. FINMA-compliant. One API.</p>
+              <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="font-size:.79rem;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- SOLUTIONS -->
-      <div class="ni" id="ni-sol">
-        <span onclick="toggleMenu('sol')"><span data-i18n="nav_solutions">Solutions</span> <i class="arr fas fa-chevron-down"></i></span>
-        <div class="mega mega-sm" id="mega-sol">
-          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></div>
-          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></div>
-          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></div>
-          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></div>
-          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></div>
-          <div class="sol-card" href="/"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine™</h4><p>Multi-signal risk decision framework.</p></div></div>
+      </li>
+      <li class="ni" id="ni-sol">
+        <span onclick="toggleMenu('sol')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('sol')">
+          <span>Solutions</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sol" id="mega-sol">
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></a>
+          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></a>
+          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></a>
+          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></a>
+          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine&#8482;</h4><p>Multi-signal risk decision framework.</p></div></a>
         </div>
-      </div>
-
-      <!-- RESOURCES -->
-      <div class="ni" id="ni-res">
-        <span onclick="toggleMenu('res')"><span data-i18n="nav_resources">Resources</span> <i class="arr fas fa-chevron-down"></i></span>
-        <div class="mega mega-sm" id="mega-res" style="min-width:300px;padding:1.5rem 1.75rem;">
+      </li>
+      <li class="ni" id="ni-res">
+        <span onclick="toggleMenu('res')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('res')">
+          <span>Resources</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sm" id="mega-res" style="min-width:260px;padding:1.35rem 1.5rem;">
           <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Resources</h5>
-          <div class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</div>
-          <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a><a class="ml" href="/resources"><i class="fas fa-book"></i>Documentation</a><a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a><a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a><a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
-          <div class="ml" href="/resources"><i class="fas fa-file-lines"></i>Compliance Guides</div>
-          <div class="ml" href="/resources"><i class="fas fa-file-pdf"></i>Whitepapers</div>
-          <div class="ml" href="/resources"><i class="fas fa-newspaper"></i>Product Updates</div>
+          <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a>
+          <a class="ml" href="/resources"><i class="fas fa-book"></i>Documentation</a>
+          <a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a>
+          <a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
+          <a class="ml" href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf"></i>nFADP Whitepaper</a>
+          <a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a>
+          <a class="ml" href="/faq"><i class="fas fa-circle-question"></i>FAQ</a>
         </div>
-      </div>
-
-      <!-- COMPANY -->
-      <div class="ni" id="ni-co">
-        <span onclick="toggleMenu('co')"><span data-i18n="nav_company">Company</span> <i class="arr fas fa-chevron-down"></i></span>
-        <div class="mega mega-sm" id="mega-co" style="min-width:280px;padding:1.5rem 1.75rem;">
+      </li>
+      <li class="ni" id="ni-co">
+        <span onclick="toggleMenu('co')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('co')">
+          <span>Company</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sm" id="mega-co" style="min-width:240px;padding:1.35rem 1.5rem;">
           <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
-          <div class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</div>
-          <div class="ml" href="/about"><i class="fas fa-users"></i>Leadership</div>
-          <div class="ml" href="/contact"><i class="fas fa-envelope"></i>Contact</div>
+          <a class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</a>
+          <a class="ml" href="/about#team"><i class="fas fa-users"></i>Leadership &amp; Team</a>
+          <a class="ml" href="/en/partners/"><i class="fas fa-handshake"></i>Partner Program</a>
+          <a class="ml" href="/careers"><i class="fas fa-briefcase"></i>Careers</a>
+          <a class="ml" href="/press"><i class="fas fa-newspaper"></i>Press</a>
+          <a class="ml" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
         </div>
-      </div>
-
-      <div class="ni"><a href="/contact">Contact</a>
-          <a class="mc-lnk" href="/de/trust-center/"><i class="fas fa-shield-halved"></i>Trust Center (DE)</a><a class="mc-lnk" href="/en/trust-center/"><i class="fas fa-shield-halved"></i>Trust Center (EN)</a><a class="mc-lnk" href="/de/partner/"><i class="fas fa-handshake"></i>Partner Programm</a><a class="mc-lnk" href="/de/demo/"><i class="fas fa-play-circle"></i>Live Demo</a><a class="mc-lnk" href="/de/fintech-map/"><i class="fas fa-map"></i>Fintech Map</a>
-          <a class="mc-lnk" href="/de/vergleich/"><i class="fas fa-scale-balanced"></i>Warum VerfiX (DE)</a><a class="mc-lnk" href="/en/comparison/"><i class="fas fa-scale-balanced"></i>Why VerfiX (EN)</a><a class="mc-lnk" href="/fr/comparaison/"><i class="fas fa-scale-balanced"></i>Pourquoi VerfiX (FR)</a></div>
-    </div>
-
+      </li>
+      <li class="ni"><a href="/contact" style="font-weight:600;color:var(--t);padding:.4rem .25rem;">Contact</a></li>
+    </ul>
     <div class="nav-r">
       <div class="lang-sw">
         <button class="lb on" onclick="setLang('en')">EN</button>
         <button class="lb" onclick="setLang('de')">DE</button>
         <button class="lb" onclick="setLang('fr')">FR</button>
       </div>
-      <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;"><span data-i18n="nav_sales">Talk to Sales</span></a>
-      <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-r"><span data-i18n="nav_demo">Book a Demo</span></a>
-      <button class="ham" id="ham-btn"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+      <a href="/contact" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;">Talk to Sales</a>
+      <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">Book a Demo</a>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open menu"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
     </div>
   </div>
-
   <div id="mob">
-    <span href="/industries">Industries</span>
-    <span href="/solutions">Products &amp; Solutions</span>
-    <span href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway <span style="font-size:.6rem;background:var(--r);color:#fff;padding:.08rem .32rem;border-radius:3px;margin-left:.3rem;">NEW</span></span>
-    <span href="/trust-center">Trust Center</span>
-    <span href="/resources">Resources</span>
-    <span href="/about">Company</span>
-    <span href="/contact">Contact</span>
-    <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-r" style="justify-content:center;margin-top:.2rem;">Book a Demo</a>
-    <div class="mob-lang">
-      <button class="mlb on" onclick="setLang('en')">EN</button>
-      <button class="mlb" onclick="setLang('de')">DE</button>
-      <button class="mlb" onclick="setLang('fr')">FR</button>
-    </div>
+    <a href="/industries"><i class="fas fa-landmark" style="width:18px;"></i>Industries</a>
+    <a href="/solutions"><i class="fas fa-layer-group" style="width:18px;"></i>Solutions</a>
+    <a href="/gateway" style="color:var(--r);font-weight:700;"><i class="fas fa-network-wired" style="width:18px;"></i>VerfiX Gateway</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/products/document-verification"><i class="fas fa-id-card" style="width:18px;"></i>Document Verification</a>
+    <a href="/products/face-verification"><i class="fas fa-face-smile" style="width:18px;"></i>Face Verification</a>
+    <a href="/products/aml-screening"><i class="fas fa-magnifying-glass-dollar" style="width:18px;"></i>AML Screening</a>
+    <a href="/en/kyb/"><i class="fas fa-building" style="width:18px;"></i>KYB Verification</a>
+    <a href="/en/products/voice-verification/"><i class="fas fa-waveform-lines" style="width:18px;"></i>Voice Biometrics</a>
+    <a href="/products/deepfake-detection"><i class="fas fa-robot" style="width:18px;"></i>Deepfake Detection</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/insights"><i class="fas fa-newspaper" style="width:18px;"></i>Insights</a>
+    <a href="/resources"><i class="fas fa-book" style="width:18px;"></i>Documentation</a>
+    <a href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf" style="width:18px;"></i>nFADP Whitepaper</a>
+    <a href="/faq"><i class="fas fa-circle-question" style="width:18px;"></i>FAQ</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/about"><i class="fas fa-building" style="width:18px;"></i>About</a>
+    <a href="/en/partners/"><i class="fas fa-handshake" style="width:18px;"></i>Partners</a>
+    <a href="/careers"><i class="fas fa-briefcase" style="width:18px;"></i>Careers</a>
+    <a href="/contact"><i class="fas fa-envelope" style="width:18px;"></i>Contact</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.5rem 0;"/>
+    <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
   </div>
 </nav>
 <div class="read-progress" id="read-progress"></div><section id="main-content" class="blog-hero"><div class="W"><div class="blog-hero-inner"><div><div class="blog-hero-badge"><i class="fas fa-newspaper" style="font-size:.65rem;"></i>VerfiX Insights</div><h1>Swiss Compliance Intelligence</h1><p class="blog-hero-sub">Praxisnahes Regulierungswissen für Banken, Fintechs, Versicherungen und regulierte Organisationen in der Schweiz — nFADP, FINMA, eIDAS 2.0, AML, KYC und digitale Identität.</p><div class="blog-stats"><div><div class="blog-stat-n">5</div><div class="blog-stat-l">Artikel</div></div><div><div class="blog-stat-n">4</div><div class="blog-stat-l">Themen</div></div><div><div class="blog-stat-n">DE</div><div class="blog-stat-l">Sprache</div></div><div><div class="blog-stat-n">CH</div><div class="blog-stat-l">Fokus</div></div></div></div></div></div></section><div class="blog-filter-bar"><div class="W"><div class="blog-filter-inner"><button class="blog-cat active" onclick="filterBlog('all',this)">Alle Artikel<span class="blog-cat-count">5</span></button><button class="blog-cat" onclick="filterBlog('nfadp',this)">nFADP / nDSG<span class="blog-cat-count">1</span></button><button class="blog-cat" onclick="filterBlog('finma',this)">FINMA<span class="blog-cat-count">1</span></button><button class="blog-cat" onclick="filterBlog('eidas',this)">eIDAS 2.0<span class="blog-cat-count">1</span></button><button class="blog-cat" onclick="filterBlog('aml',this)">AML<span class="blog-cat-count">1</span></button><button class="blog-cat" onclick="filterBlog('kyc',this)">KYC<span class="blog-cat-count">1</span></button><div class="blog-search-wrap" style="margin-left:auto;"><i class="fas fa-search blog-search-icon"></i><input class="blog-search" type="search" placeholder="Artikel suchen…" oninput="searchBlog(this.value)"/></div></div></div></div><section style="padding:3.5rem 0 5rem;"><div class="W"><div class="blog-layout"><div><a href="/insights/nfadp-compliance-guide-schweiz" class="blog-featured" style="text-decoration:none;"><div class="blog-feat-img" style="background:linear-gradient(135deg,#1a1f2e 0%,#2d1a1a 100%);"><div style="text-align:center;"><div style="width:72px;height:72px;background:rgba(200,37,42,.18);border:1.5px solid rgba(200,37,42,.3);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;"><i class="fas fa-shield-halved" style="font-size:1.75rem;color:var(--r);"></i></div><div style="font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);">Featured Article</div></div></div><div class="blog-feat-body"><div class="blog-feat-meta"><span class="blog-tag nfadp">nFADP / nDSG</span><span class="blog-read-time"><i class="fas fa-clock" style="font-size:.6rem;"></i>9 min Lesezeit</span></div><h2 class="blog-feat-title">nFADP 2023: Der vollständige Compliance-Leitfaden für Schweizer Unternehmen</h2><p class="blog-feat-excerpt">Das revidierte Schweizer Datenschutzgesetz (nFADP/nDSG) ist in Kraft. Was müssen Banken, Fintechs und regulierte Unternehmen jetzt konkret umsetzen? Dieser Leitfaden erklärt alle Anforderungen, Fristen und Best Practices.</p><div class="blog-feat-author"><!-- ⚠ REPLACE: Add your own team photo to /assets/team/ -->

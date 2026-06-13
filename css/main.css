@@ -1113,3 +1113,28 @@ body.page-contact .float-demo-btn { display: none !important; }
 }
 .vid-section.vid-dark h2 { color: #fff; }
 .vid-section.vid-dark p  { color: rgba(255,255,255,.52); }
+
+/* ── Mega menu backdrop — closes menu on outside click ── */
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9001;   /* just below mega z-index 9002 */
+  background: transparent;
+  cursor: default;
+}
+.nav-backdrop.active {
+  display: block;
+}
+
+/* Extra safety — mega never shows without explicit .open on parent */
+.mega:not(.ni.open > .mega) {
+  /* belt and suspenders — redundant but safe */
+  pointer-events: none;
+}
+/* Ensure mega closes on page scroll (CSS backup) */
+@media (hover: none) {
+  /* Touch devices — mega only opens on click, never on hover */
+  .ni:hover > .mega { opacity: 0; visibility: hidden; pointer-events: none; }
+  .ni.open > .mega  { opacity: 1; visibility: visible; pointer-events: auto; }
+}

@@ -75,6 +75,9 @@ if (!ni) return;
 ni.classList.add('open');
 _openM = id;
 if (_menuTimer) { clearTimeout(_menuTimer); _menuTimer = null; }
+/* show backdrop */
+var bd = document.getElementById('nav-backdrop');
+if (bd) bd.classList.add('active');
 }
 function _closeMenu(id) {
 var ni = document.getElementById('ni-' + id);
@@ -87,6 +90,9 @@ document.querySelectorAll('.ni.open').forEach(function(el) {
 el.classList.remove('open');
 });
 _openM = null;
+/* hide backdrop */
+var bd = document.getElementById('nav-backdrop');
+if (bd) bd.classList.remove('active');
 }
 function _startCloseTimer(id) {
 _menuTimer = setTimeout(function() {

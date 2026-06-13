@@ -3,6 +3,86 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/products/document-verification",
+      "destination": "/products/document-verification/index.html"
+    },
+    {
+      "source": "/products/document-verification/",
+      "destination": "/products/document-verification/index.html"
+    },
+    {
+      "source": "/products/face-verification",
+      "destination": "/products/face-verification/index.html"
+    },
+    {
+      "source": "/products/face-verification/",
+      "destination": "/products/face-verification/index.html"
+    },
+    {
+      "source": "/products/aml-screening",
+      "destination": "/products/aml-screening/index.html"
+    },
+    {
+      "source": "/products/aml-screening/",
+      "destination": "/products/aml-screening/index.html"
+    },
+    {
+      "source": "/products/ubo-verification",
+      "destination": "/products/ubo-verification/index.html"
+    },
+    {
+      "source": "/products/ubo-verification/",
+      "destination": "/products/ubo-verification/index.html"
+    },
+    {
+      "source": "/products/age-validation",
+      "destination": "/products/age-validation/index.html"
+    },
+    {
+      "source": "/products/age-validation/",
+      "destination": "/products/age-validation/index.html"
+    },
+    {
+      "source": "/products/age-estimation",
+      "destination": "/products/age-estimation/index.html"
+    },
+    {
+      "source": "/products/age-estimation/",
+      "destination": "/products/age-estimation/index.html"
+    },
+    {
+      "source": "/products/deepfake-detection",
+      "destination": "/products/deepfake-detection/index.html"
+    },
+    {
+      "source": "/products/deepfake-detection/",
+      "destination": "/products/deepfake-detection/index.html"
+    },
+    {
+      "source": "/products/synthetic-identity",
+      "destination": "/products/synthetic-identity/index.html"
+    },
+    {
+      "source": "/products/synthetic-identity/",
+      "destination": "/products/synthetic-identity/index.html"
+    },
+    {
+      "source": "/products/document-fraud",
+      "destination": "/products/document-fraud/index.html"
+    },
+    {
+      "source": "/products/document-fraud/",
+      "destination": "/products/document-fraud/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq/index.html"
+    },
+    {
+      "source": "/faq/",
+      "destination": "/faq/index.html"
+    },
+    {
       "source": "/de/trust-center",
       "destination": "de/trust-center/index.html"
     },
