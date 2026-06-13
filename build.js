@@ -12,6 +12,16 @@
  */
 
 'use strict';
+// ── Page manifest (explicit list per spec 2.1) ──
+const PAGES_LIST = [
+  'index.html','about.html','solutions.html','industries.html','contact.html',
+  'careers.html','case-studies.html','press.html','gateway.html','trust-center.html',
+  'resources.html','api.html','privacy.html','terms.html','impressum.html',
+  'datenschutz.html','mentions-legales.html','politique-confidentialite.html'
+];
+const LANG_DIRS = ['de','fr','en'];
+// Note: build uses walkDir for exhaustive coverage; PAGES_LIST used for validation
+
 
 const fs   = require('fs');
 const path = require('path');
@@ -108,9 +118,23 @@ function injectBuildMeta(html) {
 function processHTML(src, dest, comps, relPath) {
   let html = fs.readFileSync(src, 'utf8');
 
-  // Inject component placeholders if templates use them
-  // (existing pages don't use placeholders — they have full HTML,
-  //  so we only do variable substitution and env injection)
+  // ── Component injection (nav, footer, shared meta) ──
+  // Replace <nav ...>...</nav> with components/header.html
+  if (comps.header) {
+    html = html.replace(/<nav[\s\S]*?<\/nav>/, comps.header);
+  }
+  // Replace <footer ...>...</footer> with components/footer.html
+  if (comps.footer) {
+    html = html.replace(/<footer[\s\S]*?<\/footer>/, comps.footer);
+  }
+  // Inject shared meta into <head> (after opening <head> tag)
+  if (comps.meta && !html.includes('<!-- meta-injected -->')) {
+    html = html.replace(/(<head>)/, `$1
+  <!-- meta-injected -->
+  ${comps.meta}`);
+  }
+
+  // ── Variable substitution ──
   html = applyVars(html, ENV);
 
   // Replace hardcoded GA4 ID with env var (in case it differs)

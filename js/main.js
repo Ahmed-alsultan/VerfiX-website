@@ -535,6 +535,83 @@ document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
   }, 4000);
 })();
 
+
+/* ── Missing functions added by enterprise upgrade ── */
+
+// industryContent alias (spec name) → maps to existing IND_DATA
+var industryContent = window.IND_DATA || {};
+
+// enableAnalytics / enableMarketing — GA4 consent update
+function enableAnalytics() {
+  window.ANALYTICS_CONSENT = true;
+  if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'granted' });
+  loadGA4();
+}
+function enableMarketing() {
+  window.MARKETING_CONSENT = true;
+  if (window.gtag) window.gtag('consent', 'update', { ad_storage: 'granted' });
+}
+
+// loadCalendlyWidget — consent-aware Calendly loader
+window.loadCalendlyWidget = function() {
+  var consent = localStorage.getItem('vx-ck');
+  var prefs = null;
+  try { prefs = consent ? JSON.parse(consent) : null; } catch(e) {}
+  var allowed = prefs && (prefs.marketing || prefs.analytics);
+  if (!allowed) {
+    // Show inline fallback link instead
+    var fb = document.getElementById('calendly-fallback');
+    if (fb) fb.style.display = 'block';
+    return;
+  }
+  var widget = document.getElementById('calendly-inline-widget');
+  if (!widget) return;
+  if (window.Calendly) {
+    window.Calendly.initInlineWidget({
+      url: 'https://calendly.com/ahmed-ahmed-alsultan/30min?hide_gdpr_banner=1',
+      parentElement: widget
+    });
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.async = true;
+    s.onload = function() {
+      if (window.Calendly) {
+        window.Calendly.initInlineWidget({
+          url: 'https://calendly.com/ahmed-ahmed-alsultan/30min?hide_gdpr_banner=1',
+          parentElement: widget
+        });
+      }
+    };
+    document.head.appendChild(s);
+  }
+};
+
+// Prefers-reduced-motion — add class to <html> so CSS can target it
+(function() {
+  try {
+    var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mq.matches) document.documentElement.classList.add('reduce-motion');
+    mq.addEventListener('change', function(e) {
+      document.documentElement.classList.toggle('reduce-motion', e.matches);
+    });
+  } catch(e) {}
+})();
+
+// Cookie consent key bridge — spec uses 'cookie_consent', our code uses 'vx-ck'
+// Expose a unified helper so both keys work
+(function bridgeCookieKeys() {
+  var legacyKey = localStorage.getItem('cookie_consent');
+  if (legacyKey && !localStorage.getItem('vx-ck')) {
+    var prefs = {necessary: true, analytics: legacyKey === 'all', marketing: legacyKey === 'all', ts: new Date().toISOString()};
+    try { localStorage.setItem('vx-ck', JSON.stringify(prefs)); } catch(e) {}
+  }
+  // Also expose spec-compatible getters
+  window.getCookieConsent = function() {
+    try { return JSON.parse(localStorage.getItem('vx-ck') || 'null'); } catch(e) { return null; }
+  };
+})();
+
 /* ═══════════════════════════════════════════════════════════════
    ENTERPRISE ADDITIONS — v2.0.0
    Error handling · Monitoring · Accessibility · PWA
