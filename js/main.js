@@ -147,6 +147,21 @@ function closeMob() {
 var m = document.getElementById('mob');
 if (m) { m.classList.remove('open'); m.style.display = 'none'; }
 }
+function toggleMob() {
+  var m = document.getElementById('mob');
+  var btn = document.getElementById('ham-btn');
+  if (!m) return;
+  if (m.classList.contains('open')) {
+    closeMob();
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  } else {
+    m.classList.add('open');
+    m.style.display = 'flex';
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+    closeAll();
+  }
+}
+
 function setDep(id) {
 ['saas','swiss','private','onprem'].forEach(function(k,i){
 var tab   = document.querySelectorAll('.dep-tab')[i];
@@ -519,3 +534,299 @@ document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
     if (!shown) { btn.classList.add('visible'); shown = true; }
   }, 4000);
 })();
+
+/* ═══════════════════════════════════════════════════════════════
+   ENTERPRISE ADDITIONS — v2.0.0
+   Error handling · Monitoring · Accessibility · PWA
+   ═══════════════════════════════════════════════════════════════ */
+
+// ── 1. Global Error Handler ──────────────────────────────────
+window.onerror = function(msg, src, line, col, err) {
+  try {
+    var payload = {
+      message: String(msg).substring(0, 200),
+      source:  String(src).substring(0, 100),
+      line:    line,
+      col:     col,
+      stack:   err && err.stack ? String(err.stack).substring(0, 400) : ''
+    };
+    // Send to GA4 as exception event (non-fatal)
+    if (window.gtag) {
+      gtag('event', 'exception', {
+        description: payload.message + ' @ ' + payload.source + ':' + payload.line,
+        fatal: false
+      });
+    }
+    console.error('[VerfiX Error]', payload);
+  } catch(e) { /* fail silently */ }
+  return false; // don't suppress default browser handling
+};
+
+// Unhandled promise rejections
+window.addEventListener('unhandledrejection', function(e) {
+  try {
+    if (window.gtag) {
+      gtag('event', 'exception', {
+        description: 'Unhandled promise: ' + String(e.reason).substring(0, 200),
+        fatal: false
+      });
+    }
+  } catch(ex) { /* fail silently */ }
+});
+
+
+// ── 2. Core Web Vitals reporting ────────────────────────────
+(function initWebVitals() {
+  if (!window.gtag) return;
+
+  function sendVital(name, value, rating) {
+    gtag('event', name, {
+      event_category: 'Web Vitals',
+      value:          Math.round(name === 'CLS' ? value * 1000 : value),
+      metric_rating:  rating || 'unknown',
+      non_interaction: true
+    });
+  }
+
+  // Largest Contentful Paint (LCP)
+  try {
+    var lcpObserver = new PerformanceObserver(function(list) {
+      var entries = list.getEntries();
+      var lcp = entries[entries.length - 1];
+      var v = lcp.startTime;
+      sendVital('LCP', v, v < 2500 ? 'good' : v < 4000 ? 'needs-improvement' : 'poor');
+      lcpObserver.disconnect();
+    });
+    lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+  } catch(e) {}
+
+  // Cumulative Layout Shift (CLS)
+  try {
+    var clsValue = 0;
+    var clsObserver = new PerformanceObserver(function(list) {
+      list.getEntries().forEach(function(entry) {
+        if (!entry.hadRecentInput) clsValue += entry.value;
+      });
+    });
+    clsObserver.observe({ type: 'layout-shift', buffered: true });
+    // Report CLS on page hide/unload
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'hidden') {
+        sendVital('CLS', clsValue, clsValue < 0.1 ? 'good' : clsValue < 0.25 ? 'needs-improvement' : 'poor');
+        clsObserver.disconnect();
+      }
+    }, { once: true });
+  } catch(e) {}
+
+  // Interaction to Next Paint (INP) — via Event Timing API
+  try {
+    var maxInp = 0;
+    var inpObserver = new PerformanceObserver(function(list) {
+      list.getEntries().forEach(function(entry) {
+        var dur = entry.duration;
+        if (dur > maxInp) maxInp = dur;
+      });
+    });
+    inpObserver.observe({ type: 'event', durationThreshold: 40, buffered: true });
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'hidden' && maxInp > 0) {
+        sendVital('INP', maxInp, maxInp < 200 ? 'good' : maxInp < 500 ? 'needs-improvement' : 'poor');
+        inpObserver.disconnect();
+      }
+    }, { once: true });
+  } catch(e) {}
+})();
+
+
+// ── 3. Outbound Link & Interaction Tracking ──────────────────
+(function initOutboundTracking() {
+  document.addEventListener('click', function(e) {
+    try {
+      var link = e.target.closest('a[href]');
+      if (!link) return;
+      var href = link.href || '';
+
+      // External links
+      if (href && !href.startsWith(location.origin) && !href.startsWith('javascript')) {
+        var category = href.includes('calendly.com') ? 'Calendly' :
+                       href.includes('linkedin.com')  ? 'LinkedIn'  :
+                       href.includes('mailto:')        ? 'Email'    :
+                       href.includes('tel:')           ? 'Phone'    : 'Outbound';
+        if (window.gtag) {
+          gtag('event', 'click', {
+            event_category: category,
+            event_label:    href.substring(0, 150),
+            transport_type: 'beacon'
+          });
+        }
+      }
+
+      // CTA tracking — already handled by trackCTA() but catch any missed ones
+      if (link.classList.contains('btn') && !link.hasAttribute('data-tracked')) {
+        link.setAttribute('data-tracked', '1');
+        if (window.gtag) {
+          gtag('event', 'cta_click', {
+            event_category: 'CTA',
+            event_label: (link.textContent || '').trim().substring(0, 80)
+          });
+        }
+      }
+    } catch(ex) {}
+  }, { passive: true });
+})();
+
+
+// ── 4. Scroll Depth Tracking ────────────────────────────────
+(function initScrollDepth() {
+  if (!window.gtag) return;
+  var milestones = [25, 50, 75, 100];
+  var reached    = {};
+  var ticking    = false;
+
+  function checkDepth() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight
+    );
+    var viewHeight = window.innerHeight;
+    var pct = Math.round(((scrollTop + viewHeight) / docHeight) * 100);
+
+    milestones.forEach(function(m) {
+      if (pct >= m && !reached[m]) {
+        reached[m] = true;
+        gtag('event', 'scroll', {
+          event_category: 'Engagement',
+          event_label:    m + '%',
+          value:          m,
+          non_interaction: m < 50
+        });
+      }
+    });
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(checkDepth);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+
+// ── 5. Focus Management for Mega Menus ──────────────────────
+(function initFocusManagement() {
+  // When a mega menu opens, the first focusable item inside gets focus
+  // When it closes, focus returns to the trigger
+  var _lastFocused = null;
+
+  document.querySelectorAll('.ni').forEach(function(ni) {
+    var trigger = ni.querySelector('span[role="button"], span[onclick]');
+    var mega    = ni.querySelector('.mega');
+    if (!trigger || !mega) return;
+
+    // Store last focused element when opening
+    trigger.addEventListener('keydown', function(e) {
+      if ((e.key === 'Enter' || e.key === ' ') && !ni.classList.contains('open')) {
+        e.preventDefault();
+        _lastFocused = document.activeElement;
+        // Focus first focusable item in mega
+        setTimeout(function() {
+          var first = mega.querySelector('a[href], button, [tabindex="0"]');
+          if (first) first.focus();
+        }, 50);
+      }
+    });
+
+    // Escape closes and returns focus
+    mega.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeAll();
+        if (_lastFocused) { _lastFocused.focus(); _lastFocused = null; }
+      }
+      // Tab trap: wrap within mega
+      if (e.key === 'Tab') {
+        var focusable = Array.from(mega.querySelectorAll('a[href], button, [tabindex="0"]'));
+        if (!focusable.length) return;
+        var first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          closeAll();
+          if (_lastFocused) { _lastFocused.focus(); _lastFocused = null; }
+        }
+      }
+    });
+  });
+})();
+
+
+// ── 6. PWA Service Worker Registration ──────────────────────
+(function registerSW() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js').then(function(reg) {
+        // Check for updates
+        reg.addEventListener('updatefound', function() {
+          var newWorker = reg.installing;
+          if (newWorker) {
+            newWorker.addEventListener('statechange', function() {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                // New content available — could show a "refresh" toast here
+                console.info('[SW] New version available. Refresh to update.');
+              }
+            });
+          }
+        });
+      }).catch(function(err) {
+        // SW registration failure is non-critical
+        console.warn('[SW] Registration failed:', err.message);
+      });
+    });
+  }
+})();
+
+
+// ── 7. Safe DOM Helper — use throughout for robustness ───────
+window.vfx = window.vfx || {};
+window.vfx.$ = function(sel, ctx) {
+  try { return (ctx || document).querySelector(sel); } catch(e) { return null; }
+};
+window.vfx.$$ = function(sel, ctx) {
+  try { return Array.from((ctx || document).querySelectorAll(sel)); } catch(e) { return []; }
+};
+window.vfx.on = function(el, evt, fn, opts) {
+  try { if (el) el.addEventListener(evt, fn, opts || false); } catch(e) {}
+};
+
+
+// ── 8. Calendly Fallback (strengthen existing) ──────────────
+(function ensureCalendlyFallback() {
+  // If Calendly widget doesn't load within 5s on the contact page,
+  // show the fallback link
+  var widget = document.getElementById('calendly-inline-widget');
+  if (!widget) return;
+
+  var fallback = document.getElementById('calendly-fallback');
+  if (!fallback) {
+    fallback = document.createElement('div');
+    fallback.id = 'calendly-fallback';
+    fallback.style.cssText = 'display:none;text-align:center;padding:1.5rem;';
+    fallback.innerHTML = '<p style="color:var(--m);margin-bottom:.75rem;font-size:.9rem;">Calendar failed to load.</p>'
+      + '<a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">'
+      + '<i class="fas fa-calendar-check"></i> Open Calendly directly</a>';
+    widget.parentNode && widget.parentNode.insertBefore(fallback, widget.nextSibling);
+  }
+
+  setTimeout(function() {
+    var iframe = widget.querySelector('iframe');
+    if (!iframe || iframe.offsetHeight < 100) {
+      widget.style.display = 'none';
+      fallback.style.display = 'block';
+      if (window.gtag) gtag('event', 'calendly_fallback', { event_category: 'Error' });
+    }
+  }, 6000);
+})();
+

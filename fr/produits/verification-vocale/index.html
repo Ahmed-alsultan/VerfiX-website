@@ -326,12 +326,17 @@
        ════════════════════════════════════════════════════ -->
 
   
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#C8252A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 </head>
 <body>
 <!-- Mega menu backdrop -->
 <div id="nav-backdrop" class="nav-backdrop" onclick="closeAll()"></div>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
+<div aria-live="polite" aria-atomic="true" id="vfx-live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>
 
 <!-- ════════════════════════════════════════════════════════
      COOKIE CONSENT BANNER — PLACEHOLDER
@@ -363,7 +368,7 @@
 <!-- ═══════════════════════════════════════
      NAVIGATION
 ═══════════════════════════════════════ -->
-<nav class="nav" id="nav">
+<nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="VerfiX home">
       <picture>
@@ -378,12 +383,12 @@
         </span>
         <div class="mega mega-ind" id="mega-ind">
           <div class="mi-left">
-            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div></div>
-            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div></div>
-            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div></div>
-            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div></div>
-            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div></div>
-            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div></div>
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><div class="mc-h">Banking</div></div></div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><div class="mc-h">Fintech</div></div></div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><div class="mc-h">Crypto</div></div></div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Insurance</div></div></div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><div class="mc-h">Government</div></div></div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><div class="mc-h">Telecom</div></div></div>
           </div>
           <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
         </div>
@@ -433,12 +438,12 @@
           <span>Solutions</span> <i class="arr fas fa-chevron-down"></i>
         </span>
         <div class="mega mega-sol" id="mega-sol">
-          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></a>
-          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></a>
-          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></a>
-          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></a>
-          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
-          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine&#8482;</h4><p>Multi-signal risk decision framework.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><div class="mc-h">Digital Onboarding</div><p>KYC, face match, AML in one hosted flow.</p></div></a>
+          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><div class="mc-h">Business Verification</div><p>KYB, directors, and UBO checks.</p></div></a>
+          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><div class="mc-h">Telephone Banking Auth</div><p>Voice biometrics for call centres.</p></div></a>
+          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><div class="mc-h">AML &amp; Compliance</div><p>Automated screening + audit trail.</p></div></a>
+          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Fraud Intelligence Suite</div><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><div class="mc-h">Trust Engine&#8482;</div><p>Multi-signal risk decision framework.</p></div></a>
         </div>
       </li>
       <li class="ni" id="ni-res">
@@ -480,7 +485,7 @@
       </div>
       <a href="/contact" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;">Talk to Sales</a>
       <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">Book a Demo</a>
-      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open menu"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
     </div>
   </div>
   <div id="mob">
@@ -508,6 +513,8 @@
     <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
   </div>
 </nav>
+<main id="page-top">
+
 <div style="background:#fff;border-bottom:1px solid var(--bd);"><div class="W" style="display:flex;align-items:center;gap:.5rem;font-size:.76rem;color:var(--lt);padding:.62rem 0;"><i class="fas fa-globe" style="font-size:.7rem;"></i><span class="lang-switcher-strip" style="border:none;padding:0;margin:0;"><a href="https://verfix.ch/fr/produits/verification-vocale/" class="current">FR</a><span style="color:var(--bd);">|</span><a href="/de/produkte/stimmverifikation/">DE</a><span style="color:var(--bd);">|</span><a href="/en/products/voice-verification/">EN</a></span></div></div><section id="main-content" class="product-hero"><div class="W"><div class="product-hero-g"><div><div class="product-hero-badge"><i class="fas fa-waveform-lines"></i> Produit · Biométrie Vocale</div><h1>Vérification Vocale</h1><p class="product-hero-sub">Identification biométrique vocale pour la banque téléphonique, les centres d'appels et les services numériques réglementés. Conforme FINMA. Résidence des données en Suisse.</p><div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Réserver une démo</a><a href="/api" class="btn btn-wo btn-lg">Explorer l'API</a></div><div class="product-hero-stats" style="margin-top:2rem;"><div><div class="ph-stat-n">&lt; 3s</div><div class="ph-stat-l">Durée vérification</div></div><div><div class="ph-stat-n">99.2%</div><div class="ph-stat-l">Taux reconnaissance</div></div><div><div class="ph-stat-n">CH</div><div class="ph-stat-l">Stockage données</div></div><div><div class="ph-stat-n">FINMA</div><div class="ph-stat-l">Conforme</div></div></div></div><div class="product-hero-visual"><div class="pvrow"><div class="pvrow-ico"><i class="fas fa-waveform-lines"></i></div><div class="pvrow-txt">Modèle vocal créé</div><div class="pvrow-score" style="color:#4ade80;">&#10003;</div></div><div class="pvrow"><div class="pvrow-ico"><i class="fas fa-shield-halved"></i></div><div class="pvrow-txt">Anti-spoofing actif</div><div class="pvrow-score" style="color:#4ade80;">&#10003;</div></div><div class="pvrow"><div class="pvrow-ico"><i class="fas fa-magnifying-glass-dollar"></i></div><div class="pvrow-txt">Screening AML clair</div><div class="pvrow-score" style="color:#4ade80;">&#10003;</div></div><div class="pvrow"><div class="pvrow-ico"><i class="fas fa-circle-check"></i></div><div class="pvrow-txt">Approuvé</div><div class="pvrow-score" style="color:#4ade80;">&#10003;</div></div></div></div></div></section><div class="compliance-strip"><div class="W"><div class="compliance-inner"><span class="compliance-label">Compliance &amp; Standards</span><div class="compliance-badges"><span class="c-badge"><i class="fas fa-check"></i>Circulaire FINMA 2016/7</span><span class="c-badge"><i class="fas fa-check"></i>LBA Art. 3</span><span class="c-badge"><i class="fas fa-check"></i>nLPD / nFADP</span><span class="c-badge"><i class="fas fa-check"></i>AES-256</span><span class="c-badge"><i class="fas fa-check"></i>Données en Suisse</span></div></div></div></div><section style="padding:4.5rem 0;background:#fff;"><div class="W"><div style="max-width:760px;"><h2 style="margin-bottom:1rem;">Vérification Vocale</h2><p style="font-size:.96rem;color:var(--m);line-height:1.82;">La vérification vocale VerfiX analyse les caractéristiques biométriques uniques de la voix humaine. Le système crée un Voice Print chiffré et compare la voix de l'appelant en temps réel à chaque authentification. Détection anti-spoofing, reconnaissance des deepfakes et seuils configurables font de VerfiX la solution de vérification vocale la plus sécurisée pour les institutions financières suisses.</p></div></div></section><section class="how-section"><div class="W"><span class="label" style="display:flex;margin-bottom:.75rem;">Comment ça fonctionne</span><h2>En 4 étapes</h2><div class="how-grid" style="margin-top:2rem;"><div class="how-step"><div class="how-num">1</div><div class="how-title">Enrôlement</div><div class="how-desc">Enregistrement vocal 15–30 sec.</div></div><div class="how-step"><div class="how-num">2</div><div class="how-title">Voice Print</div><div class="how-desc">Modèle vocal chiffré</div></div><div class="how-step"><div class="how-num">3</div><div class="how-title">Authentification</div><div class="how-desc">Comparaison temps réel à chaque appel</div></div><div class="how-step"><div class="how-num">4</div><div class="how-title">Décision</div><div class="how-desc">Score de confiance & approbation ou escalade</div></div></div></div></section><section class="faq-section" id="faq"><div class="W"><div class="faq-header"><span class="label" style="justify-content:center;margin-bottom:.75rem;">FAQ</span><h2>Questions fréquentes</h2><p>Tout sur la vérification vocale de VerfiX — technologie, réglementation et intégration.</p></div><div class="faq-list" role="list"><div class="faq-item" id="voice-fr-0">
   <h3>
     <button
@@ -724,6 +731,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <section class="product-cta"><div class="W"><h2>Vérification vocale pour votre banque</h2><p>Découvrez comment la vérification vocale VerfiX améliore la sécurité de votre banque téléphonique en toute conformité FINMA.</p><div class="product-cta-btns"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Réserver une démo</a><a href="/contact" class="btn btn-wo btn-lg"><i class="fas fa-envelope"></i> Contact</a></div></div></section>
+</main>
 <!-- SOCIAL BAR -->
 <div class="social-bar">
   <div class="social-inner">
@@ -745,7 +753,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </div>
 
-<footer>
+<footer role="contentinfo">
   <div class="foot-top">
     <div class="foot-brand">
       <picture>

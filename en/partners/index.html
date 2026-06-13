@@ -259,12 +259,17 @@
   {"@type":"ListItem","position":2,"name":"Partners","item":"https://verfix.ch/en/partners/"}
 ]}
 </script>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#C8252A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 </head>
 <body>
 <!-- Mega menu backdrop -->
 <div id="nav-backdrop" class="nav-backdrop" onclick="closeAll()"></div>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
+<div aria-live="polite" aria-atomic="true" id="vfx-live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>
 
 <!-- ════════════════════════════════════════════════════════
      COOKIE CONSENT BANNER — PLACEHOLDER
@@ -298,7 +303,7 @@
      NAVIGATION
 ═══════════════════════════════════════ -->
 
-<nav class="nav" id="nav">
+<nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="VerfiX home">
       <picture>
@@ -313,12 +318,12 @@
         </span>
         <div class="mega mega-ind" id="mega-ind">
           <div class="mi-left">
-            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div></div>
-            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div></div>
-            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div></div>
-            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div></div>
-            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div></div>
-            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div></div>
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><div class="mc-h">Banking</div></div></div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><div class="mc-h">Fintech</div></div></div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><div class="mc-h">Crypto</div></div></div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Insurance</div></div></div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><div class="mc-h">Government</div></div></div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><div class="mc-h">Telecom</div></div></div>
           </div>
           <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
         </div>
@@ -368,12 +373,12 @@
           <span>Solutions</span> <i class="arr fas fa-chevron-down"></i>
         </span>
         <div class="mega mega-sol" id="mega-sol">
-          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></a>
-          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></a>
-          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></a>
-          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></a>
-          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
-          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine&#8482;</h4><p>Multi-signal risk decision framework.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><div class="mc-h">Digital Onboarding</div><p>KYC, face match, AML in one hosted flow.</p></div></a>
+          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><div class="mc-h">Business Verification</div><p>KYB, directors, and UBO checks.</p></div></a>
+          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><div class="mc-h">Telephone Banking Auth</div><p>Voice biometrics for call centres.</p></div></a>
+          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><div class="mc-h">AML &amp; Compliance</div><p>Automated screening + audit trail.</p></div></a>
+          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Fraud Intelligence Suite</div><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><div class="mc-h">Trust Engine&#8482;</div><p>Multi-signal risk decision framework.</p></div></a>
         </div>
       </li>
       <li class="ni" id="ni-res">
@@ -415,7 +420,7 @@
       </div>
       <a href="/contact" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;">Talk to Sales</a>
       <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">Book a Demo</a>
-      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open menu"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
     </div>
   </div>
   <div id="mob">
@@ -443,6 +448,8 @@
     <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
   </div>
 </nav>
+<main id="page-top">
+
 <div style="background:#fff;border-bottom:1px solid var(--bd);"><div class="W" style="display:flex;align-items:center;gap:.5rem;font-size:.76rem;color:var(--lt);padding:.6rem 0;"><i class="fas fa-globe" style="font-size:.7rem;"></i><a href="#" style="font-weight:700;color:var(--r);text-decoration:none;background:var(--rbg,#fde8e8);padding:.16rem .42rem;border-radius:3px;font-size:.72rem;">EN</a><span style="color:var(--bd);">|</span><a href="/de/partner/" style="font-weight:600;color:var(--lt);text-decoration:none;font-size:.75rem;padding:.16rem .42rem;border-radius:3px;">DE</a><a href="/fr/partenaires/" style="font-weight:600;color:var(--lt);text-decoration:none;font-size:.75rem;padding:.16rem .42rem;border-radius:3px;">FR</a></div></div><section id="main-content" class="np-hero"><div class="W np-hero-inner"><span class="np-kicker"><i class="fas fa-rocket" style="font-size:.62rem;"></i> Pre-Launch</span><h1 style="color:#fff;font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:900;letter-spacing:-.025em;line-height:1.22;margin-bottom:.75rem;">Partner Program</h1><p class="np-hero-sub">Join the VerfiX ecosystem. Together we strengthen Swiss Trust Infrastructure.</p><a href="#apply" class="btn btn-r btn-lg"><i class="fas fa-handshake"></i> Become a partner</a></div></section><section style="padding:5rem 0;background:var(--off);"><div class="W"><span class="label" style="margin-bottom:.75rem;display:flex;">Why become a VerfiX partner</span><h2 style="font-size:1.5rem;font-weight:800;margin-bottom:2rem;letter-spacing:-.02em;">Why become a VerfiX partner</h2><div class="pp-why-grid"><div class="pp-card"><div class="pp-card-ico"><i class="fas fa-percent"></i></div><h3>Attractive margins</h3><p>Competitive revenue share — transparent, predictable, designed for growth.</p></div><div class="pp-card"><div class="pp-card-ico"><i class="fas fa-handshake"></i></div><h3>Co-branding</h3><p>Joint market presence: VerfiX partner badge, co-branded materials, listing on verfix.ch.</p></div><div class="pp-card"><div class="pp-card-ico"><i class="fas fa-share-nodes"></i></div><h3>Lead sharing</h3><p>Qualified leads from our network — for partners who directly serve our target customers.</p></div><div class="pp-card"><div class="pp-card-ico"><i class="fas fa-graduation-cap"></i></div><h3>Training & certification</h3><p>Access to VerfiX product training, compliance courses and certification programme.</p></div><div class="pp-card"><div class="pp-card-ico"><i class="fas fa-life-ring"></i></div><h3>Dedicated support</h3><p>Prioritised technical support and direct contact with the VerfiX partner team.</p></div><div class="pp-card"><div class="pp-card-ico"><i class="fas fa-rocket"></i></div><h3>Early access</h3><p>Beta access to new products before public availability.</p></div></div></div></section><section style="padding:5rem 0;background:#fff;"><div class="W"><span class="label" style="margin-bottom:.75rem;display:flex;">Ideal partners</span><h2 style="font-size:1.5rem;font-weight:800;margin-bottom:2rem;letter-spacing:-.02em;">Ideal partners</h2><div class="pp-ideal-grid"><div class="pp-ideal-item"><div class="pp-ideal-ico"><i class="fas fa-laptop"></i></div><div class="pp-ideal-text"><h4>IT consultants & system integrators</h4><p>Companies helping Swiss banks and fintechs with system integration and compliance architecture.</p></div></div><div class="pp-ideal-item"><div class="pp-ideal-ico"><i class="fas fa-scale-balanced"></i></div><div class="pp-ideal-text"><h4>Regtech & AML law firms</h4><p>Lawyers and compliance consultants advising regulated institutions on GwG, FINMA and nFADP.</p></div></div><div class="pp-ideal-item"><div class="pp-ideal-ico"><i class="fas fa-server"></i></div><div class="pp-ideal-text"><h4>Swiss cloud & hosting providers</h4><p>Certified Swiss data centres and cloud providers meeting our Swiss data residency requirements.</p></div></div></div></div></section>
 <!-- ════════════════════════════════════════════════════════
      PARTNER APPLICATION FORM — Zoho CRM
@@ -656,6 +663,7 @@ function handlePartnerSubmit(event, lang) {
 }
 </script>
 
+</main>
 <!-- SOCIAL BAR -->
 <div class="social-bar">
   <div class="social-inner">
@@ -677,7 +685,7 @@ function handlePartnerSubmit(event, lang) {
   </div>
 </div>
 
-<footer>
+<footer role="contentinfo">
   <div class="foot-top">
     <div class="foot-brand">
       <picture>

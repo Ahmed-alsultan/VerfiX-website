@@ -267,8 +267,15 @@
     ];
   </script>
   <!-- END HUBSPOT CHAT SETTINGS -->
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#C8252A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div aria-live="polite" aria-atomic="true" id="vfx-live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>
+
 
 <div id="ck-bar">
   <h4>🍪 Cookie Preferences</h4>
@@ -289,7 +296,7 @@
      NAVIGATION
 ═══════════════════════════════════════ -->
 
-<nav class="nav" id="nav">
+<nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="VerfiX home">
       <picture>
@@ -304,12 +311,12 @@
         </span>
         <div class="mega mega-ind" id="mega-ind">
           <div class="mi-left">
-            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div></div>
-            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div></div>
-            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div></div>
-            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div></div>
-            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div></div>
-            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div></div>
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><div class="mc-h">Banking</div></div></div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><div class="mc-h">Fintech</div></div></div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><div class="mc-h">Crypto</div></div></div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Insurance</div></div></div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><div class="mc-h">Government</div></div></div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><div class="mc-h">Telecom</div></div></div>
           </div>
           <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
         </div>
@@ -359,12 +366,12 @@
           <span>Solutions</span> <i class="arr fas fa-chevron-down"></i>
         </span>
         <div class="mega mega-sol" id="mega-sol">
-          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></a>
-          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></a>
-          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></a>
-          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></a>
-          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
-          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine&#8482;</h4><p>Multi-signal risk decision framework.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><div class="mc-h">Digital Onboarding</div><p>KYC, face match, AML in one hosted flow.</p></div></a>
+          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><div class="mc-h">Business Verification</div><p>KYB, directors, and UBO checks.</p></div></a>
+          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><div class="mc-h">Telephone Banking Auth</div><p>Voice biometrics for call centres.</p></div></a>
+          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><div class="mc-h">AML &amp; Compliance</div><p>Automated screening + audit trail.</p></div></a>
+          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Fraud Intelligence Suite</div><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><div class="mc-h">Trust Engine&#8482;</div><p>Multi-signal risk decision framework.</p></div></a>
         </div>
       </li>
       <li class="ni" id="ni-res">
@@ -406,7 +413,7 @@
       </div>
       <a href="/contact" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;">Talk to Sales</a>
       <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">Book a Demo</a>
-      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open menu"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
     </div>
   </div>
   <div id="mob">
@@ -434,7 +441,10 @@
     <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
   </div>
 </nav>
+<main id="main-content">
+
 <section style="padding:8.5rem 0 5rem;background:var(--n);position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 50%,rgba(200,37,42,.09) 0%,transparent 70%);pointer-events:none;"></div><div class="W" style="display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;z-index:1;"><div><span style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(200,37,42,.15);border:1px solid rgba(200,37,42,.3);border-radius:100px;padding:.25rem .875rem;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--r);margin-bottom:1rem;">Product</span><h1 style="color:#fff;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;letter-spacing:-.025em;line-height:1.2;margin-bottom:.75rem;">Face Verification</h1><p style="color:rgba(255,255,255,.55);font-size:.97rem;max-width:520px;line-height:1.75;margin-bottom:2rem;">Match a live selfie against a document photo with 99%+ biometric accuracy. Active and passive liveness detection. Deepfake-resistant. Swiss-hosted.</p><div style="display:flex;flex-wrap:wrap;gap:.75rem;"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Book a Demo</a><a href="/contact" class="btn btn-wo btn-lg">Talk to Sales</a></div></div><div style="width:72px;height:72px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-face-smile" style="font-size:1.75rem;color:#fff;"></i></div></div></section><section style="padding:5rem 0;background:var(--off);"><div class="W"><span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--r);display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem;"><span style="width:14px;height:2px;background:var(--r);border-radius:1px;"></span>Key Capabilities</span><h2 style="font-size:1.45rem;font-weight:800;color:var(--t);letter-spacing:-.02em;margin-bottom:2rem;">Face Verification — How it works</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;"><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;min-width:40px;background:#d1fae5;border-radius:9px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-face-smile" style="color:#065f46;font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:800;color:var(--t);margin-bottom:.2rem;">Biometric Face Match</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Compares live selfie against the document photo using 3D face mesh and landmark detection. 99%+ accuracy.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;min-width:40px;background:#d1fae5;border-radius:9px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-eye" style="color:#065f46;font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:800;color:var(--t);margin-bottom:.2rem;">Liveness Detection</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Active (blink, turn, smile) and passive liveness detection. Prevents photo and video replay attacks.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;min-width:40px;background:#d1fae5;border-radius:9px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-robot" style="color:#065f46;font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:800;color:var(--t);margin-bottom:.2rem;">Deepfake Detection</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Real-time GAN, face-swap and TTS detection. Continuously updated with latest generative attack vectors.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;min-width:40px;background:#d1fae5;border-radius:9px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-clock" style="color:#065f46;font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:800;color:var(--t);margin-bottom:.2rem;">< 2 Seconds</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Biometric match and liveness result in under 2 seconds from a standard mobile camera.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;min-width:40px;background:#d1fae5;border-radius:9px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-lock" style="color:#065f46;font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:800;color:var(--t);margin-bottom:.2rem;">Privacy by Design</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Face data processed in memory, never stored beyond the session unless required by compliance policy.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;min-width:40px;background:#d1fae5;border-radius:9px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-chart-line" style="color:#065f46;font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:800;color:var(--t);margin-bottom:.2rem;">Confidence Scoring</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Returns a biometric match score (0–100) with threshold configurability per risk appetite.</p></div></div></div></div></section><section style="padding:4rem 0;background:#fff;"><div class="W"><h2 style="font-size:1.25rem;font-weight:800;color:var(--t);margin-bottom:1.25rem;">Who uses Face Verification</h2><div style="display:flex;flex-wrap:wrap;gap:.5rem;"><span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:600;background:#fff;border:1.5px solid var(--bd);border-radius:6px;padding:.35rem .75rem;color:var(--m);"><i class="fas fa-check" style="color:#065f46;font-size:.65rem;"></i>Digital Banking</span><span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:600;background:#fff;border:1.5px solid var(--bd);border-radius:6px;padding:.35rem .75rem;color:var(--m);"><i class="fas fa-check" style="color:#065f46;font-size:.65rem;"></i>Crypto Exchanges</span><span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:600;background:#fff;border:1.5px solid var(--bd);border-radius:6px;padding:.35rem .75rem;color:var(--m);"><i class="fas fa-check" style="color:#065f46;font-size:.65rem;"></i>Age-Gated Services</span><span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:600;background:#fff;border:1.5px solid var(--bd);border-radius:6px;padding:.35rem .75rem;color:var(--m);"><i class="fas fa-check" style="color:#065f46;font-size:.65rem;"></i>Insurance Claims</span><span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:600;background:#fff;border:1.5px solid var(--bd);border-radius:6px;padding:.35rem .75rem;color:var(--m);"><i class="fas fa-check" style="color:#065f46;font-size:.65rem;"></i>Remote Hiring</span><span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.8rem;font-weight:600;background:#fff;border:1.5px solid var(--bd);border-radius:6px;padding:.35rem .75rem;color:var(--m);"><i class="fas fa-check" style="color:#065f46;font-size:.65rem;"></i>Government eID</span></div></div></section><section style="background:var(--n);padding:5rem 0;text-align:center;"><div class="W"><h2 style="color:#fff;font-size:1.5rem;font-weight:800;margin-bottom:.5rem;">Ready to integrate Face Verification?</h2><p style="color:rgba(255,255,255,.5);max-width:480px;margin:0 auto 2rem;font-size:.9rem;line-height:1.7;">Book a 30-minute call with the VerfiX team. We will walk you through the integration and answer any compliance questions.</p><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Book a Demo</a></div></section><section style="padding:4rem 0;background:var(--off);"><div class="W"><h3 style="font-size:1rem;font-weight:800;color:var(--t);margin-bottom:1rem;">Related products</h3><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;"><a href="/products/document-verification" style="display:flex;align-items:center;gap:.5rem;background:var(--off);border:1px solid var(--bd);border-radius:8px;padding:.75rem 1rem;text-decoration:none;font-size:.84rem;font-weight:600;color:var(--t);transition:border-color .15s;"onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><i class="fas fa-arrow-right" style="color:var(--r);font-size:.7rem;"></i>Document Verification</a><a href="/products/deepfake-detection" style="display:flex;align-items:center;gap:.5rem;background:var(--off);border:1px solid var(--bd);border-radius:8px;padding:.75rem 1rem;text-decoration:none;font-size:.84rem;font-weight:600;color:var(--t);transition:border-color .15s;"onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><i class="fas fa-arrow-right" style="color:var(--r);font-size:.7rem;"></i>Deepfake Detection</a><a href="/products/aml-screening" style="display:flex;align-items:center;gap:.5rem;background:var(--off);border:1px solid var(--bd);border-radius:8px;padding:.75rem 1rem;text-decoration:none;font-size:.84rem;font-weight:600;color:var(--t);transition:border-color .15s;"onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><i class="fas fa-arrow-right" style="color:var(--r);font-size:.7rem;"></i>AML Screening</a></div></div></section>
+</main>
 <!-- SOCIAL BAR -->
 <div class="social-bar">
   <div class="social-inner">
@@ -456,7 +466,7 @@
   </div>
 </div>
 
-<footer>
+<footer role="contentinfo">
   <div class="foot-top">
     <div class="foot-brand">
       <picture>

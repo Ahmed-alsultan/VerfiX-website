@@ -259,12 +259,17 @@
   {"@type":"ListItem","position":2,"name":"Live Demo","item":"https://verfix.ch/de/demo/"}
 ]}
 </script>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#C8252A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 </head>
 <body>
 <!-- Mega menu backdrop -->
 <div id="nav-backdrop" class="nav-backdrop" onclick="closeAll()"></div>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
+<div aria-live="polite" aria-atomic="true" id="vfx-live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>
 
 <!-- ════════════════════════════════════════════════════════
      COOKIE CONSENT BANNER — PLACEHOLDER
@@ -298,7 +303,7 @@
      NAVIGATION
 ═══════════════════════════════════════ -->
 
-<nav class="nav" id="nav">
+<nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="VerfiX home">
       <picture>
@@ -313,12 +318,12 @@
         </span>
         <div class="mega mega-ind" id="mega-ind">
           <div class="mi-left">
-            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div></div>
-            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div></div>
-            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div></div>
-            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div></div>
-            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div></div>
-            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div></div>
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><div class="mc-h">Banking</div></div></div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><div class="mc-h">Fintech</div></div></div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><div class="mc-h">Crypto</div></div></div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Insurance</div></div></div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><div class="mc-h">Government</div></div></div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><div class="mc-h">Telecom</div></div></div>
           </div>
           <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
         </div>
@@ -368,12 +373,12 @@
           <span>Solutions</span> <i class="arr fas fa-chevron-down"></i>
         </span>
         <div class="mega mega-sol" id="mega-sol">
-          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></a>
-          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></a>
-          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></a>
-          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></a>
-          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
-          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine&#8482;</h4><p>Multi-signal risk decision framework.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><div class="mc-h">Digital Onboarding</div><p>KYC, face match, AML in one hosted flow.</p></div></a>
+          <a class="sol-card" href="/en/kyb/"><div class="sol-ico"><i class="fas fa-building"></i></div><div><div class="mc-h">Business Verification</div><p>KYB, directors, and UBO checks.</p></div></a>
+          <a class="sol-card" href="/en/products/voice-verification/"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><div class="mc-h">Telephone Banking Auth</div><p>Voice biometrics for call centres.</p></div></a>
+          <a class="sol-card" href="/products/aml-screening"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><div class="mc-h">AML &amp; Compliance</div><p>Automated screening + audit trail.</p></div></a>
+          <a class="sol-card" href="/products/deepfake-detection"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Fraud Intelligence Suite</div><p>Deepfakes, synthetic IDs, voice cloning.</p></div></a>
+          <a class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><div class="mc-h">Trust Engine&#8482;</div><p>Multi-signal risk decision framework.</p></div></a>
         </div>
       </li>
       <li class="ni" id="ni-res">
@@ -415,7 +420,7 @@
       </div>
       <a href="/contact" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;">Talk to Sales</a>
       <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">Book a Demo</a>
-      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open menu"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
     </div>
   </div>
   <div id="mob">
@@ -443,6 +448,8 @@
     <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
   </div>
 </nav>
+<main id="page-top">
+
 <div style="background:#fff;border-bottom:1px solid var(--bd);"><div class="W" style="display:flex;align-items:center;gap:.5rem;font-size:.76rem;color:var(--lt);padding:.6rem 0;"><i class="fas fa-globe" style="font-size:.7rem;"></i><a href="#" style="font-weight:700;color:var(--r);text-decoration:none;background:var(--rbg,#fde8e8);padding:.16rem .42rem;border-radius:3px;font-size:.72rem;">DE</a><span style="color:var(--bd);">|</span><a href="/fr/demo/" style="font-weight:600;color:var(--lt);text-decoration:none;font-size:.75rem;padding:.16rem .42rem;border-radius:3px;">FR</a><a href="/en/demo/" style="font-weight:600;color:var(--lt);text-decoration:none;font-size:.75rem;padding:.16rem .42rem;border-radius:3px;">EN</a></div></div><section id="main-content" class="np-hero"><div class="W np-hero-inner"><span class="np-kicker"><i class="fas fa-play-circle" style="font-size:.62rem;"></i> Interaktive Demo</span><h1 style="color:#fff;font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:900;letter-spacing:-.025em;line-height:1.22;margin-bottom:.75rem;">KYC-Verifikation live erleben.</h1><p class="np-hero-sub">Sehen Sie, wie VerfiX in unter 3 Sekunden eine Identitätsprüfung durchführt — sicher, FINMA-konform, Swiss-hosted. Keine Anmeldung erforderlich.</p><div style="display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.38rem .875rem;"><i class="fas fa-lock" style="color:#4ade80;font-size:.68rem;"></i><span style="font-size:.75rem;color:rgba(255,255,255,.5);">Dies ist eine interaktive Demonstration mit Beispieldaten. Keine echten Personendaten werden verarbeitet oder gespeichert.</span></div></div></section><section style="padding:5rem 0;background:var(--off);"><div class="W" style="max-width:820px;"><div class="demo-stage"><div class="demo-stage-top"><div class="demo-dot" style="background:#ff5f57;"></div><div class="demo-dot" style="background:#febc2e;"></div><div class="demo-dot" style="background:#28c840;"></div><div class="demo-stage-title">VerfiX Trust Engine™ — Live Demo</div></div><div class="demo-viewport" id="demo-viewport"><div class="demo-step" id="demo-step-0"><div class="demo-step-num">1</div><div class="demo-step-content"><h4>Dokument erfassen</h4><p>Der Nutzer fotografiert seinen Reisepass oder Personalausweis. Das System erkennt das Dokument in Echtzeit.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Schweizer Pass CH-12345678 erkannt</div></div></div><div class="demo-step" id="demo-step-1"><div class="demo-step-num">2</div><div class="demo-step-content"><h4>OCR & Prüfung</h4><p>Alle Felder werden automatisch ausgelesen: Name, Geburtsdatum, Ausweisnummer, Ablaufdatum. Sicherheitsmerkmale werden geprüft.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Name: MÜLLER, Hans · Geb.: 15.03.1985 · Abläuft: 2030</div></div></div><div class="demo-step" id="demo-step-2"><div class="demo-step-num">3</div><div class="demo-step-content"><h4>Biometrischer Abgleich</h4><p>Das Lichtbild im Dokument wird mit dem aktuellen Selfie des Nutzers verglichen. Konfidenz-Score wird berechnet.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Biometrischer Match: 98.7% Konfidenz</div></div></div><div class="demo-step" id="demo-step-3"><div class="demo-step-num">4</div><div class="demo-step-content"><h4>Liveness-Check</h4><p>Das System erkennt, ob es sich um eine lebende Person handelt — Schutz vor Fotos, Masken und Deepfakes.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Liveness bestätigt · Kein Deepfake erkannt</div></div></div><div class="demo-step" id="demo-step-4"><div class="demo-step-num">5</div><div class="demo-step-content"><h4>AML-Screening</h4><p>Name und Daten werden gegen SECO, UN-Sanktionslisten und PEP-Register geprüft.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Keine Treffer in SECO, UN, OFAC</div></div></div><div class="demo-result-panel" id="demo-result"><div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;"><div style="width:48px;height:48px;background:rgba(74,222,128,.15);border:1.5px solid rgba(74,222,128,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-circle-check" style="color:#4ade80;font-size:1.25rem;"></i></div><div><div style="font-size:1rem;font-weight:800;color:#fff;margin-bottom:.2rem;">Verifikation abgeschlossen</div><div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;"><span style="font-family:'IBM Plex Mono',monospace;font-size:.88rem;font-weight:700;color:#4ade80;">Trust Score: 96/100</span><span style="display:inline-flex;align-items:center;gap:.3rem;background:#4ade80;color:#0f1523;font-size:.72rem;font-weight:800;border-radius:4px;padding:.18rem .55rem;">GENEHMIGT</span><span style="font-size:.72rem;color:rgba(255,255,255,.38);">Gesamtdauer: 2.8 Sekunden</span></div></div></div><div style="margin-top:.875rem;padding:.625rem .875rem;background:rgba(255,255,255,.05);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:rgba(255,255,255,.4);">Alle Daten in der Schweiz verarbeitet · FINMA RS 2016/7 konform · Kein Deepfake erkannt</div></div></div><div class="demo-progress"><div class="demo-progress-fill" id="demo-progress-fill"></div></div><div class="demo-controls"><button id="demo-start-btn" class="btn btn-r" style="font-size:.88rem;"><i class="fas fa-play"></i> Demo starten</button><button id="demo-reset-btn" class="btn btn-o" style="font-size:.88rem;display:none;"><i class="fas fa-rotate-right"></i> Neu starten</button></div></div>
 <script>
 (function(){
@@ -492,6 +499,7 @@
 })();
 </script>
 </div></section><section style="padding:5rem 0;background:#fff;"><div class="W"><span class="label" style="margin-bottom:.75rem;display:flex;">Wie es funktioniert</span><h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.5rem;letter-spacing:-.02em;">Wie es funktioniert</h2><p style="color:var(--m);font-size:.9rem;margin-bottom:2rem;">Hinter dem Demo: die VerfiX Swiss Trust Infrastructure.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;"><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;background:var(--rbg,#fde8e8);border:1px solid rgba(200,37,42,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-id-card" style="color:var(--r);font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.22rem;">Dokumentenprüfung</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">VerfiX unterstützt über 4'500 Dokumenttypen aus 190+ Ländern. OCR-Erkennung, Sicherheitsmerkmalsprüfung und biometrischer Abgleich in Echtzeit.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;background:var(--rbg,#fde8e8);border:1px solid rgba(200,37,42,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-eye" style="color:var(--r);font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.22rem;">Liveness-Detection</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Aktive Erkennung von Deepfakes, Replay-Angriffen und synthetischen Stimmen. Kontinuierlich mit aktuellen Angriffsvektoren trainiert.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;background:var(--rbg,#fde8e8);border:1px solid rgba(200,37,42,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-magnifying-glass-dollar" style="color:var(--r);font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.22rem;">AML-Screening</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Echtzeit-Prüfung gegen SECO, UN, EU, OFAC und PEP-Register. Adverse Media Monitoring inklusive.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;background:var(--rbg,#fde8e8);border:1px solid rgba(200,37,42,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-gauge-high" style="color:var(--r);font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.22rem;">Trust Engine™</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Alle Signale fliessen in einen proprietären Trust Score (0–100). Klare Entscheidungen in unter 3 Sekunden.</p></div></div></div></div></section><section style="background:var(--n);padding:5rem 0;text-align:center;"><div class="W"><h2 style="color:#fff;font-size:1.5rem;font-weight:800;margin-bottom:.5rem;">Bereit für Ihre echte Integration?</h2><p style="color:rgba(255,255,255,.5);font-size:.9rem;max-width:480px;margin:0 auto 2rem;line-height:1.7;">Buchen Sie eine 30-minütige Demo mit dem VerfiX-Team — auf Ihren Use Case zugeschnitten.</p><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Demo buchen</a></div></section>
+</main>
 <!-- SOCIAL BAR -->
 <div class="social-bar">
   <div class="social-inner">
@@ -513,7 +521,7 @@
   </div>
 </div>
 
-<footer>
+<footer role="contentinfo">
   <div class="foot-top">
     <div class="foot-brand">
       <picture>

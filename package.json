@@ -1,0 +1,23 @@
+{
+  "name": "verfix-website",
+  "version": "2.0.0",
+  "description": "VerfiX AG — Swiss Trust Infrastructure website",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:prod": "NODE_ENV=production node build.js",
+    "build:dev": "NODE_ENV=development node build.js",
+    "test": "node test/checks.js",
+    "serve": "python3 serve.py",
+    "pretest": "node build.js 2>/dev/null || true"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "dotenv": "^16.4.5"
+  },
+  "license": "UNLICENSED"
+}

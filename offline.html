@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Offline — VerfiX</title>
+  <meta name="description" content="You are offline. Please check your internet connection and try again."/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="canonical" href="https://verfix.ch/offline"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:system-ui,-apple-system,sans-serif;background:#1A1F2E;color:#fff;
+      display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:2rem;}
+    .ico{font-size:3rem;margin-bottom:1.5rem;}
+    h1{font-size:1.75rem;font-weight:800;margin-bottom:.75rem;letter-spacing:-.025em;}
+    p{color:rgba(255,255,255,.55);font-size:.95rem;line-height:1.65;max-width:400px;margin:0 auto 2rem;}
+    a{display:inline-flex;align-items:center;gap:.5rem;background:#C8252A;color:#fff;
+      padding:.75rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;}
+    a:hover{background:#A01E22;}
+  </style>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#C8252A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+</head>
+<body>
+<main id="main-content">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div aria-live="polite" aria-atomic="true" id="vfx-live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>
+
+  <div>
+    <div class="ico">📡</div>
+    <h1>You're offline</h1>
+    <p>No internet connection detected. Please check your connection and try again.</p>
+    <a href="/" onclick="location.reload()">↻ Try again</a>
+  </div>
+</main>
+</body>
+</html>
