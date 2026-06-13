@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <title id="pg-title">API Dokumentation — KYC, KYB, AML REST API Referenz | VerfiX</title>
+  <!-- Google Analytics 4 — G-95ZS424SMP -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-95ZS424SMP', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=None;Secure',
+      send_page_view: true
+    });
+  </script>
+  <!-- End Google Analytics 4 -->
+  <meta name="description" content="VerfiX REST API Referenz: Authentifizierung, KYC-Verifizierung, KYB-Geschäftsprüfungen, AML-Screening, Trust Score, Webhooks und SDK-Beispiele."/>
+  <meta name="keywords" content="KYC API Schweiz, AML API, Identity Verification API, REST API KYB, Trust Score API"/>
+  <meta name="author" content="VerfiX AG"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://verfix.ch/api"/>
+  <link rel="alternate" hreflang="x-default" href="https://verfix.ch/api"/>
+  <link rel="alternate" hreflang="en" href="https://verfix.ch/api"/>
+  <link rel="alternate" hreflang="de" href="https://verfix.ch/api"/>
+  <link rel="alternate" hreflang="fr" href="https://verfix.ch/api"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://verfix.ch/api"/>
+  <meta property="og:title" content="API Dokumentation — KYC, KYB, AML REST API Referenz | VerfiX"/>
+  <meta property="og:description" content="VerfiX REST API Referenz: Authentifizierung, KYC-Verifizierung, KYB-Geschäftsprüfungen, AML-Screening, Trust Score, Webhooks und SDK-Beispiele."/>
+  <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="VerfiX"/>
+  <meta property="og:locale" content="en_CH"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="API Dokumentation — KYC, KYB, AML REST API Referenz | VerfiX"/>
+  <meta name="twitter:description" content="VerfiX REST API Referenz: Authentifizierung, KYC-Verifizierung, KYB-Geschäftsprüfungen, AML-Screening, Trust Score, Webhooks und SDK-Beispiele."/>
+  <meta name="twitter:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C8252A'/><text x='16' y='23' font-family='Arial Black,Arial' font-weight='900' font-size='22' text-anchor='middle' fill='white'>X</text></svg>"/>
+  <!-- <meta name="google-site-verification" content="YOUR_GSC_CODE"/> -->
+
+  <!-- Performance: preload critical assets -->
+  <link rel="preload" href="/css/main.css" as="style"/>
+  <link rel="preload" href="/js/main.js" as="script"/>
+  
+  <!-- Font: preconnect + optimized load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://js.hs-scripts.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  
+  <!-- Critical inline style for font-display:swap override -->
+  <style>
+    @font-face{font-display:swap}
+    body{opacity:1}
+    .rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+    .rv.in{opacity:1;transform:none}
+    .pg{display:none}.pg.on{display:block}
+  </style>
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/css/main.css"/>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://verfix.ch/#organization",
+  "name": "VerfiX AG",
+  "url": "https://verfix.ch",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://verfix.ch/assets/images/verfix-logo.png",
+    "width": 236,
+    "height": 160
+  },
+  "description": "Swiss Trust Infrastructure for Regulated Industries — KYC, KYB, AML, Fraud Intelligence, and Trust Engine™",
+  "foundingDate": "2024",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Lausanne, Switzerland",
+    "addressCountry": "CH"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. de Gratta-Paille 2",
+    "addressLocality": "Lausanne",
+    "postalCode": "CH-1018",
+    "addressRegion": "Vaud",
+    "addressCountry": "CH"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contact@verfix.ch",
+    "contactType": "sales",
+    "availableLanguage": [
+      "English",
+      "German",
+      "French"
+    ]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/verfix/",
+    "https://www.youtube.com/@verfix"
+  ],
+  "areaServed": [
+    "CH",
+    "DE",
+    "AT",
+    "FR",
+    "IT",
+    "NL",
+    "BE",
+    "LU",
+    "EU"
+  ],
+  "knowsAbout": [
+    "KYC",
+    "KYB",
+    "AML",
+    "Identity Verification",
+    "Fraud Prevention",
+    "Compliance",
+    "eIDAS",
+    "nFADP"
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.5197,
+    "longitude": 6.5932
+  },
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Trust Valley",
+      "url": "https://www.trustvalley.swiss",
+      "description": "Swiss cluster for digital trust, privacy and cybersecurity"
+    }
+  ],
+  "funder": {
+    "@type": "Organization",
+    "name": "Innosuisse",
+    "url": "https://www.innosuisse.ch",
+    "description": "Swiss Innovation Agency"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Trust Valley — Lausanne",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de Gratta-Paille 2",
+      "addressLocality": "Lausanne",
+      "postalCode": "CH-1018",
+      "addressCountry": "CH"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://verfix.ch/api#article",
+  "headline": "VerfiX API Documentation — KYC, KYB, AML REST API",
+  "description": "Complete REST API reference for VerfiX identity verification, KYB, AML screening, Trust Score, and webhooks.",
+  "url": "https://verfix.ch/api",
+  "author": {
+    "@id": "https://verfix.ch/#organization"
+  },
+  "publisher": {
+    "@id": "https://verfix.ch/#organization"
+  },
+  "dateModified": "2026-06-11",
+  "articleSection": "Developer Documentation",
+  "keywords": "API, KYC API, KYB API, AML API, identity verification API, REST API"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://verfix.ch/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "API",
+      "item": "https://verfix.ch/api"
+    }
+  ]
+}
+</script>
+
+  
+  <!-- ════════════════════════════════════════════════════
+       ZOHO CRM — Web Visitor Tracking
+       HOW TO ACTIVATE:
+       1. In Zoho CRM: Setup → Channels → Web Forms → Web Tabs → SalesIQ
+       2. Or: Zoho SalesIQ → Settings → Installation → copy the script
+       3. Paste your Zoho SalesIQ script here replacing this comment
+       Example:
+       <script type="text/javascript" id="zsiqchat">
+         var $zoho=$zoho || {};
+         $zoho.salesiq = $zoho.salesiq || {widgetcode:"YOUR_WIDGET_CODE",values:{},ready:function(){}};
+         var d=document;s=d.createElement("script");
+         s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+         s.src="https://salesiq.zohopublic.eu/widget";
+         t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
+       </script>
+       ════════════════════════════════════════════════════ -->
+
+  
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ════════════════════════════════════════════════════════
+     COOKIE CONSENT BANNER — PLACEHOLDER
+     INSTRUCTIONS: Integrate your cookie consent tool here.
+     Recommended: Cookiebot (cookiebot.com), CookieFirst, or iubenda.
+     1. Sign up at your chosen provider
+     2. Copy their script tag and paste here, replacing this comment
+     3. Configure consent categories: Necessary, Analytics (GA4), Marketing (HubSpot)
+     4. Set callback: window.loadCalendlyWidget() on analytics consent
+     Sample integration point below — replace with real script:
+     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js"
+       data-cbid="YOUR-COOKIEBOT-ID" data-blockingmode="auto" async></script>
+     ════════════════════════════════════════════════════════ -->
+<div id="ck-bar">
+  <h4>🍪 Cookie Preferences</h4>
+  <span id="ck-txt">We use cookies to improve your experience. See our <a href="/privacy">Privacy Policy</a>.</span>
+  <div id="ck-prefs">
+    <div class="ck-pref-row"><span>Necessary <small style="color:rgba(255,255,255,.3)">(always on)</small></span><label class="ck-toggle"><input type="checkbox" checked disabled/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Analytics</span><label class="ck-toggle"><input type="checkbox" id="ck-analytics"/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Marketing</span><label class="ck-toggle"><input type="checkbox" id="ck-marketing"/><span class="ck-slider"></span></label></div>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-ok" onclick="ckOk()">Accept All</button>
+    <button class="ck-no" onclick="ckNo()">Decline</button>
+    <button class="ck-more" onclick="ckToggle()">Preferences</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav-i">
+    <!-- Logo -->
+    <div class="logo" href="/">
+      <picture>
+      <source srcset="assets/images/verfix-logo--footer.webp 1x, assets/images/verfix-logo--footer@2x.webp 2x" type="image/webp"/>
+      <img src="/assets/images/verfix-logo--footer.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
+    </picture>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <!-- INDUSTRIES (most prominent, first) -->
+      <div class="ni" id="ni-ind">
+        <span onclick="toggleMenu('ind')"><span data-i18n="nav_industries">Industries</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-ind" id="mega-ind">
+          <div class="mi-left">
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')">
+              <div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div>
+            </div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')">
+              <div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div>
+            </div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')">
+              <div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div>
+            </div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')">
+              <div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div>
+            </div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')">
+              <div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div>
+            </div>
+            <div class="mi-item" data-ind="health" onmouseenter="showInd('health')">
+              <div class="mi-ico"><i class="fas fa-hospital"></i></div><div><h4>Healthcare</h4></div>
+            </div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')">
+              <div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div>
+            </div>
+            <div class="mi-item" data-ind="mobility" onmouseenter="showInd('mobility')">
+              <div class="mi-ico"><i class="fas fa-car"></i></div><div><h4>Mobility</h4></div>
+            </div>
+            <div class="mi-item" data-ind="mkt" onmouseenter="showInd('mkt')">
+              <div class="mi-ico"><i class="fas fa-store"></i></div><div><h4>Marketplaces</h4></div>
+            </div>
+            <div class="mi-item" data-ind="re" onmouseenter="showInd('re')">
+              <div class="mi-ico"><i class="fas fa-building"></i></div><div><h4>Real Estate</h4></div>
+            </div>
+          </div>
+          <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
+        </div>
+      </div>
+
+      <!-- PRODUCTS (business-centric) -->
+      <div class="ni" id="ni-products">
+        <span onclick="toggleMenu('products')"><span data-i18n="nav_products">Products</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-products" id="mega-products">
+          <div class="mp-left">
+            <div class="mp-col">
+              <h5>Customer Onboarding</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-id-card"></i>Document Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-face-smile"></i>Face Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</div>
+              <h5>Business Verification</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-building"></i>KYB Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-sitemap"></i>UBO Verification</div>
+              <h5>Age Verification</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-user-check"></i>Age Validation</div>
+              <div class="ml" href="/solutions"><i class="fas fa-user"></i>Age Estimation</div>
+            </div>
+            <div class="mp-col">
+              <h5>Telephone Banking</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-waveform-lines"></i>Voice Biometrics</div>
+              <div class="ml" href="/solutions"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</div>
+              <h5>Fraud Intelligence</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-robot"></i>Deepfake Detection</div>
+              <div class="ml" href="/solutions"><i class="fas fa-user-slash"></i>Synthetic Identity Detection</div>
+              <div class="ml" href="/solutions"><i class="fas fa-file-shield"></i>Document Fraud Detection</div>
+              <h5>Infrastructure</h5>
+              <div class="ml" href="/"><i class="fas fa-gauge-high"></i>Trust Engine™</div>
+              <div class="ml" href="/solutions"><i class="fas fa-sliders"></i>Risk Rules Engine</div>
+              <div class="ml" href="/solutions"><i class="fas fa-shuffle"></i>Multi-Provider Orchestration</div>
+            </div>
+          <div style="border-top:1px solid var(--bd);margin-top:.75rem;padding-top:.75rem;"><div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lt);margin-bottom:.5rem;">Produktseiten</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.25rem;"><a class="mc-lnk" href="/de/produkte/stimmverifikation/"><i class="fas fa-waveform-lines"></i>Stimmverifikation DE</a><a class="mc-lnk" href="/en/products/voice-verification/"><i class="fas fa-waveform-lines"></i>Voice Verification EN</a><a class="mc-lnk" href="/de/produkte/video-identifikation/"><i class="fas fa-video"></i>Video-Identifikation DE</a><a class="mc-lnk" href="/en/products/video-identification/"><i class="fas fa-video"></i>Video Identification EN</a><a class="mc-lnk" href="/de/kyb/"><i class="fas fa-building"></i>KYB DE</a><a class="mc-lnk" href="/en/kyb/"><i class="fas fa-building"></i>KYB EN</a>
+          <a class="mc-lnk" href="/de/whitepaper-nfadp/"><i class="fas fa-file-lines"></i>nFADP Whitepaper (DE)</a><a class="mc-lnk" href="/en/whitepaper-nfadp/"><i class="fas fa-file-lines"></i>nFADP Whitepaper (EN)</a></div></div></div>
+          <div class="mp-right">
+            <h5>Trust Infrastructure</h5>
+            <div class="mp-feat"><h4>One API for all identity</h4><p>Document, face, voice, AML, KYB, and risk — orchestrated through a single endpoint.</p></div>
+            <div class="mp-feat"><h4>Swiss-first deployment</h4><p>SaaS, Swiss dedicated, private cloud, or on-premise.</p></div>
+            <div class="mp-gw">
+              <div class="mp-gw-tag">New Product</div>
+              <h4>VerfiX Gateway</h4>
+              <p>The trust layer between digital identity ecosystems and regulated organizations.</p>
+              <a href="/gateway" class="btn btn-r btn-sm">Explore Gateway</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOLUTIONS -->
+      <div class="ni" id="ni-sol">
+        <span onclick="toggleMenu('sol')"><span data-i18n="nav_solutions">Solutions</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-sol">
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></div>
+          <div class="sol-card" href="/"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine™</h4><p>Multi-signal risk decision framework.</p></div></div>
+        </div>
+      </div>
+
+      <!-- RESOURCES -->
+      <div class="ni" id="ni-res">
+        <span onclick="toggleMenu('res')"><span data-i18n="nav_resources">Resources</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-res" style="min-width:300px;padding:1.5rem 1.75rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Resources</h5>
+          <div class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</div>
+          <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a><a class="ml" href="/resources"><i class="fas fa-book"></i>Documentation</a><a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a><a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a><a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
+          <div class="ml" href="/resources"><i class="fas fa-file-lines"></i>Compliance Guides</div>
+          <div class="ml" href="/resources"><i class="fas fa-file-pdf"></i>Whitepapers</div>
+          <div class="ml" href="/resources"><i class="fas fa-newspaper"></i>Product Updates</div>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="ni" id="ni-co">
+        <span onclick="toggleMenu('co')"><span data-i18n="nav_company">Company</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-co" style="min-width:280px;padding:1.5rem 1.75rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
+          <div class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</div>
+          <div class="ml" href="/about"><i class="fas fa-users"></i>Leadership</div>
+          <div class="ml" href="/contact"><i class="fas fa-envelope"></i>Contact</div>
+        </div>
+      </div>
+
+      <div class="ni"><a href="/contact">Contact</a>
+          <a class="mc-lnk" href="/de/trust-center/"><i class="fas fa-shield-halved"></i>Trust Center (DE)</a><a class="mc-lnk" href="/en/trust-center/"><i class="fas fa-shield-halved"></i>Trust Center (EN)</a><a class="mc-lnk" href="/de/partner/"><i class="fas fa-handshake"></i>Partner Programm</a><a class="mc-lnk" href="/de/demo/"><i class="fas fa-play-circle"></i>Live Demo</a><a class="mc-lnk" href="/de/fintech-map/"><i class="fas fa-map"></i>Fintech Map</a>
+          <a class="mc-lnk" href="/de/vergleich/"><i class="fas fa-scale-balanced"></i>Warum VerfiX (DE)</a><a class="mc-lnk" href="/en/comparison/"><i class="fas fa-scale-balanced"></i>Why VerfiX (EN)</a><a class="mc-lnk" href="/fr/comparaison/"><i class="fas fa-scale-balanced"></i>Pourquoi VerfiX (FR)</a></div>
+    </div>
+
+    <div class="nav-r">
+      <div class="lang-sw">
+        <button class="lb on" onclick="setLang('en')">EN</button>
+        <button class="lb" onclick="setLang('de')">DE</button>
+        <button class="lb" onclick="setLang('fr')">FR</button>
+      </div>
+      <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;"><span data-i18n="nav_sales">Talk to Sales</span></a>
+      <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-r"><span data-i18n="nav_demo">Book a Demo</span></a>
+      <button class="ham" id="ham-btn"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+    </div>
+  </div>
+
+  <div id="mob">
+    <span href="/industries">Industries</span>
+    <span href="/solutions">Products &amp; Solutions</span>
+    <span href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway <span style="font-size:.6rem;background:var(--r);color:#fff;padding:.08rem .32rem;border-radius:3px;margin-left:.3rem;">NEW</span></span>
+    <span href="/trust-center">Trust Center</span>
+    <span href="/resources">Resources</span>
+    <span href="/about">Company</span>
+    <span href="/contact">Contact</span>
+    <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-r" style="justify-content:center;margin-top:.2rem;">Book a Demo</a>
+    <div class="mob-lang">
+      <button class="mlb on" onclick="setLang('en')">EN</button>
+      <button class="mlb" onclick="setLang('de')">DE</button>
+      <button class="mlb" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</nav>
+<main id="page-main" class="pg on">
+<section style="padding-top:64px;background:var(--n);" id="api-top">
+  <div style="max-width:1400px;margin:0 auto;padding:3rem 2rem 2.5rem;">
+    <a href="/solutions" style="display:inline-flex;align-items:center;gap:.38rem;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.45);cursor:pointer;text-decoration:none;margin-bottom:1.5rem;"><i class="fas fa-arrow-left" style="font-size:.65rem;"></i>Back to Platform</a>
+    <h1 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:.35rem;">VerfiX API Reference</h1>
+    <p style="color:rgba(255,255,255,.5);font-size:.95rem;">REST API · v1 · Base URL: <code style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;background:rgba(255,255,255,.08);padding:.1rem .4rem;border-radius:4px;">https://api.verfix.ch/v1</code></p>
+  </div>
+</section>
+<div class="api-wrap">
+  <!-- Sidebar -->
+  <aside class="api-sidebar">
+    <div class="api-grp"><div class="api-grp-lbl">Getting Started</div>
+      <a class="api-nav-link active" data-sec="auth" onclick="apiNav('auth')">Authentication</a>
+      <a class="api-nav-link" data-sec="errors" onclick="apiNav('errors')">Errors</a>
+      <a class="api-nav-link" data-sec="rate" onclick="apiNav('rate')">Rate Limits</a>
+    </div>
+    <div class="api-grp"><div class="api-grp-lbl">Identity</div>
+      <a class="api-nav-link" data-sec="kyc" onclick="apiNav('kyc')">KYC — Verify Identity</a>
+      <a class="api-nav-link" data-sec="kyb" onclick="apiNav('kyb')">KYB — Verify Business</a>
+      <a class="api-nav-link" data-sec="face" onclick="apiNav('face')">Face Match</a>
+      <a class="api-nav-link" data-sec="age" onclick="apiNav('age')">Age Verification</a>
+    </div>
+    <div class="api-grp"><div class="api-grp-lbl">Compliance</div>
+      <a class="api-nav-link" data-sec="aml" onclick="apiNav('aml')">AML Screening</a>
+      <a class="api-nav-link" data-sec="trust" onclick="apiNav('trust')">Trust Score</a>
+    </div>
+    <div class="api-grp"><div class="api-grp-lbl">Webhooks</div>
+      <a class="api-nav-link" data-sec="webhooks" onclick="apiNav('webhooks')">Webhook Events</a>
+    </div>
+    <div class="api-grp"><div class="api-grp-lbl">SDKs</div>
+      <a class="api-nav-link" data-sec="sdks" onclick="apiNav('sdks')">SDKs & Libraries</a>
+    </div>
+  </aside>
+  <!-- Content -->
+  <div class="api-main">
+
+    <!-- AUTH -->
+    <div id="api-auth" class="api-section">
+      <h2 class="api-h2">Authentication</h2>
+      <p class="api-p">All API requests require a Bearer token in the Authorization header. You can generate API keys in the VerfiX Dashboard under <strong>Settings → API Keys</strong>.</p>
+      <div class="api-alert"><i class="fas fa-shield-halved"></i>Keep your API key secret. Never expose it in client-side code or public repositories.</div>
+      <h3 class="api-h3">API Key Format</h3>
+      <div class="code-block"><div class="code-top"><span class="code-lang">HTTP Header</span></div><div class="code-body"><span class="code-k">Authorization</span>: Bearer <span class="code-s">vx_live_xxxxxxxxxxxxxxxxxxxx</span></div></div>
+      <h3 class="api-h3">Example Request</h3>
+      <div class="code-block"><div class="code-top"><span class="code-lang">cURL</span><span class="code-copy" onclick="this.textContent='Copied!'">Copy</span></div><div class="code-body"><span class="code-k">curl</span> -X POST https://api.verfix.ch/v1/kyc/verify   -H <span class="code-s">"Authorization: Bearer vx_live_xxxx"</span>   -H <span class="code-s">"Content-Type: application/json"</span>   -d <span class="code-s">'{"document_type":"passport","country":"CH"}'</span></div></div>
+      <h3 class="api-h3">Test vs Live Keys</h3>
+      <table class="param-table"><thead><tr><th>Key prefix</th><th>Environment</th><th>Behavior</th></tr></thead><tbody>
+        <tr><td><span class="ptag">vx_test_</span></td><td>Test</td><td>No real verifications, free, returns simulated results</td></tr>
+        <tr><td><span class="ptag">vx_live_</span></td><td>Production</td><td>Real verifications, billed per usage</td></tr>
+      </tbody></table>
+    </div>
+
+    <!-- ERRORS -->
+    <div id="api-errors" class="api-section">
+      <h2 class="api-h2">Errors</h2>
+      <p class="api-p">VerfiX uses standard HTTP status codes. All errors return a JSON body with <code style="font-family:'IBM Plex Mono',monospace;font-size:.83rem;">code</code>, <code style="font-family:'IBM Plex Mono',monospace;font-size:.83rem;">message</code>, and optional <code style="font-family:'IBM Plex Mono',monospace;font-size:.83rem;">details</code>.</p>
+      <table class="param-table"><thead><tr><th>Status</th><th>Code</th><th>Meaning</th></tr></thead><tbody>
+        <tr><td>200</td><td>ok</td><td>Request succeeded</td></tr>
+        <tr><td>400</td><td>invalid_request</td><td>Missing or invalid parameters</td></tr>
+        <tr><td>401</td><td>unauthorized</td><td>Invalid or missing API key</td></tr>
+        <tr><td>402</td><td>insufficient_credits</td><td>Account has no remaining credits</td></tr>
+        <tr><td>429</td><td>rate_limited</td><td>Too many requests — see rate limits</td></tr>
+        <tr><td>500</td><td>server_error</td><td>Internal error — retry with backoff</td></tr>
+      </tbody></table>
+      <div class="code-block"><div class="code-top"><span class="code-lang">Error Response</span></div><div class="code-body">{
+  <span class="code-k">"error"</span>: {
+    <span class="code-k">"code"</span>: <span class="code-s">"invalid_request"</span>,
+    <span class="code-k">"message"</span>: <span class="code-s">"document_type is required"</span>,
+    <span class="code-k">"request_id"</span>: <span class="code-s">"req_01HX7ZABCDEF"</span>
+  }
+}</div></div>
+    </div>
+
+    <!-- RATE LIMITS -->
+    <div id="api-rate" class="api-section">
+      <h2 class="api-h2">Rate Limits</h2>
+      <p class="api-p">Rate limits apply per API key. Headers indicate current usage.</p>
+      <table class="param-table"><thead><tr><th>Plan</th><th>Requests/minute</th><th>Concurrent</th></tr></thead><tbody>
+        <tr><td>Startup</td><td>60 / min</td><td>5</td></tr>
+        <tr><td>Growth</td><td>300 / min</td><td>20</td></tr>
+        <tr><td>Enterprise</td><td>Custom</td><td>Unlimited</td></tr>
+      </tbody></table>
+    </div>
+
+    <!-- KYC -->
+    <div id="api-kyc" class="api-section">
+      <h2 class="api-h2">KYC — Verify Identity</h2>
+      <p class="api-p">Submit a document image and optional selfie to verify a person's identity. Returns a structured decision with confidence scores.</p>
+      <div class="endpoint"><span class="method post">POST</span>/kyc/verify</div>
+      <h3 class="api-h3">Request Parameters</h3>
+      <table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+        <tr><td><span class="ptag">document_type</span></td><td><span class="ptype">string</span></td><td><span class="preq">required</span></td><td>passport, id_card, driving_licence, residence_permit</td></tr>
+        <tr><td><span class="ptag">document_front</span></td><td><span class="ptype">base64</span></td><td><span class="preq">required</span></td><td>Base64-encoded image of document front</td></tr>
+        <tr><td><span class="ptag">document_back</span></td><td><span class="ptype">base64</span></td><td><span class="popt">optional</span></td><td>Required for ID cards and driving licences</td></tr>
+        <tr><td><span class="ptag">selfie</span></td><td><span class="ptype">base64</span></td><td><span class="popt">optional</span></td><td>Selfie for face match</td></tr>
+        <tr><td><span class="ptag">country</span></td><td><span class="ptype">string</span></td><td><span class="popt">optional</span></td><td>ISO 3166-1 alpha-2 country code (e.g. CH, DE, FR)</td></tr>
+        <tr><td><span class="ptag">user_id</span></td><td><span class="ptype">string</span></td><td><span class="popt">optional</span></td><td>Your internal user identifier for audit trail</td></tr>
+      </tbody></table>
+      <h3 class="api-h3">Example Request</h3>
+      <div class="code-block"><div class="code-top"><span class="code-lang">JSON</span><span class="code-copy" onclick="this.textContent='Copied!'">Copy</span></div><div class="code-body">{
+  <span class="code-k">"document_type"</span>: <span class="code-s">"passport"</span>,
+  <span class="code-k">"document_front"</span>: <span class="code-s">"&lt;base64&gt;"</span>,
+  <span class="code-k">"selfie"</span>: <span class="code-s">"&lt;base64&gt;"</span>,
+  <span class="code-k">"country"</span>: <span class="code-s">"CH"</span>,
+  <span class="code-k">"user_id"</span>: <span class="code-s">"usr_4829abc"</span>
+}</div></div>
+      <h3 class="api-h3">Response</h3>
+      <div class="code-block"><div class="code-top"><span class="code-lang">JSON Response</span></div><div class="code-body">{
+  <span class="code-k">"verification_id"</span>: <span class="code-s">"ver_01HX7Z4QRSTUVWXY"</span>,
+  <span class="code-k">"status"</span>: <span class="code-s">"approved"</span>,
+  <span class="code-k">"trust_score"</span>: <span class="code-n">96</span>,
+  <span class="code-k">"document"</span>: {
+    <span class="code-k">"valid"</span>: <span class="code-n">true</span>,
+    <span class="code-k">"score"</span>: <span class="code-n">95</span>,
+    <span class="code-k">"extracted"</span>: {
+      <span class="code-k">"first_name"</span>: <span class="code-s">"Jane"</span>, <span class="code-k">"last_name"</span>: <span class="code-s">"Müller"</span>,
+      <span class="code-k">"dob"</span>: <span class="code-s">"1985-04-12"</span>, <span class="code-k">"nationality"</span>: <span class="code-s">"CHE"</span>,
+      <span class="code-k">"expires"</span>: <span class="code-s">"2031-08-22"</span>
+    }
+  },
+  <span class="code-k">"face_match"</span>: { <span class="code-k">"score"</span>: <span class="code-n">98</span>, <span class="code-k">"liveness_passed"</span>: <span class="code-n">true</span> },
+  <span class="code-k">"risk"</span>: { <span class="code-k">"level"</span>: <span class="code-s">"low"</span>, <span class="code-k">"flags"</span>: [] },
+  <span class="code-k">"created_at"</span>: <span class="code-s">"2025-06-11T10:23:45Z"</span>
+}</div></div>
+    </div>
+
+    <!-- KYB -->
+    <div id="api-kyb" class="api-section">
+      <h2 class="api-h2">KYB — Verify Business</h2>
+      <p class="api-p">Verify a business entity against commercial registries, check directors, UBO structure, and cross-reference against AML watchlists.</p>
+      <div class="endpoint"><span class="method post">POST</span>/kyb/verify</div>
+      <h3 class="api-h3">Request Parameters</h3>
+      <table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+        <tr><td><span class="ptag">company_name</span></td><td><span class="ptype">string</span></td><td><span class="preq">required</span></td><td>Registered legal name</td></tr>
+        <tr><td><span class="ptag">registration_number</span></td><td><span class="ptype">string</span></td><td><span class="preq">required</span></td><td>Company registration / UID number</td></tr>
+        <tr><td><span class="ptag">country</span></td><td><span class="ptype">string</span></td><td><span class="preq">required</span></td><td>ISO 3166-1 alpha-2 country code</td></tr>
+        <tr><td><span class="ptag">include_ubo</span></td><td><span class="ptype">boolean</span></td><td><span class="popt">optional</span></td><td>Include UBO structure analysis (default: false)</td></tr>
+      </tbody></table>
+      <div class="code-block"><div class="code-top"><span class="code-lang">JSON</span></div><div class="code-body">{
+  <span class="code-k">"company_name"</span>: <span class="code-s">"Muster AG"</span>,
+  <span class="code-k">"registration_number"</span>: <span class="code-s">"CHE-123.456.789"</span>,
+  <span class="code-k">"country"</span>: <span class="code-s">"CH"</span>,
+  <span class="code-k">"include_ubo"</span>: <span class="code-n">true</span>
+}</div></div>
+    </div>
+
+    <!-- AML -->
+    <div id="api-aml" class="api-section">
+      <h2 class="api-h2">AML Screening</h2>
+      <p class="api-p">Screen individuals or businesses against global sanctions lists, PEP registries, adverse media, and watchlists in real time.</p>
+      <div class="endpoint"><span class="method post">POST</span>/aml/screen</div>
+      <table class="param-table"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+        <tr><td><span class="ptag">type</span></td><td><span class="ptype">string</span></td><td><span class="preq">required</span></td><td>individual or business</td></tr>
+        <tr><td><span class="ptag">name</span></td><td><span class="ptype">string</span></td><td><span class="preq">required</span></td><td>Full legal name</td></tr>
+        <tr><td><span class="ptag">dob</span></td><td><span class="ptype">string</span></td><td><span class="popt">optional</span></td><td>Date of birth (YYYY-MM-DD) — improves match accuracy</td></tr>
+        <tr><td><span class="ptag">nationality</span></td><td><span class="ptype">string</span></td><td><span class="popt">optional</span></td><td>ISO 3166-1 alpha-3 nationality code</td></tr>
+      </tbody></table>
+      <div class="code-block"><div class="code-top"><span class="code-lang">Response</span></div><div class="code-body">{
+  <span class="code-k">"screen_id"</span>: <span class="code-s">"scr_01HX8XXXXXXXX"</span>,
+  <span class="code-k">"result"</span>: <span class="code-s">"clear"</span>,
+  <span class="code-k">"hits"</span>: [],
+  <span class="code-k">"lists_checked"</span>: [<span class="code-s">"UN_CONSOLIDATED"</span>,<span class="code-s">"EU_CONSOLIDATED"</span>,<span class="code-s">"OFAC"</span>,<span class="code-s">"PEP_GLOBAL"</span>],
+  <span class="code-k">"checked_at"</span>: <span class="code-s">"2025-06-11T10:23:46Z"</span>
+}</div></div>
+    </div>
+
+    <!-- TRUST SCORE -->
+    <div id="api-trust" class="api-section">
+      <h2 class="api-h2">Trust Score</h2>
+      <p class="api-p">Retrieve the combined Trust Score for a completed verification, or request a new Trust Score computation combining multiple signals.</p>
+      <div class="endpoint"><span class="method get">GET</span>/trust/{verification_id}</div>
+      <div class="endpoint"><span class="method post">POST</span>/trust/compute</div>
+    </div>
+
+    <!-- WEBHOOKS -->
+    <div id="api-webhooks" class="api-section">
+      <h2 class="api-h2">Webhook Events</h2>
+      <p class="api-p">VerfiX sends webhook notifications for key events. Configure webhook endpoints in the Dashboard under <strong>Settings → Webhooks</strong>.</p>
+      <h3 class="api-h3">Event Types</h3>
+      <table class="param-table"><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody>
+        <tr><td><span class="ptag">verification.completed</span></td><td>A verification has completed with a final decision</td></tr>
+        <tr><td><span class="ptag">verification.review_required</span></td><td>Verification requires manual review</td></tr>
+        <tr><td><span class="ptag">aml.hit_detected</span></td><td>An AML screening returned a potential match</td></tr>
+        <tr><td><span class="ptag">trust_score.updated</span></td><td>Trust Score recalculated (e.g., after AML refresh)</td></tr>
+      </tbody></table>
+      <h3 class="api-h3">Webhook Payload</h3>
+      <div class="code-block"><div class="code-top"><span class="code-lang">JSON</span></div><div class="code-body">{
+  <span class="code-k">"id"</span>: <span class="code-s">"evt_01HX7ZXXXXXXXXX"</span>,
+  <span class="code-k">"type"</span>: <span class="code-s">"verification.completed"</span>,
+  <span class="code-k">"created"</span>: <span class="code-s">"2025-06-11T10:23:47Z"</span>,
+  <span class="code-k">"data"</span>: {
+    <span class="code-k">"verification_id"</span>: <span class="code-s">"ver_01HX7Z4QRSTUV"</span>,
+    <span class="code-k">"status"</span>: <span class="code-s">"approved"</span>,
+    <span class="code-k">"trust_score"</span>: <span class="code-n">96</span>
+  }
+}</div></div>
+      <h3 class="api-h3">Signature Verification</h3>
+      <p class="api-p">Webhooks are signed using HMAC-SHA256. Verify the <code style="font-family:'IBM Plex Mono',monospace;font-size:.83rem;">X-VerfiX-Signature</code> header on every request.</p>
+    </div>
+
+    <!-- SDKS -->
+    <div id="api-sdks" class="api-section">
+      <h2 class="api-h2">SDKs & Libraries</h2>
+      <p class="api-p">Official SDKs are in development. In the meantime, use the REST API directly with any HTTP client.</p>
+      <div class="code-block"><div class="code-top"><span class="code-lang">Node.js (REST)</span></div><div class="code-body"><span class="code-c">// npm install node-fetch</span>
+<span class="code-k">const</span> res = <span class="code-n">await</span> fetch(<span class="code-s">'https://api.verfix.ch/v1/kyc/verify'</span>, {
+  method: <span class="code-s">'POST'</span>,
+  headers: {
+    <span class="code-s">'Authorization'</span>: <span class="code-s">`Bearer ${process.env.VERFIX_API_KEY}`</span>,
+    <span class="code-s">'Content-Type'</span>: <span class="code-s">'application/json'</span>
+  },
+  body: JSON.stringify({ document_type: <span class="code-s">'passport'</span>, country: <span class="code-s">'CH'</span> })
+});
+<span class="code-k">const</span> data = <span class="code-n">await</span> res.json();</div></div>
+      <div class="code-block"><div class="code-top"><span class="code-lang">Python (REST)</span></div><div class="code-body"><span class="code-c"># pip install requests</span>
+<span class="code-k">import</span> requests, os
+res = requests.post(
+  <span class="code-s">'https://api.verfix.ch/v1/kyc/verify'</span>,
+  headers={<span class="code-s">'Authorization'</span>: <span class="code-s">f'Bearer {os.getenv("VERFIX_API_KEY")}'</span>},
+  json={<span class="code-s">'document_type'</span>: <span class="code-s">'passport'</span>, <span class="code-s">'country'</span>: <span class="code-s">'CH'</span>}
+)
+data = res.json()</div></div>
+      <p class="api-p" style="margin-top:1.5rem;">Coming soon: <strong>Python SDK</strong> · <strong>Node.js SDK</strong> · <strong>Go SDK</strong> · <strong>Java SDK</strong></p>
+      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--bd);">
+        <a onclick="navClose(\'contact\');trackCTA(\'book_demo\')"  class="btn btn-r" onclick="trackCTA('api_contact')"><i class="fas fa-terminal"></i> Request API Access</a>
+      </div>
+    </div>
+
+  </div><!-- /api-main -->
+</div><!-- /api-wrap -->
+</main>
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <div class="social-inner">
+    <div>
+      <div class="soc-label" style="margin-bottom:.38rem;">Follow VerfiX</div>
+      <span class="social-copy">Swiss Trust Infrastructure · @verfix</span>
+    </div>
+    <div class="social-links">
+      <a class="soc-btn soc-li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+      </a>
+      <div class="soc-divider"></div>
+      <a class="soc-btn soc-yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube Channel</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <picture>
+      <source srcset="assets/images/verfix-logo.webp 1x, assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+      <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="64" height="44" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"loading="eager" fetchpriority="high" decoding="sync"/>
+    </picture>
+      <span class="foot-tag">VERIFY · TRUST · SECURE</span>
+      <div class="foot-social">
+        <a class="foot-soc-ico li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" title="VerfiX on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="foot-soc-ico yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" title="VerfiX on YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Products</h4>
+      <span href="/solutions">Customer Onboarding</span>
+      <span href="/solutions">Business Verification</span>
+      <span href="/solutions">Telephone Banking</span>
+      <span href="/solutions">Fraud Intelligence</span>
+      <span href="/">Trust Engine™</span>
+      <span href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway</span>
+    </div>
+    <div class="foot-col">
+      <h4>Industries</h4>
+      <span href="/industries">Banking</span>
+      <span href="/industries">Fintech</span>
+      <span href="/industries">Crypto</span>
+      <span href="/industries">Insurance</span>
+      <span href="/industries">Government</span>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <span href="/resources">Documentation</span>
+      <span href="/trust-center">Trust Center</span>
+      <span href="/resources">Compliance Guides</span>
+      <span href="/resources">Whitepapers</span>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <span href="/about">About</span>
+      <span href="/contact">Contact</span>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    </div>
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <span href="/privacy">Privacy Policy</span>
+      <span href="/terms">Terms of Use</span>
+      <a href="https://status.verfix.ch" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.45);font-size:.8rem;text-decoration:none;">System Status</a>
+      <a href="/trust-center" style="color:rgba(255,255,255,.45);font-size:.8rem;text-decoration:none;">Trust Center</a>
+      <span id="f-imp" href="/impressum" style="display:none;">Impressum</span>
+      <span id="f-dat" href="/datenschutz" style="display:none;">Datenschutz</span>
+      <span id="f-men" href="/mentions-legales" style="display:none;">Mentions légales</span>
+      <span id="f-pol" href="/politique-confidentialite" style="display:none;">Politique de conf.</span>
+      <div style="margin-top:.6rem;display:flex;gap:.38rem;flex-wrap:wrap;">
+        <button class="mlb on" onclick="setLang('en')">EN</button>
+        <button class="mlb" onclick="setLang('de')">DE</button>
+        <button class="mlb" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span class="foot-copy" id="foot-c">© 2025 VerfiX AG · Switzerland · All rights reserved</span>
+    <div class="foot-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+      <a href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i>LinkedIn</a>
+      <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-youtube" style="font-size:.72rem;color:#f87171;"></i>YouTube</a>
+    </div>
+  </div>
+
+  <div class="foot-meta-row">
+    <div class="foot-address">
+      <i class="fas fa-location-dot"></i>
+      <span>VerfiX AG · Av. de Gratta-Paille 2 · CH-1018 Lausanne · Switzerland</span>
+    </div>
+    <div class="foot-partner-logos">
+      <a class="foot-partner-logo" href="https://www.trustvalley.swiss" target="_blank" rel="noopener" title="Trust Valley Partner">
+        <picture>
+          <source srcset="assets/images/trust-valley.webp" type="image/webp"/>
+          <img src="/assets/images/trust-valley.png" alt="Trust Valley" width="70" height="40" loading="lazy"/>
+        </picture>
+      </a>
+      <a class="foot-partner-logo" href="https://www.innosuisse.ch" target="_blank" rel="noopener" title="Innosuisse">
+        <picture>
+          <source srcset="assets/images/innosuisse.webp" type="image/webp"/>
+          <img src="/assets/images/innosuisse.jpg" alt="Innosuisse" width="60" height="38" loading="lazy"/>
+        </picture>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+  <script src="/js/main.js" defer></script>
+
+<!-- ── FLOATING DEMO BUTTON ── -->
+<a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" aria-label="Jetzt Demo buchen"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Jetzt Demo buchen</span></a>
+</body>
+</html>

@@ -1,129 +1,111 @@
-# VerfiX Website — Production Build
+# VerfiX — Production-Ready Static Website
 
-**Swiss Trust Infrastructure for Regulated Industries**  
-Domain: `verfix.ch`
+## ✅ Production Status
+- 51 HTML pages
+- All paths root-relative (/css/, /js/, /assets/)
+- Vercel-ready — `vercel.json` configured with 77 rewrites
+- GA4 G-95ZS424SMP active
+- Calendly https://calendly.com/ahmed-ahmed-alsultan/30min active
+- Zoho CRM forms wired
+- 0 production errors
 
 ---
 
-## Quick Deploy
+## 🚀 Deploy to Vercel (step-by-step)
 
-### Vercel (Recommended)
+### Option A: Vercel Dashboard (no CLI needed)
+1. Go to https://vercel.com → Log in
+2. Click **"Add New Project"**
+3. Click **"Upload"** (or connect GitHub — see Option B)
+4. Drag and drop the entire `verfix-multipage/` folder
+5. Vercel auto-detects: **Framework = Other** (static site)
+6. **Build Command**: leave empty (nothing to build)
+7. **Output Directory**: leave as `.` (root)
+8. Click **Deploy**
+9. Done — your site is live at `your-project.vercel.app`
+10. Add custom domain `verfix.ch` in Project → Settings → Domains
+
+### Option B: Vercel CLI
 ```bash
-npm i -g vercel
+# Install Vercel CLI once
+npm install -g vercel
+
+# From inside the verfix-multipage/ folder:
+cd verfix-multipage
+vercel
+
+# Follow prompts:
+# - Set up and deploy: Y
+# - Which scope: your account
+# - Link to existing project? N
+# - Project name: verfix
+# - In which directory is your code? ./
+# - Build command: (leave empty — press Enter)
+# - Output directory: ./  (press Enter)
+# - Deploy: Y
+
+# Production deploy:
 vercel --prod
-# or drag folder to vercel.com
 ```
 
-### Netlify
-Drag the entire folder to [netlify.com](https://netlify.com) → new site.
-
-### Apache / cPanel
-Upload all files to `public_html/`. `.htaccess` handles HTTPS and routing.
+### Option C: GitHub → Vercel (recommended for ongoing updates)
+1. Push the `verfix-multipage/` contents to a GitHub repo
+2. Connect repo in Vercel dashboard
+3. Every `git push` auto-deploys
+4. No build command, output directory = `.`
 
 ---
 
-## Project Structure
+## 🌐 Custom Domain Setup (verfix.ch)
 
+1. In Vercel project → **Settings → Domains**
+2. Add `verfix.ch` and `www.verfix.ch`
+3. Vercel shows DNS records — add them at your domain registrar:
+   - **A record**: `76.76.21.21` (Vercel IP)
+   - **CNAME**: `www` → `cname.vercel-dns.com`
+4. SSL certificate is automatic (Let's Encrypt)
+
+---
+
+## 💻 Local Preview (while developing)
+
+```bash
+cd verfix-multipage
+python serve.py
 ```
-verfix-website/
-├── index.html              ← Complete SPA (all pages)
-├── css/main.css            ← All styles (86KB)
-├── js/main.js              ← All JavaScript (33KB)
-│
+Open: **http://localhost:8080**
+
+> ⚠️ Do NOT open index.html directly via File Explorer.
+> Root-relative paths (/css/, /assets/) require a local server.
+
+---
+
+## 📁 File Structure
+```
+verfix-multipage/
+├── index.html          ← Homepage
+├── css/main.css        ← All styles (109KB)
+├── js/main.js          ← All scripts (29KB)
 ├── assets/
-│   ├── images/
-│   │   ├── verfix-logo.png             ← Nav logo
-│   │   ├── verfix-logo--footer.png     ← Footer logo
-│   │   └── og-image.jpg                ← Social sharing (1200×630)
-│   └── team/
-│       ├── ahmed-sherwed.jpeg          ← Founder & CEO
-│       ├── manel-mhamdi.jpeg           ← Business Development
-│       └── petter-stahle.jpeg          ← AI & Technology Lead
-│
-├── vercel.json             ← Vercel config (headers + SPA routing)
-├── _headers                ← Netlify / Cloudflare Pages headers
-├── _redirects              ← Netlify SPA routing
-├── .htaccess               ← Apache config
-├── robots.txt              ← SEO crawler rules
-└── sitemap.xml             ← Search engine sitemap
+│   ├── images/         ← Logos, OG image
+│   ├── team/           ← ⚠ ADD team photos here
+│   └── downloads/      ← ⚠ ADD whitepaper PDF here
+├── de/                 ← German pages
+├── fr/                 ← French pages
+├── en/                 ← English pages
+├── insights/           ← Blog articles
+├── vercel.json         ← Routing + headers config
+├── sitemap.xml         ← 45 URLs
+└── robots.txt
 ```
 
 ---
 
-## Setup Checklist
+## ⚠️ Manual Actions Before Go-Live
 
-### 1. Formspree (Contact Form)
-1. Go to [formspree.io](https://formspree.io) → create a free account
-2. Create a new form → copy the form ID (e.g. `xbjnakvp`)
-3. In `js/main.js`, replace:
-   ```js
-   var FORMSPREE_CONTACT = 'YOUR_FORMSPREE_ID';
-   var FORMSPREE_DEMO    = 'YOUR_FORMSPREE_ID';
-   ```
-
-### 2. Google Analytics 4
-1. Go to [analytics.google.com](https://analytics.google.com) → create GA4 property
-2. Copy your Measurement ID (format: `G-XXXXXXXXXX`)
-3. In `js/main.js`, replace:
-   ```js
-   var GA4_ID = 'G-XXXXXXXXXX';
-   ```
-   Analytics only loads after cookie consent.
-
-### 3. Google Search Console
-1. Go to [search.google.com/search-console](https://search.google.com/search-console)
-2. Add property for `verfix.ch`
-3. In `index.html` `<head>`, uncomment:
-   ```html
-   <meta name="google-site-verification" content="YOUR_GSC_CODE"/>
-   ```
-4. Submit `https://verfix.ch/sitemap.xml`
-
-### 4. Domain DNS
-Point `verfix.ch` to your host:
-
-**Vercel:**
-```
-A     @    76.76.21.21
-CNAME www  cname.vercel-dns.com
-```
-
-**Netlify:**
-```
-A     @    75.2.60.5
-CNAME www  your-site.netlify.app
-```
-
----
-
-## Pages
-
-| Page | nav ID |
-|------|--------|
-| Home | `home` |
-| Solutions | `solutions` |
-| Industries | `industries` |
-| Gateway | `gateway` |
-| API Docs | `apidocs` |
-| Trust Center | `trustcenter` |
-| Case Studies | `casestudies` |
-| Careers | `careers` |
-| Press & Media | `press` |
-| About | `about` |
-| Contact | `contact` |
-| Privacy | `privacy` |
-
----
-
-## After Deployment
-
-- [ ] Test contact form (sends to Formspree)
-- [ ] Verify OG preview at [opengraph.xyz](https://opengraph.xyz)
-- [ ] Submit sitemap to Google Search Console
-- [ ] Test JSON-LD at [search.google.com/test/rich-results](https://search.google.com/test/rich-results)
-- [ ] Run Lighthouse audit (target 90+)
-- [ ] Test on iOS Safari and Android Chrome
-
----
-
-*VerfiX AG · Switzerland · hello@verfix.ch*
+| Action | What | Where |
+|--------|------|-------|
+| Upload team photos | ahmed-sherwed.jpeg, manel-mhamdi.jpeg, petter-stahle.jpeg | `/assets/team/` |
+| Upload whitepaper PDF | verfix-nfadp-whitepaper.pdf | `/assets/downloads/` |
+| Activate Zoho SalesIQ | Paste widget script | `<head>` of all pages (placeholder comment already there) |
+| Submit sitemap | After first deploy | Google Search Console → verfix.ch/sitemap.xml |

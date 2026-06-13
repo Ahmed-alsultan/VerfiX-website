@@ -1,19 +1,372 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/de/trust-center",
+      "destination": "de/trust-center/index.html"
+    },
+    {
+      "source": "/de/trust-center/",
+      "destination": "de/trust-center/index.html"
+    },
+    {
+      "source": "/fr/centre-de-confiance",
+      "destination": "fr/centre-de-confiance/index.html"
+    },
+    {
+      "source": "/fr/centre-de-confiance/",
+      "destination": "fr/centre-de-confiance/index.html"
+    },
+    {
+      "source": "/en/trust-center",
+      "destination": "en/trust-center/index.html"
+    },
+    {
+      "source": "/en/trust-center/",
+      "destination": "en/trust-center/index.html"
+    },
+    {
+      "source": "/de/partner",
+      "destination": "de/partner/index.html"
+    },
+    {
+      "source": "/de/partner/",
+      "destination": "de/partner/index.html"
+    },
+    {
+      "source": "/fr/partenaires",
+      "destination": "fr/partenaires/index.html"
+    },
+    {
+      "source": "/fr/partenaires/",
+      "destination": "fr/partenaires/index.html"
+    },
+    {
+      "source": "/en/partners",
+      "destination": "en/partners/index.html"
+    },
+    {
+      "source": "/en/partners/",
+      "destination": "en/partners/index.html"
+    },
+    {
+      "source": "/de/demo",
+      "destination": "de/demo/index.html"
+    },
+    {
+      "source": "/de/demo/",
+      "destination": "de/demo/index.html"
+    },
+    {
+      "source": "/fr/demo",
+      "destination": "fr/demo/index.html"
+    },
+    {
+      "source": "/fr/demo/",
+      "destination": "fr/demo/index.html"
+    },
+    {
+      "source": "/en/demo",
+      "destination": "en/demo/index.html"
+    },
+    {
+      "source": "/en/demo/",
+      "destination": "en/demo/index.html"
+    },
+    {
+      "source": "/de/fintech-map",
+      "destination": "de/fintech-map/index.html"
+    },
+    {
+      "source": "/de/fintech-map/",
+      "destination": "de/fintech-map/index.html"
+    },
+    {
+      "source": "/fr/carte-fintech",
+      "destination": "fr/carte-fintech/index.html"
+    },
+    {
+      "source": "/fr/carte-fintech/",
+      "destination": "fr/carte-fintech/index.html"
+    },
+    {
+      "source": "/en/fintech-map",
+      "destination": "en/fintech-map/index.html"
+    },
+    {
+      "source": "/en/fintech-map/",
+      "destination": "en/fintech-map/index.html"
+    },
+    {
+      "source": "/de/whitepaper-nfadp",
+      "destination": "/de/whitepaper-nfadp/index.html"
+    },
+    {
+      "source": "/de/whitepaper-nfadp/",
+      "destination": "/de/whitepaper-nfadp/index.html"
+    },
+    {
+      "source": "/fr/livre-blanc-nfadp",
+      "destination": "/fr/livre-blanc-nfadp/index.html"
+    },
+    {
+      "source": "/fr/livre-blanc-nfadp/",
+      "destination": "/fr/livre-blanc-nfadp/index.html"
+    },
+    {
+      "source": "/en/whitepaper-nfadp",
+      "destination": "/en/whitepaper-nfadp/index.html"
+    },
+    {
+      "source": "/en/whitepaper-nfadp/",
+      "destination": "/en/whitepaper-nfadp/index.html"
+    },
+    {
+      "source": "/de/vergleich",
+      "destination": "/de/vergleich/index.html"
+    },
+    {
+      "source": "/de/vergleich/",
+      "destination": "/de/vergleich/index.html"
+    },
+    {
+      "source": "/fr/comparaison",
+      "destination": "/fr/comparaison/index.html"
+    },
+    {
+      "source": "/fr/comparaison/",
+      "destination": "/fr/comparaison/index.html"
+    },
+    {
+      "source": "/en/comparison",
+      "destination": "/en/comparison/index.html"
+    },
+    {
+      "source": "/en/comparison/",
+      "destination": "/en/comparison/index.html"
+    },
+    {
+      "source": "/de/produkte/stimmverifikation",
+      "destination": "/de/produkte/stimmverifikation/index.html"
+    },
+    {
+      "source": "/de/produkte/stimmverifikation/",
+      "destination": "/de/produkte/stimmverifikation/index.html"
+    },
+    {
+      "source": "/fr/produits/verification-vocale",
+      "destination": "/fr/produits/verification-vocale/index.html"
+    },
+    {
+      "source": "/fr/produits/verification-vocale/",
+      "destination": "/fr/produits/verification-vocale/index.html"
+    },
+    {
+      "source": "/en/products/voice-verification",
+      "destination": "/en/products/voice-verification/index.html"
+    },
+    {
+      "source": "/en/products/voice-verification/",
+      "destination": "/en/products/voice-verification/index.html"
+    },
+    {
+      "source": "/de/produkte/video-identifikation",
+      "destination": "/de/produkte/video-identifikation/index.html"
+    },
+    {
+      "source": "/de/produkte/video-identifikation/",
+      "destination": "/de/produkte/video-identifikation/index.html"
+    },
+    {
+      "source": "/fr/produits/identification-video",
+      "destination": "/fr/produits/identification-video/index.html"
+    },
+    {
+      "source": "/fr/produits/identification-video/",
+      "destination": "/fr/produits/identification-video/index.html"
+    },
+    {
+      "source": "/en/products/video-identification",
+      "destination": "/en/products/video-identification/index.html"
+    },
+    {
+      "source": "/en/products/video-identification/",
+      "destination": "/en/products/video-identification/index.html"
+    },
+    {
+      "source": "/de/kyb",
+      "destination": "/de/kyb/index.html"
+    },
+    {
+      "source": "/de/kyb/",
+      "destination": "/de/kyb/index.html"
+    },
+    {
+      "source": "/fr/kyb",
+      "destination": "/fr/kyb/index.html"
+    },
+    {
+      "source": "/fr/kyb/",
+      "destination": "/fr/kyb/index.html"
+    },
+    {
+      "source": "/en/kyb",
+      "destination": "/en/kyb/index.html"
+    },
+    {
+      "source": "/en/kyb/",
+      "destination": "/en/kyb/index.html"
+    },
+    {
+      "source": "/insights",
+      "destination": "/insights/index.html"
+    },
+    {
+      "source": "/insights/nfadp-compliance-guide-schweiz",
+      "destination": "/insights/nfadp-compliance-guide-schweiz.html"
+    },
+    {
+      "source": "/insights/finma-kyc-anforderungen-banken",
+      "destination": "/insights/finma-kyc-anforderungen-banken.html"
+    },
+    {
+      "source": "/insights/eidas-2-schweizer-banken-explainer",
+      "destination": "/insights/eidas-2-schweizer-banken-explainer.html"
+    },
+    {
+      "source": "/insights/aml-screening-best-practices-schweiz",
+      "destination": "/insights/aml-screening-best-practices-schweiz.html"
+    },
+    {
+      "source": "/insights/kyc-onboarding-digital-schweiz",
+      "destination": "/insights/kyc-onboarding-digital-schweiz.html"
+    },
+    {
+      "source": "/solutions",
+      "destination": "/solutions.html"
+    },
+    {
+      "source": "/industries",
+      "destination": "/industries.html"
+    },
+    {
+      "source": "/gateway",
+      "destination": "/gateway.html"
+    },
+    {
+      "source": "/trust-center",
+      "destination": "/trust-center.html"
+    },
+    {
+      "source": "/api",
+      "destination": "/api.html"
+    },
+    {
+      "source": "/resources",
+      "destination": "/resources.html"
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/case-studies.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/careers.html"
+    },
+    {
+      "source": "/press",
+      "destination": "/press.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/impressum",
+      "destination": "/impressum.html"
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "/datenschutz.html"
+    },
+    {
+      "source": "/mentions-legales",
+      "destination": "/mentions-legales.html"
+    },
+    {
+      "source": "/politique-confidentialite",
+      "destination": "/politique-confidentialite.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options",   "value": "nosniff" },
-        { "key": "X-Frame-Options",           "value": "SAMEORIGIN" },
-        { "key": "X-XSS-Protection",          "value": "1; mode=block" },
-        { "key": "Referrer-Policy",           "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
-        { "key": "Permissions-Policy",        "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     },
-    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/css/(.*)",    "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/js/(.*)",     "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }

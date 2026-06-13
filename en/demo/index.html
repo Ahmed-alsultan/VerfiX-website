@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <title>Live Demo | VerfiX — Experience KYC Verification in Real Time</title>
+  <!-- Google Analytics 4 — G-95ZS424SMP -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-95ZS424SMP', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=None;Secure',
+      send_page_view: true
+    });
+  </script>
+  <!-- End Google Analytics 4 -->
+  <meta name="description" content="Experience a VerfiX KYC verification live: document check, biometric matching, liveness detection and Trust Score — in under 5 minutes. No login required."/>
+  <meta name="keywords" content="VerfiX demo, KYC demo Switzerland, video identification demo, biometrics demo"/>
+  <meta name="author" content="VerfiX AG"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://verfix.ch/en/demo/"/>
+  <link rel="alternate" hreflang="x-default" href="https://verfix.ch/en/demo/"/>
+  <link rel="alternate" hreflang="en" href="https://verfix.ch/en/demo/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://verfix.ch/en/demo/"/>
+  <meta property="og:title" content="Live Demo | VerfiX — Experience KYC Verification in Real Time"/>
+  <meta property="og:description" content="Experience a VerfiX KYC verification live: document check, biometric matching, liveness detection and Trust Score — in under 5 minutes. No login required."/>
+  <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="VerfiX"/>
+  <meta property="og:locale" content="en_CH"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="VerfiX — KYC, AML & Identitätsprüfung Software | Swiss Trust Infrastructure"/>
+  <meta name="twitter:description" content="VerfiX ist die Swiss Trust Infrastructure für regulierte Industrien. KYC, KYB, AML-Screening, Betrugsbekämpfung und Trust Engine™ — eine API für Banken, Fintechs und Versicherungen in der Schweiz."/>
+  <meta name="twitter:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C8252A'/><text x='16' y='23' font-family='Arial Black,Arial' font-weight='900' font-size='22' text-anchor='middle' fill='white'>X</text></svg>"/>
+  <!-- <meta name="google-site-verification" content="YOUR_GSC_CODE"/> -->
+
+  <!-- Performance: preload critical assets -->
+  <link rel="preload" href="/css/main.css" as="style"/>
+  <link rel="preload" href="/js/main.js" as="script"/>
+  
+  <!-- Font: preconnect + optimized load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://js.hs-scripts.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  
+  <!-- Critical inline style for font-display:swap override -->
+  <style>
+    @font-face{font-display:swap}
+    body{opacity:1}
+    .rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+    .rv.in{opacity:1;transform:none}
+    .pg{display:none}.pg.on{display:block}
+  </style>
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/css/main.css"/>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://verfix.ch/#organization",
+  "name": "VerfiX AG",
+  "url": "https://verfix.ch",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://verfix.ch/assets/images/verfix-logo.png",
+    "width": 236,
+    "height": 160
+  },
+  "description": "Swiss Trust Infrastructure for Regulated Industries — KYC, KYB, AML, Fraud Intelligence, and Trust Engine™",
+  "foundingDate": "2024",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Lausanne, Switzerland",
+    "addressCountry": "CH"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. de Gratta-Paille 2",
+    "addressLocality": "Lausanne",
+    "postalCode": "CH-1018",
+    "addressRegion": "Vaud",
+    "addressCountry": "CH"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contact@verfix.ch",
+    "contactType": "sales",
+    "availableLanguage": [
+      "English",
+      "German",
+      "French"
+    ]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/verfix/",
+    "https://www.youtube.com/@verfix"
+  ],
+  "areaServed": [
+    "CH",
+    "DE",
+    "AT",
+    "FR",
+    "IT",
+    "NL",
+    "BE",
+    "LU",
+    "EU"
+  ],
+  "knowsAbout": [
+    "KYC",
+    "KYB",
+    "AML",
+    "Identity Verification",
+    "Fraud Prevention",
+    "Compliance",
+    "eIDAS",
+    "nFADP"
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.5197,
+    "longitude": 6.5932
+  },
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Trust Valley",
+      "url": "https://www.trustvalley.swiss",
+      "description": "Swiss cluster for digital trust, privacy and cybersecurity"
+    }
+  ],
+  "funder": {
+    "@type": "Organization",
+    "name": "Innosuisse",
+    "url": "https://www.innosuisse.ch",
+    "description": "Swiss Innovation Agency"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Trust Valley — Lausanne",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de Gratta-Paille 2",
+      "addressLocality": "Lausanne",
+      "postalCode": "CH-1018",
+      "addressCountry": "CH"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://verfix.ch/#website",
+  "url": "https://verfix.ch",
+  "name": "VerfiX",
+  "description": "Swiss Trust Infrastructure for Regulated Industries",
+  "publisher": {
+    "@id": "https://verfix.ch/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://verfix.ch/solutions?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  },
+  "inLanguage": [
+    "en",
+    "de",
+    "fr"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is VerfiX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX is a Swiss-built trust infrastructure platform that unifies KYC, KYB, AML screening, fraud intelligence, and Trust Engine™ into one API for banks, fintechs, insurers, and regulated organizations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does VerfiX support Swiss data residency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. VerfiX supports Swiss-hosted, dedicated, private cloud, and on-premise deployment models. Identity data can be stored and processed entirely within Switzerland."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries does VerfiX serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX serves banking, fintech, crypto and digital assets, insurance, government, healthcare, telecom, mobility, marketplaces, real estate, education, e-commerce, forex, payments, remittance, and wealth management."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is VerfiX Gateway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX Gateway is one API integration layer for verifying European digital identity credentials under eIDAS 2.0. It is designed for Swiss banks and regulated organizations that need to accept digital identities from multiple EU countries without building separate integrations for each."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is VerfiX GDPR and nFADP compliant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX is designed to support GDPR and Swiss nFADP compliance requirements. It includes configurable data retention, role-based access control, immutable audit logs, and Swiss data residency options."
+      }
+    }
+  ]
+}
+</script>
+
+  
+  <!-- ════════════════════════════════════════════════════
+       ZOHO CRM — Web Visitor Tracking
+       HOW TO ACTIVATE:
+       1. In Zoho CRM: Setup → Channels → Web Forms → Web Tabs → SalesIQ
+       2. Or: Zoho SalesIQ → Settings → Installation → copy the script
+       3. Paste your Zoho SalesIQ script here replacing this comment
+       Example:
+       <script type="text/javascript" id="zsiqchat">
+         var $zoho=$zoho || {};
+         $zoho.salesiq = $zoho.salesiq || {widgetcode:"YOUR_WIDGET_CODE",values:{},ready:function(){}};
+         var d=document;s=d.createElement("script");
+         s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+         s.src="https://salesiq.zohopublic.eu/widget";
+         t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
+       </script>
+       ════════════════════════════════════════════════════ -->
+
+  
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://verfix.ch/"},
+  {"@type":"ListItem","position":2,"name":"Live Demo","item":"https://verfix.ch/en/demo/"}
+]}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ════════════════════════════════════════════════════════
+     COOKIE CONSENT BANNER — PLACEHOLDER
+     INSTRUCTIONS: Integrate your cookie consent tool here.
+     Recommended: Cookiebot (cookiebot.com), CookieFirst, or iubenda.
+     1. Sign up at your chosen provider
+     2. Copy their script tag and paste here, replacing this comment
+     3. Configure consent categories: Necessary, Analytics (GA4), Marketing (HubSpot)
+     4. Set callback: window.loadCalendlyWidget() on analytics consent
+     Sample integration point below — replace with real script:
+     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js"
+       data-cbid="YOUR-COOKIEBOT-ID" data-blockingmode="auto" async></script>
+     ════════════════════════════════════════════════════════ -->
+
+<div id="ck-bar">
+  <h4>🍪 Cookie Preferences</h4>
+  <span id="ck-txt">We use cookies to improve your experience. See our <a href="/privacy">Privacy Policy</a>.</span>
+  <div id="ck-prefs">
+    <div class="ck-pref-row"><span>Necessary <small style="color:rgba(255,255,255,.3)">(always on)</small></span><label class="ck-toggle"><input type="checkbox" checked disabled/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Analytics</span><label class="ck-toggle"><input type="checkbox" id="ck-analytics"/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Marketing</span><label class="ck-toggle"><input type="checkbox" id="ck-marketing"/><span class="ck-slider"></span></label></div>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-ok" onclick="ckOk()">Accept All</button>
+    <button class="ck-no" onclick="ckNo()">Decline</button>
+    <button class="ck-more" onclick="ckToggle()">Preferences</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+
+<nav class="nav" id="main-nav">
+  <div class="nav-i">
+    <!-- Logo -->
+    <div class="logo" href="/">
+      <picture>
+      <source srcset="/assets/images/verfix-logo--footer.webp 1x, /assets/images/verfix-logo--footer@2x.webp 2x" type="image/webp"/>
+      <img src="/assets/images/verfix-logo--footer.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
+    </picture>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <!-- INDUSTRIES (most prominent, first) -->
+      <div class="ni" id="ni-ind">
+        <span onclick="toggleMenu('ind')"><span data-i18n="nav_industries">Industries</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-ind" id="mega-ind">
+          <div class="mi-left">
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')">
+              <div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div>
+            </div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')">
+              <div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div>
+            </div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')">
+              <div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div>
+            </div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')">
+              <div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div>
+            </div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')">
+              <div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div>
+            </div>
+            <div class="mi-item" data-ind="health" onmouseenter="showInd('health')">
+              <div class="mi-ico"><i class="fas fa-hospital"></i></div><div><h4>Healthcare</h4></div>
+            </div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')">
+              <div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div>
+            </div>
+            <div class="mi-item" data-ind="mobility" onmouseenter="showInd('mobility')">
+              <div class="mi-ico"><i class="fas fa-car"></i></div><div><h4>Mobility</h4></div>
+            </div>
+            <div class="mi-item" data-ind="mkt" onmouseenter="showInd('mkt')">
+              <div class="mi-ico"><i class="fas fa-store"></i></div><div><h4>Marketplaces</h4></div>
+            </div>
+            <div class="mi-item" data-ind="re" onmouseenter="showInd('re')">
+              <div class="mi-ico"><i class="fas fa-building"></i></div><div><h4>Real Estate</h4></div>
+            </div>
+          </div>
+          <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
+        </div>
+      </div>
+
+      <!-- PRODUCTS (business-centric) -->
+      <div class="ni" id="ni-products">
+        <span onclick="toggleMenu('products')"><span data-i18n="nav_products">Products</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-products" id="mega-products">
+          <div class="mp-left">
+            <div class="mp-col">
+              <h5>Customer Onboarding</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-id-card"></i>Document Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-face-smile"></i>Face Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</div>
+              <h5>Business Verification</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-building"></i>KYB Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-sitemap"></i>UBO Verification</div>
+              <h5>Age Verification</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-user-check"></i>Age Validation</div>
+              <div class="ml" href="/solutions"><i class="fas fa-user"></i>Age Estimation</div>
+            </div>
+            <div class="mp-col">
+              <h5>Telephone Banking</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-waveform-lines"></i>Voice Biometrics</div>
+              <div class="ml" href="/solutions"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</div>
+              <h5>Fraud Intelligence</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-robot"></i>Deepfake Detection</div>
+              <div class="ml" href="/solutions"><i class="fas fa-user-slash"></i>Synthetic Identity Detection</div>
+              <div class="ml" href="/solutions"><i class="fas fa-file-shield"></i>Document Fraud Detection</div>
+              <h5>Infrastructure</h5>
+              <div class="ml" href="/"><i class="fas fa-gauge-high"></i>Trust Engine™</div>
+              <div class="ml" href="/solutions"><i class="fas fa-sliders"></i>Risk Rules Engine</div>
+              <div class="ml" href="/solutions"><i class="fas fa-shuffle"></i>Multi-Provider Orchestration</div>
+            </div>
+          <div style="border-top:1px solid var(--bd);margin-top:.75rem;padding-top:.75rem;"><div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lt);margin-bottom:.5rem;">Produktseiten</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.25rem;"><a class="mc-lnk" href="/de/produkte/stimmverifikation/"><i class="fas fa-waveform-lines"></i>Stimmverifikation DE</a><a class="mc-lnk" href="/en/products/voice-verification/"><i class="fas fa-waveform-lines"></i>Voice Verification EN</a><a class="mc-lnk" href="/de/produkte/video-identifikation/"><i class="fas fa-video"></i>Video-Identifikation DE</a><a class="mc-lnk" href="/en/products/video-identification/"><i class="fas fa-video"></i>Video Identification EN</a><a class="mc-lnk" href="/de/kyb/"><i class="fas fa-building"></i>KYB DE</a><a class="mc-lnk" href="/en/kyb/"><i class="fas fa-building"></i>KYB EN</a>
+          <a class="mc-lnk" href="/de/whitepaper-nfadp/"><i class="fas fa-file-lines"></i>nFADP Whitepaper (DE)</a><a class="mc-lnk" href="/en/whitepaper-nfadp/"><i class="fas fa-file-lines"></i>nFADP Whitepaper (EN)</a></div></div></div>
+          <div class="mp-right">
+            <h5>Trust Infrastructure</h5>
+            <div class="mp-feat"><h4>One API for all identity</h4><p>Document, face, voice, AML, KYB, and risk — orchestrated through a single endpoint.</p></div>
+            <div class="mp-feat"><h4>Swiss-first deployment</h4><p>SaaS, Swiss dedicated, private cloud, or on-premise.</p></div>
+            <div class="mp-gw">
+              <div class="mp-gw-tag">New Product</div>
+              <h4>VerfiX Gateway</h4>
+              <p>The trust layer between digital identity ecosystems and regulated organizations.</p>
+              <a href="/gateway" class="btn btn-r btn-sm">Explore Gateway</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOLUTIONS -->
+      <div class="ni" id="ni-sol">
+        <span onclick="toggleMenu('sol')"><span data-i18n="nav_solutions">Solutions</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-sol">
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></div>
+          <div class="sol-card" href="/"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine™</h4><p>Multi-signal risk decision framework.</p></div></div>
+        </div>
+      </div>
+
+      <!-- RESOURCES -->
+      <div class="ni" id="ni-res">
+        <span onclick="toggleMenu('res')"><span data-i18n="nav_resources">Resources</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-res" style="min-width:300px;padding:1.5rem 1.75rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Resources</h5>
+          <div class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</div>
+          <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a><a class="ml" href="/resources"><i class="fas fa-book"></i>Documentation</a><a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a><a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a><a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
+          <div class="ml" href="/resources"><i class="fas fa-file-lines"></i>Compliance Guides</div>
+          <div class="ml" href="/resources"><i class="fas fa-file-pdf"></i>Whitepapers</div>
+          <div class="ml" href="/resources"><i class="fas fa-newspaper"></i>Product Updates</div>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="ni" id="ni-co">
+        <span onclick="toggleMenu('co')"><span data-i18n="nav_company">Company</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-co" style="min-width:280px;padding:1.5rem 1.75rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
+          <div class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</div>
+          <div class="ml" href="/about"><i class="fas fa-users"></i>Leadership</div>
+          <div class="ml" href="/contact"><i class="fas fa-envelope"></i>Contact</div>
+        </div>
+      </div>
+
+      <div class="ni"><a href="/contact">Contact</a>
+          <a class="mc-lnk" href="/de/trust-center/"><i class="fas fa-shield-halved"></i>Trust Center (DE)</a><a class="mc-lnk" href="/en/trust-center/"><i class="fas fa-shield-halved"></i>Trust Center (EN)</a><a class="mc-lnk" href="/de/partner/"><i class="fas fa-handshake"></i>Partner Programm</a><a class="mc-lnk" href="/de/demo/"><i class="fas fa-play-circle"></i>Live Demo</a><a class="mc-lnk" href="/de/fintech-map/"><i class="fas fa-map"></i>Fintech Map</a>
+          <a class="mc-lnk" href="/de/vergleich/"><i class="fas fa-scale-balanced"></i>Warum VerfiX (DE)</a><a class="mc-lnk" href="/en/comparison/"><i class="fas fa-scale-balanced"></i>Why VerfiX (EN)</a><a class="mc-lnk" href="/fr/comparaison/"><i class="fas fa-scale-balanced"></i>Pourquoi VerfiX (FR)</a></div>
+    </div>
+
+    <div class="nav-r">
+      <div class="lang-sw">
+        <button class="lb on" onclick="setLang('en')">EN</button>
+        <button class="lb" onclick="setLang('de')">DE</button>
+        <button class="lb" onclick="setLang('fr')">FR</button>
+      </div>
+      <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;"><span data-i18n="nav_sales">Talk to Sales</span></a>
+      <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-r"><span data-i18n="nav_demo">Book a Demo</span></a>
+      <button class="ham" id="ham-btn"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+    </div>
+  </div>
+
+  <div id="mob">
+    <span href="/industries">Industries</span>
+    <span href="/solutions">Products &amp; Solutions</span>
+    <span href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway <span style="font-size:.6rem;background:var(--r);color:#fff;padding:.08rem .32rem;border-radius:3px;margin-left:.3rem;">NEW</span></span>
+    <span href="/trust-center">Trust Center</span>
+    <span href="/resources">Resources</span>
+    <span href="/about">Company</span>
+    <span href="/contact">Contact</span>
+    <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-r" style="justify-content:center;margin-top:.2rem;">Book a Demo</a>
+    <div class="mob-lang">
+      <button class="mlb on" onclick="setLang('en')">EN</button>
+      <button class="mlb" onclick="setLang('de')">DE</button>
+      <button class="mlb" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</nav>
+<div style="background:#fff;border-bottom:1px solid var(--bd);"><div class="W" style="display:flex;align-items:center;gap:.5rem;font-size:.76rem;color:var(--lt);padding:.6rem 0;"><i class="fas fa-globe" style="font-size:.7rem;"></i><a href="#" style="font-weight:700;color:var(--r);text-decoration:none;background:var(--rbg,#fde8e8);padding:.16rem .42rem;border-radius:3px;font-size:.72rem;">EN</a><span style="color:var(--bd);">|</span><a href="/de/demo/" style="font-weight:600;color:var(--lt);text-decoration:none;font-size:.75rem;padding:.16rem .42rem;border-radius:3px;">DE</a><a href="/fr/demo/" style="font-weight:600;color:var(--lt);text-decoration:none;font-size:.75rem;padding:.16rem .42rem;border-radius:3px;">FR</a></div></div><section id="main-content" class="np-hero"><div class="W np-hero-inner"><span class="np-kicker"><i class="fas fa-play-circle" style="font-size:.62rem;"></i> Interactive demo</span><h1 style="color:#fff;font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:900;letter-spacing:-.025em;line-height:1.22;margin-bottom:.75rem;">Experience KYC verification live.</h1><p class="np-hero-sub">See how VerfiX performs an identity check in under 3 seconds — secure, FINMA-compliant, Swiss-hosted. No login required.</p><div style="display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.38rem .875rem;"><i class="fas fa-lock" style="color:#4ade80;font-size:.68rem;"></i><span style="font-size:.75rem;color:rgba(255,255,255,.5);">This is an interactive demonstration with sample data. No real personal data is processed or stored.</span></div></div></section><section style="padding:5rem 0;background:var(--off);"><div class="W" style="max-width:820px;"><div class="demo-stage"><div class="demo-stage-top"><div class="demo-dot" style="background:#ff5f57;"></div><div class="demo-dot" style="background:#febc2e;"></div><div class="demo-dot" style="background:#28c840;"></div><div class="demo-stage-title">VerfiX Trust Engine™ — Live Demo</div></div><div class="demo-viewport" id="demo-viewport"><div class="demo-step" id="demo-step-0"><div class="demo-step-num">1</div><div class="demo-step-content"><h4>Document capture</h4><p>The user photographs their passport or ID card. The system recognises the document in real time.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Swiss Passport CH-12345678 recognised</div></div></div><div class="demo-step" id="demo-step-1"><div class="demo-step-num">2</div><div class="demo-step-content"><h4>OCR & verification</h4><p>All fields are automatically extracted: name, date of birth, document number, expiry date.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Name: MÜLLER, Hans · DoB: 15.03.1985 · Expires: 2030</div></div></div><div class="demo-step" id="demo-step-2"><div class="demo-step-num">3</div><div class="demo-step-content"><h4>Biometric matching</h4><p>The document photo is compared to the user's current selfie. Confidence score is calculated.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Biometric match: 98.7% confidence</div></div></div><div class="demo-step" id="demo-step-3"><div class="demo-step-num">4</div><div class="demo-step-content"><h4>Liveness check</h4><p>The system detects whether a living person is present — protection against photos, masks and deepfakes.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ Liveness confirmed · No deepfake detected</div></div></div><div class="demo-step" id="demo-step-4"><div class="demo-step-num">5</div><div class="demo-step-content"><h4>AML screening</h4><p>Name and data are checked against SECO, UN sanctions lists and PEP register.</p><div style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:#4ade80;"><i class="fas fa-check" style="font-size:.62rem;"></i>✓ No match in SECO, UN, OFAC</div></div></div><div class="demo-result-panel" id="demo-result"><div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;"><div style="width:48px;height:48px;background:rgba(74,222,128,.15);border:1.5px solid rgba(74,222,128,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-circle-check" style="color:#4ade80;font-size:1.25rem;"></i></div><div><div style="font-size:1rem;font-weight:800;color:#fff;margin-bottom:.2rem;">Verification complete</div><div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;"><span style="font-family:'IBM Plex Mono',monospace;font-size:.88rem;font-weight:700;color:#4ade80;">Trust Score: 96/100</span><span style="display:inline-flex;align-items:center;gap:.3rem;background:#4ade80;color:#0f1523;font-size:.72rem;font-weight:800;border-radius:4px;padding:.18rem .55rem;">APPROVED</span><span style="font-size:.72rem;color:rgba(255,255,255,.38);">Total duration: 2.8 seconds</span></div></div></div><div style="margin-top:.875rem;padding:.625rem .875rem;background:rgba(255,255,255,.05);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:rgba(255,255,255,.4);">All data processed in Switzerland · FINMA Circular 2016/7 compliant · No deepfake detected</div></div></div><div class="demo-progress"><div class="demo-progress-fill" id="demo-progress-fill"></div></div><div class="demo-controls"><button id="demo-start-btn" class="btn btn-r" style="font-size:.88rem;"><i class="fas fa-play"></i> Start demo</button><button id="demo-reset-btn" class="btn btn-o" style="font-size:.88rem;display:none;"><i class="fas fa-rotate-right"></i> Restart</button></div></div>
+<script>
+(function(){
+  var STEPS = [["Document capture", "The user photographs their passport or ID card. The system recognises the document in real time.", "\u2713 Swiss Passport CH-12345678 recognised"], ["OCR & verification", "All fields are automatically extracted: name, date of birth, document number, expiry date.", "\u2713 Name: M\u00dcLLER, Hans \u00b7 DoB: 15.03.1985 \u00b7 Expires: 2030"], ["Biometric matching", "The document photo is compared to the user's current selfie. Confidence score is calculated.", "\u2713 Biometric match: 98.7% confidence"], ["Liveness check", "The system detects whether a living person is present \u2014 protection against photos, masks and deepfakes.", "\u2713 Liveness confirmed \u00b7 No deepfake detected"], ["AML screening", "Name and data are checked against SECO, UN sanctions lists and PEP register.", "\u2713 No match in SECO, UN, OFAC"]];
+  var current = 0;
+  var timer = null;
+
+  function start() {
+    document.getElementById('demo-start-btn').style.display = 'none';
+    document.getElementById('demo-reset-btn').style.display = 'inline-flex';
+    document.getElementById('demo-result').classList.remove('visible');
+    current = 0;
+    showStep(0);
+  }
+
+  function reset() {
+    clearTimeout(timer);
+    current = 0;
+    document.querySelectorAll('.demo-step').forEach(function(el){
+      el.classList.remove('visible');
+    });
+    document.getElementById('demo-result').classList.remove('visible');
+    document.getElementById('demo-progress-fill').style.width = '0%';
+    document.getElementById('demo-start-btn').style.display = 'inline-flex';
+    document.getElementById('demo-reset-btn').style.display = 'none';
+  }
+
+  function showStep(idx) {
+    if(idx >= STEPS.length) {
+      document.getElementById('demo-progress-fill').style.width = '100%';
+      timer = setTimeout(function(){ document.getElementById('demo-result').classList.add('visible'); }, 400);
+      return;
+    }
+    var steps = document.querySelectorAll('.demo-step');
+    if(steps[idx]) steps[idx].classList.add('visible');
+    var pct = Math.round(((idx+1)/STEPS.length)*90);
+    document.getElementById('demo-progress-fill').style.width = pct + '%';
+    timer = setTimeout(function(){ showStep(idx+1); }, 900);
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var btn = document.getElementById('demo-start-btn');
+    var rbtn = document.getElementById('demo-reset-btn');
+    if(btn) btn.addEventListener('click', start);
+    if(rbtn) rbtn.addEventListener('click', reset);
+  });
+})();
+</script>
+</div></section><section style="padding:5rem 0;background:#fff;"><div class="W"><span class="label" style="margin-bottom:.75rem;display:flex;">How it works</span><h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.5rem;letter-spacing:-.02em;">How it works</h2><p style="color:var(--m);font-size:.9rem;margin-bottom:2rem;">Behind the demo: VerfiX Swiss Trust Infrastructure.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;"><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;background:var(--rbg,#fde8e8);border:1px solid rgba(200,37,42,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-id-card" style="color:var(--r);font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.22rem;">Document verification</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">VerfiX supports over 4,500 document types from 190+ countries. OCR recognition, security feature checks and biometric matching in real time.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;background:var(--rbg,#fde8e8);border:1px solid rgba(200,37,42,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-eye" style="color:var(--r);font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.22rem;">Liveness detection</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Active detection of deepfakes, replay attacks and synthetic voices. Continuously trained with current attack vectors.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;background:var(--rbg,#fde8e8);border:1px solid rgba(200,37,42,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-magnifying-glass-dollar" style="color:var(--r);font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.22rem;">AML screening</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">Real-time checks against SECO, UN, EU, OFAC and PEP register. Adverse media monitoring included.</p></div></div><div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;display:flex;gap:.875rem;"><div style="width:40px;height:40px;background:var(--rbg,#fde8e8);border:1px solid rgba(200,37,42,.2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-gauge-high" style="color:var(--r);font-size:.85rem;"></i></div><div><h4 style="font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.22rem;">Trust Engine™</h4><p style="font-size:.78rem;color:var(--m);line-height:1.6;">All signals feed into a proprietary Trust Score (0–100). Clear decisions in under 3 seconds.</p></div></div></div></div></section><section style="background:var(--n);padding:5rem 0;text-align:center;"><div class="W"><h2 style="color:#fff;font-size:1.5rem;font-weight:800;margin-bottom:.5rem;">Ready for your real integration?</h2><p style="color:rgba(255,255,255,.5);font-size:.9rem;max-width:480px;margin:0 auto 2rem;line-height:1.7;">Book a 30-minute demo with the VerfiX team — tailored to your use case.</p><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Book a demo</a></div></section>
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <div class="social-inner">
+    <div>
+      <div class="soc-label" style="margin-bottom:.38rem;">Follow VerfiX</div>
+      <span class="social-copy">Swiss Trust Infrastructure · @verfix</span>
+    </div>
+    <div class="social-links">
+      <a class="soc-btn soc-li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+      </a>
+      <div class="soc-divider"></div>
+      <a class="soc-btn soc-yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube Channel</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <picture>
+      <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+      <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
+    </picture>
+      <span class="foot-tag">VERIFY · TRUST · SECURE</span>
+      <div class="foot-social">
+        <a class="foot-soc-ico li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" title="VerfiX on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="foot-soc-ico yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" title="VerfiX on YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Products</h4>
+      <span href="/solutions">Customer Onboarding</span>
+      <span href="/solutions">Business Verification</span>
+      <span href="/solutions">Telephone Banking</span>
+      <span href="/solutions">Fraud Intelligence</span>
+      <span href="/">Trust Engine™</span>
+      <span href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway</span>
+    </div>
+    <div class="foot-col">
+      <h4>Industries</h4>
+      <span href="/industries">Banking</span>
+      <span href="/industries">Fintech</span>
+      <span href="/industries">Crypto</span>
+      <span href="/industries">Insurance</span>
+      <span href="/industries">Government</span>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <span href="/resources">Documentation</span>
+      <span href="/trust-center">Trust Center</span>
+      <span href="/resources">Compliance Guides</span>
+      <span href="/resources">Whitepapers</span>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <span href="/about">About</span>
+      <span href="/contact">Contact</span>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    </div>
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <span href="/privacy">Privacy Policy</span>
+      <span href="/terms">Terms of Use</span>
+      <a href="https://status.verfix.ch" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.45);font-size:.8rem;text-decoration:none;">System Status</a>
+      <a href="/trust-center" style="color:rgba(255,255,255,.45);font-size:.8rem;text-decoration:none;">Trust Center</a>
+      <span id="f-imp" href="/impressum" style="display:none;">Impressum</span>
+      <span id="f-dat" href="/datenschutz" style="display:none;">Datenschutz</span>
+      <span id="f-men" href="/mentions-legales" style="display:none;">Mentions légales</span>
+      <span id="f-pol" href="/politique-confidentialite" style="display:none;">Politique de conf.</span>
+      <div style="margin-top:.6rem;display:flex;gap:.38rem;flex-wrap:wrap;">
+        <button class="mlb on" onclick="setLang('en')">EN</button>
+        <button class="mlb" onclick="setLang('de')">DE</button>
+        <button class="mlb" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span class="foot-copy" id="foot-c">© 2025 VerfiX AG · Switzerland · All rights reserved</span>
+    <div class="foot-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+      <a href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i>LinkedIn</a>
+      <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-youtube" style="font-size:.72rem;color:#f87171;"></i>YouTube</a>
+    </div>
+  </div>
+
+  <div class="foot-meta-row">
+    <div class="foot-address">
+      <i class="fas fa-location-dot"></i>
+      <span>VerfiX AG · Av. de Gratta-Paille 2 · CH-1018 Lausanne · Switzerland</span>
+    </div>
+    <div class="foot-partner-logos">
+      <a class="foot-partner-logo" href="https://www.trustvalley.swiss" target="_blank" rel="noopener" title="Trust Valley Partner">
+        <picture>
+          <source srcset="/assets/images/trust-valley.webp" type="image/webp"/>
+          <img src="/assets/images/trust-valley.png" alt="Trust Valley" width="70" height="40" loading="lazy"/>
+        </picture>
+      </a>
+      <a class="foot-partner-logo" href="https://www.innosuisse.ch" target="_blank" rel="noopener" title="Innosuisse">
+        <picture>
+          <source srcset="/assets/images/innosuisse.webp" type="image/webp"/>
+          <img src="/assets/images/innosuisse.jpg" alt="Innosuisse" width="60" height="38" loading="lazy"/>
+        </picture>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+  <script src="/js/main.js" defer></script>
+
+<!-- ── FLOATING DEMO BUTTON ── -->
+<script src="/js/main.js" defer></script>
+<a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Book a Demo</span></a>
+</body>
+</html>

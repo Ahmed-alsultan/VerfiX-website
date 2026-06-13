@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <title>KYB — Vérification d'Entreprise pour Banques Suisses | VerfiX</title>
+  <!-- Google Analytics 4 — G-95ZS424SMP -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-95ZS424SMP', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=None;Secure',
+      send_page_view: true
+    });
+  </script>
+  <!-- End Google Analytics 4 -->
+  <meta name="description" content="Vérification d'entreprise automatisée avec identification des bénéficiaires effectifs, vérification des registres du commerce et screening AML. Conforme LBA Art"/>
+  <meta name="keywords" content="KYC Schweiz, AML Software Schweiz, Identitätsprüfung Schweiz, Identity Verification Switzerland, nFADP compliance, FINMA KYC, digitale Identitätsprüfung"/>
+  <meta name="author" content="VerfiX AG"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://verfix.ch/fr/kyb/"/>
+  <link rel="alternate" hreflang="x-default" href="https://verfix.ch/fr/kyb/"/>
+  <link rel="alternate" hreflang="fr" href="https://verfix.ch/fr/kyb/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://verfix.ch/fr/kyb/"/>
+  <meta property="og:title" content="KYB — Vérification d'Entreprise pour Banques Suisses | VerfiX"/>
+  <meta property="og:description" content="Vérification d'entreprise automatisée avec identification des bénéficiaires effectifs, vérification des registres du commerce et screening AML. Conforme LBA Art. 3 et 4."/>
+  <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="VerfiX"/>
+  <meta property="og:locale" content="en_CH"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="VerfiX — KYC, AML & Identitätsprüfung Software | Swiss Trust Infrastructure"/>
+  <meta name="twitter:description" content="VerfiX ist die Swiss Trust Infrastructure für regulierte Industrien. KYC, KYB, AML-Screening, Betrugsbekämpfung und Trust Engine™ — eine API für Banken, Fintechs und Versicherungen in der Schweiz."/>
+  <meta name="twitter:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C8252A'/><text x='16' y='23' font-family='Arial Black,Arial' font-weight='900' font-size='22' text-anchor='middle' fill='white'>X</text></svg>"/>
+  <!-- <meta name="google-site-verification" content="YOUR_GSC_CODE"/> -->
+
+  <!-- Performance: preload critical assets -->
+  <link rel="preload" href="/css/main.css" as="style"/>
+  <link rel="preload" href="/js/main.js" as="script"/>
+  
+  <!-- Font: preconnect + optimized load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://js.hs-scripts.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  
+  <!-- Critical inline style for font-display:swap override -->
+  <style>
+    @font-face{font-display:swap}
+    body{opacity:1}
+    .rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+    .rv.in{opacity:1;transform:none}
+    .pg{display:none}.pg.on{display:block}
+  </style>
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/css/main.css"/>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://verfix.ch/#organization",
+  "name": "VerfiX AG",
+  "url": "https://verfix.ch",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://verfix.ch/assets/images/verfix-logo.png",
+    "width": 236,
+    "height": 160
+  },
+  "description": "Swiss Trust Infrastructure for Regulated Industries — KYC, KYB, AML, Fraud Intelligence, and Trust Engine™",
+  "foundingDate": "2024",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Lausanne, Switzerland",
+    "addressCountry": "CH"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. de Gratta-Paille 2",
+    "addressLocality": "Lausanne",
+    "postalCode": "CH-1018",
+    "addressRegion": "Vaud",
+    "addressCountry": "CH"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contact@verfix.ch",
+    "contactType": "sales",
+    "availableLanguage": [
+      "English",
+      "German",
+      "French"
+    ]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/verfix/",
+    "https://www.youtube.com/@verfix"
+  ],
+  "areaServed": [
+    "CH",
+    "DE",
+    "AT",
+    "FR",
+    "IT",
+    "NL",
+    "BE",
+    "LU",
+    "EU"
+  ],
+  "knowsAbout": [
+    "KYC",
+    "KYB",
+    "AML",
+    "Identity Verification",
+    "Fraud Prevention",
+    "Compliance",
+    "eIDAS",
+    "nFADP"
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.5197,
+    "longitude": 6.5932
+  },
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Trust Valley",
+      "url": "https://www.trustvalley.swiss",
+      "description": "Swiss cluster for digital trust, privacy and cybersecurity"
+    }
+  ],
+  "funder": {
+    "@type": "Organization",
+    "name": "Innosuisse",
+    "url": "https://www.innosuisse.ch",
+    "description": "Swiss Innovation Agency"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Trust Valley — Lausanne",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de Gratta-Paille 2",
+      "addressLocality": "Lausanne",
+      "postalCode": "CH-1018",
+      "addressCountry": "CH"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://verfix.ch/#website",
+  "url": "https://verfix.ch",
+  "name": "VerfiX",
+  "description": "Swiss Trust Infrastructure for Regulated Industries",
+  "publisher": {
+    "@id": "https://verfix.ch/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://verfix.ch/solutions?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  },
+  "inLanguage": [
+    "en",
+    "de",
+    "fr"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is VerfiX?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX is a Swiss-built trust infrastructure platform that unifies KYC, KYB, AML screening, fraud intelligence, and Trust Engine™ into one API for banks, fintechs, insurers, and regulated organizations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does VerfiX support Swiss data residency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. VerfiX supports Swiss-hosted, dedicated, private cloud, and on-premise deployment models. Identity data can be stored and processed entirely within Switzerland."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries does VerfiX serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX serves banking, fintech, crypto and digital assets, insurance, government, healthcare, telecom, mobility, marketplaces, real estate, education, e-commerce, forex, payments, remittance, and wealth management."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is VerfiX Gateway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX Gateway is one API integration layer for verifying European digital identity credentials under eIDAS 2.0. It is designed for Swiss banks and regulated organizations that need to accept digital identities from multiple EU countries without building separate integrations for each."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is VerfiX GDPR and nFADP compliant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX is designed to support GDPR and Swiss nFADP compliance requirements. It includes configurable data retention, role-based access control, immutable audit logs, and Swiss data residency options."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "fr",
+  "url": "https://verfix.ch/fr/kyb/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que le KYB et en quoi diffère-t-il du KYC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KYB (Know Your Business) est la vérification d'entreprise — l'équivalent de l'identification KYC pour les personnes morales. Tandis que le KYC vérifie l'identité d'un individu, le KYB vérifie les personnes morales (entreprises, fondations, trusts) et leurs bénéficiaires effectifs (UBO). Le KYB comprend typiquement: enregistrement au registre du commerce, structure de la société, administrateurs, bénéficiaires effectifs (&gt;25%), screening AML de la personne morale et de ses personnes clés, ains"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VerfiX KYB est-il conforme aux exigences suisses de la LBA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. La loi suisse sur le blanchiment d'argent (LBA) oblige les instituts surveillés à identifier la partie contractante ainsi qu'à déterminer l' ayant droit économique pour les personnes morales (Art. 4 LBA). VerfiX KYB répond à ces exigences. LBA Art. 3 & 4 FINMA conforme"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps dure une vérification KYB?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La durée dépend de la complexité de la structure de l'entreprise: Structure simple (propriétaire direct, inscription au registre du commerce suisse): 2 à 10 minutes entièrement automatisées Complexité moyenne (plusieurs propriétaires, structure holding): 10 à 30 minutes Structures complexes (holdings internationaux, trusts, fondations): 1 à 4 heures"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels documents et registres d'entreprise sont vérifiés?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX KYB accède à des sources de données officielles: en Suisse (Zefix, registres cantonaux du commerce), dans l'UE (registres nationaux via le réseau BRIS), à l'international (bases de données partenaires pour 180+ pays), ainsi que les listes de sanctions (SECO, ONU, UE, OFAC, OFSI), bases de données PPE et médias défavorables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment l'ayant droit économique (UBO) est-il identifié?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX KYB identifie automatiquement les bénéficiaires effectifs ultimes : analyse de la structure de propriété jusqu'à la personne physique détenant &gt;25% (norme FATF), vérification KYC automatique des personnes identifiées, et documentation de toute la chaîne de propriété comme preuve auditable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le KYB peut-il être intégré dans notre processus d'intégration marchand existant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. VerfiX KYB est disponible via la même API REST que tous les autres produits VerfiX. L'intégration typique prend 1 à 3 semaines . Des options de traitement par lots, de notifications webhook et de flux d'intégration en marque blanche sont disponibles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il en cas de résultats KYB négatifs (sanction, PPE, médias défavorables)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En cas de résultats négatifs, VerfiX KYB déclenche des flux de travail configurables: blocage immédiat pour les sanctions avec notification de l'équipe conformité, escalade vers la direction pour les correspondances PPE, et évaluation des risques pour les médias défavorables. Toutes les décisions sont documentées dans le journal d'audit."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Accueil","item":"https://verfix.ch/"},
+    {"@type":"ListItem","position":2,"name":"Solutions","item":"https://verfix.ch/solutions"},
+    {"@type":"ListItem","position":3,"name":"KYB","item":"https://verfix.ch/fr/kyb/"}
+]}
+</script>
+
+  
+  <!-- ════════════════════════════════════════════════════
+       ZOHO CRM — Web Visitor Tracking
+       HOW TO ACTIVATE:
+       1. In Zoho CRM: Setup → Channels → Web Forms → Web Tabs → SalesIQ
+       2. Or: Zoho SalesIQ → Settings → Installation → copy the script
+       3. Paste your Zoho SalesIQ script here replacing this comment
+       Example:
+       <script type="text/javascript" id="zsiqchat">
+         var $zoho=$zoho || {};
+         $zoho.salesiq = $zoho.salesiq || {widgetcode:"YOUR_WIDGET_CODE",values:{},ready:function(){}};
+         var d=document;s=d.createElement("script");
+         s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+         s.src="https://salesiq.zohopublic.eu/widget";
+         t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
+       </script>
+       ════════════════════════════════════════════════════ -->
+
+  
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ════════════════════════════════════════════════════════
+     COOKIE CONSENT BANNER — PLACEHOLDER
+     INSTRUCTIONS: Integrate your cookie consent tool here.
+     Recommended: Cookiebot (cookiebot.com), CookieFirst, or iubenda.
+     1. Sign up at your chosen provider
+     2. Copy their script tag and paste here, replacing this comment
+     3. Configure consent categories: Necessary, Analytics (GA4), Marketing (HubSpot)
+     4. Set callback: window.loadCalendlyWidget() on analytics consent
+     Sample integration point below — replace with real script:
+     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js"
+       data-cbid="YOUR-COOKIEBOT-ID" data-blockingmode="auto" async></script>
+     ════════════════════════════════════════════════════════ -->
+<div id="ck-bar">
+  <h4>🍪 Cookie Preferences</h4>
+  <span id="ck-txt">We use cookies to improve your experience. See our <a href="/privacy">Privacy Policy</a>.</span>
+  <div id="ck-prefs">
+    <div class="ck-pref-row"><span>Necessary <small style="color:rgba(255,255,255,.3)">(always on)</small></span><label class="ck-toggle"><input type="checkbox" checked disabled/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Analytics</span><label class="ck-toggle"><input type="checkbox" id="ck-analytics"/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Marketing</span><label class="ck-toggle"><input type="checkbox" id="ck-marketing"/><span class="ck-slider"></span></label></div>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-ok" onclick="ckOk()">Accept All</button>
+    <button class="ck-no" onclick="ckNo()">Decline</button>
+    <button class="ck-more" onclick="ckToggle()">Preferences</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav-i">
+    <!-- Logo -->
+    <div class="logo" href="/">
+      <picture>
+      <source srcset="/assets/images/verfix-logo--footer.webp 1x, /assets/images/verfix-logo--footer@2x.webp 2x" type="image/webp"/>
+      <img src="/assets/images/verfix-logo--footer.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
+    </picture>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <!-- INDUSTRIES (most prominent, first) -->
+      <div class="ni" id="ni-ind">
+        <span onclick="toggleMenu('ind')"><span data-i18n="nav_industries">Industries</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-ind" id="mega-ind">
+          <div class="mi-left">
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')">
+              <div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div>
+            </div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')">
+              <div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div>
+            </div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')">
+              <div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div>
+            </div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')">
+              <div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div>
+            </div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')">
+              <div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div>
+            </div>
+            <div class="mi-item" data-ind="health" onmouseenter="showInd('health')">
+              <div class="mi-ico"><i class="fas fa-hospital"></i></div><div><h4>Healthcare</h4></div>
+            </div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')">
+              <div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div>
+            </div>
+            <div class="mi-item" data-ind="mobility" onmouseenter="showInd('mobility')">
+              <div class="mi-ico"><i class="fas fa-car"></i></div><div><h4>Mobility</h4></div>
+            </div>
+            <div class="mi-item" data-ind="mkt" onmouseenter="showInd('mkt')">
+              <div class="mi-ico"><i class="fas fa-store"></i></div><div><h4>Marketplaces</h4></div>
+            </div>
+            <div class="mi-item" data-ind="re" onmouseenter="showInd('re')">
+              <div class="mi-ico"><i class="fas fa-building"></i></div><div><h4>Real Estate</h4></div>
+            </div>
+          </div>
+          <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
+        </div>
+      </div>
+
+      <!-- PRODUCTS (business-centric) -->
+      <div class="ni" id="ni-products">
+        <span onclick="toggleMenu('products')"><span data-i18n="nav_products">Products</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-products" id="mega-products">
+          <div class="mp-left">
+            <div class="mp-col">
+              <h5>Customer Onboarding</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-id-card"></i>Document Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-face-smile"></i>Face Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</div>
+              <h5>Business Verification</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-building"></i>KYB Verification</div>
+              <div class="ml" href="/solutions"><i class="fas fa-sitemap"></i>UBO Verification</div>
+              <h5>Age Verification</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-user-check"></i>Age Validation</div>
+              <div class="ml" href="/solutions"><i class="fas fa-user"></i>Age Estimation</div>
+            </div>
+            <div class="mp-col">
+              <h5>Telephone Banking</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-waveform-lines"></i>Voice Biometrics</div>
+              <div class="ml" href="/solutions"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</div>
+              <h5>Fraud Intelligence</h5>
+              <div class="ml" href="/solutions"><i class="fas fa-robot"></i>Deepfake Detection</div>
+              <div class="ml" href="/solutions"><i class="fas fa-user-slash"></i>Synthetic Identity Detection</div>
+              <div class="ml" href="/solutions"><i class="fas fa-file-shield"></i>Document Fraud Detection</div>
+              <h5>Infrastructure</h5>
+              <div class="ml" href="/"><i class="fas fa-gauge-high"></i>Trust Engine™</div>
+              <div class="ml" href="/solutions"><i class="fas fa-sliders"></i>Risk Rules Engine</div>
+              <div class="ml" href="/solutions"><i class="fas fa-shuffle"></i>Multi-Provider Orchestration</div>
+            </div>
+          <div style="border-top:1px solid var(--bd);margin-top:.75rem;padding-top:.75rem;"><div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lt);margin-bottom:.5rem;">Produktseiten</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.25rem;"><a class="mc-lnk" href="/de/produkte/stimmverifikation/"><i class="fas fa-waveform-lines"></i>Stimmverifikation DE</a><a class="mc-lnk" href="/en/products/voice-verification/"><i class="fas fa-waveform-lines"></i>Voice Verification EN</a><a class="mc-lnk" href="/de/produkte/video-identifikation/"><i class="fas fa-video"></i>Video-Identifikation DE</a><a class="mc-lnk" href="/en/products/video-identification/"><i class="fas fa-video"></i>Video Identification EN</a><a class="mc-lnk" href="/de/kyb/"><i class="fas fa-building"></i>KYB DE</a><a class="mc-lnk" href="/en/kyb/"><i class="fas fa-building"></i>KYB EN</a>
+          <a class="mc-lnk" href="/de/whitepaper-nfadp/"><i class="fas fa-file-lines"></i>nFADP Whitepaper (DE)</a><a class="mc-lnk" href="/en/whitepaper-nfadp/"><i class="fas fa-file-lines"></i>nFADP Whitepaper (EN)</a></div></div></div>
+          <div class="mp-right">
+            <h5>Trust Infrastructure</h5>
+            <div class="mp-feat"><h4>One API for all identity</h4><p>Document, face, voice, AML, KYB, and risk — orchestrated through a single endpoint.</p></div>
+            <div class="mp-feat"><h4>Swiss-first deployment</h4><p>SaaS, Swiss dedicated, private cloud, or on-premise.</p></div>
+            <div class="mp-gw">
+              <div class="mp-gw-tag">New Product</div>
+              <h4>VerfiX Gateway</h4>
+              <p>The trust layer between digital identity ecosystems and regulated organizations.</p>
+              <a href="/gateway" class="btn btn-r btn-sm">Explore Gateway</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOLUTIONS -->
+      <div class="ni" id="ni-sol">
+        <span onclick="toggleMenu('sol')"><span data-i18n="nav_solutions">Solutions</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-sol">
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></div>
+          <div class="sol-card" href="/solutions"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></div>
+          <div class="sol-card" href="/"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine™</h4><p>Multi-signal risk decision framework.</p></div></div>
+        </div>
+      </div>
+
+      <!-- RESOURCES -->
+      <div class="ni" id="ni-res">
+        <span onclick="toggleMenu('res')"><span data-i18n="nav_resources">Resources</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-res" style="min-width:300px;padding:1.5rem 1.75rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Resources</h5>
+          <div class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</div>
+          <div class="ml" href="/resources"><i class="fas fa-book"></i>Documentation</div>
+          <div class="ml" href="/resources"><i class="fas fa-file-lines"></i>Compliance Guides</div>
+          <div class="ml" href="/resources"><i class="fas fa-file-pdf"></i>Whitepapers</div>
+          <div class="ml" href="/resources"><i class="fas fa-newspaper"></i>Product Updates</div>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="ni" id="ni-co">
+        <span onclick="toggleMenu('co')"><span data-i18n="nav_company">Company</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-co" style="min-width:280px;padding:1.5rem 1.75rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
+          <div class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</div>
+          <div class="ml" href="/about"><i class="fas fa-users"></i>Leadership</div>
+          <div class="ml" href="/contact"><i class="fas fa-envelope"></i>Contact</div>
+        </div>
+      </div>
+
+      <div class="ni"><a href="/contact">Contact</a>
+          <a class="mc-lnk" href="/de/trust-center/"><i class="fas fa-shield-halved"></i>Trust Center (DE)</a><a class="mc-lnk" href="/en/trust-center/"><i class="fas fa-shield-halved"></i>Trust Center (EN)</a><a class="mc-lnk" href="/de/partner/"><i class="fas fa-handshake"></i>Partner Programm</a><a class="mc-lnk" href="/de/demo/"><i class="fas fa-play-circle"></i>Live Demo</a><a class="mc-lnk" href="/de/fintech-map/"><i class="fas fa-map"></i>Fintech Map</a>
+          <a class="mc-lnk" href="/de/vergleich/"><i class="fas fa-scale-balanced"></i>Warum VerfiX (DE)</a><a class="mc-lnk" href="/en/comparison/"><i class="fas fa-scale-balanced"></i>Why VerfiX (EN)</a><a class="mc-lnk" href="/fr/comparaison/"><i class="fas fa-scale-balanced"></i>Pourquoi VerfiX (FR)</a></div>
+    </div>
+
+    <div class="nav-r">
+      <div class="lang-sw">
+        <button class="lb on" onclick="setLang('en')">EN</button>
+        <button class="lb" onclick="setLang('de')">DE</button>
+        <button class="lb" onclick="setLang('fr')">FR</button>
+      </div>
+      <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;"><span data-i18n="nav_sales">Talk to Sales</span></a>
+      <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-r"><span data-i18n="nav_demo">Book a Demo</span></a>
+      <button class="ham" id="ham-btn"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+    </div>
+  </div>
+
+  <div id="mob">
+    <span href="/industries">Industries</span>
+    <span href="/solutions">Products &amp; Solutions</span>
+    <span href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway <span style="font-size:.6rem;background:var(--r);color:#fff;padding:.08rem .32rem;border-radius:3px;margin-left:.3rem;">NEW</span></span>
+    <span href="/trust-center">Trust Center</span>
+    <span href="/resources">Resources</span>
+    <span href="/about">Company</span>
+    <span href="/contact">Contact</span>
+    <a onclick="nav(\'contact\');trackCTA(\'talk_to_sales\')"  class="btn btn-r" style="justify-content:center;margin-top:.2rem;">Book a Demo</a>
+    <div class="mob-lang">
+      <button class="mlb on" onclick="setLang('en')">EN</button>
+      <button class="mlb" onclick="setLang('de')">DE</button>
+      <button class="mlb" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</nav>
+<div style="background:#fff;border-bottom:1px solid var(--bd);"><div class="W" style="display:flex;align-items:center;gap:.5rem;font-size:.76rem;color:var(--lt);padding:.62rem 0;"><i class="fas fa-globe" style="font-size:.7rem;"></i><span class="lang-switcher-strip" style="border:none;padding:0;margin:0;"><a href="https://verfix.ch/fr/kyb/" class="current">FR</a><span style="color:var(--bd);">|</span><a href="/de/kyb/">DE</a><span style="color:var(--bd);">|</span><a href="/en/kyb/">EN</a></span></div></div><section id="main-content" class="product-hero"><div class="W"><div class="product-hero-g"><div><div class="product-hero-badge"><i class="fas fa-building"></i> Produit · Know Your Business</div><h1>KYB — Vérification d'Entreprise</h1><p class="product-hero-sub">Vérification d'entreprise automatisée avec identification des bénéficiaires effectifs, vérification des registres du commerce et screening AML. Conforme LBA Art. 3 et 4.</p><div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem;"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Réserver une démo</a><a href="/api" class="btn btn-wo btn-lg">Explorer l'API</a></div><div class="product-hero-stats" style="margin-top:2rem;"><div><div class="ph-stat-n">180+</div><div class="ph-stat-l">Pays & registres</div></div><div><div class="ph-stat-n">&lt; 10min</div><div class="ph-stat-l">KYB simple</div></div><div><div class="ph-stat-n">100%</div><div class="ph-stat-l">Piste d'audit</div></div><div><div class="ph-stat-n">LBA</div><div class="ph-stat-l">Art. 3 & 4</div></div></div></div><div class="product-hero-visual"><div class="pvrow"><div class="pvrow-ico"><i class="fas fa-building"></i></div><div class="pvrow-txt">Registre du commerce vérifié</div><div class="pvrow-score" style="color:#4ade80;">&#10003;</div></div><div class="pvrow"><div class="pvrow-ico"><i class="fas fa-sitemap"></i></div><div class="pvrow-txt">UBO identifié</div><div class="pvrow-score" style="color:#4ade80;">&#10003;</div></div><div class="pvrow"><div class="pvrow-ico"><i class="fas fa-magnifying-glass-dollar"></i></div><div class="pvrow-txt">AML clair</div><div class="pvrow-score" style="color:#4ade80;">&#10003;</div></div><div class="pvrow"><div class="pvrow-ico"><i class="fas fa-circle-check"></i></div><div class="pvrow-txt">KYB approuvé</div><div class="pvrow-score" style="color:#4ade80;">&#10003;</div></div></div></div></div></section><div class="compliance-strip"><div class="W"><div class="compliance-inner"><span class="compliance-label">Compliance &amp; Standards</span><div class="compliance-badges"><span class="c-badge"><i class="fas fa-check"></i>LBA Art. 3 & 4</span><span class="c-badge"><i class="fas fa-check"></i>FINMA</span><span class="c-badge"><i class="fas fa-check"></i>Normes GAFI</span><span class="c-badge"><i class="fas fa-check"></i>nLPD / nFADP</span><span class="c-badge"><i class="fas fa-check"></i>Données en Suisse</span><span class="c-badge"><i class="fas fa-check"></i>Sanctions SECO</span></div></div></div></div><section style="padding:4.5rem 0;background:#fff;"><div class="W"><div style="max-width:760px;"><h2 style="margin-bottom:1rem;">KYB — Vérification d'Entreprise</h2><p style="font-size:.96rem;color:var(--m);line-height:1.82;">VerfiX KYB automatise la vérification complète des entreprises — de la vérification du registre du commerce à l'identification des UBO jusqu'au screening AML de toutes les personnes clés. La solution est entièrement conforme à la LBA Art. 3 et 4, aux directives GAFI et aux exigences FINMA.</p></div></div></section><section class="how-section"><div class="W"><span class="label" style="display:flex;margin-bottom:.75rem;">Comment ça fonctionne</span><h2>En 4 étapes</h2><div class="how-grid" style="margin-top:2rem;"><div class="how-step"><div class="how-num">1</div><div class="how-title">Données entreprise</div><div class="how-desc">Saisir IDE/CHE ou raison sociale</div></div><div class="how-step"><div class="how-num">2</div><div class="how-title">Vérification registre</div><div class="how-desc">Contrôle Zefix & registres internationaux</div></div><div class="how-step"><div class="how-num">3</div><div class="how-title">Identification UBO</div><div class="how-desc">Structure de propriété jusqu'à la personne physique</div></div><div class="how-step"><div class="how-num">4</div><div class="how-title">Screening AML</div><div class="how-desc">Sanctions, PPE & médias défavorables pour toutes les personnes clés</div></div></div></div></section><section class="faq-section" id="faq"><div class="W"><div class="faq-header"><span class="label" style="justify-content:center;margin-bottom:.75rem;">FAQ</span><h2>Questions fréquentes sur la vérification KYB</h2><p>Tout sur la vérification d'entreprise (KYB) de VerfiX — processus, réglementation et bénéficiaires effectifs.</p></div><div class="faq-list" role="list"><div class="faq-item" id="kyb-fr-0">
+  <h3>
+    <button
+      class="faq-q"
+      id="kyb-fr-0-btn"
+      aria-expanded="false"
+      aria-controls="kyb-fr-0-p"
+      onclick="faqToggle(this)"
+    >
+      <span>Qu'est-ce que le KYB et en quoi diffère-t-il du KYC?</span>
+      <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+    </button>
+  </h3>
+  <div
+    class="faq-a-wrap"
+    id="kyb-fr-0-p"
+    role="region"
+    aria-labelledby="kyb-fr-0-btn"
+  >
+    <div class="faq-a-inner">
+      <div class="faq-a">
+        <p><strong>KYB (Know Your Business)</strong> est la vérification d'entreprise — l'équivalent de l'identification KYC pour les personnes morales. Tandis que le KYC vérifie l'identité d'un individu, le KYB vérifie les personnes morales (entreprises, fondations, trusts) et leurs bénéficiaires effectifs (UBO).</p><p>Le KYB comprend typiquement: enregistrement au registre du commerce, structure de la société, administrateurs, bénéficiaires effectifs (&gt;25%), screening AML de la personne morale et de ses personnes clés, ainsi que vérification des sanctions et des PPE.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="faq-item" id="kyb-fr-1">
+  <h3>
+    <button
+      class="faq-q"
+      id="kyb-fr-1-btn"
+      aria-expanded="false"
+      aria-controls="kyb-fr-1-p"
+      onclick="faqToggle(this)"
+    >
+      <span>VerfiX KYB est-il conforme aux exigences suisses de la LBA?</span>
+      <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+    </button>
+  </h3>
+  <div
+    class="faq-a-wrap"
+    id="kyb-fr-1-p"
+    role="region"
+    aria-labelledby="kyb-fr-1-btn"
+  >
+    <div class="faq-a-inner">
+      <div class="faq-a">
+        <p>Oui. La loi suisse sur le blanchiment d'argent (LBA) oblige les instituts surveillés à identifier la partie contractante ainsi qu'à déterminer l'<strong>ayant droit économique</strong> pour les personnes morales (Art. 4 LBA). VerfiX KYB répond à ces exigences.</p><span class="faq-badge"><i class="fas fa-check"></i>LBA Art. 3 & 4</span><span class="faq-badge-green faq-badge" style="margin-left:.38rem;"><i class="fas fa-check"></i>FINMA conforme</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="faq-item" id="kyb-fr-2">
+  <h3>
+    <button
+      class="faq-q"
+      id="kyb-fr-2-btn"
+      aria-expanded="false"
+      aria-controls="kyb-fr-2-p"
+      onclick="faqToggle(this)"
+    >
+      <span>Combien de temps dure une vérification KYB?</span>
+      <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+    </button>
+  </h3>
+  <div
+    class="faq-a-wrap"
+    id="kyb-fr-2-p"
+    role="region"
+    aria-labelledby="kyb-fr-2-btn"
+  >
+    <div class="faq-a-inner">
+      <div class="faq-a">
+        <p>La durée dépend de la complexité de la structure de l'entreprise:</p><ul><li><strong>Structure simple</strong> (propriétaire direct, inscription au registre du commerce suisse): <strong>2 à 10 minutes</strong> entièrement automatisées</li><li><strong>Complexité moyenne</strong> (plusieurs propriétaires, structure holding): <strong>10 à 30 minutes</strong></li><li><strong>Structures complexes</strong> (holdings internationaux, trusts, fondations): <strong>1 à 4 heures</strong></li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="faq-item" id="kyb-fr-3">
+  <h3>
+    <button
+      class="faq-q"
+      id="kyb-fr-3-btn"
+      aria-expanded="false"
+      aria-controls="kyb-fr-3-p"
+      onclick="faqToggle(this)"
+    >
+      <span>Quels documents et registres d'entreprise sont vérifiés?</span>
+      <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+    </button>
+  </h3>
+  <div
+    class="faq-a-wrap"
+    id="kyb-fr-3-p"
+    role="region"
+    aria-labelledby="kyb-fr-3-btn"
+  >
+    <div class="faq-a-inner">
+      <div class="faq-a">
+        <p>VerfiX KYB accède à des sources de données officielles: en Suisse (Zefix, registres cantonaux du commerce), dans l'UE (registres nationaux via le réseau BRIS), à l'international (bases de données partenaires pour 180+ pays), ainsi que les listes de sanctions (SECO, ONU, UE, OFAC, OFSI), bases de données PPE et médias défavorables.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="faq-item" id="kyb-fr-4">
+  <h3>
+    <button
+      class="faq-q"
+      id="kyb-fr-4-btn"
+      aria-expanded="false"
+      aria-controls="kyb-fr-4-p"
+      onclick="faqToggle(this)"
+    >
+      <span>Comment l'ayant droit économique (UBO) est-il identifié?</span>
+      <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+    </button>
+  </h3>
+  <div
+    class="faq-a-wrap"
+    id="kyb-fr-4-p"
+    role="region"
+    aria-labelledby="kyb-fr-4-btn"
+  >
+    <div class="faq-a-inner">
+      <div class="faq-a">
+        <p>VerfiX KYB identifie automatiquement les <strong>bénéficiaires effectifs ultimes</strong>: analyse de la structure de propriété jusqu'à la personne physique détenant &gt;25% (norme FATF), vérification KYC automatique des personnes identifiées, et documentation de toute la chaîne de propriété comme preuve auditable.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="faq-item" id="kyb-fr-5">
+  <h3>
+    <button
+      class="faq-q"
+      id="kyb-fr-5-btn"
+      aria-expanded="false"
+      aria-controls="kyb-fr-5-p"
+      onclick="faqToggle(this)"
+    >
+      <span>Le KYB peut-il être intégré dans notre processus d'intégration marchand existant?</span>
+      <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+    </button>
+  </h3>
+  <div
+    class="faq-a-wrap"
+    id="kyb-fr-5-p"
+    role="region"
+    aria-labelledby="kyb-fr-5-btn"
+  >
+    <div class="faq-a-inner">
+      <div class="faq-a">
+        <p>Oui. VerfiX KYB est disponible via la même API REST que tous les autres produits VerfiX. L'intégration typique prend <strong>1 à 3 semaines</strong>. Des options de traitement par lots, de notifications webhook et de flux d'intégration en marque blanche sont disponibles.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="faq-item" id="kyb-fr-6">
+  <h3>
+    <button
+      class="faq-q"
+      id="kyb-fr-6-btn"
+      aria-expanded="false"
+      aria-controls="kyb-fr-6-p"
+      onclick="faqToggle(this)"
+    >
+      <span>Que se passe-t-il en cas de résultats KYB négatifs (sanction, PPE, médias défavorables)?</span>
+      <span class="faq-icon" aria-hidden="true"><i class="fas fa-plus"></i></span>
+    </button>
+  </h3>
+  <div
+    class="faq-a-wrap"
+    id="kyb-fr-6-p"
+    role="region"
+    aria-labelledby="kyb-fr-6-btn"
+  >
+    <div class="faq-a-inner">
+      <div class="faq-a">
+        <p>En cas de résultats négatifs, VerfiX KYB déclenche des flux de travail configurables: blocage immédiat pour les sanctions avec notification de l'équipe conformité, escalade vers la direction pour les correspondances PPE, et évaluation des risques pour les médias défavorables. Toutes les décisions sont documentées dans le journal d'audit.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div></div></section>
+<script>
+/* FAQ accordion — VerfiX */
+function faqToggle(btn) {
+  var item   = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  /* Close all in this list */
+  var list = item.closest('.faq-list');
+  list.querySelectorAll('.faq-item').forEach(function(el) {
+    el.classList.remove('open');
+    el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.focus();
+  }
+}
+/* Arrow-key navigation */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.faq-list').forEach(function (list) {
+    var btns = Array.from(list.querySelectorAll('.faq-q'));
+    btns.forEach(function (btn, i) {
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown') { e.preventDefault(); if (btns[i + 1]) btns[i + 1].focus(); }
+        if (e.key === 'ArrowUp')   { e.preventDefault(); if (btns[i - 1]) btns[i - 1].focus(); }
+        if (e.key === 'Home')      { e.preventDefault(); btns[0].focus(); }
+        if (e.key === 'End')       { e.preventDefault(); btns[btns.length - 1].focus(); }
+      });
+    });
+  });
+});
+</script>
+<section class="product-cta"><div class="W"><h2>Vérification KYB pour votre institution</h2><p>Automatisez la vérification de vos entreprises clientes avec VerfiX — conforme LBA, rapide et avec piste d'audit complète.</p><div class="product-cta-btns"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Réserver une démo</a><a href="/contact" class="btn btn-wo btn-lg"><i class="fas fa-envelope"></i> Contact</a></div></div></section>
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <div class="social-inner">
+    <div>
+      <div class="soc-label" style="margin-bottom:.38rem;">Follow VerfiX</div>
+      <span class="social-copy">Swiss Trust Infrastructure · @verfix</span>
+    </div>
+    <div class="social-links">
+      <a class="soc-btn soc-li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+      </a>
+      <div class="soc-divider"></div>
+      <a class="soc-btn soc-yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube Channel</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <picture>
+      <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+      <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
+    </picture>
+      <span class="foot-tag">VERIFY · TRUST · SECURE</span>
+      <div class="foot-social">
+        <a class="foot-soc-ico li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" title="VerfiX on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="foot-soc-ico yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" title="VerfiX on YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Products</h4>
+      <span href="/solutions">Customer Onboarding</span>
+      <span href="/solutions">Business Verification</span>
+      <span href="/solutions">Telephone Banking</span>
+      <span href="/solutions">Fraud Intelligence</span>
+      <span href="/">Trust Engine™</span>
+      <span href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway</span>
+    </div>
+    <div class="foot-col">
+      <h4>Industries</h4>
+      <span href="/industries">Banking</span>
+      <span href="/industries">Fintech</span>
+      <span href="/industries">Crypto</span>
+      <span href="/industries">Insurance</span>
+      <span href="/industries">Government</span>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <span href="/resources">Documentation</span>
+      <span href="/trust-center">Trust Center</span>
+      <span href="/resources">Compliance Guides</span>
+      <span href="/resources">Whitepapers</span>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <span href="/about">About</span>
+      <span href="/contact">Contact</span>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    </div>
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <span href="/privacy">Privacy Policy</span>
+      <span href="/terms">Terms of Use</span>
+      <a href="https://status.verfix.ch" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.45);font-size:.8rem;text-decoration:none;">System Status</a>
+      <a href="/trust-center" style="color:rgba(255,255,255,.45);font-size:.8rem;text-decoration:none;">Trust Center</a>
+      <span id="f-imp" href="/impressum" style="display:none;">Impressum</span>
+      <span id="f-dat" href="/datenschutz" style="display:none;">Datenschutz</span>
+      <span id="f-men" href="/mentions-legales" style="display:none;">Mentions légales</span>
+      <span id="f-pol" href="/politique-confidentialite" style="display:none;">Politique de conf.</span>
+      <div style="margin-top:.6rem;display:flex;gap:.38rem;flex-wrap:wrap;">
+        <button class="mlb on" onclick="setLang('en')">EN</button>
+        <button class="mlb" onclick="setLang('de')">DE</button>
+        <button class="mlb" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span class="foot-copy" id="foot-c">© 2025 VerfiX AG · Switzerland · All rights reserved</span>
+    <div class="foot-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+      <a href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i>LinkedIn</a>
+      <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-youtube" style="font-size:.72rem;color:#f87171;"></i>YouTube</a>
+    </div>
+  </div>
+
+  <div class="foot-meta-row">
+    <div class="foot-address">
+      <i class="fas fa-location-dot"></i>
+      <span>VerfiX AG · Av. de Gratta-Paille 2 · CH-1018 Lausanne · Switzerland</span>
+    </div>
+    <div class="foot-partner-logos">
+      <a class="foot-partner-logo" href="https://www.trustvalley.swiss" target="_blank" rel="noopener" title="Trust Valley Partner">
+        <picture>
+          <source srcset="/assets/images/trust-valley.webp" type="image/webp"/>
+          <img src="/assets/images/trust-valley.png" alt="Trust Valley" width="70" height="40" loading="lazy"/>
+        </picture>
+      </a>
+      <a class="foot-partner-logo" href="https://www.innosuisse.ch" target="_blank" rel="noopener" title="Innosuisse">
+        <picture>
+          <source srcset="/assets/images/innosuisse.webp" type="image/webp"/>
+          <img src="/assets/images/innosuisse.jpg" alt="Innosuisse" width="60" height="38" loading="lazy"/>
+        </picture>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+  <script src="/js/main.js" defer></script>
+
+<script src="/js/main.js" defer></script>
+
+<!-- ── FLOATING DEMO BUTTON ── -->
+<a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" aria-label="Réserver une démo"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Réserver une démo</span></a>
+</body>
+</html>
