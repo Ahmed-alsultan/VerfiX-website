@@ -3,6 +3,14 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/404",
+      "destination": "/404.html"
+    },
+    {
+      "source": "/404/",
+      "destination": "/404.html"
+    },
+    {
       "source": "/products/voice-verification",
       "destination": "/products/voice-verification/index.html"
     },
@@ -397,6 +405,10 @@
     {
       "source": "/politique-confidentialite",
       "destination": "/politique-confidentialite.html"
+    },
+    {
+      "source": "/products/:path*",
+      "destination": "/solutions.html"
     }
   ],
   "headers": [

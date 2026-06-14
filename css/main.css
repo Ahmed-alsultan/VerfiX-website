@@ -1302,3 +1302,26 @@ a.nav-logo,
   background: rgba(200, 37, 42, 0.15);
   border-color: rgba(200, 37, 42, 0.3);
 }
+
+
+/* ── Spec additions: display helpers & overrides ─────────────────── */
+
+/* .mega.open — alias for JS classList.add('open') on mega element directly.
+   The primary open state is .ni.open .mega (opacity/visibility transitions).
+   This alias ensures direct-class toggling also works. */
+.mega.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Cookie preferences panel open state */
+#ck-prefs.open {
+  display: block;
+}
+
+/* Cookie bar: hide when consent given (JS adds .hidden) */
+#ck-bar.hidden {
+  display: none !important;
+}
