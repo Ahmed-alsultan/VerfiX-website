@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Business Continuity Overview | VerfiX AG</title>
+  <meta name="description" content="Platform resilience, RTO/RPO targets, backup strategy, and HA architecture">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 26 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › Business Continuity Overview</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 26 of 30</div>
+    <h1>Business Continuity Overview</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">Platform resilience, RTO/RPO targets, backup strategy, and HA architecture</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>Business Continuity Overview</p>
+<p>Platform Resilience and Recovery Capabilities</p>
+<h2>Business Continuity Overview — VerfiX AG</h2>
+<p>This document describes VerfiX AG's approach to business continuity, platform resilience, and recovery capabilities. It is intended for enterprise customers conducting due diligence on the operational resilience of the VerfiX identity verification platform.</p>
+<h3>Platform Resilience Architecture</h3>
+<p>The VerfiX platform is designed for high availability through architectural redundancy at all layers:</p>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Layer</th>
+<th>Resilience approach</th>
+</tr></thead><tbody>
+<tr>
+<td>Data centre</td>
+<td>Primary and secondary Swiss data centres in separate geographic locations. Automatic failover on primary site failure.</td>
+</tr>
+<tr class="alt">
+<td>Compute</td>
+<td>Stateless service architecture enables horizontal scaling. No single server is a single point of failure.</td>
+</tr>
+<tr>
+<td>Data storage</td>
+<td>Audit trail and compliance records replicated synchronously to secondary location. No risk of data loss on primary failure.</td>
+</tr>
+<tr class="alt">
+<td>Network</td>
+<td>Redundant network paths between data centres and to internet exchange. Single network path failure does not affect service.</td>
+</tr>
+<tr>
+<td>API gateway</td>
+<td>Load-balanced across multiple instances. Automatic rerouting on instance failure.</td>
+</tr>
+<tr class="alt">
+<td>DNS</td>
+<td>Multiple DNS providers. Geographic DNS distribution for optimal routing.</td>
+</tr>
+</tbody></table></div>
+<h3>Recovery Time and Recovery Point Objectives</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Scenario</th>
+<th>RTO (target)</th>
+<th>RPO (target)</th>
+</tr></thead><tbody>
+<tr>
+<td>Single server failure</td>
+<td>&lt;1 minute (automatic failover)</td>
+<td>Zero (stateless — no data at risk)</td>
+</tr>
+<tr class="alt">
+<td>Single data centre failure</td>
+<td>&lt;15 minutes (DNS failover to secondary)</td>
+<td>&lt;1 minute (synchronous replication)</td>
+</tr>
+<tr>
+<td>Full platform rebuild (catastrophic)</td>
+<td>&lt;4 hours</td>
+<td>Less than 24 hours (daily backup restore)</td>
+</tr>
+<tr class="alt">
+<td>Audit trail corruption</td>
+<td>N/A — tamper-evident. Corruption detectable.</td>
+<td>Zero (synchronous replication to secondary)</td>
+</tr>
+</tbody></table></div>
+<p>Note: RTO and RPO targets are design objectives. Specific contractual SLA commitments are defined in the Service Agreement.</p>
+<h3>Data Backup and Recovery</h3>
+<ul><li><span class="li-arrow">›</span><span>Audit trail records: Replicated synchronously to secondary Swiss data centre. Point-in-time recovery possible.</span></li><li><span class="li-arrow">›</span><span>Configuration data: Backed up daily to secondary location. Encrypted. Tested quarterly.</span></li><li><span class="li-arrow">›</span><span>Customer data: Subject to retention periods defined in the DPA. Backups are encrypted and access-controlled.</span></li><li><span class="li-arrow">›</span><span>Recovery testing: Backup restoration tests conducted quarterly. Results documented.</span></li></ul>
+<h3>Incident and Outage Response</h3>
+<p>In the event of a service disruption:</p>
+<ul><li><span class="li-arrow">›</span><span>Automated monitoring detects the disruption and triggers alerts to the on-call operations team within minutes.</span></li><li><span class="li-arrow">›</span><span>On-call team assesses severity and initiates the appropriate response track per the Incident Response Policy.</span></li><li><span class="li-arrow">›</span><span>Customers are notified of significant service disruptions via the status page (planned: status.verfix.ch) and direct notification for Critical incidents.</span></li><li><span class="li-arrow">›</span><span>Resolution is prioritised based on customer impact and severity classification.</span></li><li><span class="li-arrow">›</span><span>Post-incident review conducted and report made available to affected customers.</span></li></ul>
+<h3>Planned Maintenance</h3>
+<p>Planned maintenance requiring service interruption is:</p>
+<ul><li><span class="li-arrow">›</span><span>Communicated to customers with at least 7 days' advance notice</span></li><li><span class="li-arrow">›</span><span>Scheduled during periods of low usage (weekends or off-peak hours for the relevant customer timezone)</span></li><li><span class="li-arrow">›</span><span>Limited in duration to the minimum necessary</span></li><li><span class="li-arrow">›</span><span>Cancelled or postponed if customer impact assessment indicates unacceptable risk</span></li></ul>
+<h3>Vendor and Supply Chain Resilience</h3>
+<ul><li><span class="li-arrow">›</span><span>VerfiX maintains alternative options for critical infrastructure components to avoid single-vendor dependency</span></li><li><span class="li-arrow">›</span><span>Sub-processor resilience is assessed as part of the sub-processor due diligence process</span></li><li><span class="li-arrow">›</span><span>Critical third-party services (AML list providers, registry APIs) have documented fallback procedures for unavailability</span></li></ul>
+<h3>Customer Responsibilities</h3>
+<p>Enterprise customers can enhance their resilience by:</p>
+<ul><li><span class="li-arrow">›</span><span>Implementing webhook retry logic with exponential backoff in their integration to handle temporary API unavailability</span></li><li><span class="li-arrow">›</span><span>Designing onboarding workflows with a graceful degradation mode for periods of reduced verification capacity</span></li><li><span class="li-arrow">›</span><span>Storing verification_id and audit_id immediately on receipt, before proceeding with downstream processing</span></li><li><span class="li-arrow">›</span><span>Subscribing to VerfiX status notifications (when available) for advance awareness of maintenance windows</span></li></ul>
+<p>contact@verfix.ch  |  verfix.ch</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

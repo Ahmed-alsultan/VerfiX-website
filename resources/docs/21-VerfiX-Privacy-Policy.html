@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy | VerfiX AG</title>
+  <meta name="description" content="How VerfiX AG processes and protects personal data under nFADP">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 21 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › Privacy Policy</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 21 of 30</div>
+    <h1>Privacy Policy</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">How VerfiX AG processes and protects personal data under nFADP</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>Privacy Policy</p>
+<p>VerfiX AG — Data Protection Notice</p>
+<h2>Privacy Policy — VerfiX AG</h2>
+<p>Last updated: June 2025</p>
+<p>This Privacy Policy describes how VerfiX AG (&quot;VerfiX&quot;, &quot;we&quot;, &quot;us&quot;) collects, processes, and protects personal data in connection with our identity verification platform and website (verfix.ch). It applies to:</p>
+<ul><li><span class="li-arrow">›</span><span>Visitors to verfix.ch</span></li><li><span class="li-arrow">›</span><span>Individuals who contact VerfiX for product information, demonstrations, or support</span></li><li><span class="li-arrow">›</span><span>Employees and contractors of organisations that use the VerfiX platform (customer users)</span></li></ul>
+<p>It does not apply to individuals whose identity is verified through the VerfiX platform on behalf of VerfiX's customers. Processing of those individuals' data is governed by the privacy policies of the relevant customer (the data controller) and the Data Processing Agreement between VerfiX and that customer.</p>
+<h3>1. Identity and Contact Details of the Controller</h3>
+<p>VerfiX AG is the data controller for personal data processed in connection with the VerfiX website and customer relationship management. Contact for data protection matters:</p>
+<p>VerfiX AG  |  privacy@verfix.ch  |  verfix.ch</p>
+<h3>2. Categories of Personal Data Processed</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Category</th>
+<th>Examples</th>
+<th>Processing purpose</th>
+</tr></thead><tbody>
+<tr>
+<td>Contact and enquiry data</td>
+<td>Name, email, company, phone, content of enquiry</td>
+<td>Responding to enquiries, providing product demonstrations, managing the customer relationship</td>
+</tr>
+<tr class="alt">
+<td>Customer user account data</td>
+<td>Name, email, company, job title, dashboard access credentials</td>
+<td>Providing access to the VerfiX customer dashboard and platform management</td>
+</tr>
+<tr>
+<td>Technical and usage data</td>
+<td>IP address, browser type, pages visited, session duration</td>
+<td>Website analytics, platform security monitoring, fraud prevention</td>
+</tr>
+<tr class="alt">
+<td>Communication data</td>
+<td>Email and call records for support and account management</td>
+<td>Customer support, compliance with communication obligations</td>
+</tr>
+</tbody></table></div>
+<h3>3. Legal Basis for Processing</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Processing activity</th>
+<th>Legal basis (nFADP)</th>
+</tr></thead><tbody>
+<tr>
+<td>Responding to enquiries and providing demonstrations</td>
+<td>Consent (by submitting the contact form) / Legitimate interest in developing the business relationship</td>
+</tr>
+<tr class="alt">
+<td>Managing customer user accounts</td>
+<td>Performance of contract (the service agreement between VerfiX and the customer organisation)</td>
+</tr>
+<tr>
+<td>Website analytics</td>
+<td>Legitimate interest in understanding website usage and improving the platform</td>
+</tr>
+<tr class="alt">
+<td>Platform security monitoring</td>
+<td>Legitimate interest in protecting the platform and customer data from unauthorised access</td>
+</tr>
+<tr>
+<td>Marketing communications (where applicable)</td>
+<td>Consent (where required) / Legitimate interest (for existing customers)</td>
+</tr>
+</tbody></table></div>
+<h3>4. Data Recipients and Sub-Processors</h3>
+<p>VerfiX AG processes all personal data within Switzerland. A limited number of sub-processors are used for specific functions. All sub-processors are contractually bound to process personal data only for the purposes specified, to apply appropriate security measures, and to comply with applicable data protection law.</p>
+<p>A current list of sub-processors is available at verfix.ch/trust-center and will be updated with reasonable advance notice of any material changes.</p>
+<h3>5. Retention Periods</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Data category</th>
+<th>Retention period</th>
+</tr></thead><tbody>
+<tr>
+<td>Contact and enquiry data (non-customer)</td>
+<td>3 years from last contact, or until erasure requested</td>
+</tr>
+<tr class="alt">
+<td>Customer user account data</td>
+<td>Duration of service agreement + 3 years thereafter</td>
+</tr>
+<tr>
+<td>Website analytics data</td>
+<td>24 months from collection (or shorter if required by applicable law)</td>
+</tr>
+<tr class="alt">
+<td>Support communication records</td>
+<td>3 years from resolution of the relevant support case</td>
+</tr>
+</tbody></table></div>
+<h3>6. Data Subject Rights</h3>
+<p>Under nFADP, individuals whose personal data VerfiX processes as controller have the right to:</p>
+<ul><li><span class="li-arrow">›</span><span>Access: Request information about the personal data VerfiX holds about them</span></li><li><span class="li-arrow">›</span><span>Rectification: Request correction of inaccurate personal data</span></li><li><span class="li-arrow">›</span><span>Erasure: Request deletion of personal data (subject to legal retention obligations)</span></li><li><span class="li-arrow">›</span><span>Restriction: Request restriction of processing in certain circumstances</span></li><li><span class="li-arrow">›</span><span>Objection: Object to processing based on legitimate interest</span></li><li><span class="li-arrow">›</span><span>Portability: Receive a copy of personal data in a structured, machine-readable format</span></li></ul>
+<p>To exercise these rights, contact privacy@verfix.ch. VerfiX will respond within 30 days. Where a request relates to personal data processed on behalf of a customer (rather than for VerfiX's own purposes), VerfiX will forward the request to the relevant customer as data controller.</p>
+<h3>7. Cookies and Tracking</h3>
+<p>VerfiX uses a limited number of cookies on the verfix.ch website:</p>
+<ul><li><span class="li-arrow">›</span><span>Strictly necessary cookies: Required for the website to function. Cannot be disabled.</span></li><li><span class="li-arrow">›</span><span>Analytics cookies: Used to understand how visitors use the website. Enabled only with consent.</span></li></ul>
+<p>Cookie preferences can be managed through the cookie consent interface on the website. For more information, see the Cookie Policy at verfix.ch/privacy.</p>
+<h3>8. Security</h3>
+<p>VerfiX applies appropriate technical and organisational measures to protect personal data against accidental or unlawful destruction, loss, alteration, unauthorised disclosure, or access. Key measures include AES-256 encryption at rest, TLS 1.3 in transit, role-based access controls, and multi-factor authentication for all administrative access. For further detail, see the VerfiX Security Overview at verfix.ch/trust-center.</p>
+<h3>9. Changes to This Policy</h3>
+<p>VerfiX may update this Privacy Policy from time to time. Material changes will be communicated to affected individuals by email or by notice on the website. The date of the last update is shown at the top of this document.</p>
+<h3>10. Contact and Complaints</h3>
+<p>For questions about this Privacy Policy or the exercise of data subject rights: privacy@verfix.ch</p>
+<p>Complaints may be addressed to the Swiss Federal Data Protection and Information Commissioner (FDPIC): edoeb.admin.ch</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

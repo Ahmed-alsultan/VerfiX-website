@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerfiX System Status</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0f1523;
+      color: #fff;
+      padding: 2rem;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .status-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .service { display: flex; justify-content: space-between; align-items: center; }
+    .service-name { font-weight: 600; }
+    .badge {
+      padding: .25rem .75rem;
+      border-radius: 20px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    .badge.up { background: #10b981; color: #fff; }
+    .badge.degraded { background: #f59e0b; color: #fff; }
+    .badge.down { background: #ef4444; color: #fff; }
+    .last-updated {
+      font-size: .75rem;
+      color: rgba(255,255,255,.4);
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+  <!-- ── Favicon & App Icons ─────────────────────────── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <meta name="msapplication-TileImage" content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor" content="#C8252A"/>
+</head>
+<body>
+<div class="container">
+  <h1>🔒 VerfiX System Status</h1>
+  <div class="status-card">
+    <div class="service">
+      <span class="service-name">🌐 Website (verfix.ch)</span>
+      <span class="badge up">Operational</span>
+    </div>
+  </div>
+  <div class="status-card">
+    <div class="service">
+      <span class="service-name">🔌 API (api.verfix.ch)</span>
+      <span class="badge up">Operational</span>
+    </div>
+  </div>
+  <div class="status-card">
+    <div class="service">
+      <span class="service-name">🚪 Gateway (gateway.verfix.ch)</span>
+      <span class="badge up">Operational</span>
+    </div>
+  </div>
+  <div class="status-card">
+    <div class="service">
+      <span class="service-name">📊 Zoho CRM Integration</span>
+      <span class="badge up">Operational</span>
+    </div>
+  </div>
+  <div class="last-updated">
+    Last updated: <span id="timestamp"></span> · Auto-updates every 5 minutes
+  </div>
+</div>
+<script>
+  document.getElementById('timestamp').textContent = new Date().toLocaleString();
+  setTimeout(() => location.reload(), 300000);
+</script>
+</body>
+</html>

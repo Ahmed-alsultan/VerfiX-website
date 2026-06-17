@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-  <title id="pg-title">VerfiX Gateway — eIDAS 2.0 API für Schweizer Banken | Europäische Digitalidentität</title>
+  <title>VerfiX Gateway — Accept EU Digital Identity Wallets in Switzerland</title>
   <!-- Google Analytics 4 — G-95ZS424SMP -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
   <script>
@@ -17,7 +17,7 @@
     });
   </script>
   <!-- End Google Analytics 4 -->
-  <meta name="description" content="VerfiX Gateway: eine API für die Verifizierung europäischer digitaler Identitäten unter eIDAS 2.0. Entwickelt für Schweizer Banken und regulierte Organisationen."/>
+  <meta name="description" content="VerfiX Gateway lets Swiss banks and fintechs accept EU Digital Identity Wallet credentials (eIDAS 2.0) from all 27 EU member states via one API integration."/>
   <meta name="keywords" content="eIDAS 2.0 Schweiz, European Digital Identity Wallet API, EUDIW Schweizer Banken, verifiable credentials Schweiz, SwissID API"/>
   <meta name="author" content="VerfiX AG"/>
   <meta name="robots" content="index, follow"/>
@@ -28,8 +28,8 @@
   <link rel="alternate" hreflang="fr" href="https://verfix.ch/gateway"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://verfix.ch/gateway"/>
-  <meta property="og:title" content="VerfiX Gateway — eIDAS 2.0 API für Schweizer Banken | Europäische Digitalidentität"/>
-  <meta property="og:description" content="VerfiX Gateway: eine API für die Verifizierung europäischer digitaler Identitäten unter eIDAS 2.0. Entwickelt für Schweizer Banken und regulierte Organisationen."/>
+  <meta property="og:title" content="VerfiX Gateway — Accept EU Digital Identity Wallets in Switzerland"/>
+  <meta property="og:description" content="VerfiX Gateway lets Swiss banks and fintechs accept EU Digital Identity Wallet credentials (eIDAS 2.0) from all 27 EU member states via one API integration."/>
   <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -245,6 +245,62 @@
   <meta name="theme-color" content="#C8252A"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <!-- ── Favicon & App Icons ─────────────────────────── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <meta name="msapplication-TileImage" content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor" content="#C8252A"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is VerfiX Gateway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX Gateway is a single-API layer that enables Swiss banks and financial institutions to accept digital identity credentials from EU Digital Identity Wallets (eIDAS 2.0) across all 27 EU member states without building separate integrations for each country."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is eIDAS 2.0 and why does it matter for Swiss banks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "eIDAS 2.0 is the EU regulation mandating that all EU member states issue Digital Identity Wallets to citizens by 2026. Swiss financial institutions that serve EU clients or operate cross-border will need to accept these credentials. VerfiX Gateway provides a single integration point for all 27 national wallet systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which EU countries does VerfiX Gateway support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX Gateway is designed to support all EU Digital Identity Wallet implementations across the 27 EU member states as they become available, including Germany, France, Spain, Italy, and the Netherlands — which are among the largest markets for Swiss banks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does VerfiX Gateway differ from regular document verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike document scanning which reads a physical ID, VerfiX Gateway accepts digitally signed credentials issued by national identity authorities. These credentials carry a higher assurance level and cannot be forged, providing stronger identity assurance than traditional document verification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is VerfiX Gateway available now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VerfiX Gateway is available for early access and integration planning. Contact us to discuss your specific requirements and timeline. The EU wallet rollout completes progressively through 2025 and 2026."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <!-- Mega menu backdrop -->
@@ -604,6 +660,7 @@
       <span href="/trust-center">Trust Center</span>
       <span href="/resources">Compliance Guides</span>
       <span href="/resources">Whitepapers</span>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX#verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-github"></i> GitHub Repository</a>
     </div>
     <div class="foot-col">
       <h4>Company</h4>
@@ -636,6 +693,9 @@
       <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
       <a href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i>LinkedIn</a>
       <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-youtube" style="font-size:.72rem;color:#f87171;"></i>YouTube</a>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX#verfix" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.producthunt.com/products/verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-product-hunt" style="font-size:.72rem;"></i>Product Hunt</a>
+      <a href="https://www.crunchbase.com/organization/verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><span style="font-size:.62rem;font-weight:800;font-family:'IBM Plex Mono',monospace;background:#0288d1;color:#fff;border-radius:3px;padding:.05rem .32rem;line-height:1.4;display:inline-block;margin-right:.1rem;">CB</span>Crunchbase</a>
     </div>
   </div>
 
@@ -664,7 +724,8 @@
 
 
 
-  <script src="/js/main.js" defer></script>
+  <script src="/js/breadcrumbs.js" defer></script>
+<script src="/js/main.js" defer></script>
 
 <!-- ── FLOATING DEMO BUTTON ── -->
 <a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" aria-label="Jetzt Demo buchen"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Jetzt Demo buchen</span></a>

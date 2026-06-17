@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-  <title>eIDAS 2.0 und Schweizer Banken: Was die EU-Digitalidentität  | VerfiX Insights</title>
+  <title>eIDAS 2.0 — Complete Guide for Swiss Banks | VerfiX</title>
   <!-- Google Analytics 4 — G-95ZS424SMP -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
   <script>
@@ -17,19 +17,15 @@
     });
   </script>
   <!-- End Google Analytics 4 -->
-  <meta name="description" content="Die EU führt mit eIDAS 2.0 eine europäische digitale Identitätswallet ein. Obwohl die Schweiz kein EU-Mitglied ist, werden Schweizer Banken und Finanzinstitute "/>
-  <meta name="keywords" content="eIDAS 2.0 Schweiz, EUDIW Schweizer Banken, European Digital Identity Wallet, digitale Identität API Schweiz"/>
+  <meta name="description" content="eIDAS 2.0 and the EU Digital Identity Wallet: what Swiss banks need to know, the 2026 timeline, and how VerfiX Gateway provides a single integration point."/>
+  <meta name="keywords" content="KYC Schweiz, AML Software Schweiz, Identitätsprüfung Schweiz, Identity Verification Switzerland, nFADP compliance, FINMA KYC, digitale Identitätsprüfung"/>
   <meta name="author" content="VerfiX AG"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://verfix.ch/insights/eidas-2-schweizer-banken-explainer"/>
-  <link rel="alternate" hreflang="x-default" href="https://verfix.ch/insights/eidas-2-schweizer-banken-explainer"/>
-  <link rel="alternate" hreflang="en" href="https://verfix.ch/insights/eidas-2-schweizer-banken-explainer"/>
-  <link rel="alternate" hreflang="de" href="https://verfix.ch/insights/eidas-2-schweizer-banken-explainer"/>
-  <link rel="alternate" hreflang="fr" href="https://verfix.ch/insights/eidas-2-schweizer-banken-explainer"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://verfix.ch/insights/eidas-2-schweizer-banken-explainer"/>
-  <meta property="og:title" content="eIDAS 2.0 und Schweizer Banken: Was die EU-Digitalidentität  | VerfiX Insights"/>
-  <meta property="og:description" content="Die EU führt mit eIDAS 2.0 eine europäische digitale Identitätswallet ein. Obwohl die Schweiz kein EU-Mitglied ist, werden Schweizer Banken und Finanzinstitute "/>
+  <meta property="og:title" content="eIDAS 2.0 — Complete Guide for Swiss Banks | VerfiX"/>
+  <meta property="og:description" content="VerfiX ist die Swiss Trust Infrastructure für regulierte Industrien. KYC, KYB, AML-Screening, Betrugsbekämpfung und Trust Engine™ — eine API für Banken, Fintechs und Versicherungen in der Schweiz."/>
   <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -65,180 +61,7 @@
   
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="/css/main.css"/>
-  <link rel="stylesheet" href="/css/blog.css"/>
   <!-- Structured Data -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://verfix.ch/#organization",
-  "name": "VerfiX AG",
-  "url": "https://verfix.ch",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://verfix.ch/assets/images/verfix-logo.png",
-    "width": 236,
-    "height": 160
-  },
-  "description": "Swiss Trust Infrastructure for Regulated Industries — KYC, KYB, AML, Fraud Intelligence, and Trust Engine™",
-  "foundingDate": "2024",
-  "foundingLocation": {
-    "@type": "Place",
-    "name": "Lausanne, Switzerland",
-    "addressCountry": "CH"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Av. de Gratta-Paille 2",
-    "addressLocality": "Lausanne",
-    "postalCode": "CH-1018",
-    "addressRegion": "Vaud",
-    "addressCountry": "CH"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "contact@verfix.ch",
-    "contactType": "sales",
-    "availableLanguage": [
-      "English",
-      "German",
-      "French"
-    ]
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/verfix/",
-    "https://www.youtube.com/@verfix"
-  ],
-  "areaServed": [
-    "CH",
-    "DE",
-    "AT",
-    "FR",
-    "IT",
-    "NL",
-    "BE",
-    "LU",
-    "EU"
-  ],
-  "knowsAbout": [
-    "KYC",
-    "KYB",
-    "AML",
-    "Identity Verification",
-    "Fraud Prevention",
-    "Compliance",
-    "eIDAS",
-    "nFADP"
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 46.5197,
-    "longitude": 6.5932
-  },
-  "memberOf": [
-    {
-      "@type": "Organization",
-      "name": "Trust Valley",
-      "url": "https://www.trustvalley.swiss",
-      "description": "Swiss cluster for digital trust, privacy and cybersecurity"
-    }
-  ],
-  "funder": {
-    "@type": "Organization",
-    "name": "Innosuisse",
-    "url": "https://www.innosuisse.ch",
-    "description": "Swiss Innovation Agency"
-  },
-  "location": {
-    "@type": "Place",
-    "name": "Trust Valley — Lausanne",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. de Gratta-Paille 2",
-      "addressLocality": "Lausanne",
-      "postalCode": "CH-1018",
-      "addressCountry": "CH"
-    }
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://verfix.ch/#website",
-  "url": "https://verfix.ch",
-  "name": "VerfiX",
-  "description": "Swiss Trust Infrastructure for Regulated Industries",
-  "publisher": {
-    "@id": "https://verfix.ch/#organization"
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://verfix.ch/solutions?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  },
-  "inLanguage": [
-    "en",
-    "de",
-    "fr"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is VerfiX?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VerfiX is a Swiss-built trust infrastructure platform that unifies KYC, KYB, AML screening, fraud intelligence, and Trust Engine™ into one API for banks, fintechs, insurers, and regulated organizations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does VerfiX support Swiss data residency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. VerfiX supports Swiss-hosted, dedicated, private cloud, and on-premise deployment models. Identity data can be stored and processed entirely within Switzerland."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What industries does VerfiX serve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VerfiX serves banking, fintech, crypto and digital assets, insurance, government, healthcare, telecom, mobility, marketplaces, real estate, education, e-commerce, forex, payments, remittance, and wealth management."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is VerfiX Gateway?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VerfiX Gateway is one API integration layer for verifying European digital identity credentials under eIDAS 2.0. It is designed for Swiss banks and regulated organizations that need to accept digital identities from multiple EU countries without building separate integrations for each."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is VerfiX GDPR and nFADP compliant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VerfiX is designed to support GDPR and Swiss nFADP compliance requirements. It includes configurable data retention, role-based access control, immutable audit logs, and Swiss data residency options."
-      }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"eIDAS 2.0 und Schweizer Banken: Was die EU-Digitalidentität für die Schweiz bedeutet","description":"Die EU führt mit eIDAS 2.0 eine europäische digitale Identitätswallet ein. Obwohl die Schweiz kein EU-Mitglied ist, werden Schweizer Banken und Finanzinstitute direkt betroffen sei","url":"https://verfix.ch/insights/eidas-2-schweizer-banken-explainer","datePublished":"2025-11-10","dateModified":"2025-11-10","inLanguage":"de","author":{"@type":"Person","name":"Petter Stahle","worksFor":{"@id":"https://verfix.ch/#organization"}},"publisher":{"@id":"https://verfix.ch/#organization"},"image":"https://verfix.ch/assets/images/og-image.jpg","keywords":"eIDAS 2.0 Schweiz, EUDIW Schweizer Banken, European Digital Identity Wallet, digitale Identität API Schweiz"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://verfix.ch/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://verfix.ch/insights"},{"@type":"ListItem","position":3,"name":"eIDAS 2.0 und Schweizer Banken: Was die EU-Digitalident","item":"https://verfix.ch/insights/eidas-2-schweizer-banken-explainer"}]}</script>
-
-  
   <!-- ════════════════════════════════════════════════════
        ZOHO CRM — Web Visitor Tracking
        HOW TO ACTIVATE:
@@ -261,6 +84,15 @@
   <meta name="theme-color" content="#C8252A"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<!-- ── Favicon & App Icons ─────────────────────────── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <meta name="msapplication-TileImage" content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor" content="#C8252A"/>
+  <link rel="alternate" hreflang="x-default" href="https://verfix.ch/insights/eidas-2-schweizer-banken-explainer"/>
 </head>
 <body>
 <!-- Mega menu backdrop -->
@@ -299,6 +131,7 @@
 <!-- ═══════════════════════════════════════
      NAVIGATION
 ═══════════════════════════════════════ -->
+
 <nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="VerfiX home">
@@ -444,63 +277,67 @@
     <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
   </div>
 </nav>
-<main id="page-top">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "eIDAS 2.0 \u2014 What Swiss Banks Need to Know", "datePublished": "May 2025", "author": {"@type": "Organization", "name": "VerfiX AG"}, "publisher": {"@type": "Organization", "name": "VerfiX AG"}, "description": "How the EU Digital Identity Wallet regulation affects Swiss financial institutions: timeline, technical challenge, VerfiX Gateway, and how to prepare."}</script>
+<main id="main-content">
+  <section class="np-hero" role="banner" style="padding:8.5rem 0 3rem;background:var(--n);position:relative;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(200,37,42,.07) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="W" style="position:relative;z-index:1;max-width:780px;">
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
+        <span class="label" style="display:inline-flex;">eIDAS / Regulation</span>
+        <span style="font-size:.75rem;color:rgba(255,255,255,.35);">May 2025 · 7 min read</span>
+      </div>
+      <h1 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;letter-spacing:-.03em;line-height:1.25;margin-bottom:.875rem;">eIDAS 2.0 — What Swiss Banks Need to Know</h1>
+      <p style="color:rgba(255,255,255,.5);font-size:.97rem;line-height:1.75;max-width:620px;">How the EU Digital Identity Wallet regulation affects Swiss financial institutions: timeline, technical challenge, VerfiX Gateway, and how to prepare.</p>
+    </div>
+  </section>
+  <section style="padding:4rem 0;background:#fff;">
+    <div class="W" style="max-width:780px;">
+      <div class="rv" style="font-size:.95rem;color:var(--m);line-height:1.9;">
+        
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);margin:2rem 0 .75rem;">What Is eIDAS 2.0?</h2>
+<p>eIDAS 2.0 — formally, Regulation (EU) 2024/1183 — is the revised EU framework for electronic identification and trust services. The original eIDAS regulation of 2014 established mutual recognition of national electronic identity schemes across EU member states, but adoption was limited because not all member states had advanced eID systems, and the schemes that existed were not interoperable at a practical level. eIDAS 2.0 addresses this by mandating that all EU member states offer citizens a European Digital Identity Wallet (EUDIW) by late 2026.</p>
+<p>The EU Digital Identity Wallet is a mobile application that allows EU citizens to store and share verified digital credentials — including their national identity document, driving licence, university diplomas, professional qualifications, and other government-issued attestations — without physically presenting documents. The wallet uses cryptographic signatures to allow the recipient to verify that the credential was issued by a trusted authority and has not been tampered with.</p>
 
-<div class="read-progress" id="read-progress"></div><section id="main-content" class="article-hero" role="banner"><div class="W"><div class="article-hero-inner"><div style="margin-bottom:1rem;display:flex;align-items:center;gap:.75rem;"><a href="/insights" style="font-size:.78rem;font-weight:600;color:rgba(255,255,255,.4);text-decoration:none;display:inline-flex;align-items:center;gap:.35rem;"><i class="fas fa-arrow-left" style="font-size:.65rem;"></i>Insights</a><span style="color:rgba(255,255,255,.2);">/</span><span class="blog-tag eidas">eIDAS 2.0</span></div><h1>eIDAS 2.0 und Schweizer Banken: Was die EU-Digitalidentität für die Schweiz bedeutet</h1><div class="article-hero-meta"><span><i class="fas fa-user" style="font-size:.65rem;margin-right:.3rem;"></i><strong>Petter Stahle</strong> &middot; AI & Technology Lead, VerfiX AG</span><span><i class="fas fa-calendar" style="font-size:.65rem;margin-right:.3rem;"></i>10. November 2025</span><span><i class="fas fa-clock" style="font-size:.65rem;margin-right:.3rem;"></i>7 min Lesezeit</span></div></div></div></section><div class="W"><div class="article-layout"><div><p style="font-size:1.05rem;color:var(--m);line-height:1.8;margin-bottom:1.5rem;font-weight:500;border-left:3px solid var(--r);padding-left:1.1rem;">Die EU führt mit eIDAS 2.0 eine europäische digitale Identitätswallet ein. Obwohl die Schweiz kein EU-Mitglied ist, werden Schweizer Banken und Finanzinstitute direkt betroffen sein. Wir erklären warum — und wie VerfiX Gateway die Lösung bietet.</p><div class="article-key-points"><div class="akp-title">Key Takeaways</div><div class="akp-item"><i class="fas fa-check"></i><span>EU Digital Identity Wallet (EUDIW) Rollout ab 2026 in allen 27 EU-Staaten</span></div><div class="akp-item"><i class="fas fa-check"></i><span>Schweizer Kunden mit EU-Wohnsitz werden digitale EU-Identitäten nutzen</span></div><div class="akp-item"><i class="fas fa-check"></i><span>Schweizer Banken müssen EU-Wallets für grenzüberschreitendes Geschäft akzeptieren</span></div><div class="akp-item"><i class="fas fa-check"></i><span>eIDAS 2.0 einführt W3C Verifiable Credentials als Standard</span></div><div class="akp-item"><i class="fas fa-check"></i><span>VerfiX Gateway: eine API statt 27 separate EU-Integrationen</span></div><div class="akp-item"><i class="fas fa-check"></i><span>Schweizer eID-Gesetz komplementär zu eIDAS 2.0 positioniert</span></div></div><div class="article-body"><h2 id="sec-0">Was ist eIDAS 2.0?</h2><strong>eIDAS 2.0</strong> (Electronic Identification, Authentication and Trust Services) ist die überarbeitete EU-Verordnung für digitale Identitäten. Im Kern steht die <strong>EU Digital Identity Wallet (EUDIW)</strong> — eine staatlich anerkannte digitale Geldbörse für Identitätsnachweise, die ab 2026 jedem EU-Bürger zur Verfügung stehen soll.
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);margin:2rem 0 .75rem;">Why eIDAS 2.0 Matters for Swiss Financial Institutions</h2>
+<p>Switzerland is not an EU member state and is not directly subject to eIDAS 2.0. However, Swiss financial institutions face eIDAS 2.0 obligations from two directions.</p>
+<p><strong>EU clients:</strong> Swiss banks, asset managers, and other financial institutions with EU-based clients will increasingly be presented with EU Digital Identity Wallet credentials by customers who want to use their wallet for account opening, loan applications, or other financial services. Institutions that cannot accept EUDIW credentials will face friction in their EU client acquisition processes.</p>
+<p><strong>EU regulatory compliance for cross-border services:</strong> Swiss institutions that provide services to EU clients under equivalence arrangements or through EU branches must comply with EU regulations including AML directives. As EU AML regulation increasingly relies on eIDAS 2.0 as the accepted identity standard for remote identification, Swiss institutions serving EU clients may find that EUDIW acceptance becomes a de facto requirement.</p>
+<p><strong>Bilateral digital identity agreements:</strong> Switzerland has been in ongoing discussions with the EU regarding digital identity interoperability. The Swiss e-ID Act (enacted in 2024) establishes a national digital identity infrastructure that is designed to be interoperable with eIDAS 2.0, suggesting that Switzerland will seek formal mutual recognition in the coming years.</p>
 
-Mit der EUDIW können EU-Bürger:
-<ul>
-<li>Ihren Personalausweis und Reisepass digital vorweisen</li>
-<li>Qualifizierte elektronische Signaturen erstellen</li>
-<li>Berufsqualifikationen, Führerschein und Hochschulabschlüsse digital nachweisen</li>
-<li>Bankkonten eröffnen, Online-Dienste nutzen — alles ohne physisches Dokument</li>
-</ul>
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);margin:2rem 0 .75rem;">The eIDAS 2.0 Timeline for Swiss Banks</h2>
+<p><strong>2024:</strong> eIDAS 2.0 regulation published. EU member states begin building wallet infrastructure. Switzerland enacts the e-ID Act.</p>
+<p><strong>2025:</strong> Pilot implementations of EU Digital Identity Wallets in multiple member states. Early adopter financial institutions begin accepting wallet credentials for digital onboarding. VerfiX Gateway enters early access.</p>
+<p><strong>2026:</strong> EU member states required to have wallets available to all citizens. Large financial institutions in EU required to accept EUDIW credentials for specified use cases. Swiss banks with significant EU client bases begin experiencing customer demand for wallet-based onboarding.</p>
+<p><strong>2027 and beyond:</strong> EU AML regulation increasingly references EUDIW as the high-assurance identity standard. Swiss-EU digital identity interoperability discussions reach implementation phase.</p>
 
-<blockquote>eIDAS 2.0 ist nicht nur eine technische Neuerung — es ist ein fundamentaler Wandel in der Art, wie Identitäten in Europa nachgewiesen werden. Schweizer Finanzinstitute, die EU-Kunden bedienen, werden nicht darum herumkommen.</blockquote><h2 id="sec-1">Warum betrifft eIDAS 2.0 Schweizer Banken?</h2>Obwohl die Schweiz kein EU-Mitglied ist, sind Schweizer Banken eng in den europäischen Finanzraum integriert:
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);margin:2rem 0 .75rem;">The Technical Challenge: 27 Wallet Implementations</h2>
+<p>The EU Digital Identity Wallet framework specifies interoperability standards, but implementation details vary between member states. Each EU country has its own national wallet system, its own national identity authority, and its own technical implementation. While the credentials are digitally signed and follow common standards (the ARF — Architecture Reference Framework), a financial institution that wants to accept EUDIW credentials from all EU citizens technically faces 27 different integrations.</p>
+<p>This is the problem that VerfiX Gateway solves. Rather than building integrations with all 27 national wallet systems, Swiss financial institutions integrate once with the VerfiX Gateway API. VerfiX handles the credential verification, the trust anchor validation, and the cross-jurisdiction interoperability, returning a standardised, verified identity result to the financial institution's onboarding workflow.</p>
 
-<h3>Grenzüberschreitende Kunden</h3>
-Schweizer Banken haben Millionen von Kunden mit Wohnsitz in EU-Ländern. Diese werden ab 2026 erwarten, dass sie sich mit ihrer EUDIW identifizieren können — statt Papierdokumente einzuscannen.
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);margin:2rem 0 .75rem;">Identity Assurance Levels Under eIDAS 2.0</h2>
+<p>eIDAS 2.0 establishes three identity assurance levels: Low, Substantial, and High. EU Digital Identity Wallet credentials are issued at High assurance level — the highest standard — because they are based on in-person identity proofing by government authorities and use cryptographic signatures that cannot be forged. This is a higher assurance level than most current remote KYC solutions, which typically achieve Substantial assurance.</p>
+<p>For FINMA compliance purposes, High assurance EUDIW credentials may satisfy the requirements of FINMA Circular 2016/7 for remote identification, potentially without requiring additional liveness detection or biometric matching — though this interpretation requires confirmation from FINMA as the regulatory framework evolves.</p>
 
-<h3>Private Banking und Wealth Management</h3>
-Europäische High-Net-Worth-Kunden werden digitale Identitätsnachweise zunehmend als Standard erwarten. Institute, die EUDIW nicht akzeptieren, sind im Nachteil.
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);margin:2rem 0 .75rem;">How to Prepare Your Organisation</h2>
+<p>Swiss financial institutions should begin preparing for eIDAS 2.0 now, even if the immediate regulatory pressure is limited. The steps to take are:</p>
+<p><strong>Assess your EU client base.</strong> Understand what proportion of your clients are EU citizens who might want to use EUDIW credentials for onboarding or account updates. This will determine the urgency of your eIDAS 2.0 readiness.</p>
+<p><strong>Engage your KYC vendor.</strong> Ask your current identity verification vendor about their eIDAS 2.0 roadmap. If they do not have a clear plan for supporting EUDIW credential verification, you should evaluate alternatives — including VerfiX Gateway.</p>
+<p><strong>Review your legal framework.</strong> Work with your legal team to assess what changes to your identification procedures may be needed to accept EUDIW credentials as a valid form of identification under Swiss law and FINMA requirements.</p>
+<p><strong>Plan the integration.</strong> Even if you are not ready to go live, planning the integration architecture now — including how EUDIW credential data maps to your existing customer data model — will significantly reduce implementation time when you are ready to proceed.</p>
 
-<h3>Regulatorische Harmonisierung</h3>
-Schweizer Regulatoren (FINMA, SECO) beobachten eIDAS 2.0 genau. Es ist wahrscheinlich, dass das Schweizer eID-Gesetz mittelfristig Interoperabilität mit EUDIW anstrebt.
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);margin:2rem 0 .75rem;">Conclusion</h2>
+<p>eIDAS 2.0 is not an immediate compliance requirement for Swiss financial institutions, but it is a significant medium-term consideration for any institution with EU clients or cross-border ambitions. The EU Digital Identity Wallet will become the standard identity credential for EU citizens within the next two to three years, and Swiss banks that are not ready to accept it will face competitive disadvantages in EU client acquisition.</p>
+<p>VerfiX Gateway is the simplest path to eIDAS 2.0 readiness for Swiss financial institutions — one API integration that handles credential verification across all 27 EU member states.</p>
 
-<h3>Technische Integration</h3>
-EUDIW basiert auf <strong>W3C Verifiable Credentials</strong> und <strong>OpenID4VP</strong> — offenen Standards, die eine Integration ermöglichen. Wer früh investiert, hat einen Vorsprung.<h2 id="sec-2">VerfiX Gateway: eine Integration für ganz Europa</h2>Das Problem für Schweizer Banken ohne VerfiX Gateway: 27 EU-Mitgliedstaaten bedeuten potenziell 27 verschiedene EUDIW-Implementierungen, nationale Schemas und technische Varianten. Dazu kommen nationale Identitätssysteme wie SwissID, BankID (Schweden/Norwegen), MitID (Dänemark) und FranceConnect.
-
-<strong>VerfiX Gateway löst dieses Problem</strong> mit einer einzigen REST-API-Integration:
-
-<ul>
-<li>Eine API für alle EU-Wallets und nationalen Identitätssysteme</li>
-<li>Automatische Prüfung von Aussteller-Vertrauenskette, Signatur, Credential-Status und Ablauf</li>
-<li>Integration in bestehende KYC- und Trust-Engine-Workflows</li>
-<li>Zukunftssicher: Neue Wallet-Typen werden über das Gateway transparent hinzugefügt</li>
-</ul></div><div style="background:var(--n);border-radius:12px;padding:2rem;margin-top:2.5rem;"><div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--r);margin-bottom:.5rem;">VerfiX AG · Lausanne</div><h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;">Bereit für eIDAS 2.0?</h3><p style="color:rgba(255,255,255,.55);font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;">Entdecken Sie VerfiX Gateway und erfahren Sie, wie Sie Ihre Bank zukunftssicher für europäische Digitalidentitäten machen.</p><div style="display:flex;gap:.75rem;flex-wrap:wrap;"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r"><i class="fas fa-calendar-check"></i> Demo buchen</a><a href="/solutions" class="btn btn-wo">Plattform erkunden</a></div></div><div class="article-share"><span class="article-share-lbl">Teilen:</span><a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://verfix.ch/insights/eidas-2-schweizer-banken-explainer" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i>LinkedIn</a><a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://verfix.ch/insights/eidas-2-schweizer-banken-explainer" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i>X</a><button class="share-btn cp" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Kopiert!';setTimeout(function(){this.textContent='Link kopieren';}.bind(this),2000)">Link kopieren</button></div></div><aside><div class="article-toc"><div class="article-toc-title">Inhalt</div><a class="toc-link" onclick="tocScroll('sec-0')">Was ist eIDAS 2.0?</a><a class="toc-link" onclick="tocScroll('sec-1')">Warum betrifft eIDAS 2.0 Schweizer Banken?</a><a class="toc-link" onclick="tocScroll('sec-2')">VerfiX Gateway: eine Integration für ganz Eur…</a><div style="margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--bd);"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r" style="font-size:.75rem;width:100%;justify-content:center;"><i class="fas fa-calendar-check"></i> Demo buchen</a></div></div><div style="background:var(--off);border:1px solid var(--bd);border-radius:10px;padding:1.35rem;margin-top:1.25rem;"><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lt);margin-bottom:.75rem;">Autor</div><div style="display:flex;align-items:center;gap:.75rem;"><!-- ⚠ REPLACE: Add your own team photo to /assets/team/ -->
-<img src="/assets/team/petter-stahle.jpeg" alt="Petter Stahle, AI &amp; Technology Lead at VerfiX" width="40" height="40" loading="lazy" style="border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;"/><div><div style="font-size:.84rem;font-weight:700;color:var(--t);">Petter Stahle</div><div style="font-size:.72rem;color:var(--lt);">AI & Technology Lead, VerfiX AG</div></div></div></div></aside></div></div><div class="blog-related"><div class="W"><span class="label">Weitere Artikel</span><h2 style="font-size:1.2rem;margin:.3rem 0 1.25rem;">Das könnte Sie auch interessieren</h2><div class="blog-related-grid"><a href="/insights/nfadp-compliance-guide-schweiz" class="blog-card" data-cat="nfadp" style="text-decoration:none;"><div class="blog-card-img" style="background:linear-gradient(135deg,#1a1f2e 0%,#2d1a1a 100%);"><i class="fas fa-shield-halved" style="font-size:2.5rem;color:rgba(200,37,42,.7);"></i></div><div class="blog-card-body"><div class="blog-card-meta"><span class="blog-tag nfadp">nFADP / nDSG</span><span class="blog-read-time" style="font-size:.68rem;"><i class="fas fa-clock" style="font-size:.58rem;"></i>9 min</span></div><h3 class="blog-card-title">nFADP 2023: Der vollständige Compliance-Leitfaden für Schweizer Unternehmen</h3><p class="blog-card-excerpt">Das revidierte Schweizer Datenschutzgesetz (nFADP/nDSG) ist in Kraft. Was müssen Banken, Fintechs und regulierte Unternehmen jetzt konkret umsetzen? Dieser Leitfaden erklärt alle Anforderungen, Fristen und Best Practices.</p><div class="blog-card-footer"><div class="blog-card-author"><img src="/assets/team/ahmed-sherwed.jpeg" alt="Ahmed Al-Sultan, Founder &amp; CEO of VerfiX" width="24" height="24" loading="lazy" style="border-radius:50%;object-fit:cover;object-position:center top;"/>Ahmed</div><span class="blog-card-date">1. September 2025</span></div></div></a><a href="/insights/finma-kyc-anforderungen-banken" class="blog-card" data-cat="finma" style="text-decoration:none;"><div class="blog-card-img" style="background:linear-gradient(135deg,#1a1f2e 0%,#1a2240 100%);"><i class="fas fa-landmark" style="font-size:2.5rem;color:rgba(200,37,42,.7);"></i></div><div class="blog-card-body"><div class="blog-card-meta"><span class="blog-tag finma">FINMA</span><span class="blog-read-time" style="font-size:.68rem;"><i class="fas fa-clock" style="font-size:.58rem;"></i>8 min</span></div><h3 class="blog-card-title">FINMA KYC-Anforderungen 2025: Was Schweizer Banken und Fintechs wissen müssen</h3><p class="blog-card-excerpt">Die FINMA stellt strenge Anforderungen an KYC-Prozesse für Banken, Fintechs und andere beaufsichtigte Institute. Dieser Artikel erklärt die aktuellen Sorgfaltspflichten, Onboarding-Standards und digitalen Identifizierungsverfahren unter FINMA-Aufsicht.</p><div class="blog-card-footer"><div class="blog-card-author"><img src="/assets/team/ahmed-sherwed.jpeg" alt="Ahmed Al-Sultan, Founder &amp; CEO of VerfiX" width="24" height="24" loading="lazy" style="border-radius:50%;object-fit:cover;object-position:center top;"/>Ahmed</div><span class="blog-card-date">15. Oktober 2025</span></div></div></a><a href="/insights" class="blog-card" style="text-decoration:none;display:flex;align-items:center;justify-content:center;background:var(--off);min-height:200px;"><div style="text-align:center;"><div style="font-size:.85rem;font-weight:700;color:var(--t);margin-bottom:.38rem;">Alle Artikel</div><i class="fas fa-arrow-right" style="color:var(--r);margin-top:.75rem;font-size:.9rem;display:block;"></i></div></a></div></div></div><script>function tocScroll(id){var el=document.getElementById(id);if(el){window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-90,behavior:"smooth"});}}window.addEventListener("scroll",function(){var p=document.getElementById("read-progress");if(!p)return;p.style.transform="scaleX("+Math.min(window.scrollY/(document.body.scrollHeight-window.innerHeight),1)+")";},{passive:true});</script>
+      </div>
+      <div style="margin-top:3rem;padding:1.75rem;background:var(--off);border-radius:12px;border-left:3px solid var(--r);">
+        <h3 style="font-size:1rem;font-weight:800;color:var(--t);margin-bottom:.5rem;">Ready to automate compliant KYB and identity verification?</h3>
+        <p style="font-size:.87rem;color:var(--m);margin-bottom:1rem;">Book a 30-minute call with the VerfiX team.</p>
+        <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+      </div>
+    </div>
+  </section>
 </main>
-<!-- SOCIAL BAR -->
-<div class="social-bar">
-  <div class="social-inner">
-    <div>
-      <div class="soc-label" style="margin-bottom:.38rem;">Follow VerfiX</div>
-      <span class="social-copy">Swiss Trust Infrastructure · @verfix</span>
-    </div>
-    <div class="social-links">
-      <a class="soc-btn soc-li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i>
-        <span>LinkedIn</span>
-      </a>
-      <div class="soc-divider"></div>
-      <a class="soc-btn soc-yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener">
-        <i class="fab fa-youtube"></i>
-        <span>YouTube Channel</span>
-      </a>
-    </div>
-  </div>
-</div>
-
 <footer role="contentinfo">
   <div class="foot-top">
     <div class="foot-brand">
@@ -537,6 +374,7 @@ EUDIW basiert auf <strong>W3C Verifiable Credentials</strong> und <strong>OpenID
       <span href="/trust-center">Trust Center</span>
       <span href="/resources">Compliance Guides</span>
       <span href="/resources">Whitepapers</span>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX#verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-github"></i> GitHub Repository</a>
     </div>
     <div class="foot-col">
       <h4>Company</h4>
@@ -569,6 +407,9 @@ EUDIW basiert auf <strong>W3C Verifiable Credentials</strong> und <strong>OpenID
       <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
       <a href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i>LinkedIn</a>
       <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-youtube" style="font-size:.72rem;color:#f87171;"></i>YouTube</a>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX#verfix" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.producthunt.com/products/verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-product-hunt" style="font-size:.72rem;"></i>Product Hunt</a>
+      <a href="https://www.crunchbase.com/organization/verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><span style="font-size:.62rem;font-weight:800;font-family:'IBM Plex Mono',monospace;background:#0288d1;color:#fff;border-radius:3px;padding:.05rem .32rem;line-height:1.4;display:inline-block;margin-right:.1rem;">CB</span>Crunchbase</a>
     </div>
   </div>
 
@@ -597,11 +438,12 @@ EUDIW basiert auf <strong>W3C Verifiable Credentials</strong> und <strong>OpenID
 
 
 
-  <script src="/js/main.js" defer></script>
 
+  <script src="/js/breadcrumbs.js" defer></script>
 <script src="/js/main.js" defer></script>
 
 <!-- ── FLOATING DEMO BUTTON ── -->
 <a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" aria-label="Jetzt Demo buchen"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Jetzt Demo buchen</span></a>
+
 </body>
 </html>

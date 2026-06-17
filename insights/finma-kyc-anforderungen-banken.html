@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-  <title>FINMA KYC-Anforderungen 2025: Was Schweizer Banken und Finte | VerfiX Insights</title>
+  <title>FINMA Circular 2016/7 — Complete Guide for Swiss Banks | VerfiX</title>
   <!-- Google Analytics 4 — G-95ZS424SMP -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
   <script>
@@ -17,19 +17,15 @@
     });
   </script>
   <!-- End Google Analytics 4 -->
-  <meta name="description" content="Die FINMA stellt strenge Anforderungen an KYC-Prozesse für Banken, Fintechs und andere beaufsichtigte Institute. Dieser Artikel erklärt die aktuellen Sorgfaltsp"/>
-  <meta name="keywords" content="FINMA KYC, FINMA Sorgfaltspflichten, Schweizer Bank KYC, GwG Schweiz, digitale Identifizierung FINMA"/>
+  <meta name="description" content="Technical and procedural requirements of FINMA Circular 2016/7 for remote KYC. Document verification, liveness detection, audit trail, data residency, and compl"/>
+  <meta name="keywords" content="KYC Schweiz, AML Software Schweiz, Identitätsprüfung Schweiz, Identity Verification Switzerland, nFADP compliance, FINMA KYC, digitale Identitätsprüfung"/>
   <meta name="author" content="VerfiX AG"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://verfix.ch/insights/finma-kyc-anforderungen-banken"/>
-  <link rel="alternate" hreflang="x-default" href="https://verfix.ch/insights/finma-kyc-anforderungen-banken"/>
-  <link rel="alternate" hreflang="en" href="https://verfix.ch/insights/finma-kyc-anforderungen-banken"/>
-  <link rel="alternate" hreflang="de" href="https://verfix.ch/insights/finma-kyc-anforderungen-banken"/>
-  <link rel="alternate" hreflang="fr" href="https://verfix.ch/insights/finma-kyc-anforderungen-banken"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://verfix.ch/insights/finma-kyc-anforderungen-banken"/>
-  <meta property="og:title" content="FINMA KYC-Anforderungen 2025: Was Schweizer Banken und Finte | VerfiX Insights"/>
-  <meta property="og:description" content="Die FINMA stellt strenge Anforderungen an KYC-Prozesse für Banken, Fintechs und andere beaufsichtigte Institute. Dieser Artikel erklärt die aktuellen Sorgfaltsp"/>
+  <meta property="og:title" content="FINMA Circular 2016/7 — Complete Guide for Swiss Banks | VerfiX"/>
+  <meta property="og:description" content="VerfiX ist die Swiss Trust Infrastructure für regulierte Industrien. KYC, KYB, AML-Screening, Betrugsbekämpfung und Trust Engine™ — eine API für Banken, Fintechs und Versicherungen in der Schweiz."/>
   <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -65,180 +61,7 @@
   
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="/css/main.css"/>
-  <link rel="stylesheet" href="/css/blog.css"/>
   <!-- Structured Data -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://verfix.ch/#organization",
-  "name": "VerfiX AG",
-  "url": "https://verfix.ch",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://verfix.ch/assets/images/verfix-logo.png",
-    "width": 236,
-    "height": 160
-  },
-  "description": "Swiss Trust Infrastructure for Regulated Industries — KYC, KYB, AML, Fraud Intelligence, and Trust Engine™",
-  "foundingDate": "2024",
-  "foundingLocation": {
-    "@type": "Place",
-    "name": "Lausanne, Switzerland",
-    "addressCountry": "CH"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Av. de Gratta-Paille 2",
-    "addressLocality": "Lausanne",
-    "postalCode": "CH-1018",
-    "addressRegion": "Vaud",
-    "addressCountry": "CH"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "contact@verfix.ch",
-    "contactType": "sales",
-    "availableLanguage": [
-      "English",
-      "German",
-      "French"
-    ]
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/verfix/",
-    "https://www.youtube.com/@verfix"
-  ],
-  "areaServed": [
-    "CH",
-    "DE",
-    "AT",
-    "FR",
-    "IT",
-    "NL",
-    "BE",
-    "LU",
-    "EU"
-  ],
-  "knowsAbout": [
-    "KYC",
-    "KYB",
-    "AML",
-    "Identity Verification",
-    "Fraud Prevention",
-    "Compliance",
-    "eIDAS",
-    "nFADP"
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 46.5197,
-    "longitude": 6.5932
-  },
-  "memberOf": [
-    {
-      "@type": "Organization",
-      "name": "Trust Valley",
-      "url": "https://www.trustvalley.swiss",
-      "description": "Swiss cluster for digital trust, privacy and cybersecurity"
-    }
-  ],
-  "funder": {
-    "@type": "Organization",
-    "name": "Innosuisse",
-    "url": "https://www.innosuisse.ch",
-    "description": "Swiss Innovation Agency"
-  },
-  "location": {
-    "@type": "Place",
-    "name": "Trust Valley — Lausanne",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. de Gratta-Paille 2",
-      "addressLocality": "Lausanne",
-      "postalCode": "CH-1018",
-      "addressCountry": "CH"
-    }
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://verfix.ch/#website",
-  "url": "https://verfix.ch",
-  "name": "VerfiX",
-  "description": "Swiss Trust Infrastructure for Regulated Industries",
-  "publisher": {
-    "@id": "https://verfix.ch/#organization"
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://verfix.ch/solutions?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  },
-  "inLanguage": [
-    "en",
-    "de",
-    "fr"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is VerfiX?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VerfiX is a Swiss-built trust infrastructure platform that unifies KYC, KYB, AML screening, fraud intelligence, and Trust Engine™ into one API for banks, fintechs, insurers, and regulated organizations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does VerfiX support Swiss data residency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. VerfiX supports Swiss-hosted, dedicated, private cloud, and on-premise deployment models. Identity data can be stored and processed entirely within Switzerland."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What industries does VerfiX serve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VerfiX serves banking, fintech, crypto and digital assets, insurance, government, healthcare, telecom, mobility, marketplaces, real estate, education, e-commerce, forex, payments, remittance, and wealth management."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is VerfiX Gateway?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VerfiX Gateway is one API integration layer for verifying European digital identity credentials under eIDAS 2.0. It is designed for Swiss banks and regulated organizations that need to accept digital identities from multiple EU countries without building separate integrations for each."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is VerfiX GDPR and nFADP compliant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "VerfiX is designed to support GDPR and Swiss nFADP compliance requirements. It includes configurable data retention, role-based access control, immutable audit logs, and Swiss data residency options."
-      }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"FINMA KYC-Anforderungen 2025: Was Schweizer Banken und Fintechs wissen müssen","description":"Die FINMA stellt strenge Anforderungen an KYC-Prozesse für Banken, Fintechs und andere beaufsichtigte Institute. Dieser Artikel erklärt die aktuellen Sorgfaltspflichten, Onboarding","url":"https://verfix.ch/insights/finma-kyc-anforderungen-banken","datePublished":"2025-10-15","dateModified":"2025-10-15","inLanguage":"de","author":{"@type":"Person","name":"Ahmed Al-Sultan","worksFor":{"@id":"https://verfix.ch/#organization"}},"publisher":{"@id":"https://verfix.ch/#organization"},"image":"https://verfix.ch/assets/images/og-image.jpg","keywords":"FINMA KYC, FINMA Sorgfaltspflichten, Schweizer Bank KYC, GwG Schweiz, digitale Identifizierung FINMA"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://verfix.ch/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://verfix.ch/insights"},{"@type":"ListItem","position":3,"name":"FINMA KYC-Anforderungen 2025: Was Schweizer Banken und ","item":"https://verfix.ch/insights/finma-kyc-anforderungen-banken"}]}</script>
-
-  
   <!-- ════════════════════════════════════════════════════
        ZOHO CRM — Web Visitor Tracking
        HOW TO ACTIVATE:
@@ -261,6 +84,15 @@
   <meta name="theme-color" content="#C8252A"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<!-- ── Favicon & App Icons ─────────────────────────── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <meta name="msapplication-TileImage" content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor" content="#C8252A"/>
+  <link rel="alternate" hreflang="x-default" href="https://verfix.ch/insights/finma-kyc-anforderungen-banken"/>
 </head>
 <body>
 <!-- Mega menu backdrop -->
@@ -299,6 +131,7 @@
 <!-- ═══════════════════════════════════════
      NAVIGATION
 ═══════════════════════════════════════ -->
+
 <nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="VerfiX home">
@@ -444,67 +277,91 @@
     <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
   </div>
 </nav>
-<main id="page-top">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "FINMA Circular 2016/7 \u2014 A Complete Guide for Swiss Banks", "datePublished": "June 2025", "dateModified": "June 2025", "author": {"@type": "Organization", "name": "VerfiX AG"}, "publisher": {"@type": "Organization", "name": "VerfiX AG", "url": "https://verfix.ch"}, "description": "Everything Swiss banks need to know about FINMA Circular 2016/7 on video and online identification: technical requirements, audit trail obligations, data residency, and a compliance checklist.", "url": "https://verfix.ch/insights/finma-kyc-anforderungen-banken"}</script>
+<main id="main-content">
+  <section class="np-hero" role="banner" style="padding:8.5rem 0 3rem;background:var(--n);position:relative;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(200,37,42,.07) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="W" style="position:relative;z-index:1;max-width:780px;">
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
+        <span class="label" style="display:inline-flex;">Compliance</span>
+        <span style="font-size:.75rem;color:rgba(255,255,255,.35);">June 2025 · 12 min read</span>
+      </div>
+      <h1 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;letter-spacing:-.03em;line-height:1.25;margin-bottom:.875rem;">FINMA Circular 2016/7 — A Complete Guide for Swiss Banks</h1>
+      <p style="color:rgba(255,255,255,.5);font-size:.97rem;line-height:1.75;max-width:620px;">Everything Swiss banks need to know about FINMA Circular 2016/7 on video and online identification: technical requirements, audit trail obligations, data residency, and a compliance checklist.</p>
+    </div>
+  </section>
+  <section style="padding:4rem 0;background:#fff;">
+    <div class="W" style="max-width:780px;">
+      <div class="rv" style="font-size:.95rem;color:var(--m);line-height:1.9;">
+        
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">What Is FINMA Circular 2016/7?</h2>
+<p>FINMA Circular 2016/7 on video and online identification sets out the conditions under which Swiss financial intermediaries may verify the identity of new clients remotely, without an in-person meeting. Before this circular, Swiss banks were required to meet clients face-to-face or use indirect identification via a notarised document. The circular opened the door to fully digital onboarding — provided that specific technical and procedural requirements are met.</p>
+<p>The circular applies to all financial intermediaries subject to the Anti-Money Laundering Act (GwG), including banks, securities firms, fund managers, insurance companies, and payment institutions. If your organisation must comply with GwG and you want to onboard customers remotely, you must comply with Circular 2016/7.</p>
 
-<div class="read-progress" id="read-progress"></div><section id="main-content" class="article-hero" role="banner"><div class="W"><div class="article-hero-inner"><div style="margin-bottom:1rem;display:flex;align-items:center;gap:.75rem;"><a href="/insights" style="font-size:.78rem;font-weight:600;color:rgba(255,255,255,.4);text-decoration:none;display:inline-flex;align-items:center;gap:.35rem;"><i class="fas fa-arrow-left" style="font-size:.65rem;"></i>Insights</a><span style="color:rgba(255,255,255,.2);">/</span><span class="blog-tag finma">FINMA</span></div><h1>FINMA KYC-Anforderungen 2025: Was Schweizer Banken und Fintechs wissen müssen</h1><div class="article-hero-meta"><span><i class="fas fa-user" style="font-size:.65rem;margin-right:.3rem;"></i><strong>Ahmed Al-Sultan</strong> &middot; Founder & CEO, VerfiX AG</span><span><i class="fas fa-calendar" style="font-size:.65rem;margin-right:.3rem;"></i>15. Oktober 2025</span><span><i class="fas fa-clock" style="font-size:.65rem;margin-right:.3rem;"></i>8 min Lesezeit</span></div></div></div></section><div class="W"><div class="article-layout"><div><p style="font-size:1.05rem;color:var(--m);line-height:1.8;margin-bottom:1.5rem;font-weight:500;border-left:3px solid var(--r);padding-left:1.1rem;">Die FINMA stellt strenge Anforderungen an KYC-Prozesse für Banken, Fintechs und andere beaufsichtigte Institute. Dieser Artikel erklärt die aktuellen Sorgfaltspflichten, Onboarding-Standards und digitalen Identifizierungsverfahren unter FINMA-Aufsicht.</p><div class="article-key-points"><div class="akp-title">Key Takeaways</div><div class="akp-item"><i class="fas fa-check"></i><span>FINMA-RS 2016/7 regelt die Video- und Online-Identifizierung</span></div><div class="akp-item"><i class="fas fa-check"></i><span>Sorgfaltspflichten nach GwG für alle beaufsichtigten Institute</span></div><div class="akp-item"><i class="fas fa-check"></i><span>Digitale Identifizierung per Video mit qualifizierter elektronischer Signatur zulässig</span></div><div class="akp-item"><i class="fas fa-check"></i><span>Risikobasierter Ansatz: PEP, Hochrisiko-Länder, UBO-Klärung</span></div><div class="akp-item"><i class="fas fa-check"></i><span>FINMA-Prüfungen umfassen KYC-Qualität und AML-Effektivität</span></div><div class="akp-item"><i class="fas fa-check"></i><span>Krypto-Dienstleister (VASP) unter verschärfter FINMA-Aufsicht seit 2023</span></div></div><div class="article-body"><h2 id="sec-0">FINMA-Regulierung und KYC: Der Überblick</h2>Die <strong>Eidgenössische Finanzmarktaufsicht (FINMA)</strong> überwacht Banken, Versicherungen, Fintechs, Krypto-Dienstleister und andere Finanzinstitute in der Schweiz. Im Bereich KYC stützt sich die FINMA primär auf das <strong>Geldwäschereigesetz (GwG)</strong>, das Bankengesetz (BankG) und ihre eigenen Rundschreiben — insbesondere das <strong>FINMA-RS 2016/7 «Video- und Online-Identifizierung»</strong>.
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">The Two Identification Methods</h2>
+<p>The circular establishes two methods for remote identification:</p>
+<p><strong>1. Video identification:</strong> A live video call between a trained staff member and the customer, during which the customer presents their identity document and the agent verifies it in real time. This method requires a human in the loop but has been partially automated using AI-assisted document verification running in parallel to the call.</p>
+<p><strong>2. Online identification:</strong> A fully automated process in which the customer uploads or captures their identity document, and the system verifies it without human involvement. This is the method used by modern KYC platforms including VerfiX. Online identification requires a higher standard of technological assurance, including biometric matching and liveness detection.</p>
+<p>For online identification, FINMA requires that the technology can verify both that the document is genuine and that the person presenting it is physically present (liveness). This rules out simple selfie uploads and requires active or passive liveness detection.</p>
 
-Für jedes beaufsichtigte Institut gilt: KYC ist keine optionale Best Practice, sondern eine <strong>gesetzliche Sorgfaltspflicht</strong>. Mängel im KYC-Prozess können zu Enforcement-Verfahren, Einschränkungen der Geschäftstätigkeit und im Extremfall zum Lizenzentzug führen.<h2 id="sec-1">Digitale Identifizierung nach FINMA-RS 2016/7</h2>Das FINMA-Rundschreiben 2016/7 ermöglicht seit 2016 die <strong>Video- und Online-Identifizierung</strong> als gleichwertige Alternative zur persönlichen Identifizierung. Die wichtigsten Anforderungen:
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">Key Technical Requirements</h2>
+<p>The circular specifies a number of technical requirements that the identification system must meet. Understanding these is essential for selecting a compliant KYC vendor.</p>
+<p><strong>Document verification:</strong> The system must be able to read and verify identity documents from the relevant jurisdictions. For Swiss banks with international customer bases, this means support for passports, national identity cards, and driving licences from a wide range of countries. VerfiX supports over 4,500 document types from 190+ countries.</p>
+<p><strong>Security feature validation:</strong> The system must check security features of the document, not just read the printed data. This includes validating the Machine Readable Zone (MRZ), checking the chip data on ePassports (where applicable), and detecting signs of tampering, printing, or photocopying.</p>
+<p><strong>Biometric match:</strong> The system must compare a live image of the customer with the photograph on the identity document. The circular does not specify a minimum match threshold, but industry practice and FINMA supervisory guidance point to a threshold of 80% biometric similarity as a minimum for unassisted approval.</p>
+<p><strong>Liveness detection:</strong> The system must verify that the person is physically present and not presenting a photograph, video replay, or synthetic image. Both active liveness (ask the customer to perform an action) and passive liveness (analyse the video stream for signs of life without requiring user action) are accepted, provided the technology meets current anti-spoofing standards.</p>
+<p><strong>Audit trail:</strong> Every identification event must be documented with a tamper-proof, timestamped record including the outcome, the evidence captured, and the date and time. This audit trail must be retained for the duration required by GwG — currently ten years.</p>
 
-<h3>Video-Identifizierung</h3>
-<ul>
-<li>Echtzeitvideo mit einem geschulten Mitarbeiter oder automatisiertem System</li>
-<li>Prüfung des Ausweisdokuments auf Echtheit (Sicherheitsmerkmale, OCR-Abgleich)</li>
-<li>Liveness-Detection zur Verhinderung von Deepfakes und Spoofing</li>
-<li>Dokumentation und Archivierung des Identifizierungsprozesses</li>
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">Procedural Requirements</h2>
+<p>Beyond the technical requirements, the circular also imposes procedural requirements on the financial intermediary:</p>
+<p><strong>Staff training:</strong> Staff involved in reviewing flagged cases or overseeing automated identification must be trained in document recognition and fraud detection. Even fully automated systems should have a human escalation path for low-confidence cases.</p>
+<p><strong>Quality assurance:</strong> The financial intermediary must conduct periodic quality checks on the identification system and the outcomes it produces. This includes tracking false acceptance rates (cases where a fraudulent document was accepted) and false rejection rates (cases where a legitimate customer was rejected).</p>
+<p><strong>Vendor assessment:</strong> If the financial intermediary uses a third-party identification service provider (such as VerfiX), it must conduct appropriate due diligence on the vendor and ensure that a data processing agreement is in place that addresses Swiss data residency, sub-processor management, and audit rights.</p>
+
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">Swiss Data Residency Requirement</h2>
+<p>One requirement that is often underweighted in vendor selection is data residency. FINMA supervisory practice and the revised Swiss Federal Act on Data Protection (nFADP) together create a strong expectation that personal data — and especially biometric data — collected during identification is processed and stored in Switzerland.</p>
+<p>While the circular does not explicitly mandate Swiss data residency, FINMA supervisory letters and audit findings have consistently held that financial intermediaries must be able to demonstrate control over where identification data is processed and stored. Using a non-Swiss KYC vendor that processes data in, say, the United States or even the European Union creates a compliance risk, particularly for institutions subject to banking secrecy.</p>
+<p>VerfiX operates exclusively in Switzerland, with all data processing and storage occurring in Swiss Tier III certified data centres. This eliminates the data residency compliance risk entirely.</p>
+
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">Integration with AML and CDD Requirements</h2>
+<p>Circular 2016/7 covers the identification of the customer — confirming who they are. But FINMA compliance does not end there. Swiss financial intermediaries must also conduct customer due diligence (CDD) under GwG Art. 3, which includes understanding the purpose of the business relationship, assessing the customer risk profile, and conducting AML screening.</p>
+<p>Best practice is to integrate identity verification and AML screening into a single onboarding workflow, so that the identification result and the AML screening result are available together at the point of onboarding decision. VerfiX supports this through the Trust Engine™, which combines identity verification signals with AML screening results into a single risk score and decision.</p>
+
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">Common Compliance Gaps</h2>
+<p>Based on FINMA inspection findings and industry experience, the most common compliance gaps in online identification programmes are:</p>
+<p><strong>Insufficient liveness detection:</strong> Using a vendor that only requires a static selfie, rather than an active or passive liveness check. This exposes the institution to presentation attacks using printed photographs.</p>
+<p><strong>Missing audit trail for rejected cases:</strong> Documenting approved identifications but not rejected ones. FINMA expects a complete record of all identification attempts, not just successful ones.</p>
+<p><strong>Inadequate vendor due diligence:</strong> Selecting a KYC vendor without reviewing their security documentation, sub-processor list, or data residency arrangements.</p>
+<p><strong>No quality assurance process:</strong> Running automated identification without a periodic review of outcomes and error rates.</p>
+<p><strong>Incomplete staff training records:</strong> Having trained staff but not documenting the training in a way that can be produced during a FINMA inspection.</p>
+
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">FINMA Circular 2016/7 Compliance Checklist</h2>
+<ul style="margin:.5rem 0 1rem 1.25rem;display:flex;flex-direction:column;gap:.5rem;">
+  <li>☐ Video or online identification technology selected and validated against circular requirements</li>
+  <li>☐ Document verification covers all relevant document types and countries</li>
+  <li>☐ Liveness detection implemented (active or passive)</li>
+  <li>☐ Biometric match threshold defined and configured</li>
+  <li>☐ Immutable audit trail with 10-year retention configured</li>
+  <li>☐ AML screening integrated into onboarding flow</li>
+  <li>☐ Data processing agreement with KYC vendor in place</li>
+  <li>☐ Swiss data residency confirmed with vendor</li>
+  <li>☐ Staff training programme documented</li>
+  <li>☐ Quality assurance process defined and scheduled</li>
 </ul>
 
-<h3>Online-Identifizierung</h3>
-<ul>
-<li>Zulässig mit qualifizierter elektronischer Signatur (QES) oder gleichwertigen Verfahren</li>
-<li>Biometrischer Abgleich (Gesichtsbild aus Dokument vs. Selfie/Video)</li>
-<li>Liveness-Check Pflicht bei vollständig automatisierten Verfahren</li>
-</ul>
+<h2 style="font-size:1.4rem;font-weight:900;color:var(--t);letter-spacing:-.025em;margin:2rem 0 .75rem;">Conclusion</h2>
+<p>FINMA Circular 2016/7 provides a clear framework for digital customer identification, but the technical and procedural bar is higher than many institutions initially assume. Selecting the right technology vendor, ensuring Swiss data residency, maintaining a complete audit trail, and building a quality assurance process are all essential components of a compliant programme.</p>
+<p>VerfiX is purpose-built to meet Circular 2016/7 requirements. Our document verification, liveness detection, biometric matching, and AML screening run as a unified workflow with a FINMA-ready audit trail, all processed in Switzerland.</p>
 
-<blockquote>Die FINMA akzeptiert automatisierte KYC-Verfahren — vorausgesetzt, sie erfüllen die Anforderungen an Dokumentenprüfung, Biometrie und Liveness-Detection nach RS 2016/7.</blockquote><h2 id="sec-2">Risikobasierter KYC-Ansatz und erhöhte Sorgfalt</h2>Das GwG verlangt einen <strong>risikobasierten Ansatz</strong>. Nicht alle Kunden erfordern denselben KYC-Aufwand — aber bestimmte Kundengruppen erfordern zwingend <strong>Enhanced Due Diligence (EDD)</strong>:
-
-<ul>
-<li><strong>Politisch exponierte Personen (PEP):</strong> Automatisches Screening gegen PEP-Datenbanken Pflicht. Geschäftsbeziehungen mit PEP erfordern Genehmigung durch Geschäftsleitung.</li>
-<li><strong>Hochrisikoländer:</strong> FINMA-Rundschreiben 2011/2 listet Länder mit erhöhtem Geldwäschereirisiko. Transaktionen mit diesen Ländern erfordern verschärfte Prüfung.</li>
-<li><strong>Wirtschaftlich Berechtigte (UBO):</strong> Bei juristischen Personen muss der tatsächlich wirtschaftlich Berechtigte (Ultimate Beneficial Owner) identifiziert werden.</li>
-<li><strong>Komplexe Strukturen:</strong> Trusts, Stiftungen, Offshore-Gesellschaften erfordern Durchleuchten der Struktur bis zum natürlichen Endempfänger.</li>
-</ul><h2 id="sec-3">KYC für Krypto-Dienstleister und VASPs</h2>Seit der Revision des GwG und der FINMA-Gesetzgebung 2023 unterliegen <strong>Virtual Asset Service Provider (VASP)</strong> — also Krypto-Börsen, Wallet-Anbieter und DeFi-Plattformen — verschärften KYC-Anforderungen:
-
-<ul>
-<li>Vollständige KYC-Identifizierung für alle Nutzer (keine anonymen Transaktionen)</li>
-<li>Travel Rule: Bei Krypto-Überweisungen über CHF 1'000 müssen Absender- und Empfängerdaten übermittelt werden</li>
-<li>Sanktionsscreening bei jeder Transaktion</li>
-<li>UBO-Klärung bei institutionellen Nutzern</li>
-</ul>
-
-VerfiX bietet eine speziell für VASPs konzipierte KYC-Lösung, die FINMA-Anforderungen und internationale VASP-Standards (FATF) kombiniert.</div><div style="background:var(--n);border-radius:12px;padding:2rem;margin-top:2.5rem;"><div style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--r);margin-bottom:.5rem;">VerfiX AG · Lausanne</div><h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;">FINMA-konforme KYC-Prozesse für Ihr Institut</h3><p style="color:rgba(255,255,255,.55);font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;">Erfahren Sie, wie VerfiX Ihre KYC-Compliance unter FINMA-Aufsicht stärkt.</p><div style="display:flex;gap:.75rem;flex-wrap:wrap;"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r"><i class="fas fa-calendar-check"></i> Demo buchen</a><a href="/solutions" class="btn btn-wo">Plattform erkunden</a></div></div><div class="article-share"><span class="article-share-lbl">Teilen:</span><a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https://verfix.ch/insights/finma-kyc-anforderungen-banken" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i>LinkedIn</a><a class="share-btn tw" href="https://twitter.com/intent/tweet?url=https://verfix.ch/insights/finma-kyc-anforderungen-banken" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i>X</a><button class="share-btn cp" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Kopiert!';setTimeout(function(){this.textContent='Link kopieren';}.bind(this),2000)">Link kopieren</button></div></div><aside><div class="article-toc"><div class="article-toc-title">Inhalt</div><a class="toc-link" onclick="tocScroll('sec-0')">FINMA-Regulierung und KYC: Der Überblick</a><a class="toc-link" onclick="tocScroll('sec-1')">Digitale Identifizierung nach FINMA-RS 2016/7</a><a class="toc-link" onclick="tocScroll('sec-2')">Risikobasierter KYC-Ansatz und erhöhte Sorgfa…</a><a class="toc-link" onclick="tocScroll('sec-3')">KYC für Krypto-Dienstleister und VASPs</a><div style="margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--bd);"><a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r" style="font-size:.75rem;width:100%;justify-content:center;"><i class="fas fa-calendar-check"></i> Demo buchen</a></div></div><div style="background:var(--off);border:1px solid var(--bd);border-radius:10px;padding:1.35rem;margin-top:1.25rem;"><div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lt);margin-bottom:.75rem;">Autor</div><div style="display:flex;align-items:center;gap:.75rem;"><!-- ⚠ REPLACE: Add your own team photo to /assets/team/ -->
-<img src="/assets/team/ahmed-sherwed.jpeg" alt="Ahmed Al-Sultan, Founder &amp; CEO of VerfiX" width="40" height="40" loading="lazy" style="border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;"/><div><div style="font-size:.84rem;font-weight:700;color:var(--t);">Ahmed Al-Sultan</div><div style="font-size:.72rem;color:var(--lt);">Founder & CEO, VerfiX AG</div></div></div></div></aside></div></div><div class="blog-related"><div class="W"><span class="label">Weitere Artikel</span><h2 style="font-size:1.2rem;margin:.3rem 0 1.25rem;">Das könnte Sie auch interessieren</h2><div class="blog-related-grid"><a href="/insights/nfadp-compliance-guide-schweiz" class="blog-card" data-cat="nfadp" style="text-decoration:none;"><div class="blog-card-img" style="background:linear-gradient(135deg,#1a1f2e 0%,#2d1a1a 100%);"><i class="fas fa-shield-halved" style="font-size:2.5rem;color:rgba(200,37,42,.7);"></i></div><div class="blog-card-body"><div class="blog-card-meta"><span class="blog-tag nfadp">nFADP / nDSG</span><span class="blog-read-time" style="font-size:.68rem;"><i class="fas fa-clock" style="font-size:.58rem;"></i>9 min</span></div><h3 class="blog-card-title">nFADP 2023: Der vollständige Compliance-Leitfaden für Schweizer Unternehmen</h3><p class="blog-card-excerpt">Das revidierte Schweizer Datenschutzgesetz (nFADP/nDSG) ist in Kraft. Was müssen Banken, Fintechs und regulierte Unternehmen jetzt konkret umsetzen? Dieser Leitfaden erklärt alle Anforderungen, Fristen und Best Practices.</p><div class="blog-card-footer"><div class="blog-card-author"><img src="/assets/team/ahmed-sherwed.jpeg" alt="Ahmed Al-Sultan, Founder &amp; CEO of VerfiX" width="24" height="24" loading="lazy" style="border-radius:50%;object-fit:cover;object-position:center top;"/>Ahmed</div><span class="blog-card-date">1. September 2025</span></div></div></a><a href="/insights/eidas-2-schweizer-banken-explainer" class="blog-card" data-cat="eidas" style="text-decoration:none;"><div class="blog-card-img" style="background:linear-gradient(135deg,#1a1f2e 0%,#1a2d20 100%);"><i class="fas fa-passport" style="font-size:2.5rem;color:rgba(200,37,42,.7);"></i></div><div class="blog-card-body"><div class="blog-card-meta"><span class="blog-tag eidas">eIDAS 2.0</span><span class="blog-read-time" style="font-size:.68rem;"><i class="fas fa-clock" style="font-size:.58rem;"></i>7 min</span></div><h3 class="blog-card-title">eIDAS 2.0 und Schweizer Banken: Was die EU-Digitalidentität für die Schweiz bedeutet</h3><p class="blog-card-excerpt">Die EU führt mit eIDAS 2.0 eine europäische digitale Identitätswallet ein. Obwohl die Schweiz kein EU-Mitglied ist, werden Schweizer Banken und Finanzinstitute direkt betroffen sein. Wir erklären warum — und wie VerfiX Gateway die Lösung bietet.</p><div class="blog-card-footer"><div class="blog-card-author"><img src="/assets/team/petter-stahle.jpeg" alt="Petter Stahle, AI &amp; Technology Lead at VerfiX" width="24" height="24" loading="lazy" style="border-radius:50%;object-fit:cover;object-position:center top;"/>Petter</div><span class="blog-card-date">10. November 2025</span></div></div></a><a href="/insights" class="blog-card" style="text-decoration:none;display:flex;align-items:center;justify-content:center;background:var(--off);min-height:200px;"><div style="text-align:center;"><div style="font-size:.85rem;font-weight:700;color:var(--t);margin-bottom:.38rem;">Alle Artikel</div><i class="fas fa-arrow-right" style="color:var(--r);margin-top:.75rem;font-size:.9rem;display:block;"></i></div></a></div></div></div><script>function tocScroll(id){var el=document.getElementById(id);if(el){window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-90,behavior:"smooth"});}}window.addEventListener("scroll",function(){var p=document.getElementById("read-progress");if(!p)return;p.style.transform="scaleX("+Math.min(window.scrollY/(document.body.scrollHeight-window.innerHeight),1)+")";},{passive:true});</script>
+      </div>
+      <div style="margin-top:3rem;padding:1.75rem;background:var(--off);border-radius:12px;border-left:3px solid var(--r);">
+        <h3 style="font-size:1rem;font-weight:800;color:var(--t);margin-bottom:.5rem;">Ready to implement compliant identity verification?</h3>
+        <p style="font-size:.87rem;color:var(--m);margin-bottom:1rem;">Book a 30-minute call with the VerfiX compliance and technical team.</p>
+        <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" onclick="trackCTA('blog_cta')"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+      </div>
+    </div>
+  </section>
 </main>
-<!-- SOCIAL BAR -->
-<div class="social-bar">
-  <div class="social-inner">
-    <div>
-      <div class="soc-label" style="margin-bottom:.38rem;">Follow VerfiX</div>
-      <span class="social-copy">Swiss Trust Infrastructure · @verfix</span>
-    </div>
-    <div class="social-links">
-      <a class="soc-btn soc-li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i>
-        <span>LinkedIn</span>
-      </a>
-      <div class="soc-divider"></div>
-      <a class="soc-btn soc-yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener">
-        <i class="fab fa-youtube"></i>
-        <span>YouTube Channel</span>
-      </a>
-    </div>
-  </div>
-</div>
-
 <footer role="contentinfo">
   <div class="foot-top">
     <div class="foot-brand">
@@ -541,6 +398,7 @@ VerfiX bietet eine speziell für VASPs konzipierte KYC-Lösung, die FINMA-Anford
       <span href="/trust-center">Trust Center</span>
       <span href="/resources">Compliance Guides</span>
       <span href="/resources">Whitepapers</span>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX#verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-github"></i> GitHub Repository</a>
     </div>
     <div class="foot-col">
       <h4>Company</h4>
@@ -573,6 +431,9 @@ VerfiX bietet eine speziell für VASPs konzipierte KYC-Lösung, die FINMA-Anford
       <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
       <a href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i>LinkedIn</a>
       <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-youtube" style="font-size:.72rem;color:#f87171;"></i>YouTube</a>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX#verfix" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.producthunt.com/products/verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-product-hunt" style="font-size:.72rem;"></i>Product Hunt</a>
+      <a href="https://www.crunchbase.com/organization/verfix" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.3rem;"><span style="font-size:.62rem;font-weight:800;font-family:'IBM Plex Mono',monospace;background:#0288d1;color:#fff;border-radius:3px;padding:.05rem .32rem;line-height:1.4;display:inline-block;margin-right:.1rem;">CB</span>Crunchbase</a>
     </div>
   </div>
 
@@ -601,11 +462,12 @@ VerfiX bietet eine speziell für VASPs konzipierte KYC-Lösung, die FINMA-Anford
 
 
 
-  <script src="/js/main.js" defer></script>
 
+  <script src="/js/breadcrumbs.js" defer></script>
 <script src="/js/main.js" defer></script>
 
 <!-- ── FLOATING DEMO BUTTON ── -->
 <a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" aria-label="Jetzt Demo buchen"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Jetzt Demo buchen</span></a>
+
 </body>
 </html>

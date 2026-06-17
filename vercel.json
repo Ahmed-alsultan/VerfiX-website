@@ -3,6 +3,258 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/legal",
+      "destination": "/legal/dpa.html"
+    },
+    {
+      "source": "/legal/dpa/",
+      "destination": "/legal/dpa.html"
+    },
+    {
+      "source": "/legal/dpa",
+      "destination": "/legal/dpa.html"
+    },
+    {
+      "source": "/developers/architecture/",
+      "destination": "/developers/architecture.html"
+    },
+    {
+      "source": "/developers/architecture",
+      "destination": "/developers/architecture.html"
+    },
+    {
+      "source": "/developers/integration/",
+      "destination": "/developers/integration.html"
+    },
+    {
+      "source": "/developers/integration",
+      "destination": "/developers/integration.html"
+    },
+    {
+      "source": "/developers/",
+      "destination": "/developers/index.html"
+    },
+    {
+      "source": "/developers",
+      "destination": "/developers/index.html"
+    },
+    {
+      "source": "/sales/insurance-deck/",
+      "destination": "/sales/insurance-deck.html"
+    },
+    {
+      "source": "/sales/insurance-deck",
+      "destination": "/sales/insurance-deck.html"
+    },
+    {
+      "source": "/sales/telecom-deck/",
+      "destination": "/sales/telecom-deck.html"
+    },
+    {
+      "source": "/sales/telecom-deck",
+      "destination": "/sales/telecom-deck.html"
+    },
+    {
+      "source": "/sales/fintech-deck/",
+      "destination": "/sales/fintech-deck.html"
+    },
+    {
+      "source": "/sales/fintech-deck",
+      "destination": "/sales/fintech-deck.html"
+    },
+    {
+      "source": "/sales/banking-deck/",
+      "destination": "/sales/banking-deck.html"
+    },
+    {
+      "source": "/sales/banking-deck",
+      "destination": "/sales/banking-deck.html"
+    },
+    {
+      "source": "/partners/reseller/",
+      "destination": "/partners/reseller.html"
+    },
+    {
+      "source": "/partners/reseller",
+      "destination": "/partners/reseller.html"
+    },
+    {
+      "source": "/partners/",
+      "destination": "/partners/index.html"
+    },
+    {
+      "source": "/partners",
+      "destination": "/partners/index.html"
+    },
+    {
+      "source": "/trust-center/business-continuity/",
+      "destination": "/trust-center/business-continuity.html"
+    },
+    {
+      "source": "/trust-center/business-continuity",
+      "destination": "/trust-center/business-continuity.html"
+    },
+    {
+      "source": "/trust-center/security-policy/",
+      "destination": "/trust-center/security-policy.html"
+    },
+    {
+      "source": "/trust-center/security-policy",
+      "destination": "/trust-center/security-policy.html"
+    },
+    {
+      "source": "/trust-center/incident-response/",
+      "destination": "/trust-center/incident-response.html"
+    },
+    {
+      "source": "/trust-center/incident-response",
+      "destination": "/trust-center/incident-response.html"
+    },
+    {
+      "source": "/trust-center/aml-whitepaper/",
+      "destination": "/trust-center/aml-whitepaper.html"
+    },
+    {
+      "source": "/trust-center/aml-whitepaper",
+      "destination": "/trust-center/aml-whitepaper.html"
+    },
+    {
+      "source": "/trust-center/nfadp-whitepaper/",
+      "destination": "/trust-center/nfadp-whitepaper.html"
+    },
+    {
+      "source": "/trust-center/nfadp-whitepaper",
+      "destination": "/trust-center/nfadp-whitepaper.html"
+    },
+    {
+      "source": "/trust-center/security/",
+      "destination": "/trust-center/security.html"
+    },
+    {
+      "source": "/trust-center/security",
+      "destination": "/trust-center/security.html"
+    },
+    {
+      "source": "/resources/trust-engine/",
+      "destination": "/resources/trust-engine.html"
+    },
+    {
+      "source": "/resources/trust-engine",
+      "destination": "/resources/trust-engine.html"
+    },
+    {
+      "source": "/resources/eid-gateway/",
+      "destination": "/resources/eid-gateway.html"
+    },
+    {
+      "source": "/resources/eid-gateway",
+      "destination": "/resources/eid-gateway.html"
+    },
+    {
+      "source": "/resources/kyb-datasheet/",
+      "destination": "/resources/kyb-datasheet.html"
+    },
+    {
+      "source": "/resources/kyb-datasheet",
+      "destination": "/resources/kyb-datasheet.html"
+    },
+    {
+      "source": "/resources/kyc-datasheet/",
+      "destination": "/resources/kyc-datasheet.html"
+    },
+    {
+      "source": "/resources/kyc-datasheet",
+      "destination": "/resources/kyc-datasheet.html"
+    },
+    {
+      "source": "/resources/brochure/",
+      "destination": "/resources/brochure.html"
+    },
+    {
+      "source": "/resources/brochure",
+      "destination": "/resources/brochure.html"
+    },
+    {
+      "source": "/insights/finma-kyc-compliance-checklist-2025",
+      "destination": "/insights/finma-kyc-compliance-checklist-2025.html"
+    },
+    {
+      "source": "/insights/finma-kyc-compliance-checklist-2025/",
+      "destination": "/insights/finma-kyc-compliance-checklist-2025.html"
+    },
+    {
+      "source": "/de/kyc-software-schweiz",
+      "destination": "/de/kyc-software-schweiz/index.html"
+    },
+    {
+      "source": "/de/kyc-software-schweiz/",
+      "destination": "/de/kyc-software-schweiz/index.html"
+    },
+    {
+      "source": "/fr/logiciel-kyc-suisse",
+      "destination": "/fr/logiciel-kyc-suisse/index.html"
+    },
+    {
+      "source": "/fr/logiciel-kyc-suisse/",
+      "destination": "/fr/logiciel-kyc-suisse/index.html"
+    },
+    {
+      "source": "/en/kyc-software-switzerland",
+      "destination": "/en/kyc-software-switzerland/index.html"
+    },
+    {
+      "source": "/en/kyc-software-switzerland/",
+      "destination": "/en/kyc-software-switzerland/index.html"
+    },
+    {
+      "source": "/insights/finma-kyc-anforderungen-banken/",
+      "destination": "/insights/finma-kyc-anforderungen-banken.html"
+    },
+    {
+      "source": "/insights/kyb-business-verification-guide-schweiz",
+      "destination": "/insights/kyb-business-verification-guide-schweiz.html"
+    },
+    {
+      "source": "/insights/kyb-business-verification-guide-schweiz/",
+      "destination": "/insights/kyb-business-verification-guide-schweiz.html"
+    },
+    {
+      "source": "/insights/aml-screening-best-practices-schweiz/",
+      "destination": "/insights/aml-screening-best-practices-schweiz.html"
+    },
+    {
+      "source": "/insights/eidas-2-schweizer-banken-explainer/",
+      "destination": "/insights/eidas-2-schweizer-banken-explainer.html"
+    },
+    {
+      "source": "/insights/nfadp-compliance-guide-schweiz/",
+      "destination": "/insights/nfadp-compliance-guide-schweiz.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/pricing/",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/dpa",
+      "destination": "/dpa.html"
+    },
+    {
+      "source": "/dpa/",
+      "destination": "/dpa.html"
+    },
+    {
+      "source": "/status",
+      "destination": "/status.html"
+    },
+    {
+      "source": "/status/",
+      "destination": "/status.html"
+    },
+    {
       "source": "/404",
       "destination": "/404.html"
     },
@@ -503,6 +755,24 @@
         {
           "key": "Content-Type",
           "value": "application/manifest+json"
+        }
+      ]
+    },
+    {
+      "source": "/favicon.:ext*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/apple-touch-icon.png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
         }
       ]
     }

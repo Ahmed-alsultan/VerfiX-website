@@ -1,0 +1,303 @@
+{
+  "errors": 0,
+  "warnings": 0,
+  "duration": "0.04s",
+  "timestamp": "2026-06-13T18:46:46.757Z",
+  "checks": [
+    {
+      "type": "WARN",
+      "file": "dist/about.html",
+      "message": "30 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/api.html",
+      "message": "36 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/careers.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/case-studies.html",
+      "message": "23 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/contact.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/datenschutz.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/de/demo/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/de/fintech-map/index.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/de/kyb/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/de/partner/index.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/de/produkte/stimmverifikation/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/de/produkte/video-identifikation/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/de/trust-center/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/de/vergleich/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/en/comparison/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/en/demo/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/en/fintech-map/index.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/en/kyb/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/en/partners/index.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/en/products/video-identification/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/en/products/voice-verification/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/en/trust-center/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/faq/index.html",
+      "message": "33 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/fr/carte-fintech/index.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/fr/centre-de-confiance/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/fr/comparaison/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/fr/demo/index.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/fr/kyb/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/fr/partenaires/index.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/fr/produits/identification-video/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/fr/produits/verification-vocale/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/gateway.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/impressum.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/index.html",
+      "message": "91 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/industries.html",
+      "message": "40 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/insights/aml-screening-best-practices-schweiz.html",
+      "message": "26 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/insights/eidas-2-schweizer-banken-explainer.html",
+      "message": "25 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/insights/finma-kyc-anforderungen-banken.html",
+      "message": "26 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/insights/index.html",
+      "message": "32 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/insights/kyc-onboarding-digital-schweiz.html",
+      "message": "26 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/insights/nfadp-compliance-guide-schweiz.html",
+      "message": "27 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/mentions-legales.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/politique-confidentialite.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/press.html",
+      "message": "23 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/privacy.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/age-estimation/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/age-validation/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/aml-screening/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/deepfake-detection/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/document-fraud/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/document-verification/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/face-verification/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/synthetic-identity/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/ubo-verification/index.html",
+      "message": "24 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/products/voice-verification/index.html",
+      "message": "28 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/resources.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/solutions.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/terms.html",
+      "message": "21 inline event handler(s) — consider moving to JS"
+    },
+    {
+      "type": "WARN",
+      "file": "dist/trust-center.html",
+      "message": "22 inline event handler(s) — consider moving to JS"
+    }
+  ]
+}
