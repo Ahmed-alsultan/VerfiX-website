@@ -907,3 +907,11 @@ window.vfx.on = function(el, evt, fn, opts) {
   }, 6000);
 })();
 
+
+// Backdrop click closes all menus
+(function() {
+  var bd = document.getElementById('nav-backdrop');
+  if (bd) {
+    bd.addEventListener('click', function() { closeAll(); });
+  }
+})();

@@ -80,15 +80,21 @@
         <span onclick="toggleMenu('res')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('res')">
           <span>Resources</span> <i class="arr fas fa-chevron-down"></i>
         </span>
-        <div class="mega mega-sm" id="mega-res" style="min-width:260px;padding:1.35rem 1.5rem;">
-          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Resources</h5>
-          <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a>
-          <a class="ml" href="/resources"><i class="fas fa-book"></i>Documentation</a>
-          <a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a>
-          <a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
-          <a class="ml" href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf"></i>nFADP Whitepaper</a>
-          <a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a>
-          <a class="ml" href="/faq"><i class="fas fa-circle-question"></i>FAQ</a>
+        <div class="mega" id="mega-res" style="min-width:520px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;padding-bottom:.35rem;border-bottom:1px solid var(--bd);">Learn</h5>
+            <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a>
+            <a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
+            <a class="ml" href="/faq"><i class="fas fa-circle-question"></i>FAQ</a>
+            <a class="ml" href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf"></i>nFADP Whitepaper</a>
+          </div>
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;padding-bottom:.35rem;border-bottom:1px solid var(--bd);">Documentation</h5>
+            <a class="ml" href="/resources" style="font-weight:700;color:var(--r);"><i class="fas fa-books"></i>Doc Center <span style="font-size:.6rem;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:3px;padding:.08rem .35rem;font-weight:700;margin-left:.2rem;">30 docs</span></a>
+            <a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a>
+            <a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a>
+            <a class="ml" href="/developers"><i class="fas fa-code"></i>Developer Hub</a>
+          </div>
         </div>
       </li>
       <li class="ni" id="ni-co">
@@ -98,7 +104,7 @@
         <div class="mega mega-sm" id="mega-co" style="min-width:240px;padding:1.35rem 1.5rem;">
           <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
           <a class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</a>
-          <a class="ml" href="/about.html#team"><i class="fas fa-users"></i>Leadership &amp; Team</a>
+          <a class="ml" href="/about#team"><i class="fas fa-users"></i>Leadership &amp; Team</a>
           <a class="ml" href="/en/partners/"><i class="fas fa-handshake"></i>Partner Program</a>
           <a class="ml" href="/careers"><i class="fas fa-briefcase"></i>Careers</a>
           <a class="ml" href="/press"><i class="fas fa-newspaper"></i>Press</a>

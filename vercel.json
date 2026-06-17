@@ -3,6 +3,18 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/resources/docs/",
+      "destination": "/resources/index.html"
+    },
+    {
+      "source": "/resources/docs",
+      "destination": "/resources/index.html"
+    },
+    {
+      "source": "/resources/",
+      "destination": "/resources/index.html"
+    },
+    {
       "source": "/legal",
       "destination": "/legal/dpa.html"
     },

@@ -60,18 +60,11 @@
 
 
 /* ════ FOOTER ADDRESS + PARTNER STRIP ════ */
-.foot-meta-row{
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-  padding:1rem 0;border-top:1px solid rgba(255,255,255,.07);
-  margin-top:.875rem;
-}
 .foot-address{
   font-size:.72rem;color:rgba(255,255,255,.38);line-height:1.6;
   display:flex;align-items:flex-start;gap:.45rem;
 }
 .foot-address i{color:var(--r);font-size:.65rem;flex-shrink:0;margin-top:.14rem;}
-.foot-partner-logos{display:flex;align-items:center;gap:1.25rem;}
 .foot-partner-logo img{
   height:22px;width:auto;opacity:.55;
   filter:grayscale(100%) brightness(2);
@@ -79,8 +72,7 @@
 }
 .foot-partner-logo:hover img{opacity:.9;filter:grayscale(0%);}
 @media(max-width:640px){
-  .foot-meta-row{flex-direction:column;align-items:flex-start;}
-}
+  }
 
 /* ═══════════════════════════════════════════════════════════
    FAQ ACCORDION — Enterprise-grade, ARIA-accessible
@@ -1127,16 +1119,10 @@ body.page-contact .float-demo-btn { display: none !important; }
   display: block;
 }
 
-/* Extra safety — mega never shows without explicit .open on parent */
-.mega:not(.ni.open > .mega) {
-  /* belt and suspenders — redundant but safe */
-  pointer-events: none;
-}
-/* Ensure mega closes on page scroll (CSS backup) */
-@media (hover: none) {
-  /* Touch devices — mega only opens on click, never on hover */
+/* Touch devices — mega opens on click only, never hover */
   .ni:hover > .mega { opacity: 0; visibility: hidden; pointer-events: none; }
-  .ni.open > .mega  { opacity: 1; visibility: visible; pointer-events: auto; }
+  .ni.open > 
+}
 }
 
 /* ── Mega menu category header (replaces h4/h5 for a11y) ── */
@@ -1255,15 +1241,6 @@ textarea:focus-visible,
   clip: rect(0,0,0,0);
 }
 
-/* ── Mega menu open state — ensure aria-expanded matches visual ── */
-.ni[aria-expanded="true"] > .mega,
-.ni.open > .mega {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
 /* ── Minimum tap target size ── */
 .btn,
 button,
@@ -1306,15 +1283,7 @@ a.nav-logo,
 
 /* ── Spec additions: display helpers & overrides ─────────────────── */
 
-/* .mega.open — alias for JS classList.add('open') on mega element directly.
-   The primary open state is .ni.open .mega (opacity/visibility transitions).
-   This alias ensures direct-class toggling also works. */
-.mega.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
+
 
 /* Cookie preferences panel open state */
 #ck-prefs.open {
@@ -1324,4 +1293,71 @@ a.nav-logo,
 /* Cookie bar: hide when consent given (JS adds .hidden) */
 #ck-bar.hidden {
   display: none !important;
+}
+
+/* ── Footer social icons — new variants ───────────────── */
+.foot-soc-ico.gh:hover{border-color:rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.1);}
+.foot-soc-ico.cb{font-size:.62rem;}
+.foot-soc-ico.cb:hover{border-color:#0288d1;color:#fff;background:rgba(2,136,209,.2);}
+
+/* ── Partner bar ─────────────────────────────────────── */
+.foot-partner-bar{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;
+  padding:1.25rem 0;border-top:1px solid rgba(255,255,255,.07);margin-top:.875rem;
+}
+
+/* Swiss Made badge */
+.swiss-made-badge{
+  display:flex;align-items:center;gap:.65rem;
+  padding:.6rem 1rem;
+  background:rgba(255,0,0,.08);
+  border:1px solid rgba(255,0,0,.18);
+  border-radius:8px;
+}
+.swiss-flag-wrap{display:flex;align-items:center;flex-shrink:0;}
+.swiss-made-label{font-size:.78rem;font-weight:800;color:#fff;letter-spacing:.03em;line-height:1.2;}
+.swiss-made-sub{font-size:.62rem;color:rgba(255,255,255,.38);margin-top:.1rem;}
+
+/* Partners group */
+.foot-partners-group{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;}
+.foot-partners-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);}
+.foot-partners-logos{display:flex;align-items:center;gap:1.1rem;}
+
+/* Partner logo wrapper with hover card */
+.fp-logo-wrap{
+  position:relative;display:flex;align-items:center;
+  opacity:.55;filter:grayscale(1) brightness(1.8);
+  transition:opacity .2s,filter .2s,transform .2s;
+  text-decoration:none;
+}
+.fp-logo-wrap:hover{opacity:1;filter:grayscale(0) brightness(1);transform:translateY(-2px);}
+.fp-logo-wrap img{height:32px;width:auto;display:block;}
+
+/* Hover card */
+.fp-hover-card{
+  position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);
+  background:#fff;border:1px solid var(--bd);border-radius:10px;
+  padding:.875rem 1rem;width:220px;
+  box-shadow:0 8px 32px rgba(26,31,46,.18);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .18s ease,visibility .18s ease,transform .18s ease;
+  z-index:200;
+}
+.fp-logo-wrap:hover .fp-hover-card{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.fp-hover-card::after{
+  content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%) rotate(45deg);
+  width:10px;height:10px;background:#fff;border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);
+}
+.fp-hover-name{font-size:.82rem;font-weight:800;color:var(--t);margin-bottom:.3rem;}
+.fp-hover-desc{font-size:.73rem;color:var(--m);line-height:1.55;margin-bottom:.5rem;}
+.fp-hover-link{font-size:.7rem;font-weight:700;color:var(--r);}
+
+/* Remove old foot-partner-logos if it still appears */
+.foot-partner-logos img{height:32px;width:auto;}
+
+@media(max-width:768px){
+  .foot-partner-bar{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .fp-hover-card{left:0;transform:translateX(0) translateY(6px);}
+  .fp-logo-wrap:hover .fp-hover-card{transform:translateX(0) translateY(0);}
+  .fp-hover-card::after{left:20%;}
 }
