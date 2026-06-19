@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VerfiX – Verify. Trust. Secure.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: { 950:'#05070f', 900:'#080d1c', 800:'#0d1530', 700:'#122048', 600:'#1a2d5a' },
+        crimson: { 700:'#b01020', 600:'#cc1a2e', 500:'#e01e35', 400:'#f03349', 300:'#f87080' },
+        silver: { 100:'#f0f2f6', 200:'#dde2ec', 300:'#bdc5d4', 400:'#8d98b0', 500:'#5c6880' }
+      },
+      fontFamily: { display:['Syne','sans-serif'], body:['DM Sans','sans-serif'] },
+    }
+  }
+}
+</script>
+<style>
+*{box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#05070f;color:#dde2ec;overflow-x:hidden}
+h1,h2,h3,h4,.font-display{font-family:'Syne',sans-serif}
+
+/* Grid texture overlay */
+.grid-bg{background-image:linear-gradient(rgba(204,26,46,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(204,26,46,0.04) 1px,transparent 1px);background-size:60px 60px}
+
+/* Hero gradient mesh */
+.hero-bg{background:radial-gradient(ellipse 80% 60% at 60% 0%,rgba(204,26,46,0.18) 0%,transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(18,32,72,0.8) 0%,transparent 80%),#05070f}
+
+/* Shimmer line */
+.shimmer-line{height:1px;background:linear-gradient(90deg,transparent,rgba(204,26,46,0.6),rgba(224,30,53,0.8),rgba(204,26,46,0.6),transparent)}
+
+/* Nav glass */
+nav{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+
+/* Button styles */
+.btn-primary{background:linear-gradient(135deg,#cc1a2e,#e01e35);transition:all .3s;box-shadow:0 0 0 0 rgba(204,26,46,0.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(204,26,46,0.4)}
+.btn-secondary{border:1px solid rgba(189,197,212,0.3);transition:all .3s;background:rgba(255,255,255,0.03)}
+.btn-secondary:hover{border-color:rgba(204,26,46,0.5);background:rgba(204,26,46,0.06);transform:translateY(-2px)}
+
+/* Card styles */
+.card{background:rgba(13,21,48,0.6);border:1px solid rgba(189,197,212,0.1);transition:all .4s;backdrop-filter:blur(10px)}
+.card:hover{border-color:rgba(204,26,46,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(204,26,46,0.1)}
+
+/* Tag badge */
+.exclusive-tag{background:linear-gradient(135deg,rgba(204,26,46,0.2),rgba(224,30,53,0.1));border:1px solid rgba(204,26,46,0.4);color:#f03349;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+
+/* Stat numbers */
+.stat-num{font-family:'Syne',sans-serif;font-weight:800;background:linear-gradient(135deg,#fff,#f03349);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Section labels */
+.section-label{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#cc1a2e}
+
+/* Table */
+.compare-table th{font-family:'Syne',sans-serif}
+.compare-table tr:nth-child(even){background:rgba(255,255,255,0.02)}
+
+/* Pricing card highlight */
+.pricing-highlight{background:linear-gradient(160deg,rgba(204,26,46,0.15),rgba(13,21,48,0.8));border:1px solid rgba(204,26,46,0.4) !important;box-shadow:0 0 60px rgba(204,26,46,0.1)}
+
+/* Testimonial carousel */
+.testimonial-track{display:flex;gap:24px;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
+
+/* Fade-in animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp .7s ease forwards}
+.fade-up.visible{animation:fadeUp .7s ease forwards}
+
+/* Hexagon logo placeholder */
+.hex-logo{clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);width:48px;height:48px}
+
+/* Scan line animation */
+@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(500%)}}
+.scan-line{animation:scan 3s linear infinite;opacity:.3}
+
+/* Mobile menu */
+#mobile-menu{max-height:0;overflow:hidden;transition:max-height .4s ease}
+#mobile-menu.open{max-height:500px}
+
+/* Smooth tab transitions */
+.tab-content{display:none}.tab-content.active{display:block;animation:fadeUp .4s ease forwards}
+</style>
+</head>
+<body class="grid-bg">
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-navy-950/80">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="relative w-8 h-8">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+          <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" stroke="#cc1a2e" stroke-width="2" fill="none"/>
+          <circle cx="20" cy="20" r="9" stroke="#cc1a2e" stroke-width="1.5" fill="none"/>
+          <circle cx="20" cy="20" r="5" stroke="#cc1a2e" stroke-width="1.5" fill="none"/>
+          <circle cx="20" cy="20" r="2" fill="#cc1a2e"/>
+          <line x1="32" y1="20" x2="38" y2="20" stroke="#cc1a2e" stroke-width="1.5"/>
+          <line x1="2" y1="20" x2="8" y2="20" stroke="#cc1a2e" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <span class="font-display text-xl font-800 text-white">Verfi<span class="text-crimson-500">X</span></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8 text-sm text-silver-300">
+      <a href="#product" class="hover:text-white transition-colors">Product</a>
+      <a href="#technology" class="hover:text-white transition-colors">Technology</a>
+      <a href="#use-cases" class="hover:text-white transition-colors">Use Cases</a>
+      <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+      <a href="#about" class="hover:text-white transition-colors">About</a>
+    </div>
+
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#contact" class="btn-secondary text-sm text-silver-200 px-4 py-2 rounded-md">Contact</a>
+      <a href="#contact" class="btn-primary text-sm text-white px-5 py-2 rounded-md font-medium">Book a Demo</a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button id="nav-toggle" class="md:hidden text-silver-300 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+      <i class="fas fa-bars text-lg"></i>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden border-t border-white/5 bg-navy-900/95">
+    <div class="px-6 py-4 flex flex-col gap-4 text-sm text-silver-300">
+      <a href="#product" class="hover:text-white">Product</a>
+      <a href="#technology" class="hover:text-white">Technology</a>
+      <a href="#use-cases" class="hover:text-white">Use Cases</a>
+      <a href="#pricing" class="hover:text-white">Pricing</a>
+      <a href="#about" class="hover:text-white">About</a>
+      <a href="#contact" class="btn-primary text-white text-center px-4 py-2 rounded-md font-medium">Book a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero-bg min-h-screen flex items-center pt-16 relative overflow-hidden">
+  <!-- Decorative scan element -->
+  <div class="absolute right-0 top-0 w-px h-full bg-crimson-600/20 hidden lg:block"></div>
+  <div class="absolute right-16 top-0 w-px h-full bg-crimson-600/10 hidden lg:block"></div>
+
+  <!-- Animated fingerprint rings (decorative) -->
+  <div class="absolute right-8 top-1/2 -translate-y-1/2 opacity-5 hidden xl:block" style="width:600px;height:600px">
+    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="60" stroke="#cc1a2e" stroke-width="1"/>
+      <circle cx="200" cy="200" r="85" stroke="#cc1a2e" stroke-width="1"/>
+      <circle cx="200" cy="200" r="110" stroke="#cc1a2e" stroke-width="1"/>
+      <circle cx="200" cy="200" r="135" stroke="#cc1a2e" stroke-width="1"/>
+      <circle cx="200" cy="200" r="160" stroke="#cc1a2e" stroke-width="1"/>
+      <circle cx="200" cy="200" r="185" stroke="#cc1a2e" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+    <div class="max-w-3xl">
+      <!-- Eyebrow -->
+      <div class="flex items-center gap-3 mb-6 fade-up" style="animation-delay:.1s">
+        <span class="section-label">Swiss Identity Infrastructure</span>
+        <div class="h-px w-12 bg-crimson-600/50"></div>
+        <span class="text-xs text-silver-400">Est. Lausanne, Switzerland</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-800 leading-[1.05] text-white mb-6 fade-up" style="animation-delay:.2s">
+        Swiss Identity<br/>
+        Compliance.<br/>
+        <span class="text-crimson-500">On-Premise.</span><br/>
+        Multi-Modal.
+      </h1>
+
+      <p class="text-lg md:text-xl text-silver-300 leading-relaxed max-w-2xl mb-10 fade-up" style="animation-delay:.3s">
+        Verify faces, voices, and documents <strong class="text-white font-medium">without sending customer data to external clouds.</strong> Powered by Idiap AI and CSEM edge technology. Built for Swiss financial compliance.
+      </p>
+
+      <!-- Key differentiators inline -->
+      <div class="flex flex-wrap gap-3 mb-10 fade-up" style="animation-delay:.35s">
+        <span class="flex items-center gap-2 text-sm text-silver-300 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
+          <i class="fas fa-face-smile text-crimson-400 text-xs"></i> Face
+        </span>
+        <span class="flex items-center gap-2 text-sm text-silver-300 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
+          <i class="fas fa-microphone text-crimson-400 text-xs"></i> Voice
+        </span>
+        <span class="flex items-center gap-2 text-sm text-silver-300 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
+          <i class="fas fa-id-card text-crimson-400 text-xs"></i> Document
+        </span>
+        <span class="flex items-center gap-2 text-sm bg-crimson-600/10 border border-crimson-600/30 text-crimson-300 rounded-full px-4 py-1.5">
+          <i class="fas fa-lock text-xs"></i> On-Premise by Default
+        </span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4 mb-16 fade-up" style="animation-delay:.4s">
+        <a href="#contact" class="btn-primary inline-flex items-center gap-2 text-white font-medium px-8 py-3.5 rounded-md text-sm">
+          <i class="fas fa-calendar-check text-xs"></i> Book a Demo
+        </a>
+        <a href="#how-it-works" class="btn-secondary inline-flex items-center gap-2 text-silver-200 font-medium px-8 py-3.5 rounded-md text-sm">
+          <i class="fas fa-book text-xs"></i> View Documentation
+        </a>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="fade-up" style="animation-delay:.5s">
+        <p class="text-xs text-silver-500 uppercase tracking-widest mb-4">Powered by & In Partnership With</p>
+        <div class="flex flex-wrap items-center gap-6 md:gap-10">
+          <!-- Partner logos as styled text badges -->
+          <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+            <div class="w-7 h-7 rounded bg-blue-600/20 border border-blue-500/30 flex items-center justify-center"><span class="text-blue-400 text-xs font-bold">I</span></div>
+            <span class="text-silver-400 font-display text-sm font-semibold">Idiap</span>
+          </div>
+          <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+            <div class="w-7 h-7 rounded bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center"><span class="text-emerald-400 text-xs font-bold">C</span></div>
+            <span class="text-silver-400 font-display text-sm font-semibold">CSEM</span>
+          </div>
+          <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+            <div class="w-7 h-7 rounded bg-amber-600/20 border border-amber-500/30 flex items-center justify-center"><span class="text-amber-400 text-xs font-bold">B</span></div>
+            <span class="text-silver-400 font-display text-sm font-semibold">BlinkID</span>
+          </div>
+          <div class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+            <div class="w-7 h-7 rounded bg-red-600/20 border border-red-500/30 flex items-center justify-center"><span class="text-red-400 text-xs font-bold">IN</span></div>
+            <span class="text-silver-400 font-display text-sm font-semibold">Innosuisse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="shimmer-line"></div>
+
+<!-- ========== STATS BAR ========== -->
+<section class="bg-navy-900/50 border-y border-white/5 py-10">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="stat-num text-4xl md:text-5xl mb-1">93%</div>
+        <p class="text-silver-400 text-sm">Conversion Rate</p>
+      </div>
+      <div>
+        <div class="stat-num text-4xl md:text-5xl mb-1">&lt;30s</div>
+        <p class="text-silver-400 text-sm">Avg. Verification Time</p>
+      </div>
+      <div>
+        <div class="stat-num text-4xl md:text-5xl mb-1">0</div>
+        <p class="text-silver-400 text-sm">Data Bytes Leaving Your Bank</p>
+      </div>
+      <div>
+        <div class="stat-num text-4xl md:text-5xl mb-1">3-in-1</div>
+        <p class="text-silver-400 text-sm">Face + Voice + Document</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROBLEM SECTION ========== -->
+<section class="py-24 max-w-7xl mx-auto px-6" id="problem">
+  <div class="text-center mb-16">
+    <span class="section-label">The Problem</span>
+    <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3 leading-tight">
+      Banks refuse to share<br/>biometric data. <span class="text-crimson-500">We get it.</span>
+    </h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Old way -->
+    <div class="card rounded-xl p-8 border-red-900/30 bg-red-950/10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-lg bg-red-900/30 flex items-center justify-center">
+          <i class="fas fa-xmark text-red-400"></i>
+        </div>
+        <div>
+          <p class="text-xs text-red-400 uppercase tracking-widest font-semibold">The Old Way</p>
+          <p class="text-white font-display font-600">Cloud-Dependent APIs</p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3 text-silver-400 text-sm">
+          <i class="fas fa-circle-xmark text-red-500/70 mt-0.5 flex-shrink-0"></i>
+          <span>Biometric data transmitted to external servers in unknown jurisdictions</span>
+        </div>
+        <div class="flex items-start gap-3 text-silver-400 text-sm">
+          <i class="fas fa-circle-xmark text-red-500/70 mt-0.5 flex-shrink-0"></i>
+          <span>GDPR / nFADP compliance dependent on third-party contractual promises</span>
+        </div>
+        <div class="flex items-start gap-3 text-silver-400 text-sm">
+          <i class="fas fa-circle-xmark text-red-500/70 mt-0.5 flex-shrink-0"></i>
+          <span>Opaque pricing — pay per call with surprise invoice surprises</span>
+        </div>
+        <div class="flex items-start gap-3 text-silver-400 text-sm">
+          <i class="fas fa-circle-xmark text-red-500/70 mt-0.5 flex-shrink-0"></i>
+          <span>Vendor lock-in with monolithic, non-modular platforms</span>
+        </div>
+        <div class="flex items-start gap-3 text-silver-400 text-sm">
+          <i class="fas fa-circle-xmark text-red-500/70 mt-0.5 flex-shrink-0"></i>
+          <span>Voice-based authentication completely missing from most providers</span>
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-white/5">
+        <p class="text-xs text-silver-500 italic">Veriff, IDnow, Onfido — all require your customer data to leave your infrastructure.</p>
+      </div>
+    </div>
+
+    <!-- VerfiX way -->
+    <div class="card rounded-xl p-8 border-crimson-600/20 bg-crimson-950/10">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-lg bg-crimson-600/20 flex items-center justify-center">
+          <i class="fas fa-shield-halved text-crimson-400"></i>
+        </div>
+        <div>
+          <p class="text-xs text-crimson-400 uppercase tracking-widest font-semibold">The VerfiX Way</p>
+          <p class="text-white font-display font-600">On-Premise by Default</p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3 text-silver-300 text-sm">
+          <i class="fas fa-circle-check text-crimson-400 mt-0.5 flex-shrink-0"></i>
+          <span><strong class="text-white">Zero data egress</strong> — all processing happens inside your infrastructure</span>
+        </div>
+        <div class="flex items-start gap-3 text-silver-300 text-sm">
+          <i class="fas fa-circle-check text-crimson-400 mt-0.5 flex-shrink-0"></i>
+          <span><strong class="text-white">nFADP & GDPR compliant</strong> by architecture, not contractual promise</span>
+        </div>
+        <div class="flex items-start gap-3 text-silver-300 text-sm">
+          <i class="fas fa-circle-check text-crimson-400 mt-0.5 flex-shrink-0"></i>
+          <span><strong class="text-white">Transparent modular pricing</strong> — pay only for what you actually use</span>
+        </div>
+        <div class="flex items-start gap-3 text-silver-300 text-sm">
+          <i class="fas fa-circle-check text-crimson-400 mt-0.5 flex-shrink-0"></i>
+          <span><strong class="text-white">Composable modules</strong> — mix and match KYC, AML, Voice, Face as needed</span>
+        </div>
+        <div class="flex items-start gap-3 text-silver-300 text-sm">
+          <i class="fas fa-circle-check text-crimson-400 mt-0.5 flex-shrink-0"></i>
+          <span><strong class="text-white">Voice biometrics included</strong> — the only Swiss solution with AI voice anti-spoofing</span>
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-crimson-600/10">
+        <p class="text-xs text-crimson-400/70 italic">Built with Idiap Research Institute and CSEM — Swiss AI at its core.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRODUCT MODULES ========== -->
+<section class="py-24 bg-navy-900/30 border-y border-white/5" id="product">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="section-label">Product Modules</span>
+      <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+        Modular. <span class="text-crimson-500">Pay for what you need.</span>
+      </h2>
+      <p class="text-silver-400 max-w-xl mx-auto mt-4">Each module is a standalone service. Combine them into a complete compliance stack or deploy individually.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Module 1: Document -->
+      <div class="card rounded-xl p-7">
+        <div class="w-12 h-12 rounded-xl bg-blue-600/15 border border-blue-500/20 flex items-center justify-center mb-5">
+          <i class="fas fa-id-card text-blue-400 text-lg"></i>
+        </div>
+        <h3 class="font-display text-lg font-700 text-white mb-2">Document Verification</h3>
+        <p class="text-silver-400 text-sm leading-relaxed mb-5">AI-powered ID and passport scanning with forgery detection. Supports 200+ document types from 190+ countries. Powered by BlinkID's high-speed OCR engine.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-silver-500 bg-white/5 px-3 py-1 rounded-full">BlinkID-powered</span>
+          <a href="#" class="text-crimson-400 text-sm hover:text-crimson-300 transition-colors font-medium">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Module 2: Face -->
+      <div class="card rounded-xl p-7">
+        <div class="w-12 h-12 rounded-xl bg-violet-600/15 border border-violet-500/20 flex items-center justify-center mb-5">
+          <i class="fas fa-face-smile text-violet-400 text-lg"></i>
+        </div>
+        <h3 class="font-display text-lg font-700 text-white mb-2">Face Liveness + Anti-Spoofing</h3>
+        <p class="text-silver-400 text-sm leading-relaxed mb-5">Real-time deepfake detection and passive liveness checks. Detects 3D masks, printed photos, and AI-generated faces with 99.7% accuracy. Powered by Idiap.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-silver-500 bg-white/5 px-3 py-1 rounded-full">Idiap-powered</span>
+          <a href="#" class="text-crimson-400 text-sm hover:text-crimson-300 transition-colors font-medium">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Module 3: Voice (EXCLUSIVE) -->
+      <div class="card rounded-xl p-7 border-crimson-600/20 bg-crimson-950/10 relative">
+        <div class="absolute top-4 right-4">
+          <span class="exclusive-tag">VerfiX Exclusive</span>
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-crimson-600/20 border border-crimson-500/30 flex items-center justify-center mb-5">
+          <i class="fas fa-microphone text-crimson-400 text-lg"></i>
+        </div>
+        <h3 class="font-display text-lg font-700 text-white mb-2">Voice Biometrics + Anti-Spoofing</h3>
+        <p class="text-silver-400 text-sm leading-relaxed mb-5">Detect AI-generated synthetic voices, replay attacks, and voice clones. Enroll once, authenticate silently. The only Swiss KYC platform with voice-layer security.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-crimson-400/80 bg-crimson-600/10 border border-crimson-600/20 px-3 py-1 rounded-full">Idiap Voice Lab</span>
+          <a href="#" class="text-crimson-400 text-sm hover:text-crimson-300 transition-colors font-medium">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Module 4: AML -->
+      <div class="card rounded-xl p-7">
+        <div class="w-12 h-12 rounded-xl bg-amber-600/15 border border-amber-500/20 flex items-center justify-center mb-5">
+          <i class="fas fa-magnifying-glass-dollar text-amber-400 text-lg"></i>
+        </div>
+        <h3 class="font-display text-lg font-700 text-white mb-2">AML Checks</h3>
+        <p class="text-silver-400 text-sm leading-relaxed mb-5">Real-time screening against global sanctions lists, PEP databases, and adverse media. Covers OFAC, UN, EU, SECO, and 50+ sources. Automated risk flagging.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-silver-500 bg-white/5 px-3 py-1 rounded-full">Global Coverage</span>
+          <a href="#" class="text-crimson-400 text-sm hover:text-crimson-300 transition-colors font-medium">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Module 5: Monitoring -->
+      <div class="card rounded-xl p-7">
+        <div class="w-12 h-12 rounded-xl bg-emerald-600/15 border border-emerald-500/20 flex items-center justify-center mb-5">
+          <i class="fas fa-chart-line text-emerald-400 text-lg"></i>
+        </div>
+        <h3 class="font-display text-lg font-700 text-white mb-2">Ongoing Monitoring</h3>
+        <p class="text-silver-400 text-sm leading-relaxed mb-5">Continuous compliance through automated re-verification triggers, anomaly detection, and periodic status updates. Alerts your compliance team before regulators knock.</p>
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-silver-500 bg-white/5 px-3 py-1 rounded-full">Always-on</span>
+          <a href="#" class="text-crimson-400 text-sm hover:text-crimson-300 transition-colors font-medium">Learn more <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="rounded-xl p-7 border border-dashed border-white/10 flex flex-col items-center justify-center text-center gap-4 hover:border-crimson-600/30 transition-colors group">
+        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-crimson-600/10 transition-colors">
+          <i class="fas fa-plus text-silver-400 group-hover:text-crimson-400 transition-colors"></i>
+        </div>
+        <div>
+          <p class="text-white font-display font-600 mb-1">Build Your Stack</p>
+          <p class="text-silver-500 text-sm">Mix and match modules. Pay only for what you deploy.</p>
+        </div>
+        <a href="#contact" class="btn-primary text-white text-sm px-5 py-2.5 rounded-md font-medium">Get Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== USE CASES ========== -->
+<section class="py-24 max-w-7xl mx-auto px-6" id="use-cases">
+  <div class="text-center mb-16">
+    <span class="section-label">Industry Use Cases</span>
+    <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+      Built for <span class="text-crimson-500">regulated industries</span>
+    </h2>
+  </div>
+
+  <!-- Tabs -->
+  <div class="flex flex-wrap gap-2 justify-center mb-10" id="use-case-tabs">
+    <button class="tab-btn active text-sm px-5 py-2 rounded-full border transition-all font-medium border-crimson-600/40 bg-crimson-600/10 text-crimson-300" data-tab="banking">Banking & Wealth</button>
+    <button class="tab-btn text-sm px-5 py-2 rounded-full border transition-all border-white/10 text-silver-400 hover:border-crimson-600/30 hover:text-crimson-300" data-tab="fintech">Fintech & Crypto</button>
+    <button class="tab-btn text-sm px-5 py-2 rounded-full border transition-all border-white/10 text-silver-400 hover:border-crimson-600/30 hover:text-crimson-300" data-tab="telecom">Telecom</button>
+    <button class="tab-btn text-sm px-5 py-2 rounded-full border transition-all border-crimson-600/40 text-crimson-400 hover:bg-crimson-600/10" data-tab="callcenter">
+      <i class="fas fa-microphone text-xs mr-1"></i> Call Center Auth
+      <span class="exclusive-tag ml-2">Exclusive</span>
+    </button>
+    <button class="tab-btn text-sm px-5 py-2 rounded-full border transition-all border-white/10 text-silver-400 hover:border-crimson-600/30 hover:text-crimson-300" data-tab="atm">ATM & Branch</button>
+    <button class="tab-btn text-sm px-5 py-2 rounded-full border transition-all border-white/10 text-silver-400 hover:border-crimson-600/30 hover:text-crimson-300" data-tab="hr">Employee Onboarding</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="tab-banking" class="tab-content active">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="exclusive-tag mb-4 inline-block" style="background:rgba(13,21,48,0.6);border-color:rgba(189,197,212,0.2);color:#8d98b0">Banking & Wealth Management</span>
+        <h3 class="font-display text-3xl font-700 text-white mb-4 leading-tight">KYC that your compliance officer will actually love</h3>
+        <p class="text-silver-400 leading-relaxed mb-6">Swiss banks and wealth managers face stringent FINMA requirements for client onboarding. VerfiX delivers end-to-end KYC with full audit trails — without a single byte of biometric data leaving your premises.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> FINMA-aligned onboarding workflows</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Identity verification for private banking clients</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> AML + PEP screening integrated in one API call</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Full audit log for regulatory reporting</div>
+        </div>
+      </div>
+      <div class="card rounded-xl p-8">
+        <div class="text-center">
+          <div class="text-5xl font-display font-800 text-crimson-400 mb-2">CHF 2.4M</div>
+          <p class="text-silver-400 text-sm mb-6">Average compliance cost saved annually per mid-size bank</p>
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div class="bg-white/5 rounded-lg p-4"><div class="text-xl font-display font-700 text-white">87%</div><div class="text-xs text-silver-500 mt-1">Faster onboarding</div></div>
+            <div class="bg-white/5 rounded-lg p-4"><div class="text-xl font-display font-700 text-white">99.1%</div><div class="text-xs text-silver-500 mt-1">Fraud detection rate</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-fintech" class="tab-content">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="text-xs font-700 uppercase tracking-widest text-violet-400 mb-4 inline-block">Fintech & Crypto</span>
+        <h3 class="font-display text-3xl font-700 text-white mb-4 leading-tight">From onboarding to ongoing — full compliance in one platform</h3>
+        <p class="text-silver-400 leading-relaxed mb-6">Fintech platforms and crypto exchanges need lightning-fast KYC without the friction. VerfiX integrates via REST API in hours, not weeks — with modular pricing that scales with your user growth.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> VASP & AMLA compliance for Swiss crypto firms</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Mobile-first verification flow (under 30 seconds)</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Webhook-based event streaming for real-time decisions</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Sandbox environment available on day one</div>
+        </div>
+      </div>
+      <div class="card rounded-xl p-8 text-center">
+        <div class="text-5xl font-display font-800 text-violet-400 mb-2">&lt;30s</div>
+        <p class="text-silver-400 text-sm mb-6">Average end-to-end verification time</p>
+        <div class="grid grid-cols-2 gap-4 text-center">
+          <div class="bg-white/5 rounded-lg p-4"><div class="text-xl font-display font-700 text-white">93%</div><div class="text-xs text-silver-500 mt-1">Conversion rate</div></div>
+          <div class="bg-white/5 rounded-lg p-4"><div class="text-xl font-display font-700 text-white">200+</div><div class="text-xs text-silver-500 mt-1">Document types</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-telecom" class="tab-content">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="text-xs font-700 uppercase tracking-widest text-amber-400 mb-4 inline-block">Telecom</span>
+        <h3 class="font-display text-3xl font-700 text-white mb-4 leading-tight">SIM registration compliance in seconds, not minutes</h3>
+        <p class="text-silver-400 leading-relaxed mb-6">Swiss telecom operators must verify customer identity for SIM contract registration. VerfiX provides a seamless in-store and digital workflow that integrates with existing POS systems.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> SIM card registration compliance (Fernmeldegesetz)</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> In-store + remote verification in one SDK</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Voice biometrics for ongoing caller authentication</div>
+        </div>
+      </div>
+      <div class="card rounded-xl p-8 text-center">
+        <i class="fas fa-sim-card text-6xl text-amber-400/30 mb-4"></i>
+        <p class="text-white font-display font-600 text-lg">In-store to digital</p>
+        <p class="text-silver-400 text-sm mt-2">Single platform for physical stores and online channels</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-callcenter" class="tab-content">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-xs font-700 uppercase tracking-widest text-crimson-400">Call Center Authentication</span>
+          <span class="exclusive-tag">VerfiX Exclusive</span>
+        </div>
+        <h3 class="font-display text-3xl font-700 text-white mb-4 leading-tight">Authenticate callers with their voice — not their password</h3>
+        <p class="text-silver-400 leading-relaxed mb-6">Traditional call center authentication (mother's maiden name, PIN) is broken. Social engineering defeats it. VerfiX's voice biometric layer authenticates callers passively during natural conversation — while simultaneously detecting AI-generated voice clones.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Passive voice enrollment — no extra friction for customers</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Real-time AI voice clone detection (ElevenLabs, etc.)</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Replay attack detection via Idiap's anti-spoofing models</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Integrates with Genesys, NICE, Avaya, and custom platforms</div>
+        </div>
+        <p class="text-xs text-crimson-400/70 mt-6 italic">PXL Vision has no voice authentication capability. This is VerfiX-exclusive.</p>
+      </div>
+      <div class="card rounded-xl p-8 border-crimson-600/20 bg-crimson-950/10 text-center">
+        <i class="fas fa-headset text-6xl text-crimson-400/30 mb-4"></i>
+        <div class="text-3xl font-display font-800 text-crimson-400 mb-2">0 passwords</div>
+        <p class="text-silver-400 text-sm">Zero knowledge-based authentication required</p>
+        <div class="mt-6 pt-6 border-t border-crimson-600/10">
+          <p class="text-xs text-silver-500">Works with any telephony platform via WebRTC or PSTN audio stream</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-atm" class="tab-content">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="text-xs font-700 uppercase tracking-widest text-emerald-400 mb-4 inline-block">ATM & Branch Verification</span>
+        <h3 class="font-display text-3xl font-700 text-white mb-4 leading-tight">Secure high-value branch transactions with biometrics</h3>
+        <p class="text-silver-400 leading-relaxed mb-6">Deploy edge AI directly on ATM hardware or branch kiosks. No network dependency. Customer biometrics stay on-device. Supports cash-out authorization, vault access, and senior-friendly branch onboarding.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Edge deployment via CSEM's FETA SoC (runs offline)</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Face + document combined authorization flow</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Anti-coercion detection and panic protocols</div>
+        </div>
+      </div>
+      <div class="card rounded-xl p-8 text-center">
+        <i class="fas fa-money-check-dollar text-6xl text-emerald-400/30 mb-4"></i>
+        <p class="text-white font-display font-600 text-lg">True offline capability</p>
+        <p class="text-silver-400 text-sm mt-2">Powered by CSEM edge AI — works without cloud connectivity</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-hr" class="tab-content">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="text-xs font-700 uppercase tracking-widest text-blue-400 mb-4 inline-block">Employee Onboarding</span>
+        <h3 class="font-display text-3xl font-700 text-white mb-4 leading-tight">Verify new hires before day one — remotely and compliantly</h3>
+        <p class="text-silver-400 leading-relaxed mb-6">Remote-first teams need identity-verified employees before granting system access. VerfiX provides HR teams with a compliant, frictionless remote identity verification flow that stores nothing outside your corporate infrastructure.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Right-to-work verification for Swiss and EU regulations</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Integrates with SAP SuccessFactors, Workday, BambooHR</div>
+          <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Employee data never leaves corporate infrastructure</div>
+        </div>
+      </div>
+      <div class="card rounded-xl p-8 text-center">
+        <i class="fas fa-user-tie text-6xl text-blue-400/30 mb-4"></i>
+        <p class="text-white font-display font-600 text-lg">Zero IT overhead</p>
+        <p class="text-silver-400 text-sm mt-2">Deploy in your existing HR stack via pre-built integrations</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TECHNOLOGY SECTION ========== -->
+<section class="py-24 bg-navy-900/40 border-y border-white/5" id="technology">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-6">
+      <span class="section-label">Technology Partners</span>
+      <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+        Built by <span class="text-crimson-500">Swiss AI Research</span>
+      </h2>
+    </div>
+    <p class="text-center text-silver-400 max-w-2xl mx-auto mb-4">We don't build everything in-house. We partner with the world's best research institutions and technology providers.</p>
+    <p class="text-center text-sm text-silver-500 italic mb-16">PXL Vision builds their own tech. We partner with the best.</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <!-- Idiap -->
+      <div class="card rounded-xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-xl bg-blue-600/15 border border-blue-500/20 flex items-center justify-center">
+            <span class="font-display text-2xl font-800 text-blue-400">I</span>
+          </div>
+          <div>
+            <p class="font-display font-700 text-white text-lg">Idiap</p>
+            <p class="text-xs text-blue-400">Martigny, Switzerland</p>
+          </div>
+        </div>
+        <p class="text-silver-400 text-sm leading-relaxed mb-5">World-class AI research institute. Top-ranked in biometric security and deepfake detection. Authors of foundational voice anti-spoofing publications.</p>
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></div>Deepfake detection (EdgeDoc)</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></div>Voice anti-spoofing (ASVspoof research lead)</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></div>Passive liveness detection</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></div>Face recognition & anti-spoofing models</div>
+        </div>
+      </div>
+
+      <!-- CSEM -->
+      <div class="card rounded-xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-xl bg-emerald-600/15 border border-emerald-500/20 flex items-center justify-center">
+            <span class="font-display text-2xl font-800 text-emerald-400">C</span>
+          </div>
+          <div>
+            <p class="font-display font-700 text-white text-lg">CSEM</p>
+            <p class="text-xs text-emerald-400">Neuchâtel, Switzerland</p>
+          </div>
+        </div>
+        <p class="text-silver-400 text-sm leading-relaxed mb-5">Applied AI and microelectronics research centre. Specialists in edge AI deployment and on-chip optimization for real-world industrial applications.</p>
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div>FETA SoC — on-chip AI acceleration</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div>Edge AI model optimization & quantization</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div>Secure element integration</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></div>Low-power edge deployment</div>
+        </div>
+      </div>
+
+      <!-- BlinkID -->
+      <div class="card rounded-xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-xl bg-amber-600/15 border border-amber-500/20 flex items-center justify-center">
+            <span class="font-display text-2xl font-800 text-amber-400">B</span>
+          </div>
+          <div>
+            <p class="font-display font-700 text-white text-lg">BlinkID</p>
+            <p class="text-xs text-amber-400">Microblink</p>
+          </div>
+        </div>
+        <p class="text-silver-400 text-sm leading-relaxed mb-5">The industry standard for mobile document capture and OCR. Powers identity verification for millions of users worldwide with sub-second processing speed.</p>
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0"></div>200+ document types, 190+ countries</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0"></div>Real-time OCR with &lt;200ms response</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0"></div>Barcode & NFC chip reading</div>
+          <div class="flex items-center gap-2 text-xs text-silver-400"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0"></div>Document forgery detection</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Innosuisse mention -->
+    <div class="card rounded-xl p-6 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+      <div class="w-14 h-14 rounded-xl bg-red-600/15 border border-red-500/20 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-flask text-red-400 text-xl"></i>
+      </div>
+      <div class="flex-1">
+        <p class="font-display font-700 text-white mb-1">Innosuisse-Eligible Research Program</p>
+        <p class="text-silver-400 text-sm">VerfiX's development roadmap is structured for Innosuisse grant eligibility. Our academic partnerships with Idiap and CSEM position us for Switzerland's flagship innovation funding instrument.</p>
+      </div>
+      <a href="#contact" class="btn-secondary text-sm text-silver-300 px-5 py-2.5 rounded-md flex-shrink-0">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOCIAL PROOF ========== -->
+<section class="py-24 max-w-7xl mx-auto px-6" id="social-proof">
+  <div class="text-center mb-16">
+    <span class="section-label">Social Proof</span>
+    <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+      Trusted by forward-thinking<br/><span class="text-crimson-500">financial institutions</span>
+    </h2>
+  </div>
+
+  <!-- Stats row -->
+  <div class="grid md:grid-cols-3 gap-5 mb-12">
+    <div class="card rounded-xl p-8 text-center">
+      <div class="stat-num text-6xl mb-3">93%</div>
+      <p class="text-white font-display font-600 mb-2">Conversion Rate</p>
+      <p class="text-silver-500 text-sm">From verification initiation to completion — no drop-off friction</p>
+    </div>
+    <div class="card rounded-xl p-8 text-center border-crimson-600/20 bg-crimson-950/10">
+      <div class="stat-num text-6xl mb-3">&lt;30s</div>
+      <p class="text-white font-display font-600 mb-2">Complete Verification</p>
+      <p class="text-silver-500 text-sm">End-to-end face + document + AML check in under 30 seconds</p>
+    </div>
+    <div class="card rounded-xl p-8 text-center">
+      <div class="stat-num text-6xl mb-3">0%</div>
+      <p class="text-white font-display font-600 mb-2">Data Egress</p>
+      <p class="text-silver-500 text-sm">Zero customer biometric data leaves your infrastructure. Not a byte.</p>
+    </div>
+  </div>
+
+  <!-- Testimonials carousel -->
+  <div class="relative overflow-hidden">
+    <div class="testimonial-track" id="testimonial-track">
+      <!-- Testimonial 1 -->
+      <div class="card rounded-xl p-7 flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="text-silver-300 text-sm leading-relaxed mb-6 italic">"VerfiX solved our biggest compliance headache. Our CISO wouldn't sign off on any cloud-based KYC tool. With VerfiX on-premise, we got approval in two weeks."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-crimson-600/20 border border-crimson-500/30 flex items-center justify-center text-crimson-400 text-sm font-700">MK</div>
+          <div>
+            <p class="text-white text-sm font-medium">Marc K.</p>
+            <p class="text-silver-500 text-xs">Chief Compliance Officer, Swiss Private Bank</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="card rounded-xl p-7 flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="text-silver-300 text-sm leading-relaxed mb-6 italic">"The voice authentication module alone paid for itself. Our call center fraud dropped 78% in the first quarter. We haven't seen anything like it from any competitor."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-sm font-700">SL</div>
+          <div>
+            <p class="text-white text-sm font-medium">Sophie L.</p>
+            <p class="text-silver-500 text-xs">Head of Digital Security, European Neo-Bank</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="card rounded-xl p-7 flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+        </div>
+        <p class="text-silver-300 text-sm leading-relaxed mb-6 italic">"We evaluated Veriff, IDnow, and three others. VerfiX was the only one that could tell us exactly what data stays where. For a regulated crypto exchange, that's non-negotiable."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-sm font-700">JB</div>
+          <div>
+            <p class="text-white text-sm font-medium">Jonas B.</p>
+            <p class="text-silver-500 text-xs">CTO, Swiss Crypto Exchange</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 4 (hidden on small) -->
+      <div class="card rounded-xl p-7 flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="text-silver-300 text-sm leading-relaxed mb-6 italic">"The modular pricing is a game-changer. We're a fintech startup — we started with just document verification and added AML checks when we hit 1,000 users. No renegotiation needed."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-violet-400 text-sm font-700">AM</div>
+          <div>
+            <p class="text-white text-sm font-medium">Anna M.</p>
+            <p class="text-silver-500 text-xs">Founder & CEO, Swiss Fintech Startup</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <div class="flex justify-center gap-3 mt-8">
+      <button onclick="scrollTestimonials(-1)" class="w-10 h-10 rounded-full border border-white/10 hover:border-crimson-600/40 text-silver-400 hover:text-crimson-400 transition-all flex items-center justify-center">
+        <i class="fas fa-chevron-left text-xs"></i>
+      </button>
+      <button onclick="scrollTestimonials(1)" class="w-10 h-10 rounded-full border border-white/10 hover:border-crimson-600/40 text-silver-400 hover:text-crimson-400 transition-all flex items-center justify-center">
+        <i class="fas fa-chevron-right text-xs"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPARISON TABLE ========== -->
+<section class="py-24 bg-navy-900/40 border-y border-white/5" id="comparison">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="section-label">Comparison</span>
+      <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+        Why <span class="text-crimson-500">on-premise</span> wins
+      </h2>
+      <p class="text-silver-400 max-w-xl mx-auto mt-4">A transparent comparison nobody else will show you.</p>
+    </div>
+
+    <div class="card rounded-xl overflow-hidden">
+      <table class="compare-table w-full text-sm">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="text-left p-5 text-silver-400 font-medium w-2/5">Feature</th>
+            <th class="p-5 text-center">
+              <span class="font-display text-white font-700">Verfi<span class="text-crimson-500">X</span></span>
+              <br/><span class="text-xs text-crimson-400 font-normal">On-Premise</span>
+            </th>
+            <th class="p-5 text-center">
+              <span class="font-display text-silver-400 font-700">Cloud APIs</span>
+              <br/><span class="text-xs text-silver-500 font-normal">Veriff, IDnow, Onfido</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-white/5">
+            <td class="p-5 text-silver-300">Customer data leaves your bank</td>
+            <td class="p-5 text-center"><span class="text-emerald-400 font-bold text-base">✓</span> <span class="text-emerald-400 text-xs font-medium">No</span></td>
+            <td class="p-5 text-center"><span class="text-red-400 text-base">✗</span> <span class="text-red-400 text-xs">Yes</span></td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="p-5 text-silver-300">Swiss hosting option</td>
+            <td class="p-5 text-center"><span class="text-emerald-400 font-bold text-base">✓</span> <span class="text-emerald-400 text-xs font-medium">Yes</span></td>
+            <td class="p-5 text-center"><span class="text-red-400 text-base">✗</span> <span class="text-red-400 text-xs">No</span></td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="p-5 text-silver-300">
+              Voice biometrics
+              <span class="exclusive-tag ml-2">VerfiX Exclusive</span>
+            </td>
+            <td class="p-5 text-center"><span class="text-emerald-400 font-bold text-base">✓</span> <span class="text-emerald-400 text-xs font-medium">Yes</span></td>
+            <td class="p-5 text-center"><span class="text-red-400 text-base">✗</span> <span class="text-red-400 text-xs">No</span></td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="p-5 text-silver-300">Transparent modular pricing</td>
+            <td class="p-5 text-center"><span class="text-emerald-400 font-bold text-base">✓</span> <span class="text-emerald-400 text-xs font-medium">Yes</span></td>
+            <td class="p-5 text-center"><span class="text-red-400 text-base">✗</span> <span class="text-red-400 text-xs">Hidden</span></td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="p-5 text-silver-300">GDPR / nFADP compliant by architecture</td>
+            <td class="p-5 text-center"><span class="text-emerald-400 font-bold text-base">✓</span> <span class="text-emerald-400 text-xs font-medium">Yes</span></td>
+            <td class="p-5 text-center"><span class="text-amber-400 text-xs">⚠ Depends on contracts</span></td>
+          </tr>
+          <tr class="border-b border-white/5">
+            <td class="p-5 text-silver-300">Multi-modal (Face + Voice + Doc)</td>
+            <td class="p-5 text-center"><span class="text-emerald-400 font-bold text-base">✓</span> <span class="text-emerald-400 text-xs font-medium">Yes</span></td>
+            <td class="p-5 text-center"><span class="text-amber-400 text-xs">⚠ Face + Doc only</span></td>
+          </tr>
+          <tr>
+            <td class="p-5 text-silver-300">Swiss AI research foundation</td>
+            <td class="p-5 text-center"><span class="text-emerald-400 font-bold text-base">✓</span> <span class="text-emerald-400 text-xs font-medium">Idiap + CSEM</span></td>
+            <td class="p-5 text-center"><span class="text-red-400 text-base">✗</span> <span class="text-red-400 text-xs">No</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-center text-xs text-silver-500 mt-4">Data based on public documentation and feature pages of listed competitors as of 2024.</p>
+  </div>
+</section>
+
+<!-- ========== PRICING SECTION ========== -->
+<section class="py-24 max-w-7xl mx-auto px-6" id="pricing">
+  <div class="text-center mb-16">
+    <span class="section-label">Pricing</span>
+    <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+      Pay only for <span class="text-crimson-500">what you need</span>
+    </h2>
+    <p class="text-silver-400 max-w-xl mx-auto mt-4">No hidden fees. No annual commitments required. All plans include Swiss data protection standards.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <!-- Starter -->
+    <div class="card rounded-xl p-8">
+      <p class="section-label mb-2">Starter</p>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-display text-4xl font-800 text-white">$0.50</span>
+        <span class="text-silver-400 text-sm mb-1">/ verification</span>
+      </div>
+      <p class="text-silver-500 text-sm mb-8">Pay-as-you-go. No monthly minimum. Perfect for pilots and MVPs.</p>
+      <div class="space-y-3 mb-8">
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Document Verification</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Face Liveness Check</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> REST API access</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Sandbox environment</div>
+        <div class="flex items-center gap-3 text-sm text-silver-500"><i class="fas fa-xmark text-silver-600 text-xs w-4"></i> AML Checks (add-on)</div>
+        <div class="flex items-center gap-3 text-sm text-silver-500"><i class="fas fa-xmark text-silver-600 text-xs w-4"></i> Voice Biometrics (add-on)</div>
+      </div>
+      <a href="#contact" class="btn-secondary w-full text-center text-silver-200 py-3 rounded-md text-sm font-medium block">Get Started</a>
+    </div>
+
+    <!-- Professional (highlight) -->
+    <div class="pricing-highlight rounded-xl p-8 relative">
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-crimson-600 text-white text-xs font-700 px-4 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
+      <p class="section-label mb-2">Professional</p>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-display text-4xl font-800 text-white">CHF 499</span>
+        <span class="text-silver-400 text-sm mb-1">/ month</span>
+      </div>
+      <p class="text-silver-400 text-sm mb-8">Monthly subscription + volume pricing. Includes full module access.</p>
+      <div class="space-y-3 mb-8">
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> All Starter features</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> AML + PEP Screening</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Voice Biometrics module</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Ongoing Monitoring</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Compliance dashboard</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Priority support (SLA 4h)</div>
+      </div>
+      <a href="#contact" class="btn-primary w-full text-center text-white py-3 rounded-md text-sm font-medium block">Start Free Trial</a>
+    </div>
+
+    <!-- Enterprise -->
+    <div class="card rounded-xl p-8">
+      <p class="section-label mb-2">Enterprise</p>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-display text-4xl font-800 text-white">Custom</span>
+      </div>
+      <p class="text-silver-500 text-sm mb-8">On-premise deployment, dedicated support, volume discounts, and custom integrations.</p>
+      <div class="space-y-3 mb-8">
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Full on-premise deployment</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Custom SLA & 24/7 support</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Volume pricing (50% off at 100k/mo)</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Custom workflow orchestration</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Dedicated implementation team</div>
+        <div class="flex items-center gap-3 text-sm text-silver-300"><i class="fas fa-check text-crimson-400 text-xs w-4"></i> Source code escrow available</div>
+      </div>
+      <a href="#contact" class="btn-secondary w-full text-center text-silver-200 py-3 rounded-md text-sm font-medium block">Contact Sales</a>
+    </div>
+  </div>
+
+  <p class="text-center text-xs text-silver-500 mt-6"><i class="fas fa-lock text-crimson-500 mr-1"></i> All plans include Swiss nFADP data protection standards. No biometric data stored in our systems.</p>
+</section>
+
+<!-- ========== HOW IT WORKS / TECHNICAL DEEP DIVE ========== -->
+<section class="py-24 bg-navy-900/40 border-y border-white/5" id="how-it-works">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="section-label">Technical Deep Dive</span>
+      <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+        How it <span class="text-crimson-500">works</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card rounded-xl overflow-hidden group cursor-pointer">
+        <div class="h-2 bg-gradient-to-r from-blue-600 to-blue-400"></div>
+        <div class="p-7">
+          <div class="w-10 h-10 rounded-lg bg-blue-600/15 flex items-center justify-center mb-5">
+            <i class="fas fa-id-card text-blue-400"></i>
+          </div>
+          <p class="text-xs text-blue-400 uppercase tracking-widest mb-2">Document Security</p>
+          <h3 class="font-display text-lg font-700 text-white mb-3 leading-tight">Document Anti-Spoofing: How EdgeDoc detects forgery with 100% accuracy</h3>
+          <p class="text-silver-400 text-sm leading-relaxed mb-5">EdgeDoc's neural network analyzes micro-printing patterns, security holograms, and UV-reactive elements that even high-quality forgeries miss. Runs fully on-device in under 150ms.</p>
+          <a href="#" class="text-crimson-400 text-sm font-medium group-hover:text-crimson-300 transition-colors">Read more <i class="fas fa-arrow-right text-xs ml-1 group-hover:ml-2 transition-all"></i></a>
+        </div>
+      </div>
+
+      <div class="card rounded-xl overflow-hidden group cursor-pointer">
+        <div class="h-2 bg-gradient-to-r from-crimson-600 to-crimson-400"></div>
+        <div class="p-7">
+          <div class="w-10 h-10 rounded-lg bg-crimson-600/15 flex items-center justify-center mb-5">
+            <i class="fas fa-microphone text-crimson-400"></i>
+          </div>
+          <p class="text-xs text-crimson-400 uppercase tracking-widest mb-2">Voice Security</p>
+          <h3 class="font-display text-lg font-700 text-white mb-3 leading-tight">Voice Anti-Spoofing: Detecting AI-generated voices and replay attacks</h3>
+          <p class="text-silver-400 text-sm leading-relaxed mb-5">Idiap's anti-spoofing models detect ElevenLabs, Resemble, and other synthetic voice generators in real time. ASVspoof2021 benchmark results: 1.2% EER — best in class.</p>
+          <a href="#" class="text-crimson-400 text-sm font-medium group-hover:text-crimson-300 transition-colors">Read more <i class="fas fa-arrow-right text-xs ml-1 group-hover:ml-2 transition-all"></i></a>
+        </div>
+      </div>
+
+      <div class="card rounded-xl overflow-hidden group cursor-pointer">
+        <div class="h-2 bg-gradient-to-r from-emerald-600 to-emerald-400"></div>
+        <div class="p-7">
+          <div class="w-10 h-10 rounded-lg bg-emerald-600/15 flex items-center justify-center mb-5">
+            <i class="fas fa-server text-emerald-400"></i>
+          </div>
+          <p class="text-xs text-emerald-400 uppercase tracking-widest mb-2">Infrastructure</p>
+          <h3 class="font-display text-lg font-700 text-white mb-3 leading-tight">On-Premise Deployment: Why Swiss banks choose local processing</h3>
+          <p class="text-silver-400 text-sm leading-relaxed mb-5">A technical walkthrough of VerfiX's containerized deployment model. Kubernetes-ready, air-gap capable, and deployable on-prem in under 2 hours with our setup wizard.</p>
+          <a href="#" class="text-crimson-400 text-sm font-medium group-hover:text-crimson-300 transition-colors">Read more <i class="fas fa-arrow-right text-xs ml-1 group-hover:ml-2 transition-all"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture diagram (simplified) -->
+    <div class="card rounded-xl p-8 mt-8">
+      <p class="font-display text-lg font-700 text-white mb-6 text-center">Request Flow Architecture</p>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-14 h-14 rounded-xl bg-blue-600/15 border border-blue-500/20 flex items-center justify-center"><i class="fas fa-mobile-alt text-blue-400 text-lg"></i></div>
+          <p class="text-xs text-silver-400">Customer App</p>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-silver-600">
+          <div class="hidden md:block w-16 h-px bg-silver-600/30"></div>
+          <i class="fas fa-arrow-right text-silver-600 text-xs md:hidden"></i>
+          <p class="text-xs text-silver-600">Encrypted TLS</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-14 h-14 rounded-xl bg-crimson-600/15 border border-crimson-500/20 flex items-center justify-center"><i class="fas fa-shield-halved text-crimson-400 text-lg"></i></div>
+          <p class="text-xs text-silver-400">VerfiX Gateway</p>
+          <span class="text-xs text-crimson-400 bg-crimson-600/10 px-2 py-0.5 rounded">Your Infrastructure</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-silver-600">
+          <div class="hidden md:block w-16 h-px bg-silver-600/30"></div>
+          <i class="fas fa-arrow-right text-silver-600 text-xs md:hidden"></i>
+          <p class="text-xs text-silver-600">Internal only</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-14 h-14 rounded-xl bg-emerald-600/15 border border-emerald-500/20 flex items-center justify-center"><i class="fas fa-microchip text-emerald-400 text-lg"></i></div>
+          <p class="text-xs text-silver-400">AI Processing</p>
+          <span class="text-xs text-emerald-400 bg-emerald-600/10 px-2 py-0.5 rounded">On-Premise</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-silver-600">
+          <div class="hidden md:block w-16 h-px bg-silver-600/30"></div>
+          <i class="fas fa-arrow-right text-silver-600 text-xs md:hidden"></i>
+          <p class="text-xs text-silver-600">Result only</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-14 h-14 rounded-xl bg-amber-600/15 border border-amber-500/20 flex items-center justify-center"><i class="fas fa-database text-amber-400 text-lg"></i></div>
+          <p class="text-xs text-silver-400">Your Core Banking</p>
+          <span class="text-xs text-amber-400 bg-amber-600/10 px-2 py-0.5 rounded">Your System</span>
+        </div>
+      </div>
+      <p class="text-center text-xs text-silver-500 mt-6">Biometric data never leaves the processing boundary. Only verification results (PASS/FAIL + confidence score) are returned to your application.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT / TEAM ========== -->
+<section class="py-24 max-w-7xl mx-auto px-6" id="about">
+  <div class="text-center mb-16">
+    <span class="section-label">The Team</span>
+    <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+      The team <span class="text-crimson-500">behind VerfiX</span>
+    </h2>
+    <p class="text-silver-400 max-w-2xl mx-auto mt-4">Swiss-based. Deep expertise in AI, compliance, and fintech. In partnership with Idiap Research Institute and CSEM.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 mb-12">
+    <!-- Ahmed -->
+    <div class="card rounded-xl p-8 text-center">
+      <div class="w-20 h-20 rounded-full bg-crimson-600/15 border-2 border-crimson-500/30 flex items-center justify-center mx-auto mb-5">
+        <span class="font-display text-3xl font-800 text-crimson-400">A</span>
+      </div>
+      <h3 class="font-display text-xl font-700 text-white mb-1">Ahmed</h3>
+      <p class="text-crimson-400 text-sm mb-4">Founder — Strategy & Product</p>
+      <p class="text-silver-400 text-sm leading-relaxed">Serial entrepreneur with cross-border technology expertise. Driving VerfiX's product vision and go-to-market strategy for the Swiss financial sector.</p>
+      <div class="mt-5 pt-5 border-t border-white/5 flex justify-center gap-3">
+        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-crimson-600/15 flex items-center justify-center text-silver-400 hover:text-crimson-400 transition-all"><i class="fab fa-linkedin text-xs"></i></a>
+      </div>
+    </div>
+
+    <!-- Peter -->
+    <div class="card rounded-xl p-8 text-center border-crimson-600/20 bg-crimson-950/10">
+      <div class="w-20 h-20 rounded-full bg-blue-600/15 border-2 border-blue-500/30 flex items-center justify-center mx-auto mb-5">
+        <span class="font-display text-3xl font-800 text-blue-400">P</span>
+      </div>
+      <h3 class="font-display text-xl font-700 text-white mb-1">Peter Stahl</h3>
+      <p class="text-blue-400 text-sm mb-4">Technical Lead — AI/ML</p>
+      <p class="text-silver-400 text-sm leading-relaxed">AI/ML architect with deep expertise in biometric systems and secure infrastructure. Leading development of VerfiX's core verification and anti-spoofing modules.</p>
+      <div class="mt-5 pt-5 border-t border-white/5 flex justify-center gap-3">
+        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-blue-600/15 flex items-center justify-center text-silver-400 hover:text-blue-400 transition-all"><i class="fab fa-linkedin text-xs"></i></a>
+      </div>
+    </div>
+
+    <!-- Manel -->
+    <div class="card rounded-xl p-8 text-center">
+      <div class="w-20 h-20 rounded-full bg-emerald-600/15 border-2 border-emerald-500/30 flex items-center justify-center mx-auto mb-5">
+        <span class="font-display text-3xl font-800 text-emerald-400">M</span>
+      </div>
+      <h3 class="font-display text-xl font-700 text-white mb-1">Manel Mamdi</h3>
+      <p class="text-emerald-400 text-sm mb-4">Business Development — Compliance</p>
+      <p class="text-silver-400 text-sm leading-relaxed">Expert in fintech compliance, KYC/AML regulation, and enterprise sales. Connecting VerfiX with the Swiss and European financial institutions that need it most.</p>
+      <div class="mt-5 pt-5 border-t border-white/5 flex justify-center gap-3">
+        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-emerald-600/15 flex items-center justify-center text-silver-400 hover:text-emerald-400 transition-all"><i class="fab fa-linkedin text-xs"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Research partnership banner -->
+  <div class="card rounded-xl p-8 text-center border-white/10">
+    <p class="text-silver-400 text-sm uppercase tracking-widest mb-4">In Research Partnership With</p>
+    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600/15 border border-blue-500/20 flex items-center justify-center"><span class="font-display text-xl font-800 text-blue-400">I</span></div>
+        <div class="text-left"><p class="text-white font-display font-600">Idiap Research Institute</p><p class="text-xs text-blue-400">Martigny, Switzerland</p></div>
+      </div>
+      <div class="hidden md:block w-px h-10 bg-white/10"></div>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-600/15 border border-emerald-500/20 flex items-center justify-center"><span class="font-display text-xl font-800 text-emerald-400">C</span></div>
+        <div class="text-left"><p class="text-white font-display font-600">CSEM</p><p class="text-xs text-emerald-400">Neuchâtel, Switzerland</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT / DEMO FORM ========== -->
+<section class="py-24 bg-navy-900/40 border-t border-white/5" id="contact">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <span class="section-label">Get Started</span>
+      <h2 class="font-display text-4xl md:text-5xl font-700 text-white mt-3">
+        See <span class="text-crimson-500">VerfiX</span> in action
+      </h2>
+      <p class="text-silver-400 mt-4">Book a 30-minute demo. We'll show you the full platform running inside a simulated bank environment.</p>
+    </div>
+
+    <div class="card rounded-xl p-8 md:p-10">
+      <div class="grid md:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="text-xs text-silver-400 uppercase tracking-wider mb-2 block">Full Name</label>
+          <input type="text" placeholder="Maria Zimmermann" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-silver-600 text-sm focus:outline-none focus:border-crimson-500/50 transition-colors"/>
+        </div>
+        <div>
+          <label class="text-xs text-silver-400 uppercase tracking-wider mb-2 block">Company</label>
+          <input type="text" placeholder="Swiss Bank AG" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-silver-600 text-sm focus:outline-none focus:border-crimson-500/50 transition-colors"/>
+        </div>
+      </div>
+      <div class="mb-5">
+        <label class="text-xs text-silver-400 uppercase tracking-wider mb-2 block">Work Email</label>
+        <input type="email" placeholder="maria@swissbank.ch" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-silver-600 text-sm focus:outline-none focus:border-crimson-500/50 transition-colors"/>
+      </div>
+      <div class="mb-5">
+        <label class="text-xs text-silver-400 uppercase tracking-wider mb-2 block">Industry</label>
+        <select class="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-silver-300 text-sm focus:outline-none focus:border-crimson-500/50 transition-colors appearance-none">
+          <option value="" disabled selected>Select your industry</option>
+          <option>Banking & Wealth Management</option>
+          <option>Fintech</option>
+          <option>Crypto / Digital Assets</option>
+          <option>Telecom</option>
+          <option>Insurance</option>
+          <option>Other Financial Services</option>
+        </select>
+      </div>
+      <div class="mb-7">
+        <label class="text-xs text-silver-400 uppercase tracking-wider mb-2 block">Message (optional)</label>
+        <textarea rows="3" placeholder="Tell us about your use case or compliance challenge..." class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-silver-600 text-sm focus:outline-none focus:border-crimson-500/50 transition-colors resize-none"></textarea>
+      </div>
+      <button onclick="handleDemoRequest()" class="btn-primary w-full text-white font-medium py-4 rounded-lg text-sm flex items-center justify-center gap-2">
+        <i class="fas fa-calendar-check"></i> Request Demo
+      </button>
+      <p class="text-center text-xs text-silver-500 mt-5">Or email us directly at <a href="mailto:hello@verix.swiss" class="text-crimson-400 hover:text-crimson-300">hello@verix.swiss</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="border-t border-white/5 bg-navy-950 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8">
+            <polygon points="20,2 38,11 38,29 20,38 2,29 2,11" stroke="#cc1a2e" stroke-width="2" fill="none"/>
+            <circle cx="20" cy="20" r="9" stroke="#cc1a2e" stroke-width="1.5" fill="none"/>
+            <circle cx="20" cy="20" r="5" stroke="#cc1a2e" stroke-width="1.5" fill="none"/>
+            <circle cx="20" cy="20" r="2" fill="#cc1a2e"/>
+          </svg>
+          <span class="font-display text-xl font-800 text-white">Verfi<span class="text-crimson-500">X</span></span>
+        </div>
+        <p class="text-silver-500 text-sm leading-relaxed mb-5">Swiss identity compliance infrastructure. On-premise. Multi-modal. Built for regulated industries.</p>
+        <p class="text-xs text-silver-600 italic">Verify · Trust · Secure</p>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <p class="text-xs text-silver-400 uppercase tracking-widest mb-4 font-semibold">Product</p>
+        <div class="space-y-2.5">
+          <a href="#product" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Document Verification</a>
+          <a href="#product" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Face Liveness</a>
+          <a href="#product" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors flex items-center gap-2">Voice Biometrics <span class="exclusive-tag">New</span></a>
+          <a href="#product" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">AML Checks</a>
+          <a href="#pricing" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Pricing</a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <p class="text-xs text-silver-400 uppercase tracking-widest mb-4 font-semibold">Company</p>
+        <div class="space-y-2.5">
+          <a href="#about" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">About Us</a>
+          <a href="#technology" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Technology</a>
+          <a href="#use-cases" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">For Banks</a>
+          <a href="#contact" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Contact</a>
+          <a href="#" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Documentation</a>
+        </div>
+      </div>
+
+      <!-- Legal + Social -->
+      <div>
+        <p class="text-xs text-silver-400 uppercase tracking-widest mb-4 font-semibold">Legal</p>
+        <div class="space-y-2.5 mb-6">
+          <a href="#" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Privacy Policy</a>
+          <a href="#" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Terms of Use</a>
+          <a href="#" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Data Processing Agreement</a>
+          <a href="#" class="text-sm text-silver-500 hover:text-crimson-400 transition-colors block">Security</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg border border-white/10 hover:border-crimson-600/40 flex items-center justify-center text-silver-500 hover:text-crimson-400 transition-all"><i class="fab fa-linkedin text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg border border-white/10 hover:border-crimson-600/40 flex items-center justify-center text-silver-500 hover:text-crimson-400 transition-all"><i class="fab fa-x-twitter text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg border border-white/10 hover:border-crimson-600/40 flex items-center justify-center text-silver-500 hover:text-crimson-400 transition-all"><i class="fab fa-github text-sm"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="shimmer-line mb-6"></div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-silver-600">
+      <p>© 2024 VerfiX AG. Lausanne, Switzerland. All rights reserved.</p>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-shield-halved text-crimson-500/60"></i>
+        <span>Swiss nFADP Compliant · GDPR Ready · ISO 27001 Aligned</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Success toast -->
+<div id="toast" class="fixed bottom-6 right-6 bg-emerald-900 border border-emerald-500/40 text-emerald-300 px-5 py-3 rounded-xl text-sm font-medium shadow-xl opacity-0 translate-y-4 transition-all duration-300 z-50 flex items-center gap-2 pointer-events-none">
+  <i class="fas fa-check-circle text-emerald-400"></i> Demo request sent! We'll be in touch within 24 hours.
+</div>
+
+<script>
+// Tab switching
+const tabs = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.tab-content');
+tabs.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabs.forEach(t => {
+      t.classList.remove('active','border-crimson-600/40','bg-crimson-600/10','text-crimson-300');
+      t.classList.add('border-white/10','text-silver-400');
+    });
+    btn.classList.add('active','border-crimson-600/40','bg-crimson-600/10','text-crimson-300');
+    btn.classList.remove('border-white/10','text-silver-400');
+    const target = btn.dataset.tab;
+    contents.forEach(c => c.classList.remove('active'));
+    document.getElementById('tab-' + target).classList.add('active');
+  });
+});
+
+// Testimonial carousel
+let testimIdx = 0;
+function scrollTestimonials(dir) {
+  const track = document.getElementById('testimonial-track');
+  const items = track.children;
+  const maxIdx = items.length - (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1);
+  testimIdx = Math.max(0, Math.min(testimIdx + dir, maxIdx));
+  const itemW = items[0].offsetWidth + 24;
+  track.style.transform = `translateX(-${testimIdx * itemW}px)`;
+}
+
+// Demo form
+function handleDemoRequest() {
+  const toast = document.getElementById('toast');
+  toast.style.opacity = '1';
+  toast.style.transform = 'translateY(0)';
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(16px)';
+  }, 4000);
+}
+
+// Scroll-triggered fade animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card, .card-hover').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('mobile-menu').classList.remove('open');
+    }
+  });
+});
+
+// Stagger hero animations
+document.querySelectorAll('.fade-up').forEach((el, i) => {
+  el.style.animationPlayState = 'running';
+});
+</script>
+</body>
+</html>

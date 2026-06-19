@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>VerfiX HubSpot Implementation Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:#0f1523;background:#f8f9fa;line-height:1.6;}
+:root{--r:#C8252A;--n:#1a1f2e;--m:#4a5568;--lt:#718096;
+  --off:#f8f9fa;--bd:#e2e8f0;--green:#065f46;--greenbg:#d1fae5;}
+.page{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem;}
+.cover{background:var(--n);border-radius:14px;padding:2.5rem;margin-bottom:2rem;}
+.cover h1{color:#fff;font-size:1.6rem;font-weight:900;letter-spacing:-.03em;margin-bottom:.4rem;}
+.cover h1 em{color:var(--r);font-style:normal;}
+.cover p{color:rgba(255,255,255,.5);font-size:.88rem;max-width:540px;line-height:1.7;}
+.step-card{background:#fff;border:1px solid var(--bd);border-radius:10px;
+  overflow:hidden;margin-bottom:1.25rem;}
+.step-header{background:var(--n);padding:.875rem 1.35rem;
+  display:flex;align-items:center;gap:.875rem;}
+.step-num{width:28px;height:28px;background:var(--r);color:#fff;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;font-weight:800;flex-shrink:0;}
+.step-header h2{color:#fff;font-size:.95rem;font-weight:700;}
+.step-header p{color:rgba(255,255,255,.4);font-size:.75rem;margin-top:.1rem;}
+.step-body{padding:1.35rem;}
+.step-body p{font-size:.88rem;color:var(--m);line-height:1.7;margin-bottom:.875rem;}
+.step-body p:last-child{margin-bottom:0;}
+.step-body strong{color:#0f1523;}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin:.875rem 0;}
+.checklist li{display:flex;align-items:flex-start;gap:.6rem;
+  font-size:.85rem;color:var(--m);line-height:1.55;}
+.checklist li::before{content:'→';color:var(--r);font-weight:700;flex-shrink:0;margin-top:.08rem;}
+.code-block{background:#0f1523;border-radius:7px;padding:1rem 1.25rem;
+  font-family:'SF Mono','Fira Code',monospace;font-size:.78rem;
+  color:#a8b4c8;line-height:1.65;margin:.875rem 0;overflow-x:auto;}
+.code-block .comment{color:#4a6a4a;}
+.code-block .placeholder{color:#e2a04a;font-weight:700;}
+.code-block .tag{color:#7eb8e0;}
+.note{background:var(--greenbg);border:1px solid #a7f3d0;border-radius:7px;
+  padding:.875rem 1.1rem;font-size:.82rem;color:var(--green);
+  line-height:1.6;margin:.875rem 0;}
+.warn{background:#fef3c7;border:1px solid #fde68a;border-radius:7px;
+  padding:.875rem 1.1rem;font-size:.82rem;color:#92400e;
+  line-height:1.6;margin:.875rem 0;}
+.section-title{font-size:1.1rem;font-weight:800;color:#0f1523;
+  margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--r);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:.875rem 0;}
+.mini-card{border:1px solid var(--bd);border-radius:8px;padding:1rem;}
+.mini-card h4{font-size:.82rem;font-weight:700;color:#0f1523;margin-bottom:.35rem;}
+.mini-card p{font-size:.78rem;color:var(--m);line-height:1.55;}
+table{width:100%;border-collapse:collapse;font-size:.83rem;margin:.875rem 0;}
+th{text-align:left;padding:.55rem .875rem;background:var(--n);
+  color:rgba(255,255,255,.5);font-size:.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;}
+td{padding:.6rem .875rem;border-bottom:1px solid var(--bd);color:var(--m);vertical-align:top;}
+tr:nth-child(even) td{background:var(--off);}
+.badge{display:inline-flex;font-size:.65rem;font-weight:700;
+  border-radius:4px;padding:.12rem .42rem;}
+.done{background:var(--greenbg);color:var(--green);}
+.pending{background:#fef3c7;color:#92400e;}
+@media(max-width:600px){.two-col{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="cover">
+  <h1>VerfiX HubSpot <em>Implementation Guide</em></h1>
+  <p>Step-by-step activation instructions for HubSpot CRM, live chat and contact form — plus Calendly integration notes. Everything is already in the code: just replace the placeholders.</p>
+</div>
+
+<div class="section-title">Part 1 — What's Already in the Code</div>
+
+<table>
+  <thead><tr><th>Feature</th><th>Status</th><th>Location</th><th>What to Replace</th></tr></thead>
+  <tbody>
+    <tr><td><strong>HubSpot Tracking Script</strong></td><td><span class="badge done">✓ In code</span></td><td>All 36 pages — &lt;head&gt;</td><td><code>YOUR_HUB_ID</code></td></tr>
+    <tr><td><strong>Live Chat Settings (DE)</strong></td><td><span class="badge done">✓ In code</span></td><td>All German pages — &lt;head&gt;</td><td>Greeting text in HubSpot dashboard</td></tr>
+    <tr><td><strong>Live Chat Settings (FR)</strong></td><td><span class="badge done">✓ In code</span></td><td>All French pages — &lt;head&gt;</td><td>Greeting text in HubSpot dashboard</td></tr>
+    <tr><td><strong>Live Chat Settings (EN)</strong></td><td><span class="badge done">✓ In code</span></td><td>All English pages — &lt;head&gt;</td><td>Greeting text in HubSpot dashboard</td></tr>
+    <tr><td><strong>HubSpot Contact Form</strong></td><td><span class="badge done">✓ In code</span></td><td>contact.html — body</td><td><code>YOUR_HUB_ID</code> + <code>YOUR_FORM_ID</code></td></tr>
+    <tr><td><strong>Calendly Demo Button</strong></td><td><span class="badge done">✓ Intact</span></td><td>All pages — floating + CTAs</td><td><code>CALENDLY_PLACEHOLDER</code></td></tr>
+    <tr><td><strong>Calendly Inline Embed</strong></td><td><span class="badge done">✓ Intact</span></td><td>contact.html</td><td><code>CALENDLY_PLACEHOLDER</code></td></tr>
+  </tbody>
+</table>
+
+<div class="section-title">Part 2 — Activation Steps (in order)</div>
+
+<div class="step-card">
+  <div class="step-header">
+    <div class="step-num">1</div>
+    <div><h2>Create Your Free HubSpot Account</h2><p>5 minutes — one time only</p></div>
+  </div>
+  <div class="step-body">
+    <ol class="checklist">
+      <li>Go to <strong>app.hubspot.com</strong> → click "Get started free"</li>
+      <li>Sign up with your <strong>hello@verfix.ch</strong> email</li>
+      <li>Select "Marketing &amp; Sales" as your use case</li>
+      <li>Skip the team setup for now — you can add Manel and Petter later</li>
+      <li>You land in the HubSpot dashboard — the free CRM is immediately active</li>
+    </ol>
+    <div class="note">The free tier includes: CRM contacts, live chat, forms, email tracking, and the tracking pixel. No credit card needed.</div>
+  </div>
+</div>
+
+<div class="step-card">
+  <div class="step-header">
+    <div class="step-num">2</div>
+    <div><h2>Get Your Hub ID — Replace in All 36 Pages</h2><p>2 minutes</p></div>
+  </div>
+  <div class="step-body">
+    <ol class="checklist">
+      <li>In HubSpot: click your <strong>account name → Account &amp; Billing</strong></li>
+      <li>Copy your <strong>Hub ID</strong> (a number like <code>12345678</code>)</li>
+      <li>Open the website ZIP, then run this command in your terminal:</li>
+    </ol>
+    <div class="code-block"><span class="comment"># Replace YOUR_HUB_ID with your actual Hub ID in all 36 HTML files</span>
+find . -name "*.html" -exec sed -i 's/YOUR_HUB_ID/<span class="placeholder">12345678</span>/g' {} +
+
+<span class="comment"># Verify it worked:</span>
+grep -r "YOUR_HUB_ID" . --include="*.html" | wc -l
+<span class="comment"># Should return: 0</span></div>
+    <p>Or use VS Code: <strong>Edit → Replace in Files</strong> → search <code>YOUR_HUB_ID</code>, replace with your actual number.</p>
+    <div class="note"><strong>What this activates:</strong> Visitor tracking on all 36 pages, contact identification when someone submits a form, and the live chat widget carrier script.</div>
+  </div>
+</div>
+
+<div class="step-card">
+  <div class="step-header">
+    <div class="step-num">3</div>
+    <div><h2>Activate Live Chat — Set Greeting Texts</h2><p>10 minutes in HubSpot dashboard</p></div>
+  </div>
+  <div class="step-body">
+    <ol class="checklist">
+      <li>In HubSpot: <strong>Conversations → Inbox → Chat</strong></li>
+      <li>Click <strong>"Create chatflow"</strong> → choose "Live chat"</li>
+      <li>Under <strong>Welcome message</strong>, set these three versions:</li>
+    </ol>
+    <div class="two-col">
+      <div class="mini-card">
+        <h4>🇩🇪 German pages</h4>
+        <p><strong>"Fragen zur Compliance? Wir sind da."</strong><br/>Create a separate chatflow for DE pages, or use the default (most traffic is DE).</p>
+      </div>
+      <div class="mini-card">
+        <h4>🇫🇷 French pages</h4>
+        <p><strong>"Des questions sur la conformité ? Nous sommes là."</strong><br/>Target: URLs containing /fr/</p>
+      </div>
+    </div>
+    <div class="mini-card" style="margin:.875rem 0;">
+      <h4>🇬🇧 English pages</h4>
+      <p><strong>"Compliance questions? We're here."</strong><br/>Target: URLs containing /en/</p>
+    </div>
+    <ol class="checklist">
+      <li>Under <strong>Availability</strong>: set your timezone to Europe/Zurich</li>
+      <li>Under <strong>Target</strong>: set "Show on all pages" (the code already controls language per page)</li>
+      <li>Click <strong>Publish</strong> — chat widget goes live immediately after your Hub ID is in the code</li>
+    </ol>
+    <div class="warn"><strong>Important:</strong> The chat widget loads via the HubSpot tracking script (Step 2). It will NOT appear until you have replaced YOUR_HUB_ID in the HTML and redeployed.</div>
+  </div>
+</div>
+
+<div class="step-card">
+  <div class="step-header">
+    <div class="step-num">4</div>
+    <div><h2>Create the Contact Form — Get Your Form ID</h2><p>10 minutes</p></div>
+  </div>
+  <div class="step-body">
+    <ol class="checklist">
+      <li>In HubSpot: <strong>Marketing → Forms → Create Form</strong></li>
+      <li>Choose <strong>"Embedded form"</strong> (not pop-up)</li>
+      <li>Add these fields in this order:</li>
+    </ol>
+    <table>
+      <thead><tr><th>Field</th><th>HubSpot Field Name</th><th>Required?</th></tr></thead>
+      <tbody>
+        <tr><td>Vorname / First Name</td><td><code>firstname</code></td><td>Yes</td></tr>
+        <tr><td>Nachname / Last Name</td><td><code>lastname</code></td><td>Yes</td></tr>
+        <tr><td>E-Mail</td><td><code>email</code></td><td>Yes</td></tr>
+        <tr><td>Unternehmen / Company</td><td><code>company</code></td><td>Yes</td></tr>
+        <tr><td>Nachricht / Message</td><td><code>message</code> (create custom)</td><td>No</td></tr>
+      </tbody>
+    </table>
+    <ol class="checklist">
+      <li>Set <strong>Submit button text</strong> to: "Nachricht senden"</li>
+      <li>Set <strong>Thank you message</strong> to: "Vielen Dank! Wir antworten innerhalb von 24 Stunden."</li>
+      <li>Click <strong>Publish</strong></li>
+      <li>Click <strong>"Share" → "Embed"</strong> → copy the <code>portalId</code> and <code>formGuid</code></li>
+    </ol>
+    <div class="code-block"><span class="comment">// The HubSpot embed snippet looks like this:</span>
+hbspt.forms.create({
+  <span class="tag">portalId</span>: <span class="placeholder">"12345678"</span>,          <span class="comment">// ← this is YOUR_HUB_ID</span>
+  <span class="tag">formId</span>:   <span class="placeholder">"a1b2c3d4-e5f6-..."</span>  <span class="comment">// ← this is YOUR_FORM_ID</span>
+});</div>
+    <ol class="checklist">
+      <li>Open <strong>contact.html</strong> in VS Code</li>
+      <li>Find the two placeholders near line ~200 and replace them:</li>
+    </ol>
+    <div class="code-block">var PORTAL_ID = '<span class="placeholder">YOUR_HUB_ID</span>';   <span class="comment">// → replace with e.g. '12345678'</span>
+var FORM_ID   = '<span class="placeholder">YOUR_FORM_ID</span>';  <span class="comment">// → replace with e.g. 'a1b2c3d4-e5f6-7890-abcd-ef1234567890'</span></div>
+    <div class="note">Until these are replaced, contact.html shows a friendly fallback message with a mailto: link. No broken UI — visitors can always email hello@verfix.ch.</div>
+  </div>
+</div>
+
+<div class="step-card">
+  <div class="step-header">
+    <div class="step-num">5</div>
+    <div><h2>Connect Calendly → HubSpot (Demo Bookings → CRM)</h2><p>Optional but strongly recommended</p></div>
+  </div>
+  <div class="step-body">
+    <p>Every time someone books a demo via Calendly, you want that contact automatically created in HubSpot. Two options:</p>
+    <div class="two-col">
+      <div class="mini-card">
+        <h4>Option A — Native Integration (Easiest)</h4>
+        <p>In HubSpot: <strong>App Marketplace → search "Calendly"</strong>. The native integration syncs bookings as HubSpot contacts and meetings. Free on HubSpot Starter+.</p>
+      </div>
+      <div class="mini-card">
+        <h4>Option B — Zapier (Free tier available)</h4>
+        <p>zapier.com → New Zap → Trigger: "Calendly — New Invitee" → Action: "HubSpot — Create Contact". Free Zapier tier allows 100 tasks/month.</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>Recommended workflow once connected:</strong><br/>
+      Calendly booking → HubSpot contact created → HubSpot sends automated confirmation email → Lead assigned in CRM → Ahmed gets Slack/email notification.
+    </div>
+  </div>
+</div>
+
+<div class="step-card">
+  <div class="step-header">
+    <div class="step-num">6</div>
+    <div><h2>Set Region — EU Data Storage (Important for nFADP)</h2><p>Must do at account creation</p></div>
+  </div>
+  <div class="step-body">
+    <p>HubSpot offers EU data hosting (Frankfurt data centre). Since VerfiX is nFADP-compliant and Swiss-hosted, you should store CRM data in Europe.</p>
+    <ol class="checklist">
+      <li>During account creation: select <strong>Europe</strong> as your data centre region</li>
+      <li>If already created with US region: contact HubSpot support to migrate (it is possible)</li>
+      <li>In the form embed script, confirm <code>region: 'eu1'</code> is set — it already is in the VerfiX code</li>
+      <li>In HubSpot: <strong>Settings → Account Defaults → Data Privacy</strong> → enable GDPR settings (covers nFADP-aligned consent flows)</li>
+    </ol>
+    <div class="warn">Do not use region 'na1' (US) for a Swiss B2B fintech platform. The code defaults to 'eu1' — verify this matches your HubSpot account's actual region.</div>
+  </div>
+</div>
+
+<div class="step-card">
+  <div class="step-header">
+    <div class="step-num">7</div>
+    <div><h2>Redeploy and Verify</h2><p>Final step</p></div>
+  </div>
+  <div class="step-body">
+    <ol class="checklist">
+      <li>After replacing all placeholders, rezip and redeploy to Vercel</li>
+      <li>Open verfix.ch in a private/incognito window</li>
+      <li>After 5–10 seconds: HubSpot chat widget should appear bottom-right</li>
+      <li>Go to verfix.ch/contact — the booking calendar (Calendly) should load above the fold, HubSpot form below</li>
+      <li>Submit a test form — check HubSpot → Contacts for the new entry</li>
+      <li>In HubSpot: <strong>Reports → Analytics Tools → Traffic Analytics</strong> → verify page views are being tracked</li>
+    </ol>
+    <div class="note">
+      <strong>HubSpot chat icon position:</strong> The HubSpot chat widget (bottom-right) and the Calendly floating button (also bottom-right) may overlap. If they do: in HubSpot → Chat → Appearance → set widget position to <strong>bottom-left</strong>. The Calendly button stays bottom-right. No code change needed.
+    </div>
+  </div>
+</div>
+
+<div class="section-title">Quick Reference — All Placeholders</div>
+
+<table>
+  <thead><tr><th>Placeholder</th><th>Replace With</th><th>Where</th></tr></thead>
+  <tbody>
+    <tr><td><code>YOUR_HUB_ID</code></td><td>Your HubSpot Portal ID (number)</td><td>All 36 HTML files — &lt;head&gt; tracking script</td></tr>
+    <tr><td><code>YOUR_HUB_ID</code> (form)</td><td>Same Portal ID</td><td>contact.html — JS form config</td></tr>
+    <tr><td><code>YOUR_FORM_ID</code></td><td>Your HubSpot Form GUID (UUID format)</td><td>contact.html — JS form config</td></tr>
+    <tr><td><code>CALENDLY_PLACEHOLDER</code></td><td>Your Calendly URL</td><td>All 36 HTML files — 80 instances</td></tr>
+  </tbody>
+</table>
+
+<div style="margin-top:2rem;padding:1.25rem;background:var(--off);border:1px solid var(--bd);
+  border-radius:9px;font-size:.78rem;color:var(--lt);display:flex;
+  justify-content:space-between;flex-wrap:wrap;gap:.75rem;">
+  <span><strong style="color:#0f1523;">VerfiX AG</strong> · Ahmed Al-Sultan · press@verfix.ch · verfix.ch</span>
+  <span>HubSpot Implementation Guide · Step 13</span>
+</div>
+
+</div>
+</body>
+</html>
