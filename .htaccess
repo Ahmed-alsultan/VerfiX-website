@@ -1,0 +1,75 @@
+RewriteEngine On
+RewriteRule ^de/trust-center/?$ de/trust-center/index.html [L]
+RewriteRule ^fr/centre-de-confiance/?$ fr/centre-de-confiance/index.html [L]
+RewriteRule ^en/trust-center/?$ en/trust-center/index.html [L]
+RewriteRule ^de/partner/?$ de/partner/index.html [L]
+RewriteRule ^fr/partenaires/?$ fr/partenaires/index.html [L]
+RewriteRule ^en/partners/?$ en/partners/index.html [L]
+RewriteRule ^de/demo/?$ de/demo/index.html [L]
+RewriteRule ^fr/demo/?$ fr/demo/index.html [L]
+RewriteRule ^en/demo/?$ en/demo/index.html [L]
+RewriteRule ^de/fintech-map/?$ de/fintech-map/index.html [L]
+RewriteRule ^fr/carte-fintech/?$ fr/carte-fintech/index.html [L]
+RewriteRule ^en/fintech-map/?$ en/fintech-map/index.html [L]
+RewriteRule ^de/whitepaper-nfadp/?$  de/whitepaper-nfadp/index.html  [L]
+RewriteRule ^fr/livre-blanc-nfadp/?$ fr/livre-blanc-nfadp/index.html [L]
+RewriteRule ^en/whitepaper-nfadp/?$  en/whitepaper-nfadp/index.html  [L]
+RewriteRule ^de/vergleich/?$   de/vergleich/index.html   [L]
+RewriteRule ^fr/comparaison/?$ fr/comparaison/index.html [L]
+RewriteRule ^en/comparison/?$  en/comparison/index.html  [L]
+RewriteRule ^de/produkte/stimmverifikation/?$ de/produkte/stimmverifikation/index.html [L]
+RewriteRule ^fr/produits/verification-vocale/?$ fr/produits/verification-vocale/index.html [L]
+RewriteRule ^en/products/voice-verification/?$ en/products/voice-verification/index.html [L]
+RewriteRule ^de/produkte/video-identifikation/?$ de/produkte/video-identifikation/index.html [L]
+RewriteRule ^fr/produits/identification-video/?$ fr/produits/identification-video/index.html [L]
+RewriteRule ^en/products/video-identification/?$ en/products/video-identification/index.html [L]
+RewriteRule ^de/kyb/?$ de/kyb/index.html [L]
+RewriteRule ^fr/kyb/?$ fr/kyb/index.html [L]
+RewriteRule ^en/kyb/?$ en/kyb/index.html [L]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Clean URLs
+RewriteRule ^insights$ insights/index.html [L]
+RewriteRule ^insights/nfadp-compliance-guide-schweiz$ insights/nfadp-compliance-guide-schweiz.html [L]
+RewriteRule ^insights/finma-kyc-anforderungen-banken$ insights/finma-kyc-anforderungen-banken.html [L]
+RewriteRule ^insights/eidas-2-schweizer-banken-explainer$ insights/eidas-2-schweizer-banken-explainer.html [L]
+RewriteRule ^insights/aml-screening-best-practices-schweiz$ insights/aml-screening-best-practices-schweiz.html [L]
+RewriteRule ^insights/kyc-onboarding-digital-schweiz$ insights/kyc-onboarding-digital-schweiz.html [L]
+RewriteRule ^solutions$ solutions.html [L]
+RewriteRule ^industries$ industries.html [L]
+RewriteRule ^gateway$ gateway.html [L]
+RewriteRule ^trust-center$ trust-center.html [L]
+RewriteRule ^api$ api.html [L]
+RewriteRule ^resources$ resources.html [L]
+RewriteRule ^case-studies$ case-studies.html [L]
+RewriteRule ^about$ about.html [L]
+RewriteRule ^contact$ contact.html [L]
+RewriteRule ^careers$ careers.html [L]
+RewriteRule ^press$ press.html [L]
+RewriteRule ^privacy$ privacy.html [L]
+RewriteRule ^terms$ terms.html [L]
+RewriteRule ^impressum$ impressum.html [L]
+RewriteRule ^datenschutz$ datenschutz.html [L]
+RewriteRule ^mentions-legales$ mentions-legales.html [L]
+RewriteRule ^politique-confidentialite$ politique-confidentialite.html [L]
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png  "access plus 1 year"
+  ExpiresByType text/css   "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+ErrorDocument 404 /index.html

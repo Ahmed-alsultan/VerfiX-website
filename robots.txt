@@ -1,0 +1,49 @@
+# VerfiX AG — robots.txt
+# https://verfix.ch | Updated: 2026-06-18
+
+User-agent: *
+Allow: /
+
+# Block internal paths
+Disallow: /admin/
+Disallow: /api/internal/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /components/
+Disallow: /.git/
+
+# Allow all major crawlers explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Block AI training scrapers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Sitemap
+Sitemap: https://verfix.ch/sitemap.xml

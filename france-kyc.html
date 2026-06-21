@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <title>France KYC Guide — ACPR, LCB-FT, TRACFIN &amp; Identity Verification</title>
+  <!-- Google Analytics 4 — G-95ZS424SMP -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-95ZS424SMP', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=None;Secure',
+      send_page_view: true
+    });
+  </script>
+  <!-- End Google Analytics 4 -->
+  <meta name="description" content="Complete guide to KYC in France: ACPR regulations, LCB-FT AML framework, TRACFIN reporting, digital onboarding, FranceConnect, electronic identity verification "/>
+  <meta name="keywords" content="KYC Schweiz, AML Software Schweiz, Identitätsprüfung Schweiz, Identity Verification Switzerland, nFADP compliance, FINMA KYC, digitale Identitätsprüfung"/>
+  <meta name="author" content="VerfiX AG"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://verfix.ch/france-kyc"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://verfix.ch/france-kyc"/>
+  <meta property="og:title" content="France KYC Guide — ACPR, LCB-FT, TRACFIN &amp;amp; Identity Verification"/>
+  <meta property="og:description" content="Complete guide to KYC in France: ACPR regulations, LCB-FT AML framework, TRACFIN reporting, digital onboarding, FranceConnect, electronic identity verification "/>
+  <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="VerfiX"/>
+  <meta property="og:locale" content="en_CH"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="VerfiX — KYC, AML & Identitätsprüfung Software | Swiss Trust Infrastructure"/>
+  <meta name="twitter:description" content="VerfiX ist die Swiss Trust Infrastructure für regulierte Industrien. KYC, KYB, AML-Screening, Betrugsbekämpfung und Trust Engine™ — eine API für Banken, Fintechs und Versicherungen in der Schweiz."/>
+  <meta name="twitter:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <rect width='32' height='32' rx='6' fill='%23C8252A'/><text x='16' y='23' font-family='Arial Black,Arial' font-weight='900' font-size='22' text-anchor='middle' fill='white'>X</text></svg>"/>
+  <!-- <meta name="google-site-verification" content="YOUR_GSC_CODE"/> -->
+
+  <!-- Performance: preload critical assets -->
+  <link rel="preload" href="/css/main.css" as="style"/>
+  <link rel="preload" href="/js/main.js" as="script"/>
+  
+  <!-- Font: preconnect + optimized load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://js.hs-scripts.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  
+  <!-- Critical inline style for font-display:swap override -->
+  <style>
+    @font-face{font-display:swap}
+    body{opacity:1}
+    .rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+    .rv.in{opacity:1;transform:none}
+    .pg{display:none}.pg.on{display:block}
+  </style>
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/css/main.css"/>
+  <!-- Structured Data -->
+  <!-- ════════════════════════════════════════════════════
+       ZOHO CRM — Web Visitor Tracking
+       HOW TO ACTIVATE:
+       1. In Zoho CRM: Setup → Channels → Web Forms → Web Tabs → SalesIQ
+       2. Or: Zoho SalesIQ → Settings → Installation → copy the script
+       3. Paste your Zoho SalesIQ script here replacing this comment
+       Example:
+       <script type="text/javascript" id="zsiqchat">
+         var $zoho=$zoho || {};
+         $zoho.salesiq = $zoho.salesiq || {widgetcode:"YOUR_WIDGET_CODE",values:{},ready:function(){}};
+         var d=document;s=d.createElement("script");
+         s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+         s.src="https://salesiq.zohopublic.eu/widget";
+         t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
+       </script>
+       ════════════════════════════════════════════════════ -->
+
+  
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#C8252A"/>
+  <!-- Favicons — all sizes for browsers, Google, Apple -->
+  <link rel="icon" type="image/x-icon"    href="/favicon.ico"/>
+  <link rel="icon" type="image/svg+xml"   href="/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="16x16"   href="/favicon-16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="48x48"   href="/favicon-48.png"/>
+  <link rel="icon" type="image/png" sizes="96x96"   href="/favicon-96.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/verfix-icon-192.png"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/verfix-icon-512.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <meta name="msapplication-TileImage"    content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor"    content="#C8252A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<!-- ── Favicon & App Icons ─────────────────────────── -->
+  
+  
+  
+  
+  
+  <meta name="msapplication-TileImage" content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor" content="#C8252A"/>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "France KYC Guide — ACPR Compliance, LCB-FT and Identity Verification", "description": "Complete guide to KYC in France: ACPR regulations, LCB-FT AML framework, digital onboarding, electronic identity verification, TRACFIN reporting and fraud prevention.", "url": "https://verfix.ch/france-kyc", "datePublished": "2026-06-18", "dateModified": "2026-06-18", "author": {"@type": "Organization", "name": "VerfiX AG", "url": "https://verfix.ch"}, "publisher": {"@type": "Organization", "name": "VerfiX AG", "url": "https://verfix.ch", "logo": {"@type": "ImageObject", "url": "https://verfix.ch/assets/images/verfix-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://verfix.ch/france-kyc"}, "keywords": "France KYC, French AML compliance, ACPR compliance, identity verification France, LCB-FT France, TRACFIN, FranceConnect KYC, digital onboarding France, KYC France, verification identite France", "about": [{"@type": "Thing", "name": "Know Your Customer"}, {"@type": "Thing", "name": "ACPR France"}, {"@type": "Thing", "name": "LCB-FT Code monétaire et financier"}, {"@type": "Thing", "name": "TRACFIN"}, {"@type": "Thing", "name": "Identity Verification France"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VerfiX", "item": "https://verfix.ch"}, {"@type": "ListItem", "position": 2, "name": "France KYC Guide", "item": "https://verfix.ch/france-kyc"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does KYC mean in France?", "acceptedAnswer": {"@type": "Answer", "text": "KYC — Know Your Customer, or in French Connaissance du Client (KYC/CDD) — is the statutory obligation for French financial institutions and designated non-financial businesses to verify customer identity, assess money laundering risk, and maintain ongoing documentation under the Code monétaire et financier (CMF). In France, AML/KYC obligations are enforced by the ACPR (Autorité de contrôle prudentiel et de résolution) for the financial sector and by TRACFIN for financial intelligence. Failure to comply is subject to ACPR sanctions including fines of up to EUR 100 million or 10% of annual revenue."}}, {"@type": "Question", "name": "What is the ACPR and what is its role in French KYC?", "acceptedAnswer": {"@type": "Answer", "text": "The ACPR (Autorité de contrôle prudentiel et de résolution) is the French supervisory authority responsible for banking and insurance. It operates under the Banque de France and enforces AML/CFT obligations for regulated financial entities. ACPR conducts on-site inspections, issues binding orders, and imposes sanctions via its Commission des sanctions. ACPR also issues supervisory guidelines (lignes directrices) that clarify GwG-equivalent obligations under the Code monétaire et financier. ACPR works alongside the AMF (Autorité des marchés financiers) for investment services and MiCA crypto supervision."}}, {"@type": "Question", "name": "What is the French LCB-FT framework?", "acceptedAnswer": {"@type": "Answer", "text": "LCB-FT (Lutte contre le blanchiment de capitaux et le financement du terrorisme) is the French AML/CFT framework, implemented in the Code monétaire et financier (CMF) Articles L.561-1 to L.574-2. It transposes EU AML Directives (AMLD4, AMLD5, AMLD6) into French law and is aligned with FATF Recommendations. The framework covers customer due diligence, beneficial owner identification, ongoing monitoring, suspicious activity reporting to TRACFIN, and internal AML programme requirements."}}, {"@type": "Question", "name": "What is TRACFIN and how does suspicious activity reporting work in France?", "acceptedAnswer": {"@type": "Answer", "text": "TRACFIN (Traitement du renseignement et action contre les circuits financiers clandestins) is France's Financial Intelligence Unit, operating under the Ministry of Economy. When a regulated entity identifies a suspicious transaction or activity, it must file a Déclaration de soupçon (DS) with TRACFIN via a secure online portal. France receives over 170,000 suspicious activity declarations annually. TRACFIN analyses reports, shares intelligence with law enforcement, and prosecutes predicate offences through the parquet national financier (PNF)."}}, {"@type": "Question", "name": "What is FranceConnect and can it be used for KYC?", "acceptedAnswer": {"@type": "Answer", "text": "FranceConnect is the French government's digital identity federation, allowing citizens to use existing government credentials (tax authority, social security, postal service) to authenticate with public services. FranceConnect+ provides a higher assurance level using certified identity providers including La Poste's digital identity service. For KYC purposes, FranceConnect+ provides government-assured identity verification that ACPR accepts for certain use cases. VerfiX eID Gateway supports FranceConnect+ integration alongside EU Digital Identity Wallet acceptance."}}, {"@type": "Question", "name": "How long must KYC records be retained in France?", "acceptedAnswer": {"@type": "Answer", "text": "Under CMF Article L.561-12, French financial institutions must retain all customer due diligence records — including identity documents or copies, beneficial owner declarations, and transaction records — for five years after the end of the business relationship. Suspicious activity declarations to TRACFIN are retained for five years from the declaration date. ACPR inspectors examine retention practices and the accessibility of records during supervisory reviews."}}, {"@type": "Question", "name": "What is the French Registre des bénéficiaires effectifs?", "acceptedAnswer": {"@type": "Answer", "text": "The Registre des bénéficiaires effectifs (RBE) is France's beneficial ownership register, maintained by the Greffe du tribunal de commerce (commercial court registry). All French legal entities must register their beneficial owners (persons holding more than 25% of shares or voting rights) and update this information when it changes. Financial institutions must consult the RBE as part of their KYB process and document any discrepancies between register data and customer-provided information."}}, {"@type": "Question", "name": "Does VerfiX support French regulatory requirements for identity verification?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VerfiX implements electronic identity verification meeting the requirements of CMF Article L.561-5-1 for digital customer identification. The platform verifies all French identity documents (carte nationale d'identité, passeport, titre de séjour), performs biometric face matching with liveness detection, and generates an immutable audit trail meeting ACPR documentation standards. For French-speaking customers, VerfiX's user interface and support are available in French. VerfiX also integrates with the French eIDAS framework for FranceConnect+ identity credential acceptance."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "@id": "https://verfix.ch/#software", "name": "VerfiX Identity Verification Platform", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Compliance Software", "operatingSystem": "Web", "url": "https://verfix.ch", "offers": {"@type": "Offer", "priceCurrency": "CHF", "availability": "https://schema.org/InStock", "seller": {"@id": "https://verfix.ch/#organization"}}, "featureList": ["KYC document verification", "Biometric face matching", "Liveness detection", "AML screening", "KYB company verification", "UBO identification", "Trust Score", "eID Gateway", "Voice biometrics", "Fraud intelligence"], "provider": {"@id": "https://verfix.ch/#organization"}, "softwareVersion": "2025", "inLanguage": ["en", "de", "fr"], "screenshot": "https://verfix.ch/assets/images/og-image.jpg"}</script>
+</head>
+
+<body>
+<!-- Mega menu backdrop -->
+<div id="nav-backdrop" class="nav-backdrop" onclick="closeAll()"></div>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div aria-live="polite" aria-atomic="true" id="vfx-live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>
+
+
+<div id="ck-bar">
+  <h4>🍪 Cookie Preferences</h4>
+  <span id="ck-txt">We use cookies to improve your experience. See our <a href="/privacy">Privacy Policy</a>.</span>
+  <div id="ck-prefs">
+    <div class="ck-pref-row"><span>Necessary <small style="color:rgba(255,255,255,.3)">(always on)</small></span><label class="ck-toggle"><input type="checkbox" checked disabled/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Analytics</span><label class="ck-toggle"><input type="checkbox" id="ck-analytics"/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Marketing</span><label class="ck-toggle"><input type="checkbox" id="ck-marketing"/><span class="ck-slider"></span></label></div>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-ok" onclick="ckOk()">Accept All</button>
+    <button class="ck-no" onclick="ckNo()">Decline</button>
+    <button class="ck-more" onclick="ckToggle()">Preferences</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+
+<nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="VerfiX home">
+      <picture>
+        <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+        <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="88" height="24" loading="eager"/>
+      </picture>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li class="ni" id="ni-ind">
+        <span onclick="toggleMenu('ind')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('ind')">
+          <span>Industries</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-ind" id="mega-ind">
+          <div class="mi-left">
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><div class="mc-h">Banking</div></div></div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><div class="mc-h">Fintech</div></div></div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><div class="mc-h">Crypto</div></div></div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Insurance</div></div></div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><div class="mc-h">Government</div></div></div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><div class="mc-h">Telecom</div></div></div>
+          </div>
+          <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
+        </div>
+      </li>
+      <li class="ni" id="ni-products">
+        <span onclick="toggleMenu('products')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('products')">
+          <span>Products</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-products" id="mega-products">
+          <div class="mp-left">
+            <div class="mp-col">
+              <h5>Customer Onboarding</h5>
+              <a class="ml" href="/solutions/document-verification"><i class="fas fa-id-card"></i>Document Verification</a>
+              <a class="ml" href="/solutions/face-verification"><i class="fas fa-face-smile"></i>Face Verification</a>
+              <a class="ml" href="/solutions/aml-screening"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</a>
+              <h5>Business Verification</h5>
+              <a class="ml" href="/en/kyb/"><i class="fas fa-building"></i>KYB Verification</a>
+              <a class="ml" href="/solutions/kyb"><i class="fas fa-sitemap"></i>UBO Verification</a>
+              <h5>Age Verification</h5>
+              <a class="ml" href="/solutions/age-verification"><i class="fas fa-user-check"></i>Age Validation</a>
+              <a class="ml" href="/solutions/age-verification"><i class="fas fa-user"></i>Age Estimation</a>
+            </div>
+            <div class="mp-col">
+              <h5>Telephone Banking</h5>
+              <a class="ml" href="/solutions/voice-verification"><i class="fas fa-waveform-lines"></i>Voice Biometrics</a>
+              <a class="ml" href="/solutions/voice-verification"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</a>
+              <h5>Fraud Intelligence</h5>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-robot"></i>Deepfake Detection</a>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-user-slash"></i>Synthetic Identity</a>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-file-shield"></i>Document Fraud</a>
+              <h5>Infrastructure</h5>
+              <a class="ml" href="/solutions"><i class="fas fa-gauge-high"></i>Trust Engine&#8482;</a>
+              <a class="ml" href="/solutions"><i class="fas fa-sliders"></i>Risk Rules Engine</a>
+            </div>
+          </div>
+          <div class="mp-right">
+            <div class="mp-cta">
+              <div class="mp-cta-title">Swiss Trust Infrastructure</div>
+              <p class="mp-cta-desc">All products hosted in Switzerland. FINMA-compliant. One API.</p>
+              <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="font-size:.79rem;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-sol">
+        <span onclick="toggleMenu('sol')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('sol')">
+          <span>Solutions</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega" id="mega-sol" style="min-width:540px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Financial Services</h5>
+            <a class="ml" href="/solutions/banking"><i class="fas fa-landmark"></i>Banking</a>
+            <a class="ml" href="/solutions/fintech"><i class="fas fa-bolt"></i>Fintech</a>
+            <a class="ml" href="/solutions/crypto"><i class="fas fa-coins"></i>Crypto</a>
+            <a class="ml" href="/solutions/insurance"><i class="fas fa-shield-halved"></i>Insurance</a>
+            <a class="ml" href="/solutions/government"><i class="fas fa-building-columns"></i>Government</a>
+            </div>
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Other Industries</h5>
+            <a class="ml" href="/solutions/telecom"><i class="fas fa-tower-broadcast"></i>Telecom</a>
+            <a class="ml" href="/solutions/healthcare"><i class="fas fa-heart-pulse"></i>Healthcare</a>
+            <a class="ml" href="/solutions/ecommerce"><i class="fas fa-bag-shopping"></i>E-Commerce</a>
+            <a class="ml" href="/solutions/real-estate"><i class="fas fa-building"></i>Real Estate</a>
+            <a class="ml" href="/solutions/legal"><i class="fas fa-scale-balanced"></i>Legal Services</a>
+            </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-res">
+        <span onclick="toggleMenu('res')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('res')">
+          <span>Resources</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sm" id="mega-res" style="min-width:520px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Learn</h5>
+            <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a>
+            <a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
+            <a class="ml" href="/faq/"><i class="fas fa-circle-question"></i>FAQ Center</a>
+            <a class="ml" href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf"></i>nFADP Whitepaper</a>
+          </div>
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Documentation</h5>
+            <a class="ml" href="/resources/" style="font-weight:700;color:var(--r);"><i class="fas fa-books"></i>Doc Center <span style="font-size:.58rem;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:3px;padding:.06rem .32rem;font-weight:700;margin-left:.25rem;">30 docs</span></a>
+            <a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a>
+            <a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a>
+            <a class="ml" href="/developers"><i class="fas fa-code"></i>Developer Hub</a>
+          </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-co">
+        <span onclick="toggleMenu('co')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('co')">
+          <span>Company</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sm" id="mega-co" style="min-width:240px;padding:1.35rem 1.5rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
+          <a class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</a>
+          <a class="ml" href="/about#team"><i class="fas fa-users"></i>Leadership &amp; Team</a>
+          <a class="ml" href="/en/partners/"><i class="fas fa-handshake"></i>Partner Program</a>
+          <a class="ml" href="/careers"><i class="fas fa-briefcase"></i>Careers</a>
+          <a class="ml" href="/press"><i class="fas fa-newspaper"></i>Press</a>
+          <a class="ml" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
+        </div>
+      </li>
+      <li class="ni"><a href="/contact" style="font-weight:600;color:var(--t);padding:.4rem .25rem;">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="lang-sw">
+        <button class="lb on" onclick="setLang('en')">EN</button>
+        <button class="lb" onclick="setLang('de')">DE</button>
+        <button class="lb" onclick="setLang('fr')">FR</button>
+      </div>
+      <a href="/contact" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;">Talk to Sales</a>
+      <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">Book a Demo</a>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+    </div>
+  </div>
+  <div id="mob">
+    <a href="/industries"><i class="fas fa-landmark" style="width:18px;"></i>Industries</a>
+    <a href="/solutions"><i class="fas fa-layer-group" style="width:18px;"></i>Solutions</a>
+    <a href="/gateway" style="color:var(--r);font-weight:700;"><i class="fas fa-network-wired" style="width:18px;"></i>VerfiX Gateway</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/solutions/document-verification"><i class="fas fa-id-card" style="width:18px;"></i>Document Verification</a>
+    <a href="/solutions/face-verification"><i class="fas fa-face-smile" style="width:18px;"></i>Face Verification</a>
+    <a href="/solutions/aml-screening"><i class="fas fa-magnifying-glass-dollar" style="width:18px;"></i>AML Screening</a>
+    <a href="/en/kyb/"><i class="fas fa-building" style="width:18px;"></i>KYB Verification</a>
+    <a href="/solutions/voice-verification"><i class="fas fa-waveform-lines" style="width:18px;"></i>Voice Biometrics</a>
+    <a href="/solutions/fraud-intelligence"><i class="fas fa-robot" style="width:18px;"></i>Deepfake Detection</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/insights"><i class="fas fa-newspaper" style="width:18px;"></i>Insights</a>
+    <a href="/resources"><i class="fas fa-book" style="width:18px;"></i>Documentation</a>
+    <a href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf" style="width:18px;"></i>nFADP Whitepaper</a>
+    <a href="/faq"><i class="fas fa-circle-question" style="width:18px;"></i>FAQ</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/about"><i class="fas fa-building" style="width:18px;"></i>About</a>
+    <a href="/en/partners/"><i class="fas fa-handshake" style="width:18px;"></i>Partners</a>
+    <a href="/careers"><i class="fas fa-briefcase" style="width:18px;"></i>Careers</a>
+    <a href="/contact"><i class="fas fa-envelope" style="width:18px;"></i>Contact</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.5rem 0;"/>
+    <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+  </div>
+</nav>
+<main id="main-content">
+
+
+<!-- HERO ─────────────────────────────────────────────────────────── -->
+<section style="padding:8.5rem 0 4.5rem;background:var(--n);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 75% 50%,rgba(200,37,42,.10) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;right:4%;top:50%;transform:translateY(-50%);opacity:.04;pointer-events:none;">
+    <i class="fas fa-scale-balanced" style="font-size:22rem;color:#fff;"></i>
+  </div>
+  <div class="W" style="position:relative;z-index:1;">
+    <nav aria-label="Breadcrumb" style="font-size:.75rem;margin-bottom:1.25rem;">
+      <a href="/" style="color:rgba(255,255,255,.4);text-decoration:none;">VerfiX</a>
+      <span style="color:rgba(255,255,255,.25);"> › </span>
+      <span style="color:rgba(255,255,255,.65);">France KYC Guide</span>
+    </nav>
+    <div style="display:inline-flex;align-items:center;gap:.45rem;background:rgba(200,37,42,.15);border:1px solid rgba(200,37,42,.3);border-radius:100px;padding:.3rem .9rem;margin-bottom:1rem;">
+      <i class="fas fa-scale-balanced" style="color:var(--r);font-size:.62rem;"></i>
+      <span style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--r);">France KYC Authority</span>
+    </div>
+    <h1 style="color:#fff;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;letter-spacing:-.04em;line-height:1.1;margin-bottom:.875rem;max-width:800px;">France KYC — The Complete Guide to ACPR Compliance, LCB-FT and Digital Identity Verification</h1>
+    <p style="color:rgba(255,255,255,.5);font-size:1.05rem;line-height:1.8;max-width:620px;margin-bottom:2rem;">Everything organisations operating in France need to know about KYC: ACPR supervision, the LCB-FT framework, digital onboarding standards, electronic identity verification, TRACFIN reporting and fraud prevention best practices.</p>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+      <a href="/solutions/banking" style="display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .75rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;font-size:.78rem;font-weight:700;color:var(--r);text-decoration:none;transition:all .15s;margin:.2rem;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'"><i class="fas fa-landmark" style="font-size:.6rem;"></i> Banking KYC</a>
+      <a href="/solutions/fintech" style="display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .75rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;font-size:.78rem;font-weight:700;color:var(--r);text-decoration:none;transition:all .15s;margin:.2rem;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'"><i class="fas fa-bolt" style="font-size:.6rem;"></i> Fintech KYC</a>
+      <a href="/solutions/crypto" style="display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .75rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;font-size:.78rem;font-weight:700;color:var(--r);text-decoration:none;transition:all .15s;margin:.2rem;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'"><i class="fas fa-coins" style="font-size:.6rem;"></i> Crypto PSAN</a>
+      <a href="/faq/kyc" style="display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .75rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;font-size:.78rem;font-weight:700;color:var(--r);text-decoration:none;transition:all .15s;margin:.2rem;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'"><i class="fas fa-circle-question" style="font-size:.6rem;"></i> KYC FAQ</a>
+      <a href="/switzerland-kyc" style="display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .75rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;font-size:.78rem;font-weight:700;color:var(--r);text-decoration:none;transition:all .15s;margin:.2rem;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'"><i class="fas fa-flag" style="font-size:.6rem;"></i> Swiss KYC</a>
+      <a href="/germany-kyc" style="display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .75rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;font-size:.78rem;font-weight:700;color:var(--r);text-decoration:none;transition:all .15s;margin:.2rem;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'"><i class="fas fa-landmark" style="font-size:.6rem;"></i> Germany KYC</a>
+    </div>
+    <div style="display:flex;gap:2.5rem;flex-wrap:wrap;">
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--r);">LCB-FT</div><div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.15rem;">Legal Framework</div></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--r);">ACPR</div><div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.15rem;">Supervisory Authority</div></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--r);">5yr</div><div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.15rem;">Record Retention</div></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--r);">RGPD</div><div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.15rem;">Data Protection</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR ────────────────────────────────────────────────────── -->
+<section style="padding:2.5rem 0;background:var(--off);border-bottom:1px solid var(--bd);">
+  <div class="W">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
+      <div style="text-align:center;padding:1.75rem 1.25rem;background:#fff;border:1px solid var(--bd);border-radius:12px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:2rem;font-weight:700;color:var(--r);line-height:1;">L.561-5</div><div style="font-size:.85rem;font-weight:700;color:var(--t);margin-top:.45rem;">CMF Art.</div><div style="font-size:.75rem;color:var(--lt);margin-top:.2rem;">CDD legal basis</div></div>
+      <div style="text-align:center;padding:1.75rem 1.25rem;background:#fff;border:1px solid var(--bd);border-radius:12px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:2rem;font-weight:700;color:var(--r);line-height:1;">TRACFIN</div><div style="font-size:.85rem;font-weight:700;color:var(--t);margin-top:.45rem;">FIU France</div><div style="font-size:.75rem;color:var(--lt);margin-top:.2rem;">170k+ SARs/year</div></div>
+      <div style="text-align:center;padding:1.75rem 1.25rem;background:#fff;border:1px solid var(--bd);border-radius:12px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:2rem;font-weight:700;color:var(--r);line-height:1;">€100M</div><div style="font-size:.85rem;font-weight:700;color:var(--t);margin-top:.45rem;">Max ACPR Fine</div><div style="font-size:.75rem;color:var(--lt);margin-top:.2rem;">Per violation</div></div>
+      <div style="text-align:center;padding:1.75rem 1.25rem;background:#fff;border:1px solid var(--bd);border-radius:12px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:2rem;font-weight:700;color:var(--r);line-height:1;">2026</div><div style="font-size:.85rem;font-weight:700;color:var(--t);margin-top:.45rem;">EUDIW Deadline</div><div style="font-size:.75rem;color:var(--lt);margin-top:.2rem;">France Identity Wallet</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE + SIDEBAR ──────────────────────────────────────────── -->
+<section style="padding:4.5rem 0;background:#fff;">
+  <div class="W" style="display:grid;grid-template-columns:1fr 260px;gap:4rem;align-items:start;">
+    <article>
+
+      <!-- S1: What is KYC France -->
+      <div id="what-is-kyc">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 1</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">What is KYC in France?</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">KYC — Know Your Customer, or in French <em>Connaissance du Client</em> — is the statutory obligation for French financial institutions and designated non-financial businesses to identify and verify customers, assess their money laundering and terrorist financing risk, and maintain ongoing documentation of the business relationship. In France, KYC obligations arise from the <strong>Code monétaire et financier</strong> (CMF), specifically Articles L.561-1 through L.574-2, which implement EU Anti-Money Laundering Directives into French law. The framework is commonly referred to as <strong>LCB-FT</strong> — Lutte contre le blanchiment de capitaux et le financement du terrorisme.</p>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">France is one of Europe's largest financial markets and hosts a significant proportion of the EU's banking, insurance, and asset management activity. ACPR, the French prudential supervisor, enforces LCB-FT obligations for regulated financial entities. The AMF (Autorité des marchés financiers) supervises investment services and, jointly with ACPR, crypto asset service providers under MiCA. TRACFIN (Traitement du renseignement et action contre les circuits financiers clandestins) is the national financial intelligence unit. Non-compliance with LCB-FT obligations carries ACPR sanctions of up to EUR 100 million or 10% of annual revenue. Compare with the <a href="/switzerland-kyc" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Switzerland LCB-FT/GwG framework</a> and the <a href="/germany-kyc" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">German GwG framework</a>.</p>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">The French LCB-FT framework has been substantially revised with each successive EU AML Directive. The transposition of AMLD4 in 2017 introduced the risk-based approach and strengthened UBO identification. AMLD5 (2020) extended coverage to crypto assets and added high-risk third-country measures. AMLD6 (2021) harmonised predicate offences. France is now preparing for the EU AML Regulation (AMLAR), which will directly apply from 2027 and be supervised by AMLA — headquartered in Frankfurt.</p>
+        <div style="display:flex;gap:.875rem;align-items:flex-start;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;padding:1rem 1.1rem;margin:1.5rem 0;"><i class="fas fa-circle-info" style="color:var(--r);font-size:.9rem;flex-shrink:0;margin-top:.2rem;"></i><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">France's CMF Article L.561-5-1 explicitly permits digital, remote customer identification using electronic identity verification — including automated document verification and biometric matching — when the process meets the technical standards referenced in the regulation. VerfiX implements a fully compliant digital KYC flow under this article. See <a href="/solutions#document-verification" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Document Verification</a> for technical details.</p></div>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Who must apply LCB-FT KYC in France?</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">CMF Article L.561-2 defines the entities subject to LCB-FT obligations — referred to as <em>personnes assujetties</em>:</p>
+        <ul style="margin:0 0 1.25rem 1.25rem;padding:0;list-style:none;">
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Établissements de crédit</strong> — banks, savings institutions (Caisses d'Épargne), mutual credit institutions (Crédit Mutuel, Crédit Agricole)</span></li>
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Établissements de paiement</strong> — payment institutions and e-money institutions licensed by ACPR</span></li>
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Prestataires de services sur actifs numériques (PSAN)</strong> — crypto asset service providers registered with AMF/ACPR; see <a href="/solutions/crypto" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Crypto Compliance</a></span></li>
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Entreprises d'assurance</strong> — for life insurance and savings products with a cash surrender value</span></li>
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Sociétés de gestion de portefeuille</strong> — portfolio management companies and fund managers</span></li>
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Changeurs manuels</strong> — currency exchange businesses</span></li>
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Notaires, avocats, experts-comptables</strong> — when acting as financial intermediaries; see <a href="/solutions/legal" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Legal Services KYC</a></span></li>
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Agents immobiliers</strong> — for transactions above CMF thresholds; see <a href="/solutions/real-estate" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Real Estate KYC</a></span></li>
+          <li style="display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;"><i class="fas fa-circle-check" style="color:var(--r);font-size:.85rem;flex-shrink:0;margin-top:.18rem;"></i><span style="font-size:.9rem;color:var(--m);line-height:1.7;"><strong>Opérateurs de jeux</strong> — online gambling and casino operators licensed by ANJ</span></li>
+        </ul>
+      </div>
+
+      <!-- S2: ACPR -->
+      <div id="acpr" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 2</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">ACPR — The French Prudential Supervisory Authority</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">The Autorité de contrôle prudentiel et de résolution (ACPR) is the French supervisory authority for banking and insurance, operating under the Banque de France. For LCB-FT purposes, ACPR is the competent authority for supervised financial institutions. It conducts on-site inspections (<em>contrôles sur place</em>), off-site reviews (<em>contrôles sur pièces</em>), and enforces compliance through its Commission des sanctions.</p>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">ACPR takes a risk-based supervisory approach informed by its annual <em>Analyse sectorielle des risques</em> (sectoral risk analysis) and the national risk assessment (ENRM — Évaluation nationale des risques en matière de blanchiment de capitaux et de financement du terrorisme) conducted every two years. ACPR's supervisory priorities for AML/CFT include: UBO identification gaps, customer risk classification weaknesses, inadequate monitoring of high-risk customers, and deficient SAR (déclaration de soupçon) processes.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">ACPR Supervisory Instruments</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin:1.25rem 0 1.5rem;">
+          <div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <div style="font-size:.72rem;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--r);margin-bottom:.35rem;">Contrôle sur place</div>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">On-site Inspection</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Full review of AML programme quality: policies, risk classification, CDD files, monitoring evidence, SAR process.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <div style="font-size:.72rem;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--r);margin-bottom:.35rem;">Mise en demeure</div>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Formal Order</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Binding requirement to remediate identified deficiencies within a specified timeframe.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <div style="font-size:.72rem;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--r);margin-bottom:.35rem;">Commission des sanctions</div>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Sanctions Commission</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Administrative fines up to EUR 100M or 10% of revenue. Public publication of sanctions decisions.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <div style="font-size:.72rem;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--r);margin-bottom:.35rem;">Lignes directrices</div>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Supervisory Guidelines</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Joint ACPR/AMF guidance letters clarifying LCB-FT obligations, acceptable verification methods, and risk factors.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <div style="font-size:.72rem;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--r);margin-bottom:.35rem;">Recommandations CCSF</div>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Joint Recommendations</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Financial sector committee guidance on practical LCB-FT implementation, including digital identification.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <div style="font-size:.72rem;font-weight:700;font-family:'IBM Plex Mono',monospace;color:var(--r);margin-bottom:.35rem;">Formulaire ACPR</div>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Supervisory Reporting</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Regular AML/CFT reporting obligations for supervised entities including statistics on SAR filings and high-risk customers.</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">ACPR and AMF — Shared Jurisdiction for PSAN</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">Following EU MiCA (Markets in Crypto-Assets Regulation) application from 2024, crypto asset service providers in France operate under a shared supervisory framework: ACPR supervises prudential and AML requirements; AMF supervises market integrity and investor protection. PSANs must register with AMF under the new MiCA-aligned CASP registration regime and comply with full LCB-FT obligations equivalent to those of credit institutions. VerfiX provides the full KYC/AML stack for French PSANs — document verification, biometric matching, sanctions screening, and audit trail generation. See the {ilink("/solutions/crypto","Crypto Compliance page")} for PSAN-specific implementation guidance.</p>
+      </div>
+
+      <!-- S3: LCB-FT Obligations -->
+      <div id="lcbft" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 3</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">LCB-FT Obligations — What French Law Requires</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">The French LCB-FT framework under the CMF imposes a structured set of customer due diligence, screening, monitoring, and reporting obligations. The risk-based approach — <em>approche fondée sur les risques</em> — is central: the intensity of due diligence must be proportionate to the assessed ML/FT risk. For a comparative view, see the <a href="/faq/kyc" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">KYC FAQ</a> and <a href="/resources/docs/11-VerfiX-AML-Compliance-Whitepaper.html" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">AML Whitepaper</a>.</p>
+        <div style="margin:1.5rem 0;">
+          <div class="rv" style="display:flex;gap:1.25rem;padding:1.4rem;background:#fff;border:1px solid var(--bd);border-radius:10px;margin-bottom:.75rem;transition:border-color .15s;" onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><div style="flex-shrink:0;width:36px;height:36px;background:var(--r);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-family:'IBM Plex Mono',monospace;font-size:.8rem;">1</div><div><div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.35rem;"><span style="font-size:.92rem;font-weight:800;color:var(--t);">Identification et vérification du client</span><span style="font-size:.62rem;font-weight:700;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:100px;padding:.1rem .5rem;">CMF Art. L.561-5</span></div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">Before entering a business relationship or executing an above-threshold transaction, the entity must identify the customer and verify their identity using reliable, independent source documents. For natural persons: full name, date of birth, nationality, address, and an identity document. CMF Art. L.561-5-1 permits digital identification using electronic identity verification when it meets applicable technical standards.</p><div style="margin-top:.5rem;"><a href="/solutions#document-verification" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Document Verification</a></div></div></div>
+          <div class="rv" style="display:flex;gap:1.25rem;padding:1.4rem;background:#fff;border:1px solid var(--bd);border-radius:10px;margin-bottom:.75rem;transition:border-color .15s;" onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><div style="flex-shrink:0;width:36px;height:36px;background:var(--r);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-family:'IBM Plex Mono',monospace;font-size:.8rem;">2</div><div><div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.35rem;"><span style="font-size:.92rem;font-weight:800;color:var(--t);">Identification du bénéficiaire effectif</span><span style="font-size:.62rem;font-weight:700;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:100px;padding:.1rem .5rem;">CMF Art. L.561-5 §2 &amp; L.561-2-2</span></div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">For legal entity customers, the entity must identify the beneficial owner — any natural person holding more than 25% of shares, voting rights, or other controlling interests, directly or indirectly. France maintains the Registre des bénéficiaires effectifs (RBE). Institutions must consult the RBE and document discrepancies between register data and customer-provided information.</p><div style="margin-top:.5rem;"><a href="/solutions#kyb" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">KYB — UBO Identification</a></div></div></div>
+          <div class="rv" style="display:flex;gap:1.25rem;padding:1.4rem;background:#fff;border:1px solid var(--bd);border-radius:10px;margin-bottom:.75rem;transition:border-color .15s;" onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><div style="flex-shrink:0;width:36px;height:36px;background:var(--r);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-family:'IBM Plex Mono',monospace;font-size:.8rem;">3</div><div><div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.35rem;"><span style="font-size:.92rem;font-weight:800;color:var(--t);">Évaluation du risque client</span><span style="font-size:.62rem;font-weight:700;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:100px;padding:.1rem .5rem;">CMF Art. L.561-4-1</span></div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">A risk-based classification is required for every customer: simplified (SDD), standard (SDD standard), or enhanced (EDD). EDD is mandatory for PEPs, customers from high-risk third countries (EU-listed), and complex or atypical relationships. The risk classification must be documented, reviewed periodically, and updated when risk factors change.</p><div style="margin-top:.5rem;"><a href="/solutions#trust-engine" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Trust Engine — Risk Scoring</a></div></div></div>
+          <div class="rv" style="display:flex;gap:1.25rem;padding:1.4rem;background:#fff;border:1px solid var(--bd);border-radius:10px;margin-bottom:.75rem;transition:border-color .15s;" onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><div style="flex-shrink:0;width:36px;height:36px;background:var(--r);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-family:'IBM Plex Mono',monospace;font-size:.8rem;">4</div><div><div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.35rem;"><span style="font-size:.92rem;font-weight:800;color:var(--t);">Mesures de vigilance renforcée</span><span style="font-size:.62rem;font-weight:700;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:100px;padding:.1rem .5rem;">CMF Art. L.561-10</span></div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">Enhanced due diligence requires source of funds and wealth verification, senior management approval, and enhanced ongoing monitoring. It applies to PEPs (and their family members and close associates), customers from FATF-listed high-risk jurisdictions, correspondent banking, and any relationship presenting significant unexplained complexity or opacity.</p><div style="margin-top:.5rem;"><a href="/solutions#aml-screening" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">AML Screening</a></div></div></div>
+          <div class="rv" style="display:flex;gap:1.25rem;padding:1.4rem;background:#fff;border:1px solid var(--bd);border-radius:10px;margin-bottom:.75rem;transition:border-color .15s;" onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><div style="flex-shrink:0;width:36px;height:36px;background:var(--r);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-family:'IBM Plex Mono',monospace;font-size:.8rem;">5</div><div><div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.35rem;"><span style="font-size:.92rem;font-weight:800;color:var(--t);">Surveillance continue</span><span style="font-size:.62rem;font-weight:700;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:100px;padding:.1rem .5rem;">CMF Art. L.561-6</span></div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">Institutions must continuously monitor business relationships: keeping customer data current, rescreening against updated sanctions and PEP lists, and monitoring transactions for patterns inconsistent with the customer's declared profile or risk classification. Unusual operations must be investigated and, where suspicion arises, reported to TRACFIN.</p><div style="margin-top:.5rem;"><a href="/solutions#aml-screening" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Ongoing Monitoring</a></div></div></div>
+          <div class="rv" style="display:flex;gap:1.25rem;padding:1.4rem;background:#fff;border:1px solid var(--bd);border-radius:10px;margin-bottom:.75rem;transition:border-color .15s;" onmouseover="this.style.borderColor='var(--r)'" onmouseout="this.style.borderColor='var(--bd)'"><div style="flex-shrink:0;width:36px;height:36px;background:var(--r);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-family:'IBM Plex Mono',monospace;font-size:.8rem;">6</div><div><div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.35rem;"><span style="font-size:.92rem;font-weight:800;color:var(--t);">Conservation des documents</span><span style="font-size:.62rem;font-weight:700;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:100px;padding:.1rem .5rem;">CMF Art. L.561-12</span></div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">All customer due diligence records must be retained for five years after the end of the business relationship. This includes identity documents or copies, beneficial owner declarations, risk assessments, screening records, and transaction monitoring evidence. ACPR inspectors specifically examine whether records are complete, accessible, and allow reconstruction of the due diligence process.</p><div style="margin-top:.5rem;"><a href="/trust-center" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Audit Trail</a></div></div></div>
+        </div>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Déclaration de soupçon — Reporting to TRACFIN</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">When suspicion of money laundering, terrorist financing, or corruption arises — triggered by an AML screening match, unusual transaction pattern, or any other indicator — the regulated entity must file a <em>déclaration de soupçon</em> (DS) with TRACFIN via the secure Ermès portal. France receives over 170,000 suspicious activity declarations annually. The obligation is triggered by <em>soupçon</em> — suspicion — not certainty. The entity may not inform the customer that a declaration has been made (<em>interdiction de divulgation</em>). TRACFIN analyses declarations, conducts investigations, and refers serious cases to the <em>parquet national financier</em> (PNF) for prosecution.</p>
+        <div style="display:flex;gap:.875rem;align-items:flex-start;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;padding:1rem 1.1rem;margin:1.5rem 0;"><i class="fas fa-triangle-exclamation" style="color:var(--r);font-size:.9rem;flex-shrink:0;margin-top:.2rem;"></i><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">ACPR's inspection findings consistently identify deficient SAR processes as a primary compliance gap — specifically: institutions identifying screening matches but failing to investigate them properly, or investigating but failing to file a declaration when the conclusion is suspicious. VerfiX generates structured alerts that feed the investigation workflow. See <a href="/faq/aml" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">AML Screening FAQ</a> for alert management guidance.</p></div>
+      </div>
+
+      <!-- S4: AML Framework -->
+      <div id="aml" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 4</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">AML Framework — Screening, PEPs and Sanctions</h2>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Mandatory Sanctions Screening</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">French financial institutions must screen customers and counterparties against all applicable EU and UN sanctions lists. The primary mandatory list is the <strong>EU Consolidated Sanctions List</strong> — which incorporates all EU autonomous restrictive measures and UN Security Council resolutions. French domestic restrictive measures (arrêtés de gel des avoirs) apply national freezing orders issued by the Direction générale du Trésor (DGT). OFAC screening is standard practice for institutions with USD transactions or US correspondent relationships. ACPR expects screening at onboarding and on a continuous basis when lists are updated.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Personnes Politiquement Exposées (PPE/PEP)</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">CMF Article L.561-10 defines PEPs as natural persons who hold or have held senior public functions: heads of state or government, senior government ministers, members of parliament, judges of supreme courts, senior central bank officials, ambassadors, senior military officers, and directors of state-owned enterprises. French PEPs — including members of the Assemblée nationale, Sénat, and Conseil d'État — must be identified through PEP screening. Family members (conjoint, enfants, parents, frères et sœurs) and close associates are also subject to EDD requirements. VerfiX Trust Engine screens against multiple PEP databases with comprehensive French domestic political coverage.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Registre des bénéficiaires effectifs (RBE)</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">France's beneficial ownership register — maintained by the <em>Greffe du tribunal de commerce</em> — requires all French legal entities (SAS, SARL, SA, SCI, associations with activities) to register and update their beneficial owner information. Financial institutions conducting KYB must consult the RBE and document any discrepancies between register data and customer-provided information. The RBE is publicly accessible. VerfiX <a href="/solutions#kyb" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">KYB module</a> integrates UBO identification workflows and discrepancy flagging for compliance with this obligation.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Gel des avoirs — Asset Freezing</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">France operates a national asset freezing mechanism managed by the Direction générale du Trésor (DGT). When a new arrêté de gel des avoirs is issued, financial institutions must freeze assets of listed persons within 24 hours and report the freeze to DGT. This is in addition to EU and UN sanctions obligations and applies to both domestic terrorism-related designations and corruption-related measures. VerfiX ongoing monitoring detects new listings in French, EU, and UN lists and triggers immediate alerts for compliance action.</p>
+      </div>
+
+      <!-- S5: Digital Onboarding -->
+      <div id="digital-onboarding" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 5</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">Digital Onboarding in France — CMF Art. L.561-5-1</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">Digital customer identification (<em>identification à distance</em>) in France is governed by CMF Article L.561-5-1, introduced by the Ordonnance 2020-115 transposing AMLD5. This article expressly permits remote electronic identification when it meets the requirements set by decree — including document verification, biometric comparison, and liveness detection. ACPR and AMF have published joint recommendations (<em>Recommandations conjointes</em>) clarifying the acceptable methods and technical standards.</p>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">France has aligned its digital identification standards with eIDAS for high-assurance use cases and with ISO 30107-3 for biometric liveness detection. The acceptable digital identification methods in France range from simple document upload (lowest assurance) to fully automated biometric verification with NFC chip reading (highest assurance) to eIDAS-certified identity providers.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Digital Identification Methods — France</h3>
+        <div style="overflow-x:auto;margin:1.5rem 0;">
+          <table style="width:100%;border-collapse:collapse;font-size:.84rem;">
+            <thead><tr style="background:var(--n);">
+              <th style="text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;">Method</th>
+              <th style="text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;">Legal Basis</th>
+              <th style="text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;">Assurance</th>
+              <th style="text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;">Time</th>
+              <th style="text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;">Cost/ID</th>
+            </tr></thead>
+            <tbody style="background:#fff;">
+              <tr style="border-bottom:1px solid var(--bd);"><td style="padding:.75rem 1rem;font-weight:600;color:var(--t);">En personne</td><td style="padding:.75rem 1rem;color:var(--m);">CMF L.561-5</td><td style="padding:.75rem 1rem;color:var(--m);">✓ Standard</td><td style="padding:.75rem 1rem;color:var(--m);">15-45 min</td><td style="padding:.75rem 1rem;color:var(--m);">€15-50</td></tr><tr style="border-bottom:1px solid var(--bd);"><td style="padding:.75rem 1rem;font-weight:600;color:var(--t);">Vidéo-identification</td><td style="padding:.75rem 1rem;color:var(--m);">CMF L.561-5-1</td><td style="padding:.75rem 1rem;color:var(--m);">✓ High</td><td style="padding:.75rem 1rem;color:var(--m);">10-20 min</td><td style="padding:.75rem 1rem;color:var(--m);">€5-15</td></tr><tr style="border-bottom:1px solid var(--bd);"><td style="padding:.75rem 1rem;font-weight:600;color:var(--t);">Vérification auto. (VerfiX)</td><td style="padding:.75rem 1rem;color:var(--m);">CMF L.561-5-1</td><td style="padding:.75rem 1rem;color:var(--m);">✓ Très haute</td><td style="padding:.75rem 1rem;color:var(--m);">2-3 min</td><td style="padding:.75rem 1rem;color:var(--m);">€1-4</td></tr><tr style="border-bottom:1px solid var(--bd);"><td style="padding:.75rem 1rem;font-weight:600;color:var(--t);">FranceConnect+</td><td style="padding:.75rem 1rem;color:var(--m);">CMF L.561-5-1 + eIDAS</td><td style="padding:.75rem 1rem;color:var(--m);">✓ Substantielle</td><td style="padding:.75rem 1rem;color:var(--m);">< 1 min</td><td style="padding:.75rem 1rem;color:var(--m);">€0.5-2</td></tr><tr style="border-bottom:1px solid var(--bd);"><td style="padding:.75rem 1rem;font-weight:600;color:var(--t);">Wallet EUDIW (2026)</td><td style="padding:.75rem 1rem;color:var(--m);">eIDAS 2.0</td><td style="padding:.75rem 1rem;color:var(--m);">✓ Élevée</td><td style="padding:.75rem 1rem;color:var(--m);">< 1 min</td><td style="padding:.75rem 1rem;color:var(--m);">€0.5-2</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Spécificités françaises de l'identification numérique</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">Several features of the French digital identification landscape are distinct from other EU markets. First, France has invested significantly in the <strong>carte nationale d'identité électronique</strong> (CNIe) — the digital national identity card — which includes an NFC chip with biometric data signed by the French Interior Ministry (ANTS). CNIe NFC reading provides the highest assurance level for French citizens. Second, France operates <strong>FranceConnect+</strong>, the government's high-assurance digital identity federation, which allows citizens to use certified identity providers — including La Poste's digital identity service — to authenticate at eIDAS Substantial assurance level. Third, France is developing its national <strong>portefeuille d'identité numérique</strong> (digital identity wallet) as its EUDIW implementation, expected to launch progressively from 2025-2026.</p>
+        <div style="display:flex;gap:.875rem;align-items:flex-start;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;padding:1rem 1.1rem;margin:1.5rem 0;"><i class="fas fa-id-card" style="color:var(--r);font-size:.9rem;flex-shrink:0;margin-top:.2rem;"></i><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">VerfiX verifies all French identity documents natively: carte nationale d'identité (CNI and CNIe), passeport biométrique, titre de séjour, and carte de résident. NFC chip reading for CNIe provides ACPR-recognised highest-assurance identification. <a href="/solutions#document-verification" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Document Verification details</a> · <a href="/resources/eid-gateway" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">eID Gateway for FranceConnect+</a></p></div>
+      </div>
+
+      <!-- S6: Electronic Identity Verification -->
+      <div id="eid-france" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 6</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">Electronic Identity Verification — FranceConnect and eIDAS</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">France has one of the most developed digital identity ecosystems in the EU, centred on FranceConnect. Launched in 2016 and managed by the Direction interministérielle du numérique (DINUM), FranceConnect provides identity federation for French public services — allowing citizens to authenticate using existing government credentials from DGFiP (tax authority), AMELI (health insurance), La Poste, or MobileConnect.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">FranceConnect and FranceConnect+</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">FranceConnect operates at eIDAS Low assurance level — suitable for most public services but insufficient for financial KYC. <strong>FranceConnect+</strong> provides eIDAS Substantial assurance through certified identity providers who perform enhanced identity proofing. La Poste's digital identity service is the primary FranceConnect+ provider, having verified identity documents in person during postal operations. For financial KYC, FranceConnect+ provides ACPR-acceptable digital identification that does not require the customer to hold the French CNIe NFC card.</p>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">VerfiX <a href="/resources/eid-gateway" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">eID Gateway</a> integrates with FranceConnect+ to accept identity assertions from certified French identity providers. This allows French financial institutions to accept FranceConnect+ authentication as the KYC identification step — either standalone or as a complement to document verification — through a single API integration.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Carte nationale d'identité électronique (CNIe) — NFC</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">France began issuing the new biometric national identity card (CNIe) in August 2021. The CNIe includes an NFC chip containing biometric data — facial photograph and fingerprints — digitally signed by the French Interior Ministry through ANTS (Agence nationale des titres sécurisés). Reading and validating the CNIe NFC chip provides eIDAS High assurance level — the strongest available — because the chip data carries a government digital signature that cannot be forged. As of 2025, the majority of new French identity cards issued are CNIe with active NFC function.</p>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">For organisations onboarding high-value French customers, CNIe NFC reading provides the strongest available identity assurance while being faster and cheaper than video identification. VerfiX supports CNIe NFC reading through its standard document verification flow. See the <a href="/resources/docs/06-VerfiX-eID-Gateway-Product-Sheet.html" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">eID Gateway Product Sheet</a> for technical specifications.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">EUDIW — France's Digital Identity Wallet (2025-2026)</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">EU Regulation 2024/1183 (eIDAS 2.0) requires all EU member states to make European Digital Identity Wallets (EUDIW) available to citizens by 2026. France is developing its national EUDIW implementation — the <em>portefeuille d'identité numérique</em> — building on the FranceConnect+ and CNIe infrastructure. The wallet will allow French citizens to store and present verified identity credentials, driving licence, and other government-issued attributes from a mobile application, at eIDAS High assurance level. VerfiX eID Gateway already accepts EU Digital Identity Wallet credentials from member states that have deployed them, and will cover France's implementation as it launches.</p>
+      </div>
+
+      <!-- S7: Fraud Prevention -->
+      <div id="fraud" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 7</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">Fraud Prevention — Specificities of the French Market</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">France faces specific identity fraud challenges that inform KYC and fraud prevention system design. The Observatoire de la sécurité des moyens de paiement (OSMP), operated by the Banque de France, publishes annual fraud statistics for the French market. Key fraud vectors in the French context include document fraud, account takeover through social engineering of banking advisers, and synthetic identity fraud targeting French online financial services.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Document Fraud — French Context</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">French identity documents have evolved significantly in security over recent years. The new CNIe (2021) has substantially stronger security features than the previous generation carte nationale d'identité. However, the earlier CNI design (valid for up to 30 years for those issued before 2014) remains in circulation with older, more easily forged security features. VerfiX document verification handles both CNI generations, applying the appropriate security feature template for each version and flagging older documents for additional scrutiny based on age and issue date.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Arnaque au faux conseiller bancaire</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">A distinctive French fraud pattern is the <em>arnaque au faux conseiller bancaire</em> — social engineering attack where fraudsters impersonate bank advisers, customer service agents, or even ACPR/Banque de France officials to obtain authentication credentials or authorise fraudulent transfers. This attack exploits knowledge-based authentication (mother's maiden name, date of birth, last four digits of account number) that is insufficient in the modern threat environment. Biometric voice authentication for telephone banking — VerfiX Voice Biometrics — addresses this specifically by ensuring that the person calling the bank is the genuine account holder, regardless of what identity information they can provide verbally.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">Identité synthétique et deepfakes</h3>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">AI-generated synthetic identities and deepfake attacks on digital onboarding channels are a growing threat in the French market. The ACPR has specifically highlighted artificial intelligence-generated fraud as an emerging supervisory concern. VerfiX Fraud Intelligence includes dedicated deepfake detection, synthetic identity analysis, and document fraud signals tuned for the French and European document landscape. See <a href="/solutions#fraud-intelligence" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Fraud Intelligence</a> for technical specifications.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.875rem;margin:1.5rem 0;">
+          <div style="background:#fde8e8;border-radius:9px;padding:1.1rem;"><i class="fas fa-id-card-clip" style="color:#C8252A;font-size:.9rem;display:block;margin-bottom:.5rem;"></i><div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Document Fraud</div><p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Multi-generation CNI templates, MRZ validation, hologram verification, UV security feature detection.</p></div>
+          <div style="background:#dbeafe;border-radius:9px;padding:1.1rem;"><i class="fas fa-microphone" style="color:#1e40af;font-size:.9rem;display:block;margin-bottom:.5rem;"></i><div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Social Engineering</div><p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Voice biometric authentication prevents faux conseiller bancaire attacks on telephone banking channels.</p></div>
+          <div style="background:#d1fae5;border-radius:9px;padding:1.1rem;"><i class="fas fa-robot" style="color:#065f46;font-size:.9rem;display:block;margin-bottom:.5rem;"></i><div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">AI-Generated Fraud</div><p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Deepfake detection, synthetic identity signals, GAN/diffusion model artefact analysis in real time.</p></div>
+        </div>
+      </div>
+
+      <!-- S8: RGPD Data Protection -->
+      <div id="rgpd" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 8</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">RGPD — Data Protection for French KYC</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">RGPD (Règlement général sur la protection des données) — the French name for GDPR — governs the processing of personal data in France. France's national data protection authority, the CNIL (Commission nationale de l'informatique et des libertés), is one of the most active GDPR supervisory authorities in Europe, having issued several high-profile enforcement actions including major fines against global technology companies.</p>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">For biometric KYC processing, RGPD Article 9 classifies biometric data as a special category of personal data requiring an explicit legal basis. For LCB-FT-regulated entities, the statutory identification obligation under CMF Art. L.561-5 provides the legal basis under RGPD Art. 6(1)(c) (legal obligation) and Art. 9(2)(g) (substantial public interest established by law). The CNIL has published specific guidance on biometric processing in the financial sector.</p>
+
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--t);margin:2rem 0 .6rem;letter-spacing:-.025em;">CNIL Requirements for Biometric KYC</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin:1.25rem 0 1.5rem;">
+          <div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <i class="fas fa-file-contract" style="color:var(--r);font-size:.9rem;display:block;margin-bottom:.5rem;"></i>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">DPA Obligatoire (Art. 28)</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Contrat de sous-traitance mandatory with all processors. CNIL actively enforces DPA requirements — including against French financial institutions.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <i class="fas fa-minimize" style="color:var(--r);font-size:.9rem;display:block;margin-bottom:.5rem;"></i>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Minimisation des données (Art. 5)</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Biometric templates must be deleted after verification — not retained indefinitely. Only the non-biometric verification outcome is retained for LCB-FT purposes.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <i class="fas fa-magnifying-glass" style="color:var(--r);font-size:.9rem;display:block;margin-bottom:.5rem;"></i>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">AIPD requise (Art. 35)</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Analyse d'impact relative à la protection des données (AIPD) required for large-scale biometric processing. CNIL provides a methodology and expects formal AIPD documentation.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <i class="fas fa-bell" style="color:var(--r);font-size:.9rem;display:block;margin-bottom:.5rem;"></i>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Notification CNIL (Art. 33)</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Breaches likely to result in risk to data subjects must be notified to CNIL within 72 hours. France has one of the highest breach notification rates in the EU.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <i class="fas fa-shield-halved" style="color:var(--r);font-size:.9rem;display:block;margin-bottom:.5rem;"></i>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Confidentialité dès la conception</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Privacy by design (Art. 25) requires privacy-protective defaults from system deployment. Biometric data deletion at session end must be the default configuration.</p>
+          </div><div style="background:var(--off);border:1px solid var(--bd);border-radius:9px;padding:1.1rem;">
+            <i class="fas fa-euro-sign" style="color:var(--r);font-size:.9rem;display:block;margin-bottom:.5rem;"></i>
+            <div style="font-size:.875rem;font-weight:800;color:var(--t);margin-bottom:.3rem;">Transfert CH → FR</div>
+            <p style="font-size:.82rem;color:var(--m);line-height:1.7;margin:0;">Switzerland holds EU RGPD/GDPR adequacy status. No SCCs required for processing French customer data in Swiss infrastructure via VerfiX.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:.875rem;align-items:flex-start;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;padding:1rem 1.1rem;margin:1.5rem 0;"><i class="fas fa-circle-info" style="color:var(--r);font-size:.9rem;flex-shrink:0;margin-top:.2rem;"></i><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">The CNIL has specifically addressed AI-based facial recognition and biometric identity verification in its guidelines. Financial institutions must conduct an AIPD before deploying biometric KYC and must ensure that the legal basis, processing purposes, retention periods, and data subject rights are documented before the first verification. VerfiX provides AIPD support documentation as part of the enterprise onboarding package. See <a href="/legal/dpa" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Contrat de traitement des données</a> and <a href="/faq/gdpr" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">FAQ RGPD</a>.</p></div>
+      </div>
+
+      <!-- S9: Common Challenges -->
+      <div id="challenges" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 9</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">Common French KYC Compliance Challenges</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">Based on ACPR inspection findings, FATF evaluation reports, and engagement with French financial institutions, the following challenges are consistently identified in French LCB-FT compliance programmes:</p>
+        <div style="display:flex;flex-direction:column;gap:.75rem;margin:1.5rem 0;">
+          <div class="rv" style="display:flex;gap:.875rem;align-items:flex-start;padding:1.25rem;background:var(--off);border:1px solid var(--bd);border-left:3px solid var(--r);border-radius:0 9px 9px 0;margin-bottom:.75rem;"><span style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:700;color:var(--r);flex-shrink:0;width:24px;">01</span><div><div style="font-size:.92rem;font-weight:800;color:var(--t);margin-bottom:.28rem;">Classification du risque insuffisamment granulaire</div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">Many French institutions implement binary risk classification (standard/enhanced) rather than a granular, documented risk score per customer. ACPR expects institutions to demonstrate proportionality between assessed risk and the intensity of due diligence applied — requiring a defensible, documented risk classification methodology.</p></div></div>
+          <div class="rv" style="display:flex;gap:.875rem;align-items:flex-start;padding:1.25rem;background:var(--off);border:1px solid var(--bd);border-left:3px solid var(--r);border-radius:0 9px 9px 0;margin-bottom:.75rem;"><span style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:700;color:var(--r);flex-shrink:0;width:24px;">02</span><div><div style="font-size:.92rem;font-weight:800;color:var(--t);margin-bottom:.28rem;">RBE non consulté systématiquement</div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">Consultation of the Registre des bénéficiaires effectifs is required but often performed inconsistently — done for some corporate customers but not others, or consulted but not documented. ACPR inspections specifically target UBO identification quality and RBE consultation evidence.</p></div></div>
+          <div class="rv" style="display:flex;gap:.875rem;align-items:flex-start;padding:1.25rem;background:var(--off);border:1px solid var(--bd);border-left:3px solid var(--r);border-radius:0 9px 9px 0;margin-bottom:.75rem;"><span style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:700;color:var(--r);flex-shrink:0;width:24px;">03</span><div><div style="font-size:.92rem;font-weight:800;color:var(--t);margin-bottom:.28rem;">Surveillance continue ad hoc</div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">French institutions frequently perform sanctions screening at onboarding and then rely on infrequent manual rescreening rather than genuine ongoing monitoring. Given that the EU and French national lists are updated frequently, point-in-time screening at onboarding is insufficient. ACPR expects demonstrated continuous monitoring.</p></div></div>
+          <div class="rv" style="display:flex;gap:.875rem;align-items:flex-start;padding:1.25rem;background:var(--off);border:1px solid var(--bd);border-left:3px solid var(--r);border-radius:0 9px 9px 0;margin-bottom:.75rem;"><span style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:700;color:var(--r);flex-shrink:0;width:24px;">04</span><div><div style="font-size:.92rem;font-weight:800;color:var(--t);margin-bottom:.28rem;">Déclarations de soupçon sous-déclarées</div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">France's SAR volume is high but ACPR consistently identifies under-reporting in specific sectors — particularly among non-bank financial intermediaries and DNFBPs. The obligation to file is triggered by suspicion, not certainty. Institutions with low SAR rates relative to their risk profile attract supervisory attention.</p></div></div>
+          <div class="rv" style="display:flex;gap:.875rem;align-items:flex-start;padding:1.25rem;background:var(--off);border:1px solid var(--bd);border-left:3px solid var(--r);border-radius:0 9px 9px 0;margin-bottom:.75rem;"><span style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:700;color:var(--r);flex-shrink:0;width:24px;">05</span><div><div style="font-size:.92rem;font-weight:800;color:var(--t);margin-bottom:.28rem;">Données RGPD non conformes pour la biométrie</div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">Institutions deploying biometric KYC frequently lack the required AIPD, have not executed a compliant DPA with their biometric processing vendor, or retain biometric data beyond the purpose-limited session. CNIL enforcement in financial services is increasing.</p></div></div>
+          <div class="rv" style="display:flex;gap:.875rem;align-items:flex-start;padding:1.25rem;background:var(--off);border:1px solid var(--bd);border-left:3px solid var(--r);border-radius:0 9px 9px 0;margin-bottom:.75rem;"><span style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:700;color:var(--r);flex-shrink:0;width:24px;">06</span><div><div style="font-size:.92rem;font-weight:800;color:var(--t);margin-bottom:.28rem;">Onboarding numérique non homologué</div><p style="font-size:.875rem;color:var(--m);line-height:1.8;margin:0;">Some French institutions use digital onboarding flows that do not fully meet CMF Art. L.561-5-1 requirements — lacking liveness detection, using insufficient document verification, or generating inadequate audit trails. ACPR's joint guidance with AMF sets clear minimum standards that must be documented and demonstrated.</p></div></div>
+        </div>
+      </div>
+
+      <!-- S10: How VerfiX Helps -->
+      <div id="verfix" style="margin-top:3rem;">
+        <span class="label" style="display:inline-flex;margin-bottom:.6rem;">Section 10</span>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.875rem;line-height:1.2;">How VerfiX Helps French Organisations Meet KYC Obligations</h2>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">VerfiX AG is a Swiss identity infrastructure company whose platform covers the French LCB-FT framework alongside Swiss GwG/FINMA and German GwG/BaFin. For organisations operating across France, Switzerland, and Germany, VerfiX provides a single compliance API that addresses all three jurisdictions. See the <a href="/switzerland-kyc" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Switzerland KYC Guide</a> and <a href="/germany-kyc" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Germany KYC Guide</a> for comparative analysis.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;">
+          <div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;transition:border-color .15s,box-shadow .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div style="width:36px;height:36px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-id-card" style="color:var(--r);font-size:.8rem;"></i></div><span style="font-size:.88rem;font-weight:800;color:var(--t);">Identification numérique CMF-conforme</span></div><p style="font-size:.82rem;color:var(--m);line-height:1.75;margin:0 0 .5rem;">Vérification documentaire (CNI, CNIe NFC, passeport, titre de séjour), correspondance biométrique et détection de vivacité selon les normes CMF Art. L.561-5-1. Résultat en moins de 3 secondes.</p><a href="/solutions#document-verification" style="font-size:.77rem;font-weight:700;color:var(--r);text-decoration:none;">En savoir plus <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a></div>
+          <div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;transition:border-color .15s,box-shadow .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div style="width:36px;height:36px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-building" style="color:var(--r);font-size:.8rem;"></i></div><span style="font-size:.88rem;font-weight:800;color:var(--t);">KYB et identification des bénéficiaires effectifs</span></div><p style="font-size:.82rem;color:var(--m);line-height:1.75;margin:0 0 .5rem;">Vérification des entités, consultation des registres de sociétés, cartographie multi-niveaux des chaînes de propriété, identification des UBO au seuil CMF de 25%. Piste d'audit GwG Art. 4 / CMF conforme.</p><a href="/solutions#kyb" style="font-size:.77rem;font-weight:700;color:var(--r);text-decoration:none;">En savoir plus <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a></div>
+          <div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;transition:border-color .15s,box-shadow .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div style="width:36px;height:36px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-shield-halved" style="color:var(--r);font-size:.8rem;"></i></div><span style="font-size:.88rem;font-weight:800;color:var(--t);">Criblage LCB-FT — Listes UE, ONU, OFAC</span></div><p style="font-size:.82rem;color:var(--m);line-height:1.75;margin:0 0 .5rem;">Liste consolidée UE (obligatoire France), ONU, OFAC, Trésor britannique, bases PPE internationales et françaises. Gel des avoirs français via arrêtés DGT. Surveillance continue automatisée.</p><a href="/solutions#aml-screening" style="font-size:.77rem;font-weight:700;color:var(--r);text-decoration:none;">En savoir plus <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a></div>
+          <div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;transition:border-color .15s,box-shadow .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div style="width:36px;height:36px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-microphone" style="color:var(--r);font-size:.8rem;"></i></div><span style="font-size:.88rem;font-weight:800;color:var(--t);">Biométrie vocale — Contre le faux conseiller</span></div><p style="font-size:.82rem;color:var(--m);line-height:1.75;margin:0 0 .5rem;">Authentification vocale pour les centres d'appels en français. Protège contre l'arnaque au faux conseiller bancaire. Modes actif et passif. Dialectes et accents régionaux français.</p><a href="/solutions#voice-verification" style="font-size:.77rem;font-weight:700;color:var(--r);text-decoration:none;">En savoir plus <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a></div>
+          <div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;transition:border-color .15s,box-shadow .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div style="width:36px;height:36px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-passport" style="color:var(--r);font-size:.8rem;"></i></div><span style="font-size:.88rem;font-weight:800;color:var(--t);">FranceConnect+ et Wallet EUDIW</span></div><p style="font-size:.82rem;color:var(--m);line-height:1.75;margin:0 0 .5rem;">Acceptation des identifiants FranceConnect+ et des wallets d'identité numérique européens. Niveau de garantie Substantiel/Élevé selon eIDAS. Un seul point d'intégration pour 27 États membres.</p><a href="/resources/eid-gateway" style="font-size:.77rem;font-weight:700;color:var(--r);text-decoration:none;">En savoir plus <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a></div>
+          <div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.35rem;transition:border-color .15s,box-shadow .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><div style="width:36px;height:36px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-file-shield" style="color:var(--r);font-size:.8rem;"></i></div><span style="font-size:.88rem;font-weight:800;color:var(--t);">Piste d'audit ACPR-ready</span></div><p style="font-size:.82rem;color:var(--m);line-height:1.75;margin:0 0 .5rem;">Enregistrement immuable horodaté par vérification. Export structuré en moins d'une heure. Conservation 5 ans (CMF) configurable. Hébergement suisse. Format ACPR-inspection.</p><a href="/trust-center" style="font-size:.77rem;font-weight:700;color:var(--r);text-decoration:none;">En savoir plus <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a></div>
+        </div>
+        <p style="font-size:.97rem;color:var(--m);line-height:1.9;margin-bottom:1.25rem;">Solutions sectorielles pour le marché français: <a href="/solutions/banking" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Banques</a> · <a href="/solutions/fintech" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Fintech</a> · <a href="/solutions/crypto" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">PSAN / Crypto</a> · <a href="/solutions/insurance" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Assurance</a> · <a href="/solutions/real-estate" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Immobilier</a> · <a href="/solutions/legal" style="color:var(--r);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--rline);">Professions juridiques</a></p>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR ────────────────────────────────────────────────────── -->
+    <aside style="position:sticky;top:88px;">
+      <div style="background:var(--off);border:1px solid var(--bd);border-radius:10px;padding:1.25rem;margin-bottom:1rem;">
+        <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--lt);margin-bottom:.75rem;">Sommaire</div>
+        <ul style="list-style:none;margin:0;padding:0;">
+          <li><a href="#what-is-kyc" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>KYC en France — définition</a></li><li><a href="#acpr" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>ACPR — Autorité de contrôle</a></li><li><a href="#lcbft" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>Obligations LCB-FT</a></li><li><a href="#aml" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>Criblage AML &amp; TRACFIN</a></li><li><a href="#digital-onboarding" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>Entrée en relation numérique</a></li><li><a href="#eid-france" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>FranceConnect &amp; eIDAS</a></li><li><a href="#fraud" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>Prévention de la fraude</a></li><li><a href="#rgpd" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>RGPD — Protection des données</a></li><li><a href="#challenges" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>Défis LCB-FT courants</a></li><li><a href="#verfix" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>Comment VerfiX peut aider</a></li><li><a href="#faq" style="font-size:.83rem;color:var(--m);text-decoration:none;display:flex;align-items:center;gap:.4rem;padding:.28rem 0;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-angle-right" style="font-size:.6rem;color:var(--lt);"></i>FAQ</a></li>
+        </ul>
+      </div>
+      <div style="background:var(--n);border-radius:10px;padding:1.35rem;margin-bottom:1rem;">
+        <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:.6rem;">Démarrer rapidement</div>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:1rem;">Réservez un appel de 30 minutes. Nous analysons vos obligations LCB-FT et votre architecture d'intégration.</p>
+        <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:block;text-align:center;font-size:.82rem;"><i class="fas fa-calendar-check"></i> Réserver une démo</a>
+        <div style="margin-top:.875rem;display:flex;flex-direction:column;gap:.3rem;">
+          <span style="font-size:.72rem;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.5);font-size:.62rem;"></i>Conforme ACPR / LCB-FT</span><span style="font-size:.72rem;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.5);font-size:.62rem;"></i>Documentation RGPD incluse</span><span style="font-size:.72rem;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.5);font-size:.62rem;"></i>Hébergement suisse</span><span style="font-size:.72rem;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.5);font-size:.62rem;"></i>Sandbox en 24 heures</span>
+        </div>
+      </div>
+      <div style="background:var(--off);border:1px solid var(--bd);border-radius:10px;padding:1.25rem;">
+        <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--lt);margin-bottom:.75rem;">Ressources associées</div>
+        <a href="/switzerland-kyc" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m);text-decoration:none;padding:.38rem 0;border-bottom:1px solid var(--bd);transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-flag" style="font-size:.65rem;color:var(--lt);width:14px;text-align:center;"></i>Guide KYC Suisse</a>
+        <a href="/germany-kyc" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m);text-decoration:none;padding:.38rem 0;border-bottom:1px solid var(--bd);transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-landmark" style="font-size:.65rem;color:var(--lt);width:14px;text-align:center;"></i>Guide KYC Allemagne</a>
+        <a href="/faq/kyc" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m);text-decoration:none;padding:.38rem 0;border-bottom:1px solid var(--bd);transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-circle-question" style="font-size:.65rem;color:var(--lt);width:14px;text-align:center;"></i>FAQ KYC</a>
+        <a href="/faq/aml" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m);text-decoration:none;padding:.38rem 0;border-bottom:1px solid var(--bd);transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-shield-halved" style="font-size:.65rem;color:var(--lt);width:14px;text-align:center;"></i>FAQ AML</a>
+        <a href="/faq/gdpr" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m);text-decoration:none;padding:.38rem 0;border-bottom:1px solid var(--bd);transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-euro-sign" style="font-size:.65rem;color:var(--lt);width:14px;text-align:center;"></i>FAQ RGPD</a>
+        <a href="/resources/docs/11-VerfiX-AML-Compliance-Whitepaper.html" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m);text-decoration:none;padding:.38rem 0;border-bottom:1px solid var(--bd);transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-file-pdf" style="font-size:.65rem;color:var(--lt);width:14px;text-align:center;"></i>Livre blanc AML</a>
+        <a href="/resources/eid-gateway" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m);text-decoration:none;padding:.38rem 0;border-bottom:1px solid var(--bd);transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-passport" style="font-size:.65rem;color:var(--lt);width:14px;text-align:center;"></i>eID Gateway</a>
+        <a href="/trust-center" style="display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--m);text-decoration:none;padding:.38rem 0;border-bottom:1px solid var(--bd);transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'"><i class="fas fa-shield-halved" style="font-size:.65rem;color:var(--lt);width:14px;text-align:center;"></i>Trust Center</a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- FAQ ──────────────────────────────────────────────────────────── -->
+<section id="faq" style="padding:4.5rem 0;background:var(--off);">
+  <div class="W" style="max-width:820px;margin-left:auto;margin-right:auto;">
+    <div class="rv" style="margin-bottom:2rem;text-align:center;">
+      <span class="label" style="display:inline-flex;margin-bottom:.75rem;">FAQ</span>
+      <h2 style="font-size:clamp(1.4rem,2.5vw,1.85rem);font-weight:900;letter-spacing:-.035em;color:var(--t);margin-bottom:.6rem;">France KYC — Questions fréquentes</h2>
+      <p style="font-size:.97rem;color:var(--m);max-width:580px;margin:0 auto;">Réponses aux questions les plus fréquentes sur les obligations KYC en France, la réglementation ACPR et la conformité LCB-FT.</p>
+    </div>
+    <div style="border:1px solid var(--bd);border-radius:9px;overflow:hidden;margin-bottom:.65rem;transition:border-color .15s;"><button onclick="var b=this.nextElementSibling;var o=b.style.display==='block';b.style.display=o?'none':'block';this.querySelector('i').style.transform=o?'rotate(0deg)':'rotate(180deg)';this.parentElement.style.borderColor=o?'var(--bd)':'var(--r)';" style="width:100%;text-align:left;padding:1.05rem 1.25rem;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.9rem;font-weight:700;color:var(--t);font-family:inherit;line-height:1.4;"><span>What does KYC mean in France?</span><i class="fas fa-chevron-down" style="font-size:.6rem;color:var(--lt);flex-shrink:0;transition:transform .2s;"></i></button><div style="display:none;padding:.9rem 1.25rem 1.1rem;border-top:1px solid var(--bd);"><p style="font-size:.875rem;color:var(--m);line-height:1.85;margin:0;">KYC — Know Your Customer, or in French Connaissance du Client (KYC/CDD) — is the statutory obligation for French financial institutions and designated non-financial businesses to verify customer identity, assess money laundering risk, and maintain ongoing documentation under the Code monétaire et financier (CMF). In France, AML/KYC obligations are enforced by the ACPR (Autorité de contrôle prudentiel et de résolution) for the financial sector and by TRACFIN for financial intelligence. Failure to comply is subject to ACPR sanctions including fines of up to EUR 100 million or 10% of annual revenue.</p></div></div><div style="border:1px solid var(--bd);border-radius:9px;overflow:hidden;margin-bottom:.65rem;transition:border-color .15s;"><button onclick="var b=this.nextElementSibling;var o=b.style.display==='block';b.style.display=o?'none':'block';this.querySelector('i').style.transform=o?'rotate(0deg)':'rotate(180deg)';this.parentElement.style.borderColor=o?'var(--bd)':'var(--r)';" style="width:100%;text-align:left;padding:1.05rem 1.25rem;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.9rem;font-weight:700;color:var(--t);font-family:inherit;line-height:1.4;"><span>What is the ACPR and what is its role in French KYC?</span><i class="fas fa-chevron-down" style="font-size:.6rem;color:var(--lt);flex-shrink:0;transition:transform .2s;"></i></button><div style="display:none;padding:.9rem 1.25rem 1.1rem;border-top:1px solid var(--bd);"><p style="font-size:.875rem;color:var(--m);line-height:1.85;margin:0;">The ACPR (Autorité de contrôle prudentiel et de résolution) is the French supervisory authority responsible for banking and insurance. It operates under the Banque de France and enforces AML/CFT obligations for regulated financial entities. ACPR conducts on-site inspections, issues binding orders, and imposes sanctions via its Commission des sanctions. ACPR also issues supervisory guidelines (lignes directrices) that clarify GwG-equivalent obligations under the Code monétaire et financier. ACPR works alongside the AMF (Autorité des marchés financiers) for investment services and MiCA crypto supervision.</p></div></div><div style="border:1px solid var(--bd);border-radius:9px;overflow:hidden;margin-bottom:.65rem;transition:border-color .15s;"><button onclick="var b=this.nextElementSibling;var o=b.style.display==='block';b.style.display=o?'none':'block';this.querySelector('i').style.transform=o?'rotate(0deg)':'rotate(180deg)';this.parentElement.style.borderColor=o?'var(--bd)':'var(--r)';" style="width:100%;text-align:left;padding:1.05rem 1.25rem;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.9rem;font-weight:700;color:var(--t);font-family:inherit;line-height:1.4;"><span>What is the French LCB-FT framework?</span><i class="fas fa-chevron-down" style="font-size:.6rem;color:var(--lt);flex-shrink:0;transition:transform .2s;"></i></button><div style="display:none;padding:.9rem 1.25rem 1.1rem;border-top:1px solid var(--bd);"><p style="font-size:.875rem;color:var(--m);line-height:1.85;margin:0;">LCB-FT (Lutte contre le blanchiment de capitaux et le financement du terrorisme) is the French AML/CFT framework, implemented in the Code monétaire et financier (CMF) Articles L.561-1 to L.574-2. It transposes EU AML Directives (AMLD4, AMLD5, AMLD6) into French law and is aligned with FATF Recommendations. The framework covers customer due diligence, beneficial owner identification, ongoing monitoring, suspicious activity reporting to TRACFIN, and internal AML programme requirements.</p></div></div><div style="border:1px solid var(--bd);border-radius:9px;overflow:hidden;margin-bottom:.65rem;transition:border-color .15s;"><button onclick="var b=this.nextElementSibling;var o=b.style.display==='block';b.style.display=o?'none':'block';this.querySelector('i').style.transform=o?'rotate(0deg)':'rotate(180deg)';this.parentElement.style.borderColor=o?'var(--bd)':'var(--r)';" style="width:100%;text-align:left;padding:1.05rem 1.25rem;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.9rem;font-weight:700;color:var(--t);font-family:inherit;line-height:1.4;"><span>What is TRACFIN and how does suspicious activity reporting work in France?</span><i class="fas fa-chevron-down" style="font-size:.6rem;color:var(--lt);flex-shrink:0;transition:transform .2s;"></i></button><div style="display:none;padding:.9rem 1.25rem 1.1rem;border-top:1px solid var(--bd);"><p style="font-size:.875rem;color:var(--m);line-height:1.85;margin:0;">TRACFIN (Traitement du renseignement et action contre les circuits financiers clandestins) is France's Financial Intelligence Unit, operating under the Ministry of Economy. When a regulated entity identifies a suspicious transaction or activity, it must file a Déclaration de soupçon (DS) with TRACFIN via a secure online portal. France receives over 170,000 suspicious activity declarations annually. TRACFIN analyses reports, shares intelligence with law enforcement, and prosecutes predicate offences through the parquet national financier (PNF).</p></div></div><div style="border:1px solid var(--bd);border-radius:9px;overflow:hidden;margin-bottom:.65rem;transition:border-color .15s;"><button onclick="var b=this.nextElementSibling;var o=b.style.display==='block';b.style.display=o?'none':'block';this.querySelector('i').style.transform=o?'rotate(0deg)':'rotate(180deg)';this.parentElement.style.borderColor=o?'var(--bd)':'var(--r)';" style="width:100%;text-align:left;padding:1.05rem 1.25rem;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.9rem;font-weight:700;color:var(--t);font-family:inherit;line-height:1.4;"><span>What is FranceConnect and can it be used for KYC?</span><i class="fas fa-chevron-down" style="font-size:.6rem;color:var(--lt);flex-shrink:0;transition:transform .2s;"></i></button><div style="display:none;padding:.9rem 1.25rem 1.1rem;border-top:1px solid var(--bd);"><p style="font-size:.875rem;color:var(--m);line-height:1.85;margin:0;">FranceConnect is the French government's digital identity federation, allowing citizens to use existing government credentials (tax authority, social security, postal service) to authenticate with public services. FranceConnect+ provides a higher assurance level using certified identity providers including La Poste's digital identity service. For KYC purposes, FranceConnect+ provides government-assured identity verification that ACPR accepts for certain use cases. VerfiX eID Gateway supports FranceConnect+ integration alongside EU Digital Identity Wallet acceptance.</p></div></div><div style="border:1px solid var(--bd);border-radius:9px;overflow:hidden;margin-bottom:.65rem;transition:border-color .15s;"><button onclick="var b=this.nextElementSibling;var o=b.style.display==='block';b.style.display=o?'none':'block';this.querySelector('i').style.transform=o?'rotate(0deg)':'rotate(180deg)';this.parentElement.style.borderColor=o?'var(--bd)':'var(--r)';" style="width:100%;text-align:left;padding:1.05rem 1.25rem;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.9rem;font-weight:700;color:var(--t);font-family:inherit;line-height:1.4;"><span>How long must KYC records be retained in France?</span><i class="fas fa-chevron-down" style="font-size:.6rem;color:var(--lt);flex-shrink:0;transition:transform .2s;"></i></button><div style="display:none;padding:.9rem 1.25rem 1.1rem;border-top:1px solid var(--bd);"><p style="font-size:.875rem;color:var(--m);line-height:1.85;margin:0;">Under CMF Article L.561-12, French financial institutions must retain all customer due diligence records — including identity documents or copies, beneficial owner declarations, and transaction records — for five years after the end of the business relationship. Suspicious activity declarations to TRACFIN are retained for five years from the declaration date. ACPR inspectors examine retention practices and the accessibility of records during supervisory reviews.</p></div></div><div style="border:1px solid var(--bd);border-radius:9px;overflow:hidden;margin-bottom:.65rem;transition:border-color .15s;"><button onclick="var b=this.nextElementSibling;var o=b.style.display==='block';b.style.display=o?'none':'block';this.querySelector('i').style.transform=o?'rotate(0deg)':'rotate(180deg)';this.parentElement.style.borderColor=o?'var(--bd)':'var(--r)';" style="width:100%;text-align:left;padding:1.05rem 1.25rem;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.9rem;font-weight:700;color:var(--t);font-family:inherit;line-height:1.4;"><span>What is the French Registre des bénéficiaires effectifs?</span><i class="fas fa-chevron-down" style="font-size:.6rem;color:var(--lt);flex-shrink:0;transition:transform .2s;"></i></button><div style="display:none;padding:.9rem 1.25rem 1.1rem;border-top:1px solid var(--bd);"><p style="font-size:.875rem;color:var(--m);line-height:1.85;margin:0;">The Registre des bénéficiaires effectifs (RBE) is France's beneficial ownership register, maintained by the Greffe du tribunal de commerce (commercial court registry). All French legal entities must register their beneficial owners (persons holding more than 25% of shares or voting rights) and update this information when it changes. Financial institutions must consult the RBE as part of their KYB process and document any discrepancies between register data and customer-provided information.</p></div></div><div style="border:1px solid var(--bd);border-radius:9px;overflow:hidden;margin-bottom:.65rem;transition:border-color .15s;"><button onclick="var b=this.nextElementSibling;var o=b.style.display==='block';b.style.display=o?'none':'block';this.querySelector('i').style.transform=o?'rotate(0deg)':'rotate(180deg)';this.parentElement.style.borderColor=o?'var(--bd)':'var(--r)';" style="width:100%;text-align:left;padding:1.05rem 1.25rem;background:#fff;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.9rem;font-weight:700;color:var(--t);font-family:inherit;line-height:1.4;"><span>Does VerfiX support French regulatory requirements for identity verification?</span><i class="fas fa-chevron-down" style="font-size:.6rem;color:var(--lt);flex-shrink:0;transition:transform .2s;"></i></button><div style="display:none;padding:.9rem 1.25rem 1.1rem;border-top:1px solid var(--bd);"><p style="font-size:.875rem;color:var(--m);line-height:1.85;margin:0;">Yes. VerfiX implements electronic identity verification meeting the requirements of CMF Article L.561-5-1 for digital customer identification. The platform verifies all French identity documents (carte nationale d'identité, passeport, titre de séjour), performs biometric face matching with liveness detection, and generates an immutable audit trail meeting ACPR documentation standards. For French-speaking customers, VerfiX's user interface and support are available in French. VerfiX also integrates with the French eIDAS framework for FranceConnect+ identity credential acceptance.</p></div></div>
+    <p style="text-align:center;margin-top:1.5rem;">
+      <a href="/faq/" style="font-size:.875rem;font-weight:700;color:var(--r);text-decoration:none;">Centre FAQ VerfiX complet <i class="fas fa-arrow-right" style="font-size:.65rem;"></i></a>
+      &nbsp;·&nbsp;
+      <a href="/switzerland-kyc" style="font-size:.875rem;font-weight:700;color:var(--r);text-decoration:none;">Guide KYC Suisse</a>
+      &nbsp;·&nbsp;
+      <a href="/germany-kyc" style="font-size:.875rem;font-weight:700;color:var(--r);text-decoration:none;">Guide KYC Allemagne</a>
+    </p>
+  </div>
+</section>
+
+<!-- CTA ──────────────────────────────────────────────────────────── -->
+<section style="padding:5.5rem 0;background:var(--n);text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(200,37,42,.13) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="W" style="position:relative;z-index:1;max-width:660px;margin-left:auto;margin-right:auto;">
+    <div style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(200,37,42,.15);border:1px solid rgba(200,37,42,.3);border-radius:100px;padding:.3rem .875rem;margin-bottom:1.1rem;">
+      <i class="fas fa-scale-balanced" style="color:var(--r);font-size:.62rem;"></i>
+      <span style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--r);">KYC France — Simplifié</span>
+    </div>
+    <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;letter-spacing:-.035em;margin-bottom:.75rem;">Prêt à déployer un KYC conforme ACPR?</h2>
+    <p style="color:rgba(255,255,255,.45);font-size:.97rem;margin-bottom:2rem;line-height:1.8;">Réservez une démonstration de 30 minutes. Nous analysons vos obligations LCB-FT, votre architecture d'intégration et effectuons une vérification en direct sur votre propre document d'identité.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;">
+      <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r btn-lg"><i class="fas fa-calendar-check"></i> Réserver une démo</a>
+      <a href="/contact" class="btn btn-wo btn-lg"><i class="fas fa-envelope"></i> Contacter l'équipe</a>
+    </div>
+    <div style="display:flex;gap:1.75rem;justify-content:center;flex-wrap:wrap;">
+      <span style="font-size:.77rem;color:rgba(255,255,255,.32);display:inline-flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.55);font-size:.65rem;"></i>ACPR / LCB-FT conforme</span><span style="font-size:.77rem;color:rgba(255,255,255,.32);display:inline-flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.55);font-size:.65rem;"></i>RGPD DPA inclus</span><span style="font-size:.77rem;color:rgba(255,255,255,.32);display:inline-flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.55);font-size:.65rem;"></i>Hébergement suisse</span><span style="font-size:.77rem;color:rgba(255,255,255,.32);display:inline-flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.55);font-size:.65rem;"></i>Sandbox 24 heures</span><span style="font-size:.77rem;color:rgba(255,255,255,.32);display:inline-flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-check" style="color:rgba(200,37,42,.55);font-size:.65rem;"></i>Adéquation RGPD CH-UE</span>
+    </div>
+  </div>
+</section>
+
+<style>
+@media(max-width:900px){
+  #main-content .W[style*="grid-template-columns:1fr 260px"]{grid-template-columns:1fr!important;}
+  aside[style*="sticky"]{position:static!important;display:none;}
+}
+@media(max-width:640px){
+  table{font-size:.78rem;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+}
+</style>
+
+</main>
+
+<!-- VerfiX Knowledge Hub — Enterprise Internal Linking -->
+<section style="padding:2.5rem 0;background:var(--off);border-top:1px solid var(--bd);">
+  <div class="W">
+    <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--lt);margin-bottom:1.1rem;">VerfiX Knowledge Hub</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;">
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-user-check" style="color:var(--r);font-size:.6rem;"></i>KYC &amp; Compliance</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/switzerland-kyc" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Switzerland KYC Guide</a>
+          <a href="/germany-kyc" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Germany KYC Guide</a>
+          <a href="/france-kyc" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">France KYC Guide</a>
+          <a href="/european-eid" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">European eID &amp; eIDAS 2.0</a>
+          <a href="/faq/kyc" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">KYC FAQ</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-landmark" style="color:var(--r);font-size:.6rem;"></i>Industry Solutions</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/solutions/banking" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Banking KYC</a>
+          <a href="/solutions/fintech" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Fintech KYC</a>
+          <a href="/solutions/crypto" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Crypto &amp; VASP</a>
+          <a href="/solutions/insurance" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Insurance</a>
+          <a href="/solutions" style="font-size:.76rem;color:var(--r);text-decoration:none;font-weight:700;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">All Industries →</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-question" style="color:var(--r);font-size:.6rem;"></i>FAQ Center</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/faq/aml" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">AML Screening FAQ</a>
+          <a href="/faq/kyb" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">KYB FAQ</a>
+          <a href="/faq/gdpr" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">GDPR FAQ</a>
+          <a href="/faq/nfadp" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">nFADP FAQ</a>
+          <a href="/faq/" style="font-size:.76rem;color:var(--r);text-decoration:none;font-weight:700;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">All FAQs →</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-file-shield" style="color:var(--r);font-size:.6rem;"></i>Trust &amp; Compliance</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/trust-center" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Trust Center</a>
+          <a href="/security" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Security Overview</a>
+          <a href="/legal/dpa" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Data Processing Agreement</a>
+          <a href="/privacy" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Privacy Policy</a>
+          <a href="/terms" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Terms of Service</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-book" style="color:var(--r);font-size:.6rem;"></i>Resources</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/resources/" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Documentation Center</a>
+          <a href="/resources/eid-gateway" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">eID Gateway</a>
+          <a href="/insights/" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Insights &amp; Guides</a>
+          <a href="/api" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">API Reference</a>
+          <a href="/developers" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Developer Hub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer role="contentinfo">
+  <div class="foot-top">
+
+    <!-- Brand col -->
+    <div class="foot-brand">
+      <picture>
+        <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+        <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
+      </picture>
+      <span class="foot-tag">VERIFY · TRUST · SECURE</span>
+      <!-- Social icons row -->
+      <div class="foot-social">
+        <a class="foot-soc-ico li"        href="https://www.linkedin.com/company/verfix/"                                  target="_blank" rel="noopener"          title="VerfiX on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="foot-soc-ico yt"        href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1"   target="_blank" rel="noopener"          title="VerfiX on YouTube"><i class="fab fa-youtube"></i></a>
+        <a class="foot-soc-ico gh"        href="https://github.com/Ahmed-alsultan/VerfiX"                                  target="_blank" rel="noopener noreferrer" title="VerfiX on GitHub"><i class="fab fa-github"></i></a>
+        <a class="foot-soc-ico cb"        href="https://www.crunchbase.com/organization/verfix"                            target="_blank" rel="noopener noreferrer" title="VerfiX on Crunchbase">
+          <span style="font-size:.52rem;font-weight:900;font-family:'IBM Plex Mono',monospace;line-height:1;letter-spacing:-.02em;">CB</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Products col -->
+    <div class="foot-col">
+      <h4>Products</h4>
+      <a href="/solutions/document-verification">Customer Onboarding</a>
+      <a href="/solutions/kyb">Business Verification</a>
+      <a href="/solutions/voice-verification">Telephone Banking</a>
+      <a href="/solutions/fraud-intelligence">Fraud Intelligence</a>
+      <a href="/solutions/trust-engine">Trust Engine™</a>
+      <a href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway</a>
+    </div>
+
+    <!-- Industries col -->
+    <div class="foot-col">
+      <h4>Industries</h4>
+      <a href="/industries">Banking</a>
+      <a href="/industries">Fintech</a>
+      <a href="/industries">Crypto</a>
+      <a href="/industries">Insurance</a>
+      <a href="/industries">Government</a>
+    </div>
+
+    <!-- Resources col -->
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <a href="/resources/">Documentation Center</a>
+      <a href="/api">API Reference</a>
+      <a href="/trust-center">Trust Center</a>
+      <a href="/insights">Insights &amp; Blog</a>
+      <a href="/faq">FAQ</a>
+    </div>
+
+    <!-- Company col -->
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/careers">Careers</a>
+      <a href="/press">Press</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    </div>
+
+    <!-- Legal col -->
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Use</a>
+      <a href="https://status.verfix.ch" target="_blank" rel="noopener noreferrer">System Status</a>
+      <a href="/trust-center">Trust Center</a>
+      <span id="f-imp" href="/impressum"                    style="display:none;">Impressum</span>
+      <span id="f-dat" href="/datenschutz"                  style="display:none;">Datenschutz</span>
+      <span id="f-men" href="/mentions-legales"             style="display:none;">Mentions légales</span>
+      <span id="f-pol" href="/politique-confidentialite"    style="display:none;">Politique de conf.</span>
+      <div style="margin-top:.6rem;display:flex;gap:.38rem;flex-wrap:wrap;">
+        <button class="mlb on" onclick="setLang('en')">EN</button>
+        <button class="mlb"    onclick="setLang('de')">DE</button>
+        <button class="mlb"    onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+
+  </div><!-- /foot-top -->
+
+  <!-- ── Partner / Swiss Made bar ─────────────────────────── -->
+  <div class="foot-partner-bar">
+
+    <!-- Swiss Made badge -->
+    <div class="swiss-made-badge">
+      <div class="swiss-flag-wrap">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22" aria-hidden="true">
+          <rect width="24" height="24" rx="4" fill="#FF0000"/>
+          <rect x="10.5" y="4" width="3" height="16" rx="1" fill="white"/>
+          <rect x="4"    y="10.5" width="16" height="3" rx="1" fill="white"/>
+        </svg>
+      </div>
+      <div>
+        <div class="swiss-made-label">Swiss Made</div>
+        <div class="swiss-made-sub">Built &amp; hosted in Switzerland</div>
+      </div>
+    </div>
+
+    <!-- Partners -->
+    <div class="foot-partners-group">
+      <span class="foot-partners-label">Backed &amp; supported by</span>
+      <div class="foot-partners-logos">
+
+        <!-- Trust Valley -->
+        <a class="fp-logo-wrap" href="https://www.trustvalley.swiss" target="_blank" rel="noopener" aria-label="Trust Valley — Swiss Digital Trust Ecosystem">
+          <picture>
+            <source srcset="/assets/images/trust-valley.webp 1x, /assets/images/trust-valley@2x.webp 2x" type="image/webp"/>
+            <img src="/assets/images/trust-valley.png" alt="Trust Valley" width="90" height="36" loading="lazy" decoding="async"/>
+          </picture>
+          <div class="fp-hover-card">
+            <div class="fp-hover-name">Trust Valley</div>
+            <div class="fp-hover-desc">Switzerland's Digital Trust &amp; Cybersecurity ecosystem — connecting innovators, corporates, and institutions.</div>
+            <div class="fp-hover-link">trustvalley.swiss ↗</div>
+          </div>
+        </a>
+
+        <!-- Innosuisse -->
+        <a class="fp-logo-wrap" href="https://www.innosuisse.ch" target="_blank" rel="noopener" aria-label="Innosuisse — Swiss Innovation Agency">
+          <picture>
+            <source srcset="/assets/images/innosuisse.webp 1x, /assets/images/innosuisse@2x.webp 2x" type="image/webp"/>
+            <img src="/assets/images/innosuisse.jpg" alt="Innosuisse" width="80" height="32" loading="lazy" decoding="async"/>
+          </picture>
+          <div class="fp-hover-card">
+            <div class="fp-hover-name">Innosuisse</div>
+            <div class="fp-hover-desc">Swiss Innovation Agency — promoting science-based innovation for the benefit of the economy and society.</div>
+            <div class="fp-hover-link">innosuisse.ch ↗</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div><!-- /foot-partner-bar -->
+
+  <!-- ── Bottom strip ──────────────────────────────────────── -->
+  <div class="foot-bot">
+    <span class="foot-copy" id="foot-c">© 2025 VerfiX AG · Switzerland · All rights reserved</span>
+    <div class="foot-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+      <a href="https://www.linkedin.com/company/verfix/"                                  target="_blank" rel="noopener"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i> LinkedIn</a>
+      <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1"   target="_blank" rel="noopener"><i class="fab fa-youtube"       style="font-size:.72rem;color:#f87171;"></i> YouTube</a>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX"                                  target="_blank" rel="noopener noreferrer"><i class="fab fa-github"         style="font-size:.72rem;"></i> GitHub</a>
+      <a href="https://www.crunchbase.com/organization/verfix"                            target="_blank" rel="noopener noreferrer"><span style="font-size:.58rem;font-weight:900;font-family:'IBM Plex Mono',monospace;background:#0288d1;color:#fff;border-radius:3px;padding:.05rem .32rem;line-height:1.4;display:inline-block;margin-right:.15rem;">CB</span>Crunchbase</a>
+    </div>
+  </div>
+
+  <!-- ── Address strip ─────────────────────────────────────── -->
+  <div class="foot-meta-row">
+    <div class="foot-address">
+      <i class="fas fa-location-dot"></i>
+      <span>VerfiX AG · Av. de Gratta-Paille 2 · CH-1018 Lausanne · Switzerland</span>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+  <script src="/js/breadcrumbs.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+<!-- ── FLOATING DEMO BUTTON ── -->
+<a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" aria-label="Jetzt Demo buchen"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Jetzt Demo buchen</span></a>
+
+</body>
+</html>

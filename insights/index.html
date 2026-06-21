@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <title>Insights — KYC, AML and Identity Verification Guides | VerfiX</title>
+  <!-- Google Analytics 4 — G-95ZS424SMP -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-95ZS424SMP', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=None;Secure',
+      send_page_view: true
+    });
+  </script>
+  <!-- End Google Analytics 4 -->
+  <meta name="description" content="Expert guides on KYC compliance, AML screening, Swiss identity verification and digital identity. FINMA, GwG, nFADP, eIDAS coverage."/>
+  <meta name="keywords" content="KYC Schweiz, AML Software Schweiz, Identitätsprüfung Schweiz, Identity Verification Switzerland, nFADP compliance, FINMA KYC, digitale Identitätsprüfung"/>
+  <meta name="author" content="VerfiX AG"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://verfix.ch/insights/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://verfix.ch/insights/"/>
+  <meta property="og:title" content="Insights — KYC, AML and Identity Verification Guides | VerfiX"/>
+  <meta property="og:description" content="Expert guides on KYC compliance, AML screening, Swiss identity verification and digital identity. FINMA, GwG, nFADP, eIDAS coverage."/>
+  <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="VerfiX"/>
+  <meta property="og:locale" content="en_CH"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="VerfiX — KYC, AML & Identitätsprüfung Software | Swiss Trust Infrastructure"/>
+  <meta name="twitter:description" content="VerfiX ist die Swiss Trust Infrastructure für regulierte Industrien. KYC, KYB, AML-Screening, Betrugsbekämpfung und Trust Engine™ — eine API für Banken, Fintechs und Versicherungen in der Schweiz."/>
+  <meta name="twitter:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <rect width='32' height='32' rx='6' fill='%23C8252A'/><text x='16' y='23' font-family='Arial Black,Arial' font-weight='900' font-size='22' text-anchor='middle' fill='white'>X</text></svg>"/>
+  <!-- <meta name="google-site-verification" content="YOUR_GSC_CODE"/> -->
+
+  <!-- Performance: preload critical assets -->
+  <link rel="preload" href="/css/main.css" as="style"/>
+  <link rel="preload" href="/js/main.js" as="script"/>
+  
+  <!-- Font: preconnect + optimized load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://js.hs-scripts.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  
+  <!-- Critical inline style for font-display:swap override -->
+  <style>
+    @font-face{font-display:swap}
+    body{opacity:1}
+    .rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+    .rv.in{opacity:1;transform:none}
+    .pg{display:none}.pg.on{display:block}
+  </style>
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/css/main.css"/>
+  <!-- Structured Data -->
+  <!-- ════════════════════════════════════════════════════
+       ZOHO CRM — Web Visitor Tracking
+       HOW TO ACTIVATE:
+       1. In Zoho CRM: Setup → Channels → Web Forms → Web Tabs → SalesIQ
+       2. Or: Zoho SalesIQ → Settings → Installation → copy the script
+       3. Paste your Zoho SalesIQ script here replacing this comment
+       Example:
+       <script type="text/javascript" id="zsiqchat">
+         var $zoho=$zoho || {};
+         $zoho.salesiq = $zoho.salesiq || {widgetcode:"YOUR_WIDGET_CODE",values:{},ready:function(){}};
+         var d=document;s=d.createElement("script");
+         s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+         s.src="https://salesiq.zohopublic.eu/widget";
+         t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
+       </script>
+       ════════════════════════════════════════════════════ -->
+
+  
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#C8252A"/>
+  <!-- Favicons — all sizes for browsers, Google, Apple -->
+  <link rel="icon" type="image/x-icon"    href="/favicon.ico"/>
+  <link rel="icon" type="image/svg+xml"   href="/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="16x16"   href="/favicon-16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="48x48"   href="/favicon-48.png"/>
+  <link rel="icon" type="image/png" sizes="96x96"   href="/favicon-96.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/verfix-icon-192.png"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/verfix-icon-512.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <meta name="msapplication-TileImage"    content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor"    content="#C8252A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<!-- ── Favicon & App Icons ─────────────────────────── -->
+  
+  
+  
+  
+  
+  <meta name="msapplication-TileImage" content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor" content="#C8252A"/>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "VerfiX Insights — KYC, AML and Identity Verification", "description": "Expert guides on KYC compliance, AML screening, identity verification and digital identity for regulated industries.", "url": "https://verfix.ch/insights/", "publisher": {"@type": "Organization", "name": "VerfiX AG", "url": "https://verfix.ch"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "VerfiX", "item": "https://verfix.ch"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://verfix.ch/insights/"}]}</script>
+</head>
+
+<body>
+<!-- Mega menu backdrop -->
+<div id="nav-backdrop" class="nav-backdrop" onclick="closeAll()"></div>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div aria-live="polite" aria-atomic="true" id="vfx-live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>
+
+
+<div id="ck-bar">
+  <h4>🍪 Cookie Preferences</h4>
+  <span id="ck-txt">We use cookies to improve your experience. See our <a href="/privacy">Privacy Policy</a>.</span>
+  <div id="ck-prefs">
+    <div class="ck-pref-row"><span>Necessary <small style="color:rgba(255,255,255,.3)">(always on)</small></span><label class="ck-toggle"><input type="checkbox" checked disabled/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Analytics</span><label class="ck-toggle"><input type="checkbox" id="ck-analytics"/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Marketing</span><label class="ck-toggle"><input type="checkbox" id="ck-marketing"/><span class="ck-slider"></span></label></div>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-ok" onclick="ckOk()">Accept All</button>
+    <button class="ck-no" onclick="ckNo()">Decline</button>
+    <button class="ck-more" onclick="ckToggle()">Preferences</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+
+<nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="VerfiX home">
+      <picture>
+        <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+        <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="88" height="24" loading="eager"/>
+      </picture>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li class="ni" id="ni-ind">
+        <span onclick="toggleMenu('ind')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('ind')">
+          <span>Industries</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-ind" id="mega-ind">
+          <div class="mi-left">
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><div class="mc-h">Banking</div></div></div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><div class="mc-h">Fintech</div></div></div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><div class="mc-h">Crypto</div></div></div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Insurance</div></div></div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><div class="mc-h">Government</div></div></div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><div class="mc-h">Telecom</div></div></div>
+          </div>
+          <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
+        </div>
+      </li>
+      <li class="ni" id="ni-products">
+        <span onclick="toggleMenu('products')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('products')">
+          <span>Products</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-products" id="mega-products">
+          <div class="mp-left">
+            <div class="mp-col">
+              <h5>Customer Onboarding</h5>
+              <a class="ml" href="/solutions/document-verification"><i class="fas fa-id-card"></i>Document Verification</a>
+              <a class="ml" href="/solutions/face-verification"><i class="fas fa-face-smile"></i>Face Verification</a>
+              <a class="ml" href="/solutions/aml-screening"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</a>
+              <h5>Business Verification</h5>
+              <a class="ml" href="/en/kyb/"><i class="fas fa-building"></i>KYB Verification</a>
+              <a class="ml" href="/solutions/kyb"><i class="fas fa-sitemap"></i>UBO Verification</a>
+              <h5>Age Verification</h5>
+              <a class="ml" href="/solutions/age-verification"><i class="fas fa-user-check"></i>Age Validation</a>
+              <a class="ml" href="/solutions/age-verification"><i class="fas fa-user"></i>Age Estimation</a>
+            </div>
+            <div class="mp-col">
+              <h5>Telephone Banking</h5>
+              <a class="ml" href="/solutions/voice-verification"><i class="fas fa-waveform-lines"></i>Voice Biometrics</a>
+              <a class="ml" href="/solutions/voice-verification"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</a>
+              <h5>Fraud Intelligence</h5>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-robot"></i>Deepfake Detection</a>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-user-slash"></i>Synthetic Identity</a>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-file-shield"></i>Document Fraud</a>
+              <h5>Infrastructure</h5>
+              <a class="ml" href="/solutions"><i class="fas fa-gauge-high"></i>Trust Engine&#8482;</a>
+              <a class="ml" href="/solutions"><i class="fas fa-sliders"></i>Risk Rules Engine</a>
+            </div>
+          </div>
+          <div class="mp-right">
+            <div class="mp-cta">
+              <div class="mp-cta-title">Swiss Trust Infrastructure</div>
+              <p class="mp-cta-desc">All products hosted in Switzerland. FINMA-compliant. One API.</p>
+              <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="font-size:.79rem;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-sol">
+        <span onclick="toggleMenu('sol')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('sol')">
+          <span>Solutions</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega" id="mega-sol" style="min-width:540px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Financial Services</h5>
+            <a class="ml" href="/solutions/banking"><i class="fas fa-landmark"></i>Banking</a>
+            <a class="ml" href="/solutions/fintech"><i class="fas fa-bolt"></i>Fintech</a>
+            <a class="ml" href="/solutions/crypto"><i class="fas fa-coins"></i>Crypto</a>
+            <a class="ml" href="/solutions/insurance"><i class="fas fa-shield-halved"></i>Insurance</a>
+            <a class="ml" href="/solutions/government"><i class="fas fa-building-columns"></i>Government</a>
+            </div>
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Other Industries</h5>
+            <a class="ml" href="/solutions/telecom"><i class="fas fa-tower-broadcast"></i>Telecom</a>
+            <a class="ml" href="/solutions/healthcare"><i class="fas fa-heart-pulse"></i>Healthcare</a>
+            <a class="ml" href="/solutions/ecommerce"><i class="fas fa-bag-shopping"></i>E-Commerce</a>
+            <a class="ml" href="/solutions/real-estate"><i class="fas fa-building"></i>Real Estate</a>
+            <a class="ml" href="/solutions/legal"><i class="fas fa-scale-balanced"></i>Legal Services</a>
+            </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-res">
+        <span onclick="toggleMenu('res')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('res')">
+          <span>Resources</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sm" id="mega-res" style="min-width:520px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Learn</h5>
+            <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a>
+            <a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
+            <a class="ml" href="/faq/"><i class="fas fa-circle-question"></i>FAQ Center</a>
+            <a class="ml" href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf"></i>nFADP Whitepaper</a>
+          </div>
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Documentation</h5>
+            <a class="ml" href="/resources/" style="font-weight:700;color:var(--r);"><i class="fas fa-books"></i>Doc Center <span style="font-size:.58rem;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:3px;padding:.06rem .32rem;font-weight:700;margin-left:.25rem;">30 docs</span></a>
+            <a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a>
+            <a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a>
+            <a class="ml" href="/developers"><i class="fas fa-code"></i>Developer Hub</a>
+          </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-co">
+        <span onclick="toggleMenu('co')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('co')">
+          <span>Company</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sm" id="mega-co" style="min-width:240px;padding:1.35rem 1.5rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
+          <a class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</a>
+          <a class="ml" href="/about#team"><i class="fas fa-users"></i>Leadership &amp; Team</a>
+          <a class="ml" href="/en/partners/"><i class="fas fa-handshake"></i>Partner Program</a>
+          <a class="ml" href="/careers"><i class="fas fa-briefcase"></i>Careers</a>
+          <a class="ml" href="/press"><i class="fas fa-newspaper"></i>Press</a>
+          <a class="ml" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
+        </div>
+      </li>
+      <li class="ni"><a href="/contact" style="font-weight:600;color:var(--t);padding:.4rem .25rem;">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="lang-sw">
+        <button class="lb on" onclick="setLang('en')">EN</button>
+        <button class="lb" onclick="setLang('de')">DE</button>
+        <button class="lb" onclick="setLang('fr')">FR</button>
+      </div>
+      <a href="/contact" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;">Talk to Sales</a>
+      <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">Book a Demo</a>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+    </div>
+  </div>
+  <div id="mob">
+    <a href="/industries"><i class="fas fa-landmark" style="width:18px;"></i>Industries</a>
+    <a href="/solutions"><i class="fas fa-layer-group" style="width:18px;"></i>Solutions</a>
+    <a href="/gateway" style="color:var(--r);font-weight:700;"><i class="fas fa-network-wired" style="width:18px;"></i>VerfiX Gateway</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/solutions/document-verification"><i class="fas fa-id-card" style="width:18px;"></i>Document Verification</a>
+    <a href="/solutions/face-verification"><i class="fas fa-face-smile" style="width:18px;"></i>Face Verification</a>
+    <a href="/solutions/aml-screening"><i class="fas fa-magnifying-glass-dollar" style="width:18px;"></i>AML Screening</a>
+    <a href="/en/kyb/"><i class="fas fa-building" style="width:18px;"></i>KYB Verification</a>
+    <a href="/solutions/voice-verification"><i class="fas fa-waveform-lines" style="width:18px;"></i>Voice Biometrics</a>
+    <a href="/solutions/fraud-intelligence"><i class="fas fa-robot" style="width:18px;"></i>Deepfake Detection</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/insights"><i class="fas fa-newspaper" style="width:18px;"></i>Insights</a>
+    <a href="/resources"><i class="fas fa-book" style="width:18px;"></i>Documentation</a>
+    <a href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf" style="width:18px;"></i>nFADP Whitepaper</a>
+    <a href="/faq"><i class="fas fa-circle-question" style="width:18px;"></i>FAQ</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/about"><i class="fas fa-building" style="width:18px;"></i>About</a>
+    <a href="/en/partners/"><i class="fas fa-handshake" style="width:18px;"></i>Partners</a>
+    <a href="/careers"><i class="fas fa-briefcase" style="width:18px;"></i>Careers</a>
+    <a href="/contact"><i class="fas fa-envelope" style="width:18px;"></i>Contact</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.5rem 0;"/>
+    <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+  </div>
+</nav>
+<main id="main-content">
+
+<section style="padding:8rem 0 4rem;background:var(--n);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 90% at 70% 50%,rgba(200,37,42,.10) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="W" style="position:relative;z-index:1;">
+    <div style="display:inline-flex;align-items:center;gap:.45rem;background:rgba(200,37,42,.15);border:1px solid rgba(200,37,42,.3);border-radius:100px;padding:.3rem .9rem;margin-bottom:1rem;">
+      <i class="fas fa-newspaper" style="color:var(--r);font-size:.62rem;"></i>
+      <span style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--r);">Knowledge Base</span>
+    </div>
+    <h1 style="color:#fff;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;letter-spacing:-.04em;line-height:1.1;margin-bottom:.875rem;max-width:720px;">KYC, AML and Identity Verification — Expert Guides</h1>
+    <p style="color:rgba(255,255,255,.5);font-size:1.05rem;line-height:1.8;max-width:580px;margin-bottom:2rem;">Practical compliance guides for regulated industries in Switzerland and Europe. FINMA, GwG, BaFin, ACPR, nFADP, eIDAS 2.0 — all covered.</p>
+    <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--r);">23</div><div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.1rem;">Full Articles</div></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--r);">7</div><div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.1rem;">Topic Clusters</div></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--r);">100</div><div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.1rem;">Topics Planned</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:1.5rem 0;background:var(--off);border-bottom:1px solid var(--bd);">
+  <div class="W">
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;">
+      <span style="font-size:.75rem;font-weight:700;color:var(--lt);margin-right:.5rem;">Filter:</span>
+      <a href="#cluster-kyc" style="font-size:.75rem;font-weight:600;color:var(--r);text-decoration:none;padding:.25rem .65rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;transition:all .15s;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'">KYC</a><a href="#cluster-kyb" style="font-size:.75rem;font-weight:600;color:var(--r);text-decoration:none;padding:.25rem .65rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;transition:all .15s;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'">KYB</a><a href="#cluster-amlscreening" style="font-size:.75rem;font-weight:600;color:var(--r);text-decoration:none;padding:.25rem .65rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;transition:all .15s;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'">AML Screening</a><a href="#cluster-identityverification" style="font-size:.75rem;font-weight:600;color:var(--r);text-decoration:none;padding:.25rem .65rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;transition:all .15s;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'">Identity Verification</a><a href="#cluster-eidas" style="font-size:.75rem;font-weight:600;color:var(--r);text-decoration:none;padding:.25rem .65rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;transition:all .15s;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'">eIDAS</a><a href="#cluster-fraudprevention" style="font-size:.75rem;font-weight:600;color:var(--r);text-decoration:none;padding:.25rem .65rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;transition:all .15s;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'">Fraud Prevention</a><a href="#cluster-compliance" style="font-size:.75rem;font-weight:600;color:var(--r);text-decoration:none;padding:.25rem .65rem;background:var(--rbg);border:1px solid var(--rline);border-radius:100px;transition:all .15s;" onmouseover="this.style.background='var(--r)';this.style.color='#fff'" onmouseout="this.style.background='var(--rbg)';this.style.color='var(--r)'">Compliance</a>
+      <a href="/insights/topical-authority-map" style="font-size:.75rem;font-weight:600;color:var(--lt);text-decoration:none;margin-left:auto;display:flex;align-items:center;gap:.3rem;"><i class="fas fa-map" style="font-size:.62rem;"></i>Full Topic Map</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding:4rem 0;background:#fff;">
+  <div class="W">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/aml-kyc-difference" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">KYC vs AML: Understanding the Difference in 2025</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">KYC and AML are different obligations with different legal bases and different technology. This guide clarifie...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/aml-kyc-difference" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/aml-screening-best-practices-schweiz" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">AML Screening Best Practices for Swiss Regulated Entities</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">AML screening for Swiss institutions: SECO, UN, EU, OFAC, PEP, adverse media. Managing false positives, ongoin...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/aml-screening-best-practices-schweiz" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#065f46';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#065f4615;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#065f46;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#065f46;">AML Screening</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/aml-screening-guide" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#065f46'" onmouseout="this.style.color='var(--t)'">AML Screening Guide — Sanctions, PEPs and Adverse Media</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Complete AML screening guide for Swiss financial institutions: SECO mandatory screening, PEP identification, a...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/aml-screening-guide" style="font-size:.75rem;font-weight:700;color:#065f46;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#92400e';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#92400e15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#92400e;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#92400e;">Fraud Prevention</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/deepfake-detection" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#92400e'" onmouseout="this.style.color='var(--t)'">Deepfake Detection in KYC: How to Stop AI-Generated Identity Fraud</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">How deepfake attacks target digital KYC, how AI-generated face swap and injection attacks work, and how dedica...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/deepfake-detection" style="font-size:.75rem;font-weight:700;color:#92400e;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/digital-onboarding-switzerland" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">Digital Onboarding in Switzerland: FINMA-Compliant Methods and Best Practices</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">How to implement compliant digital onboarding in Switzerland: FINMA Circular 2016/7 requirements, the six-step...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/digital-onboarding-switzerland" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#7c3aed';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#7c3aed15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#7c3aed;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#7c3aed;">Identity Verification</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/document-verification-101" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#7c3aed'" onmouseout="this.style.color='var(--t)'">Document Verification 101: How It Works and Why It Matters</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">How automated document verification works: the four layers from classification to tamper detection, MRZ valida...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/document-verification-101" style="font-size:.75rem;font-weight:700;color:#7c3aed;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/edd-guide" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">Enhanced Due Diligence (EDD): When and How to Apply It</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Complete guide to Enhanced Due Diligence under Swiss GwG: mandatory EDD triggers, PEP relationships, source of...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/edd-guide" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/eidas-2-schweizer-banken-explainer" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">eIDAS 2.0 — What Swiss Banks Need to Know</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">eIDAS 2.0 and the EU Digital Identity Wallet: what Swiss banks need to know, the 2026 timeline, and how VerfiX...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/eidas-2-schweizer-banken-explainer" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#065f46';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#065f4615;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#065f46;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#065f46;">AML Screening</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/fatf-grey-list" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#065f46'" onmouseout="this.style.color='var(--t)'">Switzerland's FATF Grey Listing 2024: What It Means and What Changed</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Why Switzerland was placed on the FATF grey list in October 2024, which AML deficiencies were identified, how ...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/fatf-grey-list" style="font-size:.75rem;font-weight:700;color:#065f46;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/finma-circular-2016-7" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">FINMA Circular 2016/7 — Online Identification Explained</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">The complete guide to FINMA Circular 2016/7: what the four technical requirements mean, how to implement compl...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/finma-circular-2016-7" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/finma-kyc-anforderungen-banken" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">FINMA Circular 2016/7 — A Complete Guide for Swiss Banks</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Technical and procedural requirements of FINMA Circular 2016/7 for remote KYC. Document verification, liveness...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/finma-kyc-anforderungen-banken" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/finma-kyc-compliance-checklist-2025" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">FINMA KYC Compliance Checklist for Swiss Banks (2025 Update)</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Updated 2025 FINMA KYC checklist for Swiss banks: 7-point compliance guide covering GwG, AML, UBO, documentati...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/finma-kyc-compliance-checklist-2025" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/kyb-business-verification-guide-schweiz" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">KYB Verification — A Complete Guide for Swiss Financial Institutions</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Complete guide to KYB under Swiss GwG: company identification, UBO mapping, director verification, AML screeni...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/kyb-business-verification-guide-schweiz" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/kyc-onboarding-digital-schweiz" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">Digitales KYC-Onboarding in der Schweiz: Technologie, Regulierung und Best Practices 2025</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Digitales KYC-Onboarding ist für Schweizer Banken, Fintechs und Versicherungen zum Standard geworden. Aber wie...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/kyc-onboarding-digital-schweiz" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/kyc-refresh-guide" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">KYC Refresh: How Often Should You Re-Verify Customers?</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Complete guide to KYC refresh frequency under Swiss GwG: risk-based refresh schedules, trigger events, operati...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/kyc-refresh-guide" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#7c3aed';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#7c3aed15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#7c3aed;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#7c3aed;">Identity Verification</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/liveness-detection-guide" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#7c3aed'" onmouseout="this.style.color='var(--t)'">Liveness Detection Guide: Active vs Passive Anti-Spoofing</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Complete guide to liveness detection in KYC: how active and passive anti-spoofing works, ISO 30107-3 standard,...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/liveness-detection-guide" style="font-size:.75rem;font-weight:700;color:#7c3aed;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/nfadp-biometric-data" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">nFADP and Biometric Data: Legal Basis for KYC Processing in Switzerland</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">How Switzerland's nFADP classifies biometric KYC data as sensitive personal data, the legal basis options for ...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/nfadp-biometric-data" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/nfadp-compliance-guide-schweiz" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">nFADP Compliance Guide for Swiss Organisations</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Revised Swiss data protection law (nFADP): biometric data as sensitive, privacy by design, mandatory DPA, DPIA...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/nfadp-compliance-guide-schweiz" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#065f46';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#065f4615;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#065f46;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#065f46;">AML Screening</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/ongoing-monitoring" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#065f46'" onmouseout="this.style.color='var(--t)'">Ongoing AML Monitoring: Why Point-in-Time Screening Is Not Enough</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Why AML screening at onboarding is insufficient: the legal requirement for ongoing monitoring under GwG Art. 5...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/ongoing-monitoring" style="font-size:.75rem;font-weight:700;color:#065f46;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#065f46';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#065f4615;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#065f46;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#065f46;">AML Screening</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/pep-screening" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#065f46'" onmouseout="this.style.color='var(--t)'">PEP Screening: A Practical Guide for Compliance Teams</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Complete PEP screening guide: who counts as a politically exposed person, how screening works, domestic vs int...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/pep-screening" style="font-size:.75rem;font-weight:700;color:#065f46;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#C8252A';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#C8252A15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#C8252A;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#C8252A;">KYC</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/risk-based-approach" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#C8252A'" onmouseout="this.style.color='var(--t)'">Risk-Based Approach to KYC: A Practical Implementation Guide</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">How to implement a defensible risk-based KYC approach: the four risk factors, SDD vs EDD triggers, risk classi...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/risk-based-approach" style="font-size:.75rem;font-weight:700;color:#C8252A;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#065f46';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#065f4615;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#065f46;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#065f46;">AML Screening</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/seco-sanctions" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#065f46'" onmouseout="this.style.color='var(--t)'">SECO Sanctions List: What Swiss Institutions Must Know</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Everything Swiss financial institutions need to know about SECO: what the sanctions list covers, the legal obl...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/seco-sanctions" style="font-size:.75rem;font-weight:700;color:#065f46;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+<article style="background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor='#1e40af';this.style.boxShadow='0 4px 20px rgba(0,0,0,.08)'" onmouseout="this.style.borderColor='var(--bd)';this.style.boxShadow='none'">
+  <div style="padding:1.5rem 1.5rem 0;">
+    <div style="display:inline-flex;align-items:center;gap:.35rem;background:#1e40af15;border-radius:100px;padding:.2rem .65rem;margin-bottom:.875rem;">
+      <i class="fas fa-tag" style="font-size:.55rem;color:#1e40af;"></i>
+      <span style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#1e40af;">KYB</span>
+    </div>
+    <h2 style="font-size:.95rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.5rem;"><a href="/insights/ubo-identification" style="text-decoration:none;color:inherit;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='var(--t)'">Ultimate Beneficial Owner (UBO) Identification: The Complete Guide</a></h2>
+    <p style="font-size:.82rem;color:var(--m);line-height:1.65;margin-bottom:1rem;">Complete guide to UBO identification under Swiss GwG Article 4: the 25% threshold, ownership chain mapping, co...</p>
+  </div>
+  <div style="margin-top:auto;padding:.875rem 1.5rem;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:.72rem;color:var(--lt);">VerfiX AG · 2026-06-19</span>
+    <a href="/insights/ubo-identification" style="font-size:.75rem;font-weight:700;color:#1e40af;text-decoration:none;display:flex;align-items:center;gap:.3rem;">Read <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></a>
+  </div>
+</article>
+    </div>
+    <div style="text-align:center;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--bd);">
+      <p style="font-size:.95rem;color:var(--m);margin-bottom:1rem;">More articles are published regularly. Subscribe for updates.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/insights/topical-authority-map" class="btn btn-o"><i class="fas fa-map"></i> View Full Topic Map (100 articles)</a>
+        <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+@media(max-width:900px){div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr)!important;}}
+@media(max-width:640px){div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}}
+</style>
+
+</main>
+<footer role="contentinfo">
+  <div class="foot-top">
+
+    <!-- Brand col -->
+    <div class="foot-brand">
+      <picture>
+        <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+        <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
+      </picture>
+      <span class="foot-tag">VERIFY · TRUST · SECURE</span>
+      <!-- Social icons row -->
+      <div class="foot-social">
+        <a class="foot-soc-ico li"        href="https://www.linkedin.com/company/verfix/"                                  target="_blank" rel="noopener"          title="VerfiX on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="foot-soc-ico yt"        href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1"   target="_blank" rel="noopener"          title="VerfiX on YouTube"><i class="fab fa-youtube"></i></a>
+        <a class="foot-soc-ico gh"        href="https://github.com/Ahmed-alsultan/VerfiX"                                  target="_blank" rel="noopener noreferrer" title="VerfiX on GitHub"><i class="fab fa-github"></i></a>
+        <a class="foot-soc-ico cb"        href="https://www.crunchbase.com/organization/verfix"                            target="_blank" rel="noopener noreferrer" title="VerfiX on Crunchbase">
+          <span style="font-size:.52rem;font-weight:900;font-family:'IBM Plex Mono',monospace;line-height:1;letter-spacing:-.02em;">CB</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Products col -->
+    <div class="foot-col">
+      <h4>Products</h4>
+      <a href="/solutions/document-verification">Customer Onboarding</a>
+      <a href="/solutions/kyb">Business Verification</a>
+      <a href="/solutions/voice-verification">Telephone Banking</a>
+      <a href="/solutions/fraud-intelligence">Fraud Intelligence</a>
+      <a href="/solutions/trust-engine">Trust Engine™</a>
+      <a href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway</a>
+    </div>
+
+    <!-- Industries col -->
+    <div class="foot-col">
+      <h4>Industries</h4>
+      <a href="/industries">Banking</a>
+      <a href="/industries">Fintech</a>
+      <a href="/industries">Crypto</a>
+      <a href="/industries">Insurance</a>
+      <a href="/industries">Government</a>
+    </div>
+
+    <!-- Resources col -->
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <a href="/resources/">Documentation Center</a>
+      <a href="/api">API Reference</a>
+      <a href="/trust-center">Trust Center</a>
+      <a href="/insights">Insights &amp; Blog</a>
+      <a href="/faq">FAQ</a>
+    </div>
+
+    <!-- Company col -->
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/careers">Careers</a>
+      <a href="/press">Press</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    </div>
+
+    <!-- Legal col -->
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Use</a>
+      <a href="https://status.verfix.ch" target="_blank" rel="noopener noreferrer">System Status</a>
+      <a href="/trust-center">Trust Center</a>
+      <span id="f-imp" href="/impressum"                    style="display:none;">Impressum</span>
+      <span id="f-dat" href="/datenschutz"                  style="display:none;">Datenschutz</span>
+      <span id="f-men" href="/mentions-legales"             style="display:none;">Mentions légales</span>
+      <span id="f-pol" href="/politique-confidentialite"    style="display:none;">Politique de conf.</span>
+      <div style="margin-top:.6rem;display:flex;gap:.38rem;flex-wrap:wrap;">
+        <button class="mlb on" onclick="setLang('en')">EN</button>
+        <button class="mlb"    onclick="setLang('de')">DE</button>
+        <button class="mlb"    onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+
+  </div><!-- /foot-top -->
+
+  <!-- ── Partner / Swiss Made bar ─────────────────────────── -->
+  <div class="foot-partner-bar">
+
+    <!-- Swiss Made badge -->
+    <div class="swiss-made-badge">
+      <div class="swiss-flag-wrap">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22" aria-hidden="true">
+          <rect width="24" height="24" rx="4" fill="#FF0000"/>
+          <rect x="10.5" y="4" width="3" height="16" rx="1" fill="white"/>
+          <rect x="4"    y="10.5" width="16" height="3" rx="1" fill="white"/>
+        </svg>
+      </div>
+      <div>
+        <div class="swiss-made-label">Swiss Made</div>
+        <div class="swiss-made-sub">Built &amp; hosted in Switzerland</div>
+      </div>
+    </div>
+
+    <!-- Partners -->
+    <div class="foot-partners-group">
+      <span class="foot-partners-label">Backed &amp; supported by</span>
+      <div class="foot-partners-logos">
+
+        <!-- Trust Valley -->
+        <a class="fp-logo-wrap" href="https://www.trustvalley.swiss" target="_blank" rel="noopener" aria-label="Trust Valley — Swiss Digital Trust Ecosystem">
+          <picture>
+            <source srcset="/assets/images/trust-valley.webp 1x, /assets/images/trust-valley@2x.webp 2x" type="image/webp"/>
+            <img src="/assets/images/trust-valley.png" alt="Trust Valley" width="90" height="36" loading="lazy" decoding="async"/>
+          </picture>
+          <div class="fp-hover-card">
+            <div class="fp-hover-name">Trust Valley</div>
+            <div class="fp-hover-desc">Switzerland's Digital Trust &amp; Cybersecurity ecosystem — connecting innovators, corporates, and institutions.</div>
+            <div class="fp-hover-link">trustvalley.swiss ↗</div>
+          </div>
+        </a>
+
+        <!-- Innosuisse -->
+        <a class="fp-logo-wrap" href="https://www.innosuisse.ch" target="_blank" rel="noopener" aria-label="Innosuisse — Swiss Innovation Agency">
+          <picture>
+            <source srcset="/assets/images/innosuisse.webp 1x, /assets/images/innosuisse@2x.webp 2x" type="image/webp"/>
+            <img src="/assets/images/innosuisse.jpg" alt="Innosuisse" width="80" height="32" loading="lazy" decoding="async"/>
+          </picture>
+          <div class="fp-hover-card">
+            <div class="fp-hover-name">Innosuisse</div>
+            <div class="fp-hover-desc">Swiss Innovation Agency — promoting science-based innovation for the benefit of the economy and society.</div>
+            <div class="fp-hover-link">innosuisse.ch ↗</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div><!-- /foot-partner-bar -->
+
+  <!-- ── Bottom strip ──────────────────────────────────────── -->
+  <div class="foot-bot">
+    <span class="foot-copy" id="foot-c">© 2025 VerfiX AG · Switzerland · All rights reserved</span>
+    <div class="foot-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+      <a href="https://www.linkedin.com/company/verfix/"                                  target="_blank" rel="noopener"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i> LinkedIn</a>
+      <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1"   target="_blank" rel="noopener"><i class="fab fa-youtube"       style="font-size:.72rem;color:#f87171;"></i> YouTube</a>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX"                                  target="_blank" rel="noopener noreferrer"><i class="fab fa-github"         style="font-size:.72rem;"></i> GitHub</a>
+      <a href="https://www.crunchbase.com/organization/verfix"                            target="_blank" rel="noopener noreferrer"><span style="font-size:.58rem;font-weight:900;font-family:'IBM Plex Mono',monospace;background:#0288d1;color:#fff;border-radius:3px;padding:.05rem .32rem;line-height:1.4;display:inline-block;margin-right:.15rem;">CB</span>Crunchbase</a>
+    </div>
+  </div>
+
+  <!-- ── Address strip ─────────────────────────────────────── -->
+  <div class="foot-meta-row">
+    <div class="foot-address">
+      <i class="fas fa-location-dot"></i>
+      <span>VerfiX AG · Av. de Gratta-Paille 2 · CH-1018 Lausanne · Switzerland</span>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+  <script src="/js/breadcrumbs.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+<!-- ── FLOATING DEMO BUTTON ── -->
+<a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" aria-label="Jetzt Demo buchen"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Jetzt Demo buchen</span></a>
+
+</body>
+</html>

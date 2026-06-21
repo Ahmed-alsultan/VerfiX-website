@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <title>Documentation Center | VerfiX AG</title>
+  <!-- Google Analytics 4 — G-95ZS424SMP -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95ZS424SMP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-95ZS424SMP', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=None;Secure',
+      send_page_view: true
+    });
+  </script>
+  <!-- End Google Analytics 4 -->
+  <meta name="description" content="VerfiX enterprise documentation library — 30 documents covering KYC, KYB, AML compliance, API, security, legal and sales."/>
+  <meta name="keywords" content="KYC Schweiz, AML Software Schweiz, Identitätsprüfung Schweiz, Identity Verification Switzerland, nFADP compliance, FINMA KYC, digitale Identitätsprüfung"/>
+  <meta name="author" content="VerfiX AG"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://verfix.ch/resources/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://verfix.ch/resources/"/>
+  <meta property="og:title" content="Documentation Center | VerfiX"/>
+  <meta property="og:description" content="Swiss-hosted KYC, KYB, AML screening, and identity verification for regulated industries. FINMA Circular 2016/7 compliant. One REST API. Go live in under 48 hours."/>
+  <meta property="og:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:site_name" content="VerfiX"/>
+  <meta property="og:locale" content="en_CH"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="VerfiX — KYC, AML & Identitätsprüfung Software | Swiss Trust Infrastructure"/>
+  <meta name="twitter:description" content="VerfiX ist die Swiss Trust Infrastructure für regulierte Industrien. KYC, KYB, AML-Screening, Betrugsbekämpfung und Trust Engine™ — eine API für Banken, Fintechs und Versicherungen in der Schweiz."/>
+  <meta name="twitter:image" content="https://verfix.ch/assets/images/og-image.jpg"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23C8252A'/><text x='16' y='23' font-family='Arial Black,Arial' font-weight='900' font-size='22' text-anchor='middle' fill='white'>X</text></svg>"/>
+  <!-- <meta name="google-site-verification" content="YOUR_GSC_CODE"/> -->
+
+  <!-- Performance: preload critical assets -->
+  <link rel="preload" href="/css/main.css" as="style"/>
+  <link rel="preload" href="/js/main.js" as="script"/>
+  
+  <!-- Font: preconnect + optimized load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+  <link rel="dns-prefetch" href="https://js.hs-scripts.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  
+  <!-- Critical inline style for font-display:swap override -->
+  <style>
+    @font-face{font-display:swap}
+    body{opacity:1}
+    .rv{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+    .rv.in{opacity:1;transform:none}
+    .pg{display:none}.pg.on{display:block}
+  </style>
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/css/main.css"/>
+  <!-- Structured Data -->
+  <!-- ════════════════════════════════════════════════════
+       ZOHO CRM — Web Visitor Tracking
+       HOW TO ACTIVATE:
+       1. In Zoho CRM: Setup → Channels → Web Forms → Web Tabs → SalesIQ
+       2. Or: Zoho SalesIQ → Settings → Installation → copy the script
+       3. Paste your Zoho SalesIQ script here replacing this comment
+       Example:
+       <script type="text/javascript" id="zsiqchat">
+         var $zoho=$zoho || {};
+         $zoho.salesiq = $zoho.salesiq || {widgetcode:"YOUR_WIDGET_CODE",values:{},ready:function(){}};
+         var d=document;s=d.createElement("script");
+         s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+         s.src="https://salesiq.zohopublic.eu/widget";
+         t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
+       </script>
+       ════════════════════════════════════════════════════ -->
+
+  
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#C8252A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<!-- ── Favicon & App Icons ─────────────────────────── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <meta name="msapplication-TileImage" content="/assets/images/verfix-icon-192.png"/>
+  <meta name="msapplication-TileColor" content="#C8252A"/>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"VerfiX Documentation Center","url":"https://verfix.ch/resources/"}</script>
+</head>
+
+<body>
+<!-- Mega menu backdrop -->
+<div id="nav-backdrop" class="nav-backdrop" onclick="closeAll()"></div>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div aria-live="polite" aria-atomic="true" id="vfx-live" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>
+
+
+<div id="ck-bar">
+  <h4>🍪 Cookie Preferences</h4>
+  <span id="ck-txt">We use cookies to improve your experience. See our <a href="/privacy">Privacy Policy</a>.</span>
+  <div id="ck-prefs">
+    <div class="ck-pref-row"><span>Necessary <small style="color:rgba(255,255,255,.3)">(always on)</small></span><label class="ck-toggle"><input type="checkbox" checked disabled/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Analytics</span><label class="ck-toggle"><input type="checkbox" id="ck-analytics"/><span class="ck-slider"></span></label></div>
+    <div class="ck-pref-row"><span>Marketing</span><label class="ck-toggle"><input type="checkbox" id="ck-marketing"/><span class="ck-slider"></span></label></div>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-ok" onclick="ckOk()">Accept All</button>
+    <button class="ck-no" onclick="ckNo()">Decline</button>
+    <button class="ck-more" onclick="ckToggle()">Preferences</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+
+<nav class="nav" role="navigation" aria-label="Main navigation" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="VerfiX home">
+      <picture>
+        <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+        <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="88" height="24" loading="eager"/>
+      </picture>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li class="ni" id="ni-ind">
+        <span onclick="toggleMenu('ind')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('ind')">
+          <span>Industries</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-ind" id="mega-ind">
+          <div class="mi-left">
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')"><div class="mi-ico"><i class="fas fa-landmark"></i></div><div><div class="mc-h">Banking</div></div></div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')"><div class="mi-ico"><i class="fas fa-bolt"></i></div><div><div class="mc-h">Fintech</div></div></div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')"><div class="mi-ico"><i class="fas fa-coins"></i></div><div><div class="mc-h">Crypto</div></div></div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')"><div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><div class="mc-h">Insurance</div></div></div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')"><div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><div class="mc-h">Government</div></div></div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')"><div class="mi-ico"><i class="fas fa-signal"></i></div><div><div class="mc-h">Telecom</div></div></div>
+          </div>
+          <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
+        </div>
+      </li>
+      <li class="ni" id="ni-products">
+        <span onclick="toggleMenu('products')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('products')">
+          <span>Products</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-products" id="mega-products">
+          <div class="mp-left">
+            <div class="mp-col">
+              <h5>Customer Onboarding</h5>
+              <a class="ml" href="/solutions/document-verification"><i class="fas fa-id-card"></i>Document Verification</a>
+              <a class="ml" href="/solutions/face-verification"><i class="fas fa-face-smile"></i>Face Verification</a>
+              <a class="ml" href="/solutions/aml-screening"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</a>
+              <h5>Business Verification</h5>
+              <a class="ml" href="/en/kyb/"><i class="fas fa-building"></i>KYB Verification</a>
+              <a class="ml" href="/solutions/kyb"><i class="fas fa-sitemap"></i>UBO Verification</a>
+              <h5>Age Verification</h5>
+              <a class="ml" href="/solutions/age-verification"><i class="fas fa-user-check"></i>Age Validation</a>
+              <a class="ml" href="/solutions/age-verification"><i class="fas fa-user"></i>Age Estimation</a>
+            </div>
+            <div class="mp-col">
+              <h5>Telephone Banking</h5>
+              <a class="ml" href="/solutions/voice-verification"><i class="fas fa-waveform-lines"></i>Voice Biometrics</a>
+              <a class="ml" href="/solutions/voice-verification"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</a>
+              <h5>Fraud Intelligence</h5>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-robot"></i>Deepfake Detection</a>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-user-slash"></i>Synthetic Identity</a>
+              <a class="ml" href="/solutions/fraud-intelligence"><i class="fas fa-file-shield"></i>Document Fraud</a>
+              <h5>Infrastructure</h5>
+              <a class="ml" href="/solutions"><i class="fas fa-gauge-high"></i>Trust Engine&#8482;</a>
+              <a class="ml" href="/solutions"><i class="fas fa-sliders"></i>Risk Rules Engine</a>
+            </div>
+          </div>
+          <div class="mp-right">
+            <div class="mp-cta">
+              <div class="mp-cta-title">Swiss Trust Infrastructure</div>
+              <p class="mp-cta-desc">All products hosted in Switzerland. FINMA-compliant. One API.</p>
+              <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="font-size:.79rem;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-sol">
+        <span onclick="toggleMenu('sol')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('sol')">
+          <span>Solutions</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega" id="mega-sol" style="min-width:540px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Financial Services</h5>
+            <a class="ml" href="/solutions/banking"><i class="fas fa-landmark"></i>Banking</a>
+            <a class="ml" href="/solutions/fintech"><i class="fas fa-bolt"></i>Fintech</a>
+            <a class="ml" href="/solutions/crypto"><i class="fas fa-coins"></i>Crypto</a>
+            <a class="ml" href="/solutions/insurance"><i class="fas fa-shield-halved"></i>Insurance</a>
+            <a class="ml" href="/solutions/government"><i class="fas fa-building-columns"></i>Government</a>
+            </div>
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Other Industries</h5>
+            <a class="ml" href="/solutions/telecom"><i class="fas fa-tower-broadcast"></i>Telecom</a>
+            <a class="ml" href="/solutions/healthcare"><i class="fas fa-heart-pulse"></i>Healthcare</a>
+            <a class="ml" href="/solutions/ecommerce"><i class="fas fa-bag-shopping"></i>E-Commerce</a>
+            <a class="ml" href="/solutions/real-estate"><i class="fas fa-building"></i>Real Estate</a>
+            <a class="ml" href="/solutions/legal"><i class="fas fa-scale-balanced"></i>Legal Services</a>
+            </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-res">
+        <span onclick="toggleMenu('res')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('res')">
+          <span>Resources</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sm" id="mega-res" style="min-width:520px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;">
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Learn</h5>
+            <a class="ml" href="/insights"><i class="fas fa-newspaper"></i>Insights &amp; Blog</a>
+            <a class="ml" href="/case-studies"><i class="fas fa-chart-line"></i>Case Studies</a>
+            <a class="ml" href="/faq/"><i class="fas fa-circle-question"></i>FAQ Center</a>
+            <a class="ml" href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf"></i>nFADP Whitepaper</a>
+          </div>
+          <div>
+            <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.55rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd);">Documentation</h5>
+            <a class="ml" href="/resources/" style="font-weight:700;color:var(--r);"><i class="fas fa-books"></i>Doc Center <span style="font-size:.58rem;background:var(--rbg);color:var(--r);border:1px solid var(--rline);border-radius:3px;padding:.06rem .32rem;font-weight:700;margin-left:.25rem;">30 docs</span></a>
+            <a class="ml" href="/api"><i class="fas fa-terminal"></i>API Reference</a>
+            <a class="ml" href="/trust-center"><i class="fas fa-shield-halved"></i>Trust Center</a>
+            <a class="ml" href="/developers"><i class="fas fa-code"></i>Developer Hub</a>
+          </div>
+        </div>
+      </li>
+      <li class="ni" id="ni-co">
+        <span onclick="toggleMenu('co')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu('co')">
+          <span>Company</span> <i class="arr fas fa-chevron-down"></i>
+        </span>
+        <div class="mega mega-sm" id="mega-co" style="min-width:240px;padding:1.35rem 1.5rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
+          <a class="ml" href="/about"><i class="fas fa-building"></i>About VerfiX</a>
+          <a class="ml" href="/about#team"><i class="fas fa-users"></i>Leadership &amp; Team</a>
+          <a class="ml" href="/en/partners/"><i class="fas fa-handshake"></i>Partner Program</a>
+          <a class="ml" href="/careers"><i class="fas fa-briefcase"></i>Careers</a>
+          <a class="ml" href="/press"><i class="fas fa-newspaper"></i>Press</a>
+          <a class="ml" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
+        </div>
+      </li>
+      <li class="ni"><a href="/contact" style="font-weight:600;color:var(--t);padding:.4rem .25rem;">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="lang-sw">
+        <button class="lb on" onclick="setLang('en')">EN</button>
+        <button class="lb" onclick="setLang('de')">DE</button>
+        <button class="lb" onclick="setLang('fr')">FR</button>
+      </div>
+      <a href="/contact" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;">Talk to Sales</a>
+      <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">Book a Demo</a>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Open main navigation menu" aria-expanded="false" aria-controls="mob"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+    </div>
+  </div>
+  <div id="mob">
+    <a href="/industries"><i class="fas fa-landmark" style="width:18px;"></i>Industries</a>
+    <a href="/solutions"><i class="fas fa-layer-group" style="width:18px;"></i>Solutions</a>
+    <a href="/gateway" style="color:var(--r);font-weight:700;"><i class="fas fa-network-wired" style="width:18px;"></i>VerfiX Gateway</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/solutions/document-verification"><i class="fas fa-id-card" style="width:18px;"></i>Document Verification</a>
+    <a href="/solutions/face-verification"><i class="fas fa-face-smile" style="width:18px;"></i>Face Verification</a>
+    <a href="/solutions/aml-screening"><i class="fas fa-magnifying-glass-dollar" style="width:18px;"></i>AML Screening</a>
+    <a href="/en/kyb/"><i class="fas fa-building" style="width:18px;"></i>KYB Verification</a>
+    <a href="/solutions/voice-verification"><i class="fas fa-waveform-lines" style="width:18px;"></i>Voice Biometrics</a>
+    <a href="/solutions/fraud-intelligence"><i class="fas fa-robot" style="width:18px;"></i>Deepfake Detection</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/insights"><i class="fas fa-newspaper" style="width:18px;"></i>Insights</a>
+    <a href="/resources"><i class="fas fa-book" style="width:18px;"></i>Documentation</a>
+    <a href="/en/whitepaper-nfadp/"><i class="fas fa-file-pdf" style="width:18px;"></i>nFADP Whitepaper</a>
+    <a href="/faq"><i class="fas fa-circle-question" style="width:18px;"></i>FAQ</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.4rem 0;"/>
+    <a href="/about"><i class="fas fa-building" style="width:18px;"></i>About</a>
+    <a href="/en/partners/"><i class="fas fa-handshake" style="width:18px;"></i>Partners</a>
+    <a href="/careers"><i class="fas fa-briefcase" style="width:18px;"></i>Careers</a>
+    <a href="/contact"><i class="fas fa-envelope" style="width:18px;"></i>Contact</a>
+    <hr style="border:none;border-top:1px solid var(--bd);margin:.5rem 0;"/>
+    <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r" style="display:flex;justify-content:center;"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+  </div>
+</nav>
+<main id="main-content">
+
+<!-- ── HERO ─────────────────────────────────── -->
+<section style="padding:8.5rem 0 3.5rem;background:var(--n);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.1) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="W" style="position:relative;z-index:1;">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;">
+      <div>
+        <span class="label" style="margin-bottom:.875rem;display:inline-flex;">Documentation Center</span>
+        <h1 style="color:#fff;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;letter-spacing:-.04em;margin-bottom:.75rem;line-height:1.15;">Enterprise Resource Library</h1>
+        <p style="color:rgba(255,255,255,.5);font-size:.95rem;line-height:1.75;max-width:520px;margin-bottom:1.75rem;">30 enterprise documents covering KYC, KYB, AML compliance, API reference, security policies, legal agreements, and sales materials.</p>
+        <div style="position:relative;max-width:440px;">
+          <i class="fas fa-search" style="position:absolute;left:.875rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.35);font-size:.72rem;pointer-events:none;"></i>
+          <input id="dc-search" type="search" placeholder="Search documents…" oninput="dcSearch(this.value)"
+            style="width:100%;padding:.68rem 1rem .68rem 2.4rem;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);border-radius:7px;color:#fff;font-size:.875rem;font-family:inherit;outline:none;"
+            onfocus="this.style.borderColor='var(--r)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'"/>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;flex-shrink:0;">
+        <div style="text-align:center;"><div style="font-family:'IBM Plex Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--r);line-height:1;">30</div><div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:.2rem;">Documents</div></div>
+        <div style="text-align:center;"><div style="font-family:'IBM Plex Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--r);line-height:1;">6</div><div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:.2rem;">Categories</div></div>
+        <div style="text-align:center;"><div style="font-family:'IBM Plex Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--r);line-height:1;">CH</div><div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:.2rem;">Swiss-First</div></div>
+        <div style="text-align:center;"><div style="font-family:'IBM Plex Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--r);line-height:1;">2025</div><div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:.2rem;">Edition</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FILTER BAR ─────────────────────────────── -->
+<div style="background:var(--off);border-bottom:1px solid var(--bd);padding:.75rem 0;position:sticky;top:64px;z-index:88;">
+  <div class="W">
+    <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;">
+      <div style="display:flex;gap:.38rem;flex-wrap:wrap;flex:1;"><button onclick="dcFilter('All',this)" class="dcfb on"
+  data-cat="All">All <span class="dcfc">30</span></button><button onclick="dcFilter('Company',this)" class="dcfb"
+  data-cat="Company"><i class="fas fa-building" style="font-size:.6rem;"></i> Company <span class="dcfc">8</span></button><button onclick="dcFilter('Product',this)" class="dcfb"
+  data-cat="Product"><i class="fas fa-box-open" style="font-size:.6rem;"></i> Product <span class="dcfc">5</span></button><button onclick="dcFilter('Compliance',this)" class="dcfb"
+  data-cat="Compliance"><i class="fas fa-scale-balanced" style="font-size:.6rem;"></i> Compliance <span class="dcfc">5</span></button><button onclick="dcFilter('Security',this)" class="dcfb"
+  data-cat="Security"><i class="fas fa-shield-halved" style="font-size:.6rem;"></i> Security <span class="dcfc">4</span></button><button onclick="dcFilter('Developers',this)" class="dcfb"
+  data-cat="Developers"><i class="fas fa-code" style="font-size:.6rem;"></i> Developers <span class="dcfc">4</span></button><button onclick="dcFilter('Sales',this)" class="dcfb"
+  data-cat="Sales"><i class="fas fa-handshake" style="font-size:.6rem;"></i> Sales <span class="dcfc">4</span></button></div>
+      <span id="dc-count" style="font-size:.72rem;color:var(--lt);font-family:'IBM Plex Mono',monospace;white-space:nowrap;">30 docs</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── GRID ───────────────────────────────────── -->
+<section style="padding:3rem 0;background:#fff;">
+  <div class="W">
+    <div id="dc-no" style="display:none;text-align:center;padding:4rem 0;">
+      <i class="fas fa-search" style="font-size:2.5rem;color:var(--xlt);display:block;margin-bottom:1rem;"></i>
+      <p style="color:var(--lt);margin-bottom:.75rem;">No documents match your search.</p>
+      <button onclick="dcReset()" style="color:var(--r);background:none;border:none;cursor:pointer;font-size:.875rem;font-weight:700;font-family:inherit;">Clear filter</button>
+    </div>
+    <div id="dc-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+<a href="/resources/docs/01-VerfiX-Company-Overview.html" class="dc-card rv" data-cat="Company" data-q="company overview overview swiss swiss identity infrastructure — who verfix are and what they build." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#dbeafe;color:#1e40af;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-building" style="font-size:.52rem;"></i>Company</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#01</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Company Overview</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Swiss identity infrastructure — who VerfiX are and what they build.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Overview</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Swiss</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/02-VerfiX-Executive-Summary.html" class="dc-card rv" data-cat="Company" data-q="executive summary c-suite strategy c-suite overview: market position, platform capabilities, growth opportunity." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#dbeafe;color:#1e40af;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-building" style="font-size:.52rem;"></i>Company</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#02</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Executive Summary</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">C-suite overview: market position, platform capabilities, growth opportunity.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">C-Suite</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Strategy</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/03-VerfiX-Product-Brochure.html" class="dc-card rv" data-cat="Product" data-q="product brochure brochure all products full product suite overview: kyc, kyb, eid gateway, trust engine." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fde8e8;color:#C8252A;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-box-open" style="font-size:.52rem;"></i>Product</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#03</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Product Brochure</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Full product suite overview: KYC, KYB, eID Gateway, Trust Engine.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Brochure</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">All Products</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/04-VerfiX-KYC-Product-Sheet.html" class="dc-card rv" data-cat="Product" data-q="kyc product sheet kyc finma biometrics document verification, face biometrics, liveness — finma 2016/7." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fde8e8;color:#C8252A;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-box-open" style="font-size:.52rem;"></i>Product</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#04</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">KYC Product Sheet</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Document verification, face biometrics, liveness — FINMA 2016/7.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">KYC</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">FINMA</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/05-VerfiX-KYB-Product-Sheet.html" class="dc-card rv" data-cat="Product" data-q="kyb product sheet kyb ubo gwg company registry, ubo identification — gwg art. 4 compliant." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fde8e8;color:#C8252A;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-box-open" style="font-size:.52rem;"></i>Product</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#05</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">KYB Product Sheet</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Company registry, UBO identification — GwG Art. 4 compliant.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">KYB</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">UBO</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/06-VerfiX-eID-Gateway-Product-Sheet.html" class="dc-card rv" data-cat="Product" data-q="eid gateway sheet eid eidas eu single api for all 27 eu digital identity wallets. eidas 2.0." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fde8e8;color:#C8252A;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-box-open" style="font-size:.52rem;"></i>Product</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#06</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">eID Gateway Sheet</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Single API for all 27 EU Digital Identity Wallets. eIDAS 2.0.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">eID</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">eIDAS</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/07-VerfiX-Trust-Engine-Product-Sheet.html" class="dc-card rv" data-cat="Product" data-q="trust engine sheet aml risk trust score aml screening, risk scoring, sanctions, pep detection." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fde8e8;color:#C8252A;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-box-open" style="font-size:.52rem;"></i>Product</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#07</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Trust Engine Sheet</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">AML screening, risk scoring, sanctions, PEP detection.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">AML</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Risk</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/08-VerfiX-API-Documentation.html" class="dc-card rv" data-cat="Developers" data-q="api documentation api rest code rest api v1 — endpoints, auth, request/response, webhooks." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#ede9fe;color:#5b21b6;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-code" style="font-size:.52rem;"></i>Developers</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#08</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">API Documentation</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">REST API v1 — endpoints, auth, request/response, webhooks.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">API</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">REST</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/09-VerfiX-Security-Overview.html" class="dc-card rv" data-cat="Security" data-q="security overview encryption swiss audit encryption, swiss data residency, access controls, audit trail." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fef3c7;color:#92400e;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-shield-halved" style="font-size:.52rem;"></i>Security</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#09</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Security Overview</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Encryption, Swiss data residency, access controls, audit trail.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Encryption</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Swiss</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/10-VerfiX-Data-Protection-nFADP-Whitepaper.html" class="dc-card rv" data-cat="Compliance" data-q="nfadp whitepaper nfadp privacy dpia swiss nfadp compliance for biometric identity verification." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#d1fae5;color:#065f46;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-scale-balanced" style="font-size:.52rem;"></i>Compliance</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#10</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">nFADP Whitepaper</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Swiss nFADP compliance for biometric identity verification.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">nFADP</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Privacy</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/11-VerfiX-AML-Compliance-Whitepaper.html" class="dc-card rv" data-cat="Compliance" data-q="aml whitepaper aml gwg finma aml programme design — gwg, fatf grey list, ongoing monitoring." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#d1fae5;color:#065f46;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-scale-balanced" style="font-size:.52rem;"></i>Compliance</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#11</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">AML Whitepaper</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">AML programme design — GwG, FATF grey list, ongoing monitoring.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">AML</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">GwG</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/12-VerfiX-Partner-Program-Guide.html" class="dc-card rv" data-cat="Company" data-q="partner program partners channel technology integrators, consultants, channel partners." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#dbeafe;color:#1e40af;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-building" style="font-size:.52rem;"></i>Company</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#12</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Partner Program</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Technology integrators, consultants, channel partners.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Partners</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Channel</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/13-VerfiX-Reseller-Program-Guide.html" class="dc-card rv" data-cat="Company" data-q="reseller program resellers commercial commercial model and onboarding for verfix resellers." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#dbeafe;color:#1e40af;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-building" style="font-size:.52rem;"></i>Company</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#13</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Reseller Program</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Commercial model and onboarding for VerfiX resellers.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Resellers</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Commercial</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/14-VerfiX-Bank-Sales-Presentation.html" class="dc-card rv" data-cat="Sales" data-q="banking sales deck banking finma swiss identity infrastructure for swiss banks — finma built in." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#cffafe;color:#0e7490;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-handshake" style="font-size:.52rem;"></i>Sales</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#14</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Banking Sales Deck</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Identity infrastructure for Swiss banks — FINMA built in.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Banking</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">FINMA</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/15-VerfiX-Fintech-Sales-Presentation.html" class="dc-card rv" data-cat="Sales" data-q="fintech sales deck fintech api startup api-first kyc and aml for swiss and eu fintechs." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#cffafe;color:#0e7490;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-handshake" style="font-size:.52rem;"></i>Sales</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#15</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Fintech Sales Deck</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">API-first KYC and AML for Swiss and EU fintechs.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Fintech</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">API</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/16-VerfiX-Telecom-Sales-Presentation.html" class="dc-card rv" data-cat="Sales" data-q="telecom sales deck telecom voice sim sim registration, sim-swap prevention, voice biometrics." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#cffafe;color:#0e7490;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-handshake" style="font-size:.52rem;"></i>Sales</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#16</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Telecom Sales Deck</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">SIM registration, SIM-swap prevention, voice biometrics.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Telecom</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Voice</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/17-VerfiX-Insurance-Sales-Presentation.html" class="dc-card rv" data-cat="Sales" data-q="insurance sales deck insurance fraud policyholder onboarding, claims fraud prevention, aml." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#cffafe;color:#0e7490;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-handshake" style="font-size:.52rem;"></i>Sales</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#17</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Insurance Sales Deck</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Policyholder onboarding, claims fraud prevention, AML.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Insurance</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Fraud</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/18-VerfiX-Developer-Documentation.html" class="dc-card rv" data-cat="Developers" data-q="developer docs getting started sandbox getting started, auth, first api call, sandbox, go-live." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#ede9fe;color:#5b21b6;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-code" style="font-size:.52rem;"></i>Developers</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#18</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Developer Docs</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Getting started, auth, first API call, sandbox, go-live.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Getting Started</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Sandbox</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/19-VerfiX-Integration-Guide.html" class="dc-card rv" data-cat="Developers" data-q="integration guide integration webhooks architecture patterns, webhooks, production readiness." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#ede9fe;color:#5b21b6;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-code" style="font-size:.52rem;"></i>Developers</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#19</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Integration Guide</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Architecture patterns, webhooks, production readiness.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Integration</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Webhooks</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/20-VerfiX-Technical-Architecture.html" class="dc-card rv" data-cat="Developers" data-q="technical architecture architecture ha platform components, data layers, ha, deployment models." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#ede9fe;color:#5b21b6;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-code" style="font-size:.52rem;"></i>Developers</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#20</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Technical Architecture</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Platform components, data layers, HA, deployment models.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Architecture</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">HA</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/21-VerfiX-Privacy-Policy.html" class="dc-card rv" data-cat="Compliance" data-q="privacy policy privacy nfadp legal how verfix ag processes personal data under swiss nfadp." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#d1fae5;color:#065f46;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-scale-balanced" style="font-size:.52rem;"></i>Compliance</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#21</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Privacy Policy</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">How VerfiX AG processes personal data under Swiss nFADP.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Privacy</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">nFADP</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/22-VerfiX-Terms-of-Service.html" class="dc-card rv" data-cat="Compliance" data-q="terms of service terms legal terms governing the verfix platform — swiss law." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#d1fae5;color:#065f46;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-scale-balanced" style="font-size:.52rem;"></i>Compliance</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#22</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Terms of Service</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Terms governing the VerfiX platform — Swiss law.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Terms</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Legal</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/23-VerfiX-Data-Processing-Agreement.html" class="dc-card rv" data-cat="Compliance" data-q="data processing agreement dpa gdpr legal standard dpa — swiss data residency, nfadp, gdpr." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#d1fae5;color:#065f46;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-scale-balanced" style="font-size:.52rem;"></i>Compliance</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#23</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Data Processing Agreement</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Standard DPA — Swiss data residency, nFADP, GDPR.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">DPA</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">GDPR</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/24-VerfiX-Incident-Response-Policy.html" class="dc-card rv" data-cat="Security" data-q="incident response incident policy 72-hour notification, severity levels, response procedures." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fef3c7;color:#92400e;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-shield-halved" style="font-size:.52rem;"></i>Security</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#24</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Incident Response</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">72-hour notification, severity levels, response procedures.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Incident</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Policy</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/25-VerfiX-Information-Security-Policy.html" class="dc-card rv" data-cat="Security" data-q="infosec policy policy controls access control, cryptography, vulnerability management." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fef3c7;color:#92400e;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-shield-halved" style="font-size:.52rem;"></i>Security</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#25</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">InfoSec Policy</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Access control, cryptography, vulnerability management.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Policy</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Controls</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/26-VerfiX-Business-Continuity-Overview.html" class="dc-card rv" data-cat="Security" data-q="business continuity bcp ha resilience rto/rpo targets, ha architecture, backup strategy." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#fef3c7;color:#92400e;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-shield-halved" style="font-size:.52rem;"></i>Security</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#26</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Business Continuity</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">RTO/RPO targets, HA architecture, backup strategy.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">BCP</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">HA</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/27-VerfiX-FAQ.html" class="dc-card rv" data-cat="Company" data-q="faq faq support common questions: compliance, products, integration, pricing." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#dbeafe;color:#1e40af;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-building" style="font-size:.52rem;"></i>Company</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#27</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">FAQ</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Common questions: compliance, products, integration, pricing.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">FAQ</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Support</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/28-VerfiX-Google-Business-Profile.html" class="dc-card rv" data-cat="Company" data-q="google business profile gbp marketing approved content for verfix google business profile." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#dbeafe;color:#1e40af;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-building" style="font-size:.52rem;"></i>Company</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#28</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">Google Business Profile</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Approved content for VerfiX Google Business Profile.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">GBP</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Marketing</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/29-VerfiX-LinkedIn-Content.html" class="dc-card rv" data-cat="Company" data-q="linkedin content linkedin social post templates and company page copy for linkedin." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#dbeafe;color:#1e40af;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-building" style="font-size:.52rem;"></i>Company</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#29</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">LinkedIn Content</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Post templates and company page copy for LinkedIn.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">LinkedIn</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Social</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+<a href="/resources/docs/30-VerfiX-Website-SEO-Content.html" class="dc-card rv" data-cat="Company" data-q="seo content seo content keyword strategy, meta content, blog calendar for verfix.ch." style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;position:relative;overflow:hidden;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+    <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:#dbeafe;color:#1e40af;padding:.18rem .55rem;border-radius:100px;"><i class="fas fa-building" style="font-size:.52rem;"></i>Company</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--lt);">#30</span>
+  </div>
+  <h3 style="font-size:.87rem;font-weight:800;color:var(--t);line-height:1.35;margin-bottom:.35rem;">SEO Content</h3>
+  <p style="font-size:.74rem;color:var(--m);line-height:1.6;flex:1;margin-bottom:.7rem;">Keyword strategy, meta content, blog calendar for verfix.ch.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding-top:.6rem;border-top:1px solid var(--bd);">
+    <div style="display:flex;gap:.25rem;flex-wrap:wrap;"><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">SEO</span><span style="font-size:.58rem;font-weight:600;background:var(--off);border:1px solid var(--bd);border-radius:3px;padding:.1rem .36rem;color:var(--lt);">Content</span></div>
+    <span style="font-size:.7rem;font-weight:700;color:var(--r);white-space:nowrap;">View <i class="fas fa-arrow-right" style="font-size:.58rem;"></i></span>
+  </div>
+</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXISTING RESOURCE PAGES ───────────────── -->
+<section style="padding:3rem 0;background:var(--off);border-top:1px solid var(--bd);">
+  <div class="W">
+    <div class="sh" style="margin-bottom:1.5rem;">
+      <span class="label">Product Datasheets</span>
+      <h2 style="margin-top:.4rem;">Quick-Access Datasheets</h2>
+      <p>Dedicated pages for each core VerfiX product.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;">
+      <a href="/resources/brochure" class="rv" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:1.5rem 1rem;background:#fff;border:1px solid var(--bd);border-radius:10px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.transform='none';this.style.boxShadow='none'">
+        <div style="width:40px;height:40px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--r);margin-bottom:.75rem;"><i class="fas fa-book-open"></i></div>
+        <h3 style="font-size:.82rem;font-weight:700;color:var(--t);margin-bottom:.25rem;">Product Brochure</h3>
+        <p style="font-size:.72rem;color:var(--m);line-height:1.5;">Full platform overview</p>
+      </a>
+      <a href="/resources/kyc-datasheet" class="rv" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:1.5rem 1rem;background:#fff;border:1px solid var(--bd);border-radius:10px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.transform='none';this.style.boxShadow='none'">
+        <div style="width:40px;height:40px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--r);margin-bottom:.75rem;"><i class="fas fa-id-card"></i></div>
+        <h3 style="font-size:.82rem;font-weight:700;color:var(--t);margin-bottom:.25rem;">KYC Datasheet</h3>
+        <p style="font-size:.72rem;color:var(--m);line-height:1.5;">Identity verification</p>
+      </a>
+      <a href="/resources/kyb-datasheet" class="rv" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:1.5rem 1rem;background:#fff;border:1px solid var(--bd);border-radius:10px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.transform='none';this.style.boxShadow='none'">
+        <div style="width:40px;height:40px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--r);margin-bottom:.75rem;"><i class="fas fa-building"></i></div>
+        <h3 style="font-size:.82rem;font-weight:700;color:var(--t);margin-bottom:.25rem;">KYB Datasheet</h3>
+        <p style="font-size:.72rem;color:var(--m);line-height:1.5;">Business verification</p>
+      </a>
+      <a href="/resources/eid-gateway" class="rv" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:1.5rem 1rem;background:#fff;border:1px solid var(--bd);border-radius:10px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.transform='none';this.style.boxShadow='none'">
+        <div style="width:40px;height:40px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--r);margin-bottom:.75rem;"><i class="fas fa-passport"></i></div>
+        <h3 style="font-size:.82rem;font-weight:700;color:var(--t);margin-bottom:.25rem;">eID Gateway</h3>
+        <p style="font-size:.72rem;color:var(--m);line-height:1.5;">EU Digital Identity</p>
+      </a>
+      <a href="/resources/trust-engine" class="rv" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:1.5rem 1rem;background:#fff;border:1px solid var(--bd);border-radius:10px;text-decoration:none;transition:border-color .15s,box-shadow .15s,transform .15s;" onmouseover="this.style.borderColor='var(--r)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(200,37,42,.09)'" onmouseout="this.style.borderColor='var(--bd)';this.style.transform='none';this.style.boxShadow='none'">
+        <div style="width:40px;height:40px;background:var(--rbg);border:1px solid var(--rline);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--r);margin-bottom:.75rem;"><i class="fas fa-shield-halved"></i></div>
+        <h3 style="font-size:.82rem;font-weight:700;color:var(--t);margin-bottom:.25rem;">Trust Engine</h3>
+        <p style="font-size:.72rem;color:var(--m);line-height:1.5;">AML &amp; risk scoring</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--n);text-align:center;">
+  <div class="W">
+    <h2 style="color:#fff;font-size:1.35rem;font-weight:800;margin-bottom:.5rem;">Need a tailored enterprise package?</h2>
+    <p style="color:rgba(255,255,255,.45);margin-bottom:1.5rem;font-size:.875rem;max-width:420px;margin-left:auto;margin-right:auto;">Book a 30-minute call and we'll prepare documentation and a demo for your compliance and procurement team.</p>
+    <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" class="btn btn-r"><i class="fas fa-calendar-check"></i> Book a Demo</a>
+      <a href="/contact" class="btn btn-wo"><i class="fas fa-envelope"></i> Contact Us</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- VerfiX Knowledge Hub — Enterprise Internal Linking -->
+<section style="padding:2.5rem 0;background:var(--off);border-top:1px solid var(--bd);">
+  <div class="W">
+    <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--lt);margin-bottom:1.1rem;">VerfiX Knowledge Hub</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;">
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-user-check" style="color:var(--r);font-size:.6rem;"></i>KYC &amp; Compliance</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/switzerland-kyc" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Switzerland KYC Guide</a>
+          <a href="/germany-kyc" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Germany KYC Guide</a>
+          <a href="/france-kyc" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">France KYC Guide</a>
+          <a href="/european-eid" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">European eID &amp; eIDAS 2.0</a>
+          <a href="/faq/kyc" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">KYC FAQ</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-landmark" style="color:var(--r);font-size:.6rem;"></i>Industry Solutions</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/solutions/banking" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Banking KYC</a>
+          <a href="/solutions/fintech" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Fintech KYC</a>
+          <a href="/solutions/crypto" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Crypto &amp; VASP</a>
+          <a href="/solutions/insurance" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Insurance</a>
+          <a href="/solutions" style="font-size:.76rem;color:var(--r);text-decoration:none;font-weight:700;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">All Industries →</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-circle-question" style="color:var(--r);font-size:.6rem;"></i>FAQ Center</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/faq/aml" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">AML Screening FAQ</a>
+          <a href="/faq/kyb" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">KYB FAQ</a>
+          <a href="/faq/gdpr" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">GDPR FAQ</a>
+          <a href="/faq/nfadp" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">nFADP FAQ</a>
+          <a href="/faq/" style="font-size:.76rem;color:var(--r);text-decoration:none;font-weight:700;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">All FAQs →</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-file-shield" style="color:var(--r);font-size:.6rem;"></i>Trust &amp; Compliance</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/trust-center" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Trust Center</a>
+          <a href="/security" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Security Overview</a>
+          <a href="/legal/dpa" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Data Processing Agreement</a>
+          <a href="/privacy" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Privacy Policy</a>
+          <a href="/terms" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Terms of Service</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;font-weight:700;color:var(--t);margin-bottom:.5rem;display:flex;align-items:center;gap:.35rem;"><i class="fas fa-book" style="color:var(--r);font-size:.6rem;"></i>Resources</div>
+        <div style="display:flex;flex-direction:column;gap:.2rem;">
+          <a href="/resources/" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Documentation Center</a>
+          <a href="/resources/eid-gateway" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">eID Gateway</a>
+          <a href="/insights/" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Insights &amp; Guides</a>
+          <a href="/api" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">API Reference</a>
+          <a href="/developers" style="font-size:.76rem;color:var(--m);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='var(--r)'" onmouseout="this.style.color='var(--m)'">Developer Hub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer role="contentinfo">
+  <div class="foot-top">
+
+    <!-- Brand col -->
+    <div class="foot-brand">
+      <picture>
+        <source srcset="/assets/images/verfix-logo.webp 1x, /assets/images/verfix-logo@2x.webp 2x" type="image/webp"/>
+        <img src="/assets/images/verfix-logo.png" alt="VerfiX" width="64" height="44" loading="eager" fetchpriority="high" decoding="sync" style="height:44px;width:auto;display:block;"/>
+      </picture>
+      <span class="foot-tag">VERIFY · TRUST · SECURE</span>
+      <!-- Social icons row -->
+      <div class="foot-social">
+        <a class="foot-soc-ico li"        href="https://www.linkedin.com/company/verfix/"                                  target="_blank" rel="noopener"          title="VerfiX on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="foot-soc-ico yt"        href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1"   target="_blank" rel="noopener"          title="VerfiX on YouTube"><i class="fab fa-youtube"></i></a>
+        <a class="foot-soc-ico gh"        href="https://github.com/Ahmed-alsultan/VerfiX"                                  target="_blank" rel="noopener noreferrer" title="VerfiX on GitHub"><i class="fab fa-github"></i></a>
+        <a class="foot-soc-ico cb"        href="https://www.crunchbase.com/organization/verfix"                            target="_blank" rel="noopener noreferrer" title="VerfiX on Crunchbase">
+          <span style="font-size:.52rem;font-weight:900;font-family:'IBM Plex Mono',monospace;line-height:1;letter-spacing:-.02em;">CB</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Products col -->
+    <div class="foot-col">
+      <h4>Products</h4>
+      <a href="/solutions/document-verification">Customer Onboarding</a>
+      <a href="/solutions/kyb">Business Verification</a>
+      <a href="/solutions/voice-verification">Telephone Banking</a>
+      <a href="/solutions/fraud-intelligence">Fraud Intelligence</a>
+      <a href="/solutions/trust-engine">Trust Engine™</a>
+      <a href="/gateway" style="color:var(--r);font-weight:600;">VerfiX Gateway</a>
+    </div>
+
+    <!-- Industries col -->
+    <div class="foot-col">
+      <h4>Industries</h4>
+      <a href="/industries">Banking</a>
+      <a href="/industries">Fintech</a>
+      <a href="/industries">Crypto</a>
+      <a href="/industries">Insurance</a>
+      <a href="/industries">Government</a>
+    </div>
+
+    <!-- Resources col -->
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <a href="/resources/">Documentation Center</a>
+      <a href="/api">API Reference</a>
+      <a href="/trust-center">Trust Center</a>
+      <a href="/insights">Insights &amp; Blog</a>
+      <a href="/faq">FAQ</a>
+    </div>
+
+    <!-- Company col -->
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/careers">Careers</a>
+      <a href="/press">Press</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    </div>
+
+    <!-- Legal col -->
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Use</a>
+      <a href="https://status.verfix.ch" target="_blank" rel="noopener noreferrer">System Status</a>
+      <a href="/trust-center">Trust Center</a>
+      <span id="f-imp" href="/impressum"                    style="display:none;">Impressum</span>
+      <span id="f-dat" href="/datenschutz"                  style="display:none;">Datenschutz</span>
+      <span id="f-men" href="/mentions-legales"             style="display:none;">Mentions légales</span>
+      <span id="f-pol" href="/politique-confidentialite"    style="display:none;">Politique de conf.</span>
+      <div style="margin-top:.6rem;display:flex;gap:.38rem;flex-wrap:wrap;">
+        <button class="mlb on" onclick="setLang('en')">EN</button>
+        <button class="mlb"    onclick="setLang('de')">DE</button>
+        <button class="mlb"    onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+
+  </div><!-- /foot-top -->
+
+  <!-- ── Partner / Swiss Made bar ─────────────────────────── -->
+  <div class="foot-partner-bar">
+
+    <!-- Swiss Made badge -->
+    <div class="swiss-made-badge">
+      <div class="swiss-flag-wrap">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22" aria-hidden="true">
+          <rect width="24" height="24" rx="4" fill="#FF0000"/>
+          <rect x="10.5" y="4" width="3" height="16" rx="1" fill="white"/>
+          <rect x="4"    y="10.5" width="16" height="3" rx="1" fill="white"/>
+        </svg>
+      </div>
+      <div>
+        <div class="swiss-made-label">Swiss Made</div>
+        <div class="swiss-made-sub">Built &amp; hosted in Switzerland</div>
+      </div>
+    </div>
+
+    <!-- Partners -->
+    <div class="foot-partners-group">
+      <span class="foot-partners-label">Backed &amp; supported by</span>
+      <div class="foot-partners-logos">
+
+        <!-- Trust Valley -->
+        <a class="fp-logo-wrap" href="https://www.trustvalley.swiss" target="_blank" rel="noopener" aria-label="Trust Valley — Swiss Digital Trust Ecosystem">
+          <picture>
+            <source srcset="/assets/images/trust-valley.webp 1x, /assets/images/trust-valley@2x.webp 2x" type="image/webp"/>
+            <img src="/assets/images/trust-valley.png" alt="Trust Valley" width="90" height="36" loading="lazy" decoding="async"/>
+          </picture>
+          <div class="fp-hover-card">
+            <div class="fp-hover-name">Trust Valley</div>
+            <div class="fp-hover-desc">Switzerland's Digital Trust &amp; Cybersecurity ecosystem — connecting innovators, corporates, and institutions.</div>
+            <div class="fp-hover-link">trustvalley.swiss ↗</div>
+          </div>
+        </a>
+
+        <!-- Innosuisse -->
+        <a class="fp-logo-wrap" href="https://www.innosuisse.ch" target="_blank" rel="noopener" aria-label="Innosuisse — Swiss Innovation Agency">
+          <picture>
+            <source srcset="/assets/images/innosuisse.webp 1x, /assets/images/innosuisse@2x.webp 2x" type="image/webp"/>
+            <img src="/assets/images/innosuisse.jpg" alt="Innosuisse" width="80" height="32" loading="lazy" decoding="async"/>
+          </picture>
+          <div class="fp-hover-card">
+            <div class="fp-hover-name">Innosuisse</div>
+            <div class="fp-hover-desc">Swiss Innovation Agency — promoting science-based innovation for the benefit of the economy and society.</div>
+            <div class="fp-hover-link">innosuisse.ch ↗</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div><!-- /foot-partner-bar -->
+
+  <!-- ── Bottom strip ──────────────────────────────────────── -->
+  <div class="foot-bot">
+    <span class="foot-copy" id="foot-c">© 2025 VerfiX AG · Switzerland · All rights reserved</span>
+    <div class="foot-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+      <a href="https://www.linkedin.com/company/verfix/"                                  target="_blank" rel="noopener"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i> LinkedIn</a>
+      <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1"   target="_blank" rel="noopener"><i class="fab fa-youtube"       style="font-size:.72rem;color:#f87171;"></i> YouTube</a>
+      <a href="https://github.com/Ahmed-alsultan/VerfiX"                                  target="_blank" rel="noopener noreferrer"><i class="fab fa-github"         style="font-size:.72rem;"></i> GitHub</a>
+      <a href="https://www.crunchbase.com/organization/verfix"                            target="_blank" rel="noopener noreferrer"><span style="font-size:.58rem;font-weight:900;font-family:'IBM Plex Mono',monospace;background:#0288d1;color:#fff;border-radius:3px;padding:.05rem .32rem;line-height:1.4;display:inline-block;margin-right:.15rem;">CB</span>Crunchbase</a>
+    </div>
+  </div>
+
+  <!-- ── Address strip ─────────────────────────────────────── -->
+  <div class="foot-meta-row">
+    <div class="foot-address">
+      <i class="fas fa-location-dot"></i>
+      <span>VerfiX AG · Av. de Gratta-Paille 2 · CH-1018 Lausanne · Switzerland</span>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+  <script src="/js/breadcrumbs.js" defer></script>
+<script src="/js/main.js" defer></script>
+
+<!-- ── FLOATING DEMO BUTTON ── -->
+<a id="float-demo-btn" class="float-demo-btn" href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener" aria-label="Jetzt Demo buchen"><i class="fas fa-calendar-check"></i><span class="float-demo-label">Jetzt Demo buchen</span></a>
+
+
+<style>
+.dcfb{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .88rem;border-radius:100px;border:1.5px solid var(--bd2);background:#fff;color:var(--m);font-size:.77rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap;}
+.dcfb.on,.dcfb:hover{background:var(--r);color:#fff;border-color:var(--r);}
+.dcfc{font-size:.6rem;opacity:.75;}
+.dc-card{display:flex;flex-direction:column;}
+.dc-card:hover{border-color:var(--r)!important;box-shadow:0 4px 18px rgba(200,37,42,.1)!important;transform:translateY(-2px)!important;}
+@media(max-width:900px){#dc-grid{grid-template-columns:repeat(2,1fr)!important;}}
+@media(max-width:580px){#dc-grid{grid-template-columns:1fr!important;}
+  .W>div[style*="grid-template-columns:repeat(5"]{grid-template-columns:repeat(2,1fr)!important;}
+  section>div.W>div[style*="grid-template-columns:1fr auto"]{grid-template-columns:1fr!important;}
+  section>div.W>div[style*="grid-template-columns:1fr auto"]>div:last-child{display:none;}
+}
+</style>
+<script>
+var _dcCat='All',_dcQ='';
+function _dcRender(){
+  var cards=document.querySelectorAll('.dc-card');
+  var n=0;
+  cards.forEach(function(c){
+    var catOk=_dcCat==='All'||c.dataset.cat===_dcCat;
+    var qOk=!_dcQ||c.dataset.q.includes(_dcQ);
+    var show=catOk&&qOk;
+    c.style.display=show?'':'none';
+    if(show)n++;
+  });
+  var el=document.getElementById('dc-count');
+  if(el)el.textContent=n+' doc'+(n!==1?'s':'');
+  var no=document.getElementById('dc-no');
+  if(no)no.style.display=n===0?'block':'none';
+}
+function dcFilter(cat,btn){
+  _dcCat=cat;
+  document.querySelectorAll('.dcfb').forEach(function(b){
+    b.classList.toggle('on',b===btn);
+  });
+  _dcRender();
+}
+function dcSearch(v){_dcQ=v.toLowerCase().trim();_dcRender();}
+function dcReset(){
+  _dcCat='All';_dcQ='';
+  var inp=document.getElementById('dc-search');
+  if(inp)inp.value='';
+  document.querySelectorAll('.dcfb').forEach(function(b,i){b.classList.toggle('on',i===0);});
+  _dcRender();
+}
+</script>
+</body>
+</html>
