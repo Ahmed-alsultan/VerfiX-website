@@ -1,0 +1,255 @@
+<!-- @dsCard group="VerfiX Website" viewport="1100x900" name="Phase 3 — Commercial & GTM Readiness" subtitle="Commercial, provider, sales, partnership, accelerator, investor & GTM strategy + scores" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VerfiX — Phase 3 Commercial & GTM Readiness</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--vx-off);font-family:var(--font-body);color:var(--vx-text);line-height:1.6;}
+  .wrap{max-width:1000px;margin:0 auto;background:#fff;}
+  header.top{background:var(--vx-navy);color:#fff;padding:3rem 3.5rem 2.6rem;}
+  .kick{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--vx-red);margin-bottom:1.1rem;}
+  .kick::before{content:'';width:16px;height:1.5px;background:var(--vx-red);}
+  header.top h1{font-size:2.4rem;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin:0 0 .7rem;}
+  header.top p{color:rgba(255,255,255,.62);max-width:580px;margin:0;font-size:.98rem;}
+  .hmeta{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.12);}
+  .hmeta .l{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+  .hmeta .v{font-weight:700;font-size:.95rem;margin-top:2px;}
+  .pad{padding:0 3.5rem;}
+  @media(max-width:700px){.pad{padding:0 1.4rem;}header.top{padding:2.2rem 1.4rem;}.split{grid-template-columns:1fr!important;}.scoregrid{grid-template-columns:1fr 1fr!important;}}
+  section{padding:2.8rem 0;border-bottom:1px solid var(--vx-border);}
+  .seclabel{font-family:var(--font-mono);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vx-red);}
+  h2{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;margin:.4rem 0 1.2rem;}
+  h3{font-size:1rem;font-weight:800;margin:1.3rem 0 .6rem;}
+  table{width:100%;border-collapse:collapse;font-size:.82rem;}
+  th{text-align:left;font-family:var(--font-mono);font-size:.55rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--vx-light);padding:.5rem .6rem;border-bottom:1px solid var(--vx-border);}
+  td{padding:.55rem .6rem;border-bottom:1px solid var(--vx-off);vertical-align:top;}
+  td code{font-family:var(--font-mono);font-size:.73rem;color:var(--vx-navy);}
+  ul{margin:.3rem 0 0;padding-left:1.1rem;}li{margin-bottom:.4rem;font-size:.86rem;}
+  .pill{display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:.14rem .42rem;border-radius:3px;white-space:nowrap;}
+  .live{background:var(--vx-success-bg);color:var(--vx-success-fg);}
+  .gap{background:var(--vx-warn-bg);color:var(--vx-warn-fg);}
+  .concept{background:#EEF1F5;color:var(--vx-muted);}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+  .card{border:1px solid var(--vx-border);border-radius:9px;padding:1.1rem 1.2rem;}
+  .card .ph{font-family:var(--font-mono);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--vx-red);}
+  .pipe{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:.5rem;}
+  .stg{background:var(--vx-off);border:1px solid var(--vx-border);border-radius:6px;padding:.3rem .6rem;font-size:.74rem;font-weight:600;}
+  .arr{color:var(--vx-light);font-size:.7rem;}
+  .scoregrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;}
+  .scard{border:1px solid var(--vx-border);border-top:3px solid var(--vx-red);border-radius:8px;padding:.9rem 1rem;}
+  .scard .dim{font-size:.74rem;font-weight:700;color:var(--vx-muted);}
+  .scard .num{font-family:var(--font-mono);font-size:1.5rem;font-weight:700;letter-spacing:-.03em;margin:.2rem 0;}
+  .bar{height:4px;background:var(--vx-off);border-radius:2px;overflow:hidden;}.bar i{display:block;height:100%;border-radius:2px;}
+  .overall{background:var(--vx-navy);color:#fff;border-radius:10px;padding:1.5rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.4rem;}
+  .overall .big{font-family:var(--font-mono);font-size:2.8rem;font-weight:700;letter-spacing:-.04em;line-height:1;}
+  .overall .lab{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+  .yes{color:var(--vx-success);font-weight:700;}.part{color:var(--vx-warn);font-weight:700;}.no{color:var(--vx-xlight);}
+  .callout{display:flex;align-items:flex-start;gap:.7rem;background:var(--vx-red-bg);border:1px solid var(--vx-red-line);border-radius:8px;padding:.9rem 1.1rem;font-size:.85rem;margin-top:1.3rem;}
+  footer{padding:2.2rem 3.5rem;background:var(--vx-navy-3);color:rgba(255,255,255,.6);font-size:.78rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="kick">Phase 3 · Commercial, Market & Ecosystem Readiness</div>
+    <h1>From platform to pilot-ready company</h1>
+    <p>Commercial packaging, the pilot program, provider and partnership strategy, the sales operating system, and accelerator / investor / go-to-market readiness — with honest maturity, launch and fundraising scores.</p>
+    <div class="hmeta">
+      <div><div class="l">New surfaces</div><div class="v">Pricing · Pilot · Partners</div></div>
+      <div><div class="l">Strategy modules</div><div class="v">9</div></div>
+      <div><div class="l">Fake assets added</div><div class="v">Zero</div></div>
+      <div><div class="l">Date</div><div class="v">Jun 2026</div></div>
+    </div>
+  </header>
+
+  <!-- 1. COMMERCIAL READINESS -->
+  <section class="pad">
+    <div class="seclabel">1 · Commercial readiness</div>
+    <h2>Packaging &amp; deployment</h2>
+    <p style="font-size:.9rem;color:var(--vx-muted);max-width:640px">Live on the site (<code>/pricing</code>): three plans and three deployment models, every figure scoped per engagement — no public per-unit prices, no customer counts.</p>
+    <div class="split" style="margin-top:1rem">
+      <div class="card"><div class="ph">Plans</div>
+        <table style="margin-top:.5rem"><tbody>
+          <tr><td><b>Pilot Program</b></td><td>Fixed pilot fee</td></tr>
+          <tr><td><b>Enterprise</b></td><td>Custom · volume-based</td></tr>
+          <tr><td><b>On-Premise / Private</b></td><td>Custom · annual licence</td></tr>
+        </tbody></table>
+        <div style="font-size:.78rem;color:var(--vx-light);margin-top:.5rem">+ Hosted Verification · API Access · Professional Services</div>
+      </div>
+      <div class="card"><div class="ph">Deployment models</div>
+        <ul style="margin-top:.5rem">
+          <li><b>VerfiX Cloud</b> — multi-tenant SaaS, CH/EU regions.</li>
+          <li><b>Private Cloud</b> — single-tenant dedicated environment.</li>
+          <li><b>On-Premise</b> — inside your own infrastructure (sovereign).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PILOT PROGRAM -->
+  <section class="pad">
+    <div class="seclabel">2 · Pilot program</div>
+    <h2>The path to first deployments</h2>
+    <p style="font-size:.9rem;color:var(--vx-muted);max-width:660px">Live on the site (<code>/pilot</code>): 30 / 60 / 90-day tracks, qualification criteria, a success-metrics framework, a working multi-step application flow, and a pilot FAQ.</p>
+    <div class="split" style="margin-top:1rem">
+      <div class="card"><div class="ph">Tracks</div><ul style="margin-top:.5rem"><li><b>30-day Sprint</b> — single flow, fast signal.</li><li><b>60-day Standard</b> — KYC+KYB+AML, tuned rules.</li><li><b>90-day Deep</b> — full platform + compliance setup.</li></ul></div>
+      <div class="card"><div class="ph">Success metrics</div><ul style="margin-top:.5rem"><li>Pass / completion rate</li><li>Decision time</li><li>Manual review rate</li><li>Fraud catch</li></ul></div>
+    </div>
+    <h3>Pilot package — what to prepare next</h3>
+    <table><tbody>
+      <tr><td style="width:130px"><b>Pilot deck</b></td><td>Investor/customer-facing slides — outline ready; build when brand deck template lands.</td><td><span class="pill gap">To build</span></td></tr>
+      <tr><td><b>Pilot FAQ</b></td><td>Published on <code>/pilot</code>.</td><td><span class="pill live">Live</span></td></tr>
+      <tr><td><b>Pilot agreement</b></td><td>Legal template — needs counsel; placeholder terms referenced in the flow.</td><td><span class="pill gap">Legal</span></td></tr>
+      <tr><td><b>Success framework</b></td><td>Metrics defined on <code>/pilot</code>; thresholds set per customer at kickoff.</td><td><span class="pill live">Live</span></td></tr>
+    </tbody></table>
+  </section>
+
+  <!-- 3. PROVIDER STRATEGY -->
+  <section class="pad">
+    <div class="seclabel">3 · Provider strategy</div>
+    <h2>VerfiX as the orchestration layer</h2>
+    <p style="font-size:.9rem;color:var(--vx-muted);max-width:660px">VerfiX does not bet on a single vendor — it scores and routes across best-of-breed providers per signal and region. Representative comparison (illustrative categories, not endorsements):</p>
+    <table style="margin-top:.8rem">
+      <thead><tr><th>Signal</th><th>Strength to optimize</th><th>Watch-out</th><th>Integration effort</th><th>Best for</th></tr></thead>
+      <tbody>
+        <tr><td><b>OCR / Document</b></td><td>Coverage of ID types &amp; languages</td><td>Edge-case forgery detection</td><td>Low</td><td>Broad retail onboarding</td></tr>
+        <tr><td><b>Face verification</b></td><td>Match accuracy</td><td>Demographic bias</td><td>Medium</td><td>High-assurance KYC</td></tr>
+        <tr><td><b>Liveness</b></td><td>Anti-deepfake robustness</td><td>UX friction</td><td>Medium</td><td>Fraud-sensitive flows</td></tr>
+        <tr><td><b>AML data</b></td><td>List breadth + freshness</td><td>False-positive rate</td><td>Low</td><td>Regulated AML duty</td></tr>
+        <tr><td><b>KYB / registry</b></td><td>Jurisdiction coverage</td><td>UBO depth</td><td>High</td><td>Corporate onboarding</td></tr>
+        <tr><td><b>Fraud intelligence</b></td><td>Device + behavioral signals</td><td>Data-sharing limits</td><td>Medium</td><td>Coordinated-fraud defense</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.78rem;color:var(--vx-light);margin-top:.7rem">Pricing assumptions are deliberately omitted — they are vendor-confidential and would be invented here. Scope per-provider commercials during integration.</p>
+  </section>
+
+  <!-- 4. SALES OS -->
+  <section class="pad">
+    <div class="seclabel">4 · Sales operating system</div>
+    <h2>Pipeline &amp; playbook</h2>
+    <div class="card"><div class="ph">Lead pipeline</div>
+      <div class="pipe"><span class="stg">Prospect</span><span class="arr">→</span><span class="stg">Qualified</span><span class="arr">→</span><span class="stg">Discovery</span><span class="arr">→</span><span class="stg">Demo</span><span class="arr">→</span><span class="stg">Proposal</span><span class="arr">→</span><span class="stg">Pilot</span><span class="arr">→</span><span class="stg" style="border-color:var(--vx-red);color:var(--vx-red)">Customer</span></div>
+    </div>
+    <div class="split" style="margin-top:1rem">
+      <div>
+        <h3 style="margin-top:0">Frameworks</h3>
+        <ul>
+          <li><b>Discovery</b> — current flow, volumes, pain, compliance owner, timeline.</li>
+          <li><b>Demo</b> — run the live console + Trust Engine on the prospect's scenario.</li>
+          <li><b>Proposal</b> — scoped quote + deployment model + pilot plan.</li>
+          <li><b>Pilot conversion</b> — review vs success metrics → Enterprise plan.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-top:0">CRM structure</h3>
+        <ul>
+          <li>Account → opportunity → pilot → subscription.</li>
+          <li>Stage gates aligned to the pipeline above.</li>
+          <li>Required fields: industry, volume band, checks, deployment, compliance owner.</li>
+        </ul>
+        <p style="font-size:.78rem;color:var(--vx-light)">Playbook is a framework here — wire into your CRM of choice (HubSpot/Pipedrive/Salesforce).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PARTNERSHIP + ACCELERATOR -->
+  <section class="pad">
+    <div class="seclabel">5 · Partnership &amp; accelerator readiness</div>
+    <h2>Ecosystem &amp; programmes</h2>
+    <p style="font-size:.9rem;color:var(--vx-muted);max-width:660px">Partner program is live on the site (<code>/partners</code>): six categories, benefits, three tiers (Registered → Certified → Strategic), and an application flow. No partners are listed that don't exist.</p>
+    <h3>Accelerator application readiness</h3>
+    <table>
+      <thead><tr><th>Programme</th><th>Fit</th><th>Site supports</th><th>Still needed</th></tr></thead>
+      <tbody>
+        <tr><td><b>Innosuisse</b></td><td>Deep-tech / innovation</td><td>Product depth, compliance positioning</td><td>R&amp;D innovation dossier</td></tr>
+        <tr><td><b>Trust Valley</b></td><td>Swiss trust &amp; cyber</td><td>Trust Center, CH residency</td><td>Pen-test + cert progress</td></tr>
+        <tr><td><b>Venture Kick</b></td><td>Pre-seed Swiss</td><td>Team, product, honest claims</td><td>Traction slide / data room</td></tr>
+        <tr><td><b>La Forge</b></td><td>Build-stage</td><td>Full platform surfaces</td><td>Live demo footage</td></tr>
+        <tr><td><b>BlueLion / MassChallenge</b></td><td>Early-stage scale</td><td>Pricing, pilot, GTM</td><td>Early pilot evidence</td></tr>
+      </tbody>
+    </table>
+    <h3>Evidence checklist</h3>
+    <table><tbody>
+      <tr><td style="width:30px" class="yes">✓</td><td>Product surfaces (8) · Trust Center · Pricing · Pilot · Partners</td></tr>
+      <tr><td class="part">◐</td><td>Team bios + photos (placeholders live; awaiting real assets)</td></tr>
+      <tr><td class="part">◐</td><td>Demo footage (placeholders live; awaiting real video)</td></tr>
+      <tr><td class="no">○</td><td>Traction / first pilots (do not fabricate — earn it)</td></tr>
+      <tr><td class="no">○</td><td>ISO 27001 / SOC 2 (roadmap)</td></tr>
+    </tbody></table>
+  </section>
+
+  <!-- 6. INVESTOR + GTM -->
+  <section class="pad">
+    <div class="seclabel">6 · Investor narrative &amp; GTM</div>
+    <h2>Story &amp; market entry</h2>
+    <div class="split">
+      <div>
+        <h3 style="margin-top:0">Investor narrative</h3>
+        <ul>
+          <li><b>Problem:</b> regulated onboarding is fragmented, vendor-locked and opaque.</li>
+          <li><b>Solution:</b> a Swiss-native orchestration + decision layer (Trust Engine™).</li>
+          <li><b>Why now:</b> tightening EU/CH compliance + demand for sovereign data.</li>
+          <li><b>Moat:</b> orchestration neutrality + Swiss trust brand + future marketplace.</li>
+          <li><b>Vision:</b> European identity infrastructure (Identity Gateway, Compliance Hub).</li>
+        </ul>
+        <p style="font-size:.78rem;color:var(--vx-light)">Financial assumptions intentionally not numericized here — model with real volume/pricing inputs, not invented figures.</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0">GTM — markets &amp; ICP</h3>
+        <ul>
+          <li><b>Markets:</b> CH first → DE, FR, AT (DACH + France).</li>
+          <li><b>Segments:</b> banking, fintech, crypto, insurance, telecom, government.</li>
+          <li><b>ICP:</b> regulated business, live onboarding volume, named compliance owner, integration capacity.</li>
+          <li><b>Motion:</b> founder-led discovery → live demo → fixed-fee pilot → land &amp; expand.</li>
+          <li><b>Entry wedge:</b> the 30/60/90 pilot de-risks the first deployment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. SCORES -->
+  <section class="pad" style="border-bottom:none">
+    <div class="seclabel">7 · Readiness scores</div>
+    <h2>Where VerfiX stands</h2>
+    <div class="overall">
+      <div><div class="lab">Commercial maturity · post-phase-3</div><div style="font-size:1.05rem;font-weight:700;margin-top:.3rem;">Pilot-ready &amp; accelerator-ready · pre-traction, pre-certification</div></div>
+      <div style="text-align:right"><div class="big">81</div><div class="lab">/ 100</div></div>
+    </div>
+    <div class="scoregrid">
+      <div class="scard"><div class="dim">Commercial</div><div class="num" style="color:var(--vx-success)">84</div><div class="bar"><i style="width:84%;background:var(--vx-success)"></i></div></div>
+      <div class="scard"><div class="dim">Pilot readiness</div><div class="num" style="color:var(--vx-success)">88</div><div class="bar"><i style="width:88%;background:var(--vx-success)"></i></div></div>
+      <div class="scard"><div class="dim">Sales process</div><div class="num" style="color:var(--vx-review)">72</div><div class="bar"><i style="width:72%;background:var(--vx-review)"></i></div></div>
+      <div class="scard"><div class="dim">Partnership</div><div class="num" style="color:var(--vx-review)">74</div><div class="bar"><i style="width:74%;background:var(--vx-review)"></i></div></div>
+      <div class="scard"><div class="dim">Accelerator</div><div class="num" style="color:var(--vx-success)">80</div><div class="bar"><i style="width:80%;background:var(--vx-success)"></i></div></div>
+      <div class="scard"><div class="dim">Investor</div><div class="num" style="color:var(--vx-review)">76</div><div class="bar"><i style="width:76%;background:var(--vx-review)"></i></div></div>
+      <div class="scard"><div class="dim">GTM clarity</div><div class="num" style="color:var(--vx-success)">82</div><div class="bar"><i style="width:82%;background:var(--vx-success)"></i></div></div>
+      <div class="scard"><div class="dim">Traction</div><div class="num" style="color:var(--vx-reject)">25</div><div class="bar"><i style="width:25%;background:var(--vx-reject)"></i></div></div>
+    </div>
+    <div class="split" style="margin-top:1.4rem">
+      <div class="scard" style="border-top-color:var(--vx-navy)"><div class="dim">Launch readiness</div><div class="num" style="color:var(--vx-success)">83 / 100</div><div style="font-size:.76rem;color:var(--vx-light)">Pricing, pilot, partners, full platform all live. Gate to launch: first signed pilots + demo footage.</div></div>
+      <div class="scard" style="border-top-color:var(--vx-navy)"><div class="dim">Fundraising readiness</div><div class="num" style="color:var(--vx-review)">76 / 100</div><div style="font-size:.76rem;color:var(--vx-light)">Strong narrative + product + honest claims. Add: traction, data room, financial model, confirmed bios.</div></div>
+    </div>
+
+    <h3>Priority actions</h3>
+    <table><tbody>
+      <tr><td style="width:70px"><span class="pill live">Now</span></td><td>Sign 2–3 design-partner pilots; capture team photos + demo footage; draft pilot agreement with counsel.</td></tr>
+      <tr><td><span class="pill gap">Next</span></td><td>Pitch + pilot decks; data room; DE/FR localization; begin ISO 27001 scoping.</td></tr>
+      <tr><td><span class="pill concept">Then</span></td><td>First traction metrics (real); SOC 2; activate provider + partner integrations.</td></tr>
+    </tbody></table>
+
+    <div class="callout"><i class="fas fa-shield-halved" style="color:var(--vx-red);margin-top:2px"></i><div><b>Integrity guardrail held.</b> Phase 3 added no fake prices, customers, partners, certifications or traction. The single lowest score — <b>traction (25)</b> — is the one thing that must be <i>earned</i>, not manufactured. Everything built here is designed to help win it honestly.</div></div>
+  </section>
+
+  <footer>
+    VerfiX Design System · Phase 3 Commercial &amp; GTM Readiness · Reflects the current design-reference build. Strategy frameworks are starting points to operationalize; financials and traction are intentionally not fabricated.
+  </footer>
+
+</div>
+</body>
+</html>

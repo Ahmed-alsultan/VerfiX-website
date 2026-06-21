@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Security Overview | VerfiX AG</title>
+  <meta name="description" content="Information security controls, encryption, data residency, and audit trail">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 09 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › Security Overview</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 09 of 30</div>
+    <h1>Security Overview</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">Information security controls, encryption, data residency, and audit trail</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>Security Overview</p>
+<p>Information Security Controls and Architecture</p>
+<h2>VerfiX Security Overview</h2>
+<p>This document describes the information security controls, architecture, and practices that VerfiX AG applies to protect customer data, maintain platform integrity, and ensure the confidentiality and availability of the VerfiX identity verification platform.</p>
+<h3>Security Principles</h3>
+<p>VerfiX's security programme is built on four principles:</p>
+<ul><li><span class="li-arrow">›</span><span>Defence in depth: Multiple layers of security controls so that the failure of any single control does not result in a security breach.</span></li><li><span class="li-arrow">›</span><span>Least privilege: Every component, user, and process is granted only the minimum access required to perform its function.</span></li><li><span class="li-arrow">›</span><span>Data minimisation: Only data necessary for the verification purpose is collected, processed, and retained. Biometric data is not retained beyond the session by default.</span></li><li><span class="li-arrow">›</span><span>Auditability: Every significant action on the platform is logged in an immutable, tamper-evident audit trail that can be produced for regulatory inspection.</span></li></ul>
+<h3>Encryption</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Context</th>
+<th>Standard</th>
+<th>Detail</th>
+</tr></thead><tbody>
+<tr>
+<td>Data at rest</td>
+<td>AES-256</td>
+<td>All customer data and verification records encrypted at rest using AES-256-GCM.</td>
+</tr>
+<tr class="alt">
+<td>Data in transit</td>
+<td>TLS 1.3</td>
+<td>All API communications use TLS 1.3. TLS 1.2 and below not accepted.</td>
+</tr>
+<tr>
+<td>API key storage</td>
+<td>PBKDF2-SHA256</td>
+<td>API keys are hashed using PBKDF2 before storage. Plain-text keys are never stored.</td>
+</tr>
+<tr class="alt">
+<td>Webhook signatures</td>
+<td>HMAC-SHA256</td>
+<td>All webhook payloads are signed with HMAC-SHA256 for recipient verification.</td>
+</tr>
+<tr>
+<td>Key management</td>
+<td>HSM-backed</td>
+<td>Encryption keys managed using Hardware Security Modules. Per-deployment key isolation.</td>
+</tr>
+<tr class="alt">
+<td>Audit trail integrity</td>
+<td>SHA-256 hash chain</td>
+<td>Each audit record includes a cryptographic hash that references the previous record, enabling tamper detection.</td>
+</tr>
+</tbody></table></div>
+<h3>Data Residency and Infrastructure</h3>
+<p>All VerfiX processing and storage occurs exclusively within Switzerland:</p>
+<ul><li><span class="li-arrow">›</span><span>Primary compute: Swiss Tier III certified data centres</span></li><li><span class="li-arrow">›</span><span>No cross-border data transfer without explicit customer consent and documented legal basis</span></li><li><span class="li-arrow">›</span><span>Infrastructure providers are contractually bound by Swiss data protection law and subject to the same nFADP obligations as VerfiX AG</span></li><li><span class="li-arrow">›</span><span>Physical security: Data centre facilities include 24/7 manned security, biometric access controls, and CCTV monitoring</span></li><li><span class="li-arrow">›</span><span>Redundancy: Primary and secondary Swiss data centre locations for high availability</span></li></ul>
+<h3>Access Control</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Control</th>
+<th>Detail</th>
+</tr></thead><tbody>
+<tr>
+<td>Role-based access control</td>
+<td>All VerfiX platform access is governed by RBAC. Roles are defined per function with minimum necessary permissions.</td>
+</tr>
+<tr class="alt">
+<td>Multi-factor authentication</td>
+<td>MFA is enforced for all administrative access to production systems. TOTP-based MFA required.</td>
+</tr>
+<tr>
+<td>SSO</td>
+<td>Single Sign-On via SAML 2.0 / OIDC is supported for enterprise customer dashboard access.</td>
+</tr>
+<tr class="alt">
+<td>IP allowlisting</td>
+<td>API access can be restricted to specified IP address ranges per API key.</td>
+</tr>
+<tr>
+<td>Session management</td>
+<td>Authenticated sessions are subject to configurable timeout. Session tokens are invalidated on logout.</td>
+</tr>
+<tr class="alt">
+<td>Privileged access</td>
+<td>Production system access by VerfiX operations staff requires approval workflow and is logged in the privileged access audit trail.</td>
+</tr>
+<tr>
+<td>Vendor access</td>
+<td>Third-party access to production systems is prohibited. Sub-processor access to customer data is contractually restricted.</td>
+</tr>
+</tbody></table></div>
+<h3>Vulnerability Management</h3>
+<ul><li><span class="li-arrow">›</span><span>Penetration testing: Annual third-party penetration testing programme is planned. Results reviewed by security team and remediated per severity SLA.</span></li><li><span class="li-arrow">›</span><span>Dependency scanning: Automated scanning of all software dependencies for known vulnerabilities on each code deployment.</span></li><li><span class="li-arrow">›</span><span>Static code analysis: Security-focused static analysis integrated into the development pipeline.</span></li><li><span class="li-arrow">›</span><span>Responsible disclosure: VerfiX maintains a responsible disclosure programme. Security researchers may report vulnerabilities to security@verfix.ch.</span></li><li><span class="li-arrow">›</span><span>Patch management: Critical security patches applied within 24 hours of availability. High severity within 7 days. Medium within 30 days.</span></li></ul>
+<h3>Incident Response</h3>
+<p>VerfiX maintains a documented Incident Response Policy. Key commitments:</p>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Phase</th>
+<th>VerfiX Commitment</th>
+</tr></thead><tbody>
+<tr>
+<td>Detection</td>
+<td>Continuous monitoring of platform health and security signals. Automated alerting on anomalous activity.</td>
+</tr>
+<tr class="alt">
+<td>Assessment</td>
+<td>Initial severity assessment within 4 hours of detection.</td>
+</tr>
+<tr>
+<td>Containment</td>
+<td>Containment measures initiated within 8 hours of confirmed incident.</td>
+</tr>
+<tr class="alt">
+<td>Customer notification</td>
+<td>Affected customers notified within 72 hours of confirmed breach likely to result in risk to individuals, in accordance with nFADP Art. 24.</td>
+</tr>
+<tr>
+<td>Authority notification</td>
+<td>Notification to FDPIC (Federal Data Protection Commissioner) within the statutory timeframe where required.</td>
+</tr>
+<tr class="alt">
+<td>Post-incident review</td>
+<td>Written post-incident report provided to affected customers within 30 days of incident resolution.</td>
+</tr>
+</tbody></table></div>
+<h3>Audit Trail</h3>
+<p>Every significant platform event generates an immutable audit record:</p>
+<ul><li><span class="li-arrow">›</span><span>Verification initiated — timestamp, API key identifier, IP address, request parameters</span></li><li><span class="li-arrow">›</span><span>Verification completed — outcome, all signal values, fraud flags, processing time</span></li><li><span class="li-arrow">›</span><span>AML/PEP/sanctions screening — lists checked, match threshold, results, match details where applicable</span></li><li><span class="li-arrow">›</span><span>Trust Score generated — score value, component weights, decision outcome, rules triggered</span></li><li><span class="li-arrow">›</span><span>Webhook delivery — endpoint, payload hash, delivery status, retry attempts</span></li><li><span class="li-arrow">›</span><span>Administrative actions — user ID, action, timestamp, affected resource</span></li></ul>
+<p>Audit records are cryptographically linked (each record includes a SHA-256 hash of the previous record), making any tampering detectable. Records are retained for the period specified in the customer's DPA and can be exported in structured format for FINMA inspection within one hour of request.</p>
+<h3>Security Documentation Available on Request</h3>
+<ul><li><span class="li-arrow">›</span><span>Penetration test executive summary (planned)</span></li><li><span class="li-arrow">›</span><span>Encryption specification document</span></li><li><span class="li-arrow">›</span><span>Incident response policy (full document)</span></li><li><span class="li-arrow">›</span><span>Information security policy (full document)</span></li><li><span class="li-arrow">›</span><span>Sub-processor list (current)</span></li><li><span class="li-arrow">›</span><span>Data Processing Agreement</span></li></ul>
+<p>Request via: security@verfix.ch</p>
+<p>security@verfix.ch  |  verfix.ch</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

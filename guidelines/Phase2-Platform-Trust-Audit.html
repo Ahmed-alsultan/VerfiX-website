@@ -1,0 +1,259 @@
+<!-- @dsCard group="VerfiX Website" viewport="1100x900" name="Phase 2 — Platform & Trust Audit" subtitle="Ecosystem audit, fake-signal removal, roadmaps & investor/enterprise readiness scores" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VerfiX — Phase 2 Platform & Trust Audit</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--vx-off);font-family:var(--font-body);color:var(--vx-text);line-height:1.6;}
+  .wrap{max-width:1000px;margin:0 auto;background:#fff;}
+  header.top{background:var(--vx-navy);color:#fff;padding:3rem 3.5rem 2.6rem;}
+  .kick{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--vx-red);margin-bottom:1.1rem;}
+  .kick::before{content:'';width:16px;height:1.5px;background:var(--vx-red);}
+  header.top h1{font-size:2.4rem;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin:0 0 .7rem;}
+  header.top p{color:rgba(255,255,255,.62);max-width:580px;margin:0;font-size:.98rem;}
+  .hmeta{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.12);}
+  .hmeta .l{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+  .hmeta .v{font-weight:700;font-size:.95rem;margin-top:2px;}
+  .pad{padding:0 3.5rem;}
+  @media(max-width:700px){.pad{padding:0 1.4rem;}header.top{padding:2.2rem 1.4rem;}}
+  section{padding:2.8rem 0;border-bottom:1px solid var(--vx-border);}
+  .seclabel{font-family:var(--font-mono);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vx-red);}
+  h2{font-size:1.65rem;font-weight:800;letter-spacing:-.03em;margin:.4rem 0 1.3rem;}
+  h3{font-size:1.05rem;font-weight:800;margin:1.4rem 0 .7rem;}
+  table{width:100%;border-collapse:collapse;font-size:.84rem;}
+  th{text-align:left;font-family:var(--font-mono);font-size:.56rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--vx-light);padding:.5rem .7rem;border-bottom:1px solid var(--vx-border);}
+  td{padding:.65rem .7rem;border-bottom:1px solid var(--vx-off);vertical-align:top;}
+  td code{font-family:var(--font-mono);font-size:.74rem;color:var(--vx-navy);background:var(--vx-off);padding:.1rem .3rem;border-radius:3px;}
+  .st{display:inline-flex;align-items:center;gap:.3rem;font-size:.66rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:.16rem .45rem;border-radius:3px;white-space:nowrap;}
+  .ok{background:var(--vx-success-bg);color:var(--vx-success-fg);}
+  .new{background:var(--vx-red-bg);color:var(--vx-red);}
+  .partial{background:var(--vx-warn-bg);color:var(--vx-warn-fg);}
+  .gone{background:#EEF1F5;color:var(--vx-muted);}
+  ul{margin:.3rem 0 0;padding-left:1.1rem;}
+  li{margin-bottom:.4rem;font-size:.87rem;}
+  .scoregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;}
+  @media(max-width:700px){.scoregrid{grid-template-columns:1fr;}.split{grid-template-columns:1fr!important;}}
+  .scard{border:1px solid var(--vx-border);border-top:3px solid var(--vx-red);border-radius:8px;padding:1.1rem 1.2rem;}
+  .scard .dim{font-size:.82rem;font-weight:700;color:var(--vx-muted);}
+  .scard .num{font-family:var(--font-mono);font-size:1.9rem;font-weight:700;letter-spacing:-.04em;line-height:1;margin:.3rem 0;}
+  .bar{height:5px;background:var(--vx-off);border-radius:3px;overflow:hidden;}
+  .bar i{display:block;height:100%;border-radius:3px;}
+  .scard .note{font-size:.73rem;color:var(--vx-light);margin-top:.5rem;}
+  .overall{background:var(--vx-navy);color:#fff;border-radius:10px;padding:1.6rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-bottom:1.6rem;flex-wrap:wrap;}
+  .overall .big{font-family:var(--font-mono);font-size:3rem;font-weight:700;letter-spacing:-.04em;line-height:1;}
+  .overall .lab{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+  .road{border:1px solid var(--vx-border);border-radius:9px;padding:1.2rem 1.3rem;}
+  .road .ph{font-family:var(--font-mono);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--vx-red);}
+  .callout{display:flex;align-items:flex-start;gap:.7rem;background:var(--vx-red-bg);border:1px solid var(--vx-red-line);border-radius:8px;padding:.9rem 1.1rem;font-size:.85rem;}
+  footer{padding:2.2rem 3.5rem;background:var(--vx-navy-3);color:rgba(255,255,255,.6);font-size:.78rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="kick">Phase 2 · Platform & Trust Ecosystem Audit</div>
+    <h1>From website to verification platform</h1>
+    <p>A full review of the VerfiX product and trust ecosystem: what exists, what was missing, the fake trust signals that were removed, what was built, and where VerfiX stands on enterprise and investor readiness.</p>
+    <div class="hmeta">
+      <div><div class="l">Product surfaces</div><div class="v">7 + site</div></div>
+      <div><div class="l">New this phase</div><div class="v">Trust Center · Team · Demos</div></div>
+      <div><div class="l">Fake signals removed</div><div class="v">6 classes</div></div>
+      <div><div class="l">Date</div><div class="v">Jun 2026</div></div>
+    </div>
+  </header>
+
+  <!-- 1. AUDIT -->
+  <section class="pad">
+    <div class="seclabel">1 · Ecosystem audit</div>
+    <h2>What exists today</h2>
+    <table>
+      <thead><tr><th>Surface</th><th>State</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><b>Marketing site</b> — home, platform, industries, developers, company</td><td><span class="st ok">Exists</span></td><td>Click-through SPA, responsive, SEO + schema, QA-verified.</td></tr>
+        <tr><td><b>Verification console</b></td><td><span class="st ok">Exists</span></td><td>Sign-in → queue → drill-in with Trust Score.</td></tr>
+        <tr><td><b>Developer Portal</b></td><td><span class="st ok">Exists</span></td><td>10 views incl. live sandbox, keys, webhooks, logs, SDKs.</td></tr>
+        <tr><td><b>Rules Builder</b></td><td><span class="st ok">Exists</span></td><td>Drag workflow + risk scoring + decision simulator.</td></tr>
+        <tr><td><b>KYB Company Profile</b></td><td><span class="st ok">Exists</span></td><td>Registry, directors, UBO graph, risk, media, timeline.</td></tr>
+        <tr><td><b>Case Management</b></td><td><span class="st ok">Exists</span></td><td>Investigation, notes, attachments, audit trail, decisions.</td></tr>
+        <tr><td><b>Compliance Center</b></td><td><span class="st ok">Exists</span></td><td>Audit, consent, retention, GDPR/nFADP, exports, reports.</td></tr>
+        <tr><td><b>Trust Engine Analytics</b></td><td><span class="st ok">Exists</span></td><td>Volume, approval, fraud, geo, AML, providers, KPIs.</td></tr>
+        <tr><td><b>Documentation Center</b></td><td><span class="st ok">Exists</span></td><td>Docs home, sidebar tree, article reader + TOC.</td></tr>
+        <tr><td><b>Trust Center</b></td><td><span class="st new">New</span></td><td>Security, compliance, privacy, data processing, disclosure, security contact.</td></tr>
+        <tr><td><b>Team section</b></td><td><span class="st new">New</span></td><td>Ahmed, Manel, Petter with photo-or-monogram avatars.</td></tr>
+        <tr><td><b>Product Demos</b></td><td><span class="st new">New</span></td><td>6 video-showcase flows (KYC, KYB, AML, Engine, Hosted, Dev).</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Gap analysis — missing · incomplete · duplicated · remove · improve</h3>
+    <div class="split">
+      <div>
+        <p style="font-size:.8rem;font-weight:800;color:var(--vx-red);margin:.2rem 0 .4rem;text-transform:uppercase;letter-spacing:.05em;">Was missing → now built</p>
+        <ul>
+          <li><b>Trust Center</b> (security/privacy/disclosure) — built.</li>
+          <li><b>Team</b> section — built (photos pending upload).</li>
+          <li><b>Video demos</b> for 6 flows — built as placeholders.</li>
+          <li><b>Honest compliance posture</b> — replaced fake certs.</li>
+        </ul>
+        <p style="font-size:.8rem;font-weight:800;color:var(--vx-warn-fg);margin:.8rem 0 .4rem;text-transform:uppercase;letter-spacing:.05em;">Still incomplete (needs your input)</p>
+        <ul>
+          <li>Real <b>team photos</b> + confirmed roles/bios.</li>
+          <li>Real <b>demo footage</b> for the 6 flows.</li>
+          <li><b>Pricing</b> / packaging page (none yet).</li>
+          <li><b>Localization</b> (DE/FR/IT) for the Swiss market.</li>
+          <li>Live <b>status / uptime</b> page.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:.8rem;font-weight:800;color:var(--vx-muted);margin:.2rem 0 .4rem;text-transform:uppercase;letter-spacing:.05em;">Removed (fake trust signals)</p>
+        <ul>
+          <li><b>"Certified end to end"</b> + ISO 27001 / SOC 2 shown as held → now <b>Planned</b>.</li>
+          <li><b>"190+ countries", "14k+ ID types"</b> unprovable metrics → removed / reworded.</li>
+          <li><b>"Live Verifications"</b> + "today" volume → relabelled <b>illustrative / sample</b>.</li>
+          <li><b>"Compliant with"</b> framework row → <b>"Built to align with"</b>.</li>
+          <li>Footer <b>ISO 27001</b> cert badge → removed; frameworks now "Aligned with".</li>
+          <li><b>"100% audit-ready", "&lt;3s"</b> hero stats → honest architecture claims.</li>
+        </ul>
+        <p style="font-size:.8rem;font-weight:800;color:var(--vx-muted);margin:.8rem 0 .4rem;text-transform:uppercase;letter-spacing:.05em;">Duplicated / to improve</p>
+        <ul>
+          <li>No true duplicate pages found.</li>
+          <li>Footer "API Reference" + "Documentation" both point to Docs Center (intended).</li>
+          <li>Improve: wire demo footage + team photos when supplied.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. FAKE SIGNAL REMOVAL -->
+  <section class="pad">
+    <div class="seclabel">2 · Trust integrity — fake signals removed</div>
+    <h2>Every claim is now defensible</h2>
+    <table>
+      <thead><tr><th>Was</th><th>Now</th><th>File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>"Certified end to end" with ISO 27001 + SOC 2 Type II</td><td>"Honest about where we are" — status badges: Live / Aligned / <b>Planned</b></td><td><code>Company.jsx</code></td><td><span class="st gone">Reframed</span></td></tr>
+        <tr><td>190+ countries · 14k+ ID types (Company stats)</td><td>Founding facts: 2021 · Swiss-built · Seed stage</td><td><code>Company.jsx</code></td><td><span class="st gone">Removed</span></td></tr>
+        <tr><td>14,000+ ID types / 190+ countries (Platform copy)</td><td>"a broad range of government ID types and countries"</td><td><code>Platform.jsx</code></td><td><span class="st gone">Reworded</span></td></tr>
+        <tr><td>"Live Verifications" + "Avg trust score · today 88"</td><td>"Sample queue · illustrative" + "score · sample"</td><td><code>Homepage.jsx</code></td><td><span class="st gone">Relabelled</span></td></tr>
+        <tr><td>"Compliant with nFADP/GDPR/eIDAS/FINMA"</td><td>"Built to align with …"</td><td><code>Homepage.jsx</code></td><td><span class="st gone">Reworded</span></td></tr>
+        <tr><td>Hero stats "&lt;3s · 10+ industries · 100% audit-ready"</td><td>"Every decision logged · 3 outcomes · CH/EU residency"</td><td><code>Homepage.jsx</code></td><td><span class="st gone">Reframed</span></td></tr>
+        <tr><td>Footer cert badges incl. ISO 27001</td><td>"Aligned with" nFADP/GDPR/eIDAS/FINMA (no cert badge)</td><td><code>Chrome.jsx</code></td><td><span class="st gone">Removed</span></td></tr>
+      </tbody>
+    </table>
+    <div class="callout" style="margin-top:1.2rem"><i class="fas fa-circle-check" style="color:var(--vx-red);margin-top:2px"></i><div>No fake customer logos, partner logos, client names or verification volumes were ever present, and none were added. Industry names on the site denote <b>target sectors</b>, not customers.</div></div>
+  </section>
+
+  <!-- 3. TEAM & VIDEOS -->
+  <section class="pad">
+    <div class="seclabel">3 · Team & video readiness</div>
+    <h2>What needs your assets</h2>
+    <div class="split">
+      <div class="road">
+        <div class="ph">Team photos</div>
+        <h3 style="margin:.3rem 0 .5rem">Ahmed · Manel · Petter</h3>
+        <p style="font-size:.85rem;color:var(--vx-muted);margin:0 0 .6rem">The team section renders today with branded monogram avatars — <b>no broken or distorted images</b>. Drop real photos to replace them:</p>
+        <ul>
+          <li><code>assets/team/ahmed.jpg</code></li>
+          <li><code>assets/team/manel.jpg</code></li>
+          <li><code>assets/team/petter.jpg</code></li>
+        </ul>
+        <p style="font-size:.78rem;color:var(--vx-light);margin:.5rem 0 0">Square images, ≥ 400×400px. Sizing, circle crop & responsive behavior are already handled.</p>
+      </div>
+      <div class="road">
+        <div class="ph">Demo footage</div>
+        <h3 style="margin:.3rem 0 .5rem">6 product flows</h3>
+        <p style="font-size:.85rem;color:var(--vx-muted);margin:0 0 .6rem">Each demo card has a labelled placeholder, description, supporting points and CTA. Drop final footage:</p>
+        <ul>
+          <li>KYC · KYB · AML · Trust Engine</li>
+          <li>Hosted Flow · Developer Integration</li>
+          <li><code>assets/demos/&lt;flow&gt;.mp4</code></li>
+        </ul>
+        <p style="font-size:.78rem;color:var(--vx-light);margin:.5rem 0 0">Placeholders are marked "Coming soon" — no fake view counts or fabricated footage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MATURITY + READINESS -->
+  <section class="pad">
+    <div class="seclabel">4 · Readiness scorecard</div>
+    <h2>Maturity & readiness</h2>
+    <div class="overall">
+      <div><div class="lab">Overall product maturity</div><div style="font-size:1.05rem;font-weight:700;margin-top:.3rem;">Full platform surface · honest trust posture · pre-certification</div></div>
+      <div style="text-align:right"><div class="big">84</div><div class="lab">/ 100</div></div>
+    </div>
+    <div class="scoregrid">
+      <div class="scard"><div class="dim">Product depth</div><div class="num" style="color:var(--vx-success)">90</div><div class="bar"><i style="width:90%;background:var(--vx-success)"></i></div><div class="note">8 surfaces incl. rules, KYB, cases, analytics.</div></div>
+      <div class="scard"><div class="dim">Developer experience</div><div class="num" style="color:var(--vx-success)">88</div><div class="bar"><i style="width:88%;background:var(--vx-success)"></i></div><div class="note">Portal + docs + sandbox + SDKs.</div></div>
+      <div class="scard"><div class="dim">Trust & integrity</div><div class="num" style="color:var(--vx-success)">92</div><div class="bar"><i style="width:92%;background:var(--vx-success)"></i></div><div class="note">No fake signals; published posture + Trust Center.</div></div>
+      <div class="scard"><div class="dim">Brand & UX</div><div class="num" style="color:var(--vx-success)">93</div><div class="bar"><i style="width:93%;background:var(--vx-success)"></i></div><div class="note">Disciplined red/navy system across every surface.</div></div>
+      <div class="scard"><div class="dim">Compliance positioning</div><div class="num" style="color:var(--vx-success)">88</div><div class="bar"><i style="width:88%;background:var(--vx-success)"></i></div><div class="note">Honest aligned/planned framing; DSAR ops UI.</div></div>
+      <div class="scard"><div class="dim">Security posture</div><div class="num" style="color:var(--vx-review)">72</div><div class="bar"><i style="width:72%;background:var(--vx-review)"></i></div><div class="note">Strong narrative; certs (ISO/SOC2) still roadmap.</div></div>
+      <div class="scard"><div class="dim">Localization</div><div class="num" style="color:var(--vx-reject)">35</div><div class="bar"><i style="width:35%;background:var(--vx-reject)"></i></div><div class="note">EN only; DE/FR/IT expected in CH market.</div></div>
+      <div class="scard"><div class="dim">Commercial (pricing)</div><div class="num" style="color:var(--vx-reject)">40</div><div class="bar"><i style="width:40%;background:var(--vx-reject)"></i></div><div class="note">No pricing/packaging page yet.</div></div>
+      <div class="scard"><div class="dim">Content (photos/video)</div><div class="num" style="color:var(--vx-review)">60</div><div class="bar"><i style="width:60%;background:var(--vx-review)"></i></div><div class="note">Placeholders ready; awaiting real assets.</div></div>
+    </div>
+
+    <div class="split" style="margin-top:1.6rem">
+      <div class="scard" style="border-top-color:var(--vx-navy)">
+        <div class="dim">Enterprise readiness</div>
+        <div class="num" style="color:var(--vx-success)">82 / 100</div>
+        <div class="note">Banks/fintechs/crypto/insurers see a credible full platform: dev portal, rules, KYB, cases, compliance ops. Gaps to close for procurement: ISO 27001 / SOC 2 certification, a live status page, and a signed DPA + sub-processor list (scaffolded in Trust Center).</div>
+      </div>
+      <div class="scard" style="border-top-color:var(--vx-navy)">
+        <div class="dim">Investor readiness</div>
+        <div class="num" style="color:var(--vx-review)">74 / 100</div>
+        <div class="note">Strong for Venture Kick / Innosuisse / Trust Valley / La Forge diligence: clear product, Swiss-first trust narrative, team page, honest claims (de-risks diligence). Add: traction metrics when real, a data room, and confirmed team bios. <b>Do not</b> add fake traction to raise this score.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ROADMAPS -->
+  <section class="pad">
+    <div class="seclabel">5 · Roadmaps</div>
+    <h2>Product & trust roadmap</h2>
+    <div class="split">
+      <div class="road">
+        <div class="ph">Product roadmap</div>
+        <h3 style="margin:.3rem 0 .6rem">Next surfaces</h3>
+        <ul>
+          <li><b>Now:</b> wire team photos + demo footage; add pricing page.</li>
+          <li><b>Next:</b> hosted verification flow (end-user screens); DE/FR/IT localization.</li>
+          <li><b>Later:</b> live status page; in-product onboarding; partner marketplace.</li>
+        </ul>
+      </div>
+      <div class="road">
+        <div class="ph">Trust roadmap</div>
+        <h3 style="margin:.3rem 0 .6rem">Earning the badges</h3>
+        <ul>
+          <li><b>Live:</b> Swiss data residency, encryption, audit logging, nFADP/GDPR alignment.</li>
+          <li><b>In progress:</b> formal DPA + named sub-processor list; security.txt + PGP.</li>
+          <li><b>Planned:</b> ISO 27001, then SOC 2 Type II; external pen-test report.</li>
+        </ul>
+      </div>
+    </div>
+    <h3>Investor / accelerator readiness</h3>
+    <table>
+      <thead><tr><th>Programme</th><th>What the site now supports</th><th>Still needed</th></tr></thead>
+      <tbody>
+        <tr><td><b>Venture Kick</b></td><td>Clear product, team page, Swiss narrative, honest claims</td><td>Traction slide / data room</td></tr>
+        <tr><td><b>Innosuisse</b></td><td>Deep-tech product surface, compliance positioning</td><td>R&D / innovation framing doc</td></tr>
+        <tr><td><b>Trust Valley</b></td><td>Trust Center, security posture, CH residency</td><td>Pen-test + cert progress</td></tr>
+        <tr><td><b>La Forge</b></td><td>Full platform demo surfaces, dev portal</td><td>Live demo footage</td></tr>
+      </tbody>
+    </table>
+    <div class="callout" style="margin-top:1.4rem"><i class="fas fa-triangle-exclamation" style="color:var(--vx-red);margin-top:2px"></i><div><b>Integrity guardrail:</b> the fastest way to raise these scores is fake certs, fake logos or fake traction — which fail diligence and damage a Swiss trust brand. Every number on the site is now defensible. Keep it that way; fill the gaps with <b>real</b> assets as they exist.</div></div>
+  </section>
+
+  <footer>
+    VerfiX Design System · Phase 2 Platform & Trust Audit · All scores reflect the current design-reference build (<code style="color:#fff">ui_kits/</code>), not the production application. Certifications shown as "Planned" are not held today.
+  </footer>
+
+</div>
+</body>
+</html>

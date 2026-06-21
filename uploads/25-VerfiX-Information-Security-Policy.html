@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Information Security Policy | VerfiX AG</title>
+  <meta name="description" content="Security objectives, access control, cryptography, and personnel security">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 25 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › Information Security Policy</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 25 of 30</div>
+    <h1>Information Security Policy</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">Security objectives, access control, cryptography, and personnel security</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>Information Security Policy</p>
+<p>VerfiX AG — Information Security Framework</p>
+<h2>Information Security Policy — VerfiX AG</h2>
+<p>This Information Security Policy establishes the principles, objectives, and responsibilities for information security at VerfiX AG. It applies to all VerfiX personnel, contractors, and third-party providers with access to VerfiX systems, infrastructure, or customer data.</p>
+<h3>1. Policy Statement</h3>
+<p>VerfiX AG is committed to protecting the confidentiality, integrity, and availability of all information assets, including customer personal data processed through the VerfiX platform. As a company whose core business is the secure processing of sensitive identity and biometric data, VerfiX holds information security as a foundational business obligation, not an optional add-on.</p>
+<p>This commitment is expressed through:</p>
+<ul><li><span class="li-arrow">›</span><span>Maintaining ISO 27001-aligned information security management practices</span></li><li><span class="li-arrow">›</span><span>Investing in security controls proportionate to the sensitivity of the data processed</span></li><li><span class="li-arrow">›</span><span>Building security into platform design from the outset (security by design)</span></li><li><span class="li-arrow">›</span><span>Maintaining transparency with customers about security controls and incidents</span></li></ul>
+<h3>2. Security Objectives</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Objective</th>
+<th>Description</th>
+</tr></thead><tbody>
+<tr>
+<td>Confidentiality</td>
+<td>Personal data and customer information is accessible only to those with an authorised need. Biometric data is not disclosed to any party other than the Controller on whose behalf it is processed.</td>
+</tr>
+<tr class="alt">
+<td>Integrity</td>
+<td>Personal data and audit records are accurate and complete. Audit trail records are cryptographically protected against modification.</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>The VerfiX platform is available to customers in accordance with the agreed SLA. Single points of failure are eliminated through redundant architecture.</td>
+</tr>
+<tr class="alt">
+<td>Accountability</td>
+<td>All actions on the VerfiX platform are logged in an audit trail that enables identification of who did what, when, and to what data.</td>
+</tr>
+</tbody></table></div>
+<h3>3. Asset Management</h3>
+<ul><li><span class="li-arrow">›</span><span>All information assets (hardware, software, data, and credentials) must be inventoried and assigned an owner</span></li><li><span class="li-arrow">›</span><span>Information assets must be classified by sensitivity: Public, Internal, Confidential, or Restricted</span></li><li><span class="li-arrow">›</span><span>Customer personal data is classified as Restricted and is subject to the highest level of access control</span></li><li><span class="li-arrow">›</span><span>Information asset inventories must be reviewed annually</span></li></ul>
+<h3>4. Access Control</h3>
+<ul><li><span class="li-arrow">›</span><span>Access to production systems and customer data is granted on a least-privilege basis</span></li><li><span class="li-arrow">›</span><span>All production access requires multi-factor authentication</span></li><li><span class="li-arrow">›</span><span>Access rights must be reviewed quarterly and revoked promptly on change of role or departure</span></li><li><span class="li-arrow">›</span><span>Privileged access to production databases and infrastructure requires management approval and is logged in a separate privileged access audit trail</span></li><li><span class="li-arrow">›</span><span>Remote access to VerfiX systems requires VPN and MFA</span></li><li><span class="li-arrow">›</span><span>Shared accounts and service accounts are prohibited for human users</span></li></ul>
+<h3>5. Cryptography</h3>
+<ul><li><span class="li-arrow">›</span><span>AES-256-GCM for all data at rest</span></li><li><span class="li-arrow">›</span><span>TLS 1.3 for all data in transit (TLS 1.2 and below prohibited)</span></li><li><span class="li-arrow">›</span><span>PBKDF2-SHA256 for credential storage</span></li><li><span class="li-arrow">›</span><span>HMAC-SHA256 for webhook signatures</span></li><li><span class="li-arrow">›</span><span>SHA-256 hash chain for audit trail integrity</span></li><li><span class="li-arrow">›</span><span>Encryption keys managed via HSM with per-customer key isolation</span></li><li><span class="li-arrow">›</span><span>Cryptographic standards reviewed and updated annually</span></li></ul>
+<h3>6. Vulnerability Management</h3>
+<ul><li><span class="li-arrow">›</span><span>All software dependencies scanned for known vulnerabilities on each deployment</span></li><li><span class="li-arrow">›</span><span>Static code analysis integrated into CI/CD pipeline</span></li><li><span class="li-arrow">›</span><span>Annual penetration test by qualified third party (planned)</span></li><li><span class="li-arrow">›</span><span>Critical vulnerabilities: patched within 24 hours</span></li><li><span class="li-arrow">›</span><span>High vulnerabilities: patched within 7 days</span></li><li><span class="li-arrow">›</span><span>Medium vulnerabilities: patched within 30 days</span></li><li><span class="li-arrow">›</span><span>All identified vulnerabilities tracked in a security defect register</span></li></ul>
+<h3>7. Personnel Security</h3>
+<ul><li><span class="li-arrow">›</span><span>Background verification appropriate to role conducted for all new personnel with access to customer data (where permitted by applicable law)</span></li><li><span class="li-arrow">›</span><span>All personnel with access to customer data sign a confidentiality agreement before access is granted</span></li><li><span class="li-arrow">›</span><span>Security awareness training mandatory for all personnel annually</span></li><li><span class="li-arrow">›</span><span>Specific training on biometric data handling and nFADP obligations for personnel in processing roles</span></li><li><span class="li-arrow">›</span><span>Personnel departure procedures include immediate revocation of all access rights and return of equipment</span></li></ul>
+<h3>8. Physical Security</h3>
+<ul><li><span class="li-arrow">›</span><span>VerfiX relies on certified colocation data centre providers for physical infrastructure security</span></li><li><span class="li-arrow">›</span><span>Data centre providers must maintain physical access controls, CCTV monitoring, and 24/7 security</span></li><li><span class="li-arrow">›</span><span>No customer personal data is stored on portable or mobile devices</span></li><li><span class="li-arrow">›</span><span>VerfiX office physical security measures are commensurate with the sensitivity of information handled</span></li></ul>
+<h3>9. Supplier Security</h3>
+<ul><li><span class="li-arrow">›</span><span>All third-party providers with access to customer data must sign a data processing agreement</span></li><li><span class="li-arrow">›</span><span>Sub-processors are assessed for security capability before engagement</span></li><li><span class="li-arrow">›</span><span>Security requirements are included in all supplier contracts</span></li><li><span class="li-arrow">›</span><span>Supplier security is reviewed annually or on material change</span></li></ul>
+<h3>10. Policy Compliance and Review</h3>
+<p>Compliance with this policy is mandatory for all VerfiX personnel and contractors. Violations may result in disciplinary action, up to and including termination. This policy will be reviewed at least annually and updated to reflect changes in the threat environment, technology, or applicable regulatory requirements.</p>
+<p>Policy owner: VerfiX AG Management  |  Review date: June 2026</p>
+<p>security@verfix.ch  |  verfix.ch</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

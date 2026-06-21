@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Terms of Service | VerfiX AG</title>
+  <meta name="description" content="Terms governing use of the VerfiX identity verification platform">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 22 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › Terms of Service</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 22 of 30</div>
+    <h1>Terms of Service</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">Terms governing use of the VerfiX identity verification platform</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>Terms of Service</p>
+<p>VerfiX Platform Terms and Conditions</p>
+<h2>Terms of Service — VerfiX AG</h2>
+<p>Last updated: June 2025</p>
+<p>These Terms of Service (&quot;Terms&quot;) govern the use of the VerfiX identity verification platform and related services (&quot;Services&quot;) provided by VerfiX AG (&quot;VerfiX&quot;, &quot;we&quot;, &quot;us&quot;). By accessing or using the Services, the Customer agrees to be bound by these Terms.</p>
+<p>Note: These Terms of Service are provided as a template for legal review. They should be reviewed and approved by qualified legal counsel before deployment.</p>
+<h3>1. Definitions</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Term</th>
+<th>Definition</th>
+</tr></thead><tbody>
+<tr>
+<td>Customer</td>
+<td>The organisation or individual that has entered into a Service Agreement with VerfiX AG for access to the Services.</td>
+</tr>
+<tr class="alt">
+<td>Services</td>
+<td>The VerfiX identity verification platform, including KYC, KYB, eID Gateway, and Trust Engine products, accessed via the REST API.</td>
+</tr>
+<tr>
+<td>Service Agreement</td>
+<td>The commercial agreement between VerfiX and the Customer that specifies the products, pricing, and commercial terms applicable to the Customer's use of the Services.</td>
+</tr>
+<tr class="alt">
+<td>API Key</td>
+<td>The authentication credential issued by VerfiX to the Customer for accessing the Services.</td>
+</tr>
+<tr>
+<td>Data Subject</td>
+<td>An individual whose personal data is processed through the Services on behalf of the Customer.</td>
+</tr>
+<tr class="alt">
+<td>Prohibited Use</td>
+<td>Any use of the Services that is inconsistent with Section 4 of these Terms.</td>
+</tr>
+</tbody></table></div>
+<h3>2. Access to Services</h3>
+<p>Subject to these Terms and the Service Agreement, VerfiX grants the Customer a non-exclusive, non-transferable right to access and use the Services during the term of the Service Agreement.</p>
+<p>Access is provided via API Key. The Customer is responsible for maintaining the security of its API Keys and for all use of the Services made using its API Keys. API Keys must not be shared with third parties.</p>
+<h3>3. Customer Obligations</h3>
+<ul><li><span class="li-arrow">›</span><span>The Customer must use the Services in accordance with applicable law, including Swiss law, the laws of any jurisdiction from which the Customer accesses the Services, and all applicable data protection regulations.</span></li><li><span class="li-arrow">›</span><span>The Customer must obtain all necessary consents, licences, and authorisations for the processing of personal data through the Services.</span></li><li><span class="li-arrow">›</span><span>The Customer must execute the VerfiX Data Processing Agreement before processing personal data through the Services.</span></li><li><span class="li-arrow">›</span><span>The Customer must not reverse engineer, decompile, or attempt to derive source code from the Services.</span></li><li><span class="li-arrow">›</span><span>The Customer must not use the Services to process data for purposes other than those described in the Service Agreement.</span></li><li><span class="li-arrow">›</span><span>The Customer must notify VerfiX promptly of any suspected security incident involving its API Keys or access credentials.</span></li></ul>
+<h3>4. Prohibited Uses</h3>
+<p>The following uses of the Services are prohibited:</p>
+<ul><li><span class="li-arrow">›</span><span>Verification of individuals without their knowledge or without a lawful basis for processing their personal data</span></li><li><span class="li-arrow">›</span><span>Use in connection with unlawful surveillance, tracking, or monitoring of individuals</span></li><li><span class="li-arrow">›</span><span>Processing of personal data of minors without appropriate consent and authorisation</span></li><li><span class="li-arrow">›</span><span>Use for purposes that violate applicable anti-discrimination law</span></li><li><span class="li-arrow">›</span><span>Resale or redistribution of the Services without VerfiX's prior written consent and execution of a Reseller Agreement</span></li><li><span class="li-arrow">›</span><span>Attempt to circumvent rate limits, security measures, or access controls</span></li><li><span class="li-arrow">›</span><span>Processing data in jurisdictions where such processing violates applicable law</span></li></ul>
+<h3>5. Service Level and Availability</h3>
+<p>VerfiX will use commercially reasonable efforts to maintain the availability of the Services in accordance with the SLA specified in the Service Agreement. VerfiX does not guarantee uninterrupted availability and is not liable for periods of unavailability caused by scheduled maintenance, force majeure, third-party infrastructure failures, or circumstances beyond VerfiX's reasonable control.</p>
+<h3>6. Data Protection</h3>
+<p>Processing of personal data through the Services is governed by the Data Processing Agreement between VerfiX and the Customer. These Terms are supplemented by, and should be read alongside, the Data Processing Agreement.</p>
+<h3>7. Intellectual Property</h3>
+<p>All intellectual property rights in the Services, including the VerfiX platform, API, documentation, and brand materials, remain the property of VerfiX AG. These Terms do not grant the Customer any intellectual property rights beyond the right to use the Services as described in Section 2.</p>
+<h3>8. Limitation of Liability</h3>
+<p>To the maximum extent permitted by Swiss law, VerfiX's total liability to the Customer for any claim arising from these Terms or the use of the Services shall not exceed the total fees paid by the Customer to VerfiX in the 12 months preceding the claim. VerfiX shall not be liable for indirect, consequential, incidental, punitive, or special damages.</p>
+<h3>9. Term and Termination</h3>
+<p>These Terms remain in effect for the duration of the Service Agreement. Either party may terminate the Service Agreement in accordance with its terms. Upon termination, the Customer's access to the Services will be revoked and VerfiX will delete or return Customer data in accordance with the Data Processing Agreement.</p>
+<h3>10. Governing Law and Jurisdiction</h3>
+<p>These Terms are governed by Swiss law, excluding conflict of laws rules. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of the Canton of Vaud, Switzerland.</p>
+<h3>11. Changes to Terms</h3>
+<p>VerfiX may update these Terms from time to time. Material changes will be communicated to Customers with at least 30 days' notice. Continued use of the Services after the effective date of the change constitutes acceptance of the revised Terms.</p>
+<h3>12. Contact</h3>
+<p>For questions about these Terms: contact@verfix.ch  |  VerfiX AG, Switzerland</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

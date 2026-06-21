@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>eID Gateway Product Sheet | VerfiX AG</title>
+  <meta name="description" content="Single API for EU Digital Identity Wallet acceptance across 27 member states">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 06 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › eID Gateway Product Sheet</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 06 of 30</div>
+    <h1>eID Gateway Product Sheet</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">Single API for EU Digital Identity Wallet acceptance across 27 member states</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>eID Gateway Product Sheet</p>
+<p>Single API for European Digital Identity Wallets</p>
+<h2>VerfiX eID Gateway</h2>
+<p>VerfiX eID Gateway is a single REST API integration that enables Swiss organisations to accept digital identity credentials from EU Digital Identity Wallets across all 27 EU member states, without building individual integrations for each country. Designed for the eIDAS 2.0 rollout.</p>
+<h3>The eIDAS 2.0 Context</h3>
+<p>eIDAS 2.0 (Regulation (EU) 2024/1183) mandates that all EU member states offer citizens a European Digital Identity Wallet (EUDIW) by 2026. The EUDIW allows EU citizens to store and present verified digital credentials — identity documents, driving licences, professional qualifications — from their mobile device, with cryptographic proof of authenticity issued by government authorities.</p>
+<p>For Swiss organisations, eIDAS 2.0 creates both an opportunity and a technical challenge:</p>
+<ul><li><span class="li-arrow">›</span><span>Opportunity: EU Digital Identity Wallet credentials are issued at the highest identity assurance level. Accepting them provides stronger identity assurance than traditional document scanning, potentially reducing fraud and streamlining onboarding.</span></li><li><span class="li-arrow">›</span><span>Challenge: Each EU member state operates its own national wallet implementation. Accepting credentials from all 27 EU countries requires 27 separate technical integrations — unless a gateway handles the interoperability layer.</span></li></ul>
+<p>VerfiX eID Gateway is that gateway. One API call. All 27 EU wallets. Standardised result.</p>
+<h3>How VerfiX eID Gateway Works</h3>
+<div class="diagram"><i class="icon">⬡</i> <em>Diagram: eID Gateway Flow — EU Citizen presents EUDIW credential on mobile → VerfiX eID Gateway receives credential presentation → Validates cryptographic signature against EU trust anchor → Verifies credential is current and unrevoked → Extracts identity attributes → Returns standardised identity result to Swiss organisation's system → Audit trail generated</em></div>
+<p>The gateway abstracts the complexity of:</p>
+<ul><li><span class="li-arrow">›</span><span>Validating the cryptographic signatures on EU wallet credentials against the correct national trust anchor for each of the 27 EU member states</span></li><li><span class="li-arrow">›</span><span>Handling the different credential formats and attribute schemas used by different national implementations</span></li><li><span class="li-arrow">›</span><span>Maintaining current trust lists as EU member states update their wallet infrastructure</span></li><li><span class="li-arrow">›</span><span>Translating credential attributes into a standardised format compatible with Swiss onboarding workflows</span></li></ul>
+<h3>Key Capabilities</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Capability</th>
+<th>Description</th>
+</tr></thead><tbody>
+<tr>
+<td>27-country EU wallet coverage</td>
+<td>Designed to support EU Digital Identity Wallet credentials from all EU member states as they become available through the EUDIW rollout.</td>
+</tr>
+<tr class="alt">
+<td>Cryptographic verification</td>
+<td>Validates digital signatures from government-issued EU wallet credentials against official EU trust anchors. Verifies credentials are current, unrevoked, and unmodified.</td>
+</tr>
+<tr>
+<td>Attribute extraction</td>
+<td>Extracts identity attributes (name, date of birth, nationality, document number, address) from EU wallet credentials in a standardised format.</td>
+</tr>
+<tr class="alt">
+<td>Highest assurance level</td>
+<td>EU Digital Identity Wallet credentials are issued at eIDAS High assurance level — the strongest identity assurance available under the EU framework.</td>
+</tr>
+<tr>
+<td>Standardised output</td>
+<td>Returns a consistent, structured JSON response regardless of the source EU member state or credential format.</td>
+</tr>
+<tr class="alt">
+<td>Swiss integration</td>
+<td>Output is designed to integrate directly with Swiss onboarding workflows and compliance systems. Audit trail generated for every credential verification.</td>
+</tr>
+<tr>
+<td>FINMA compatibility</td>
+<td>Designed for compatibility with FINMA's evolving guidance on the acceptance of digital identity credentials for remote identification.</td>
+</tr>
+</tbody></table></div>
+<h3>Why This Matters for Swiss Organisations</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Situation</th>
+<th>Without eID Gateway</th>
+<th>With VerfiX eID Gateway</th>
+</tr></thead><tbody>
+<tr>
+<td>EU clients presenting EUDIW credentials</td>
+<td>27 separate integrations needed, or credentials declined, creating friction</td>
+<td>One integration, all 27 EU wallets accepted</td>
+</tr>
+<tr class="alt">
+<td>Identity assurance level</td>
+<td>Traditional document scanning: Substantial assurance</td>
+<td>EUDIW credentials: High assurance — strongest available</td>
+</tr>
+<tr>
+<td>Integration maintenance</td>
+<td>Each national wallet update requires separate maintenance</td>
+<td>VerfiX maintains all wallet integrations</td>
+</tr>
+<tr class="alt">
+<td>Swiss data residency</td>
+<td>Credential data processed at non-Swiss vendor</td>
+<td>All processing in Switzerland, nFADP compliant</td>
+</tr>
+<tr>
+<td>Audit trail</td>
+<td>Custom documentation per credential type</td>
+<td>Standardised audit trail for every credential verification</td>
+</tr>
+</tbody></table></div>
+<h3>Use Cases</h3>
+<ul><li><span class="li-arrow">›</span><span>Swiss banks with EU clients: Accept EUDIW credentials for digital account opening from EU citizens, removing friction in cross-border onboarding.</span></li><li><span class="li-arrow">›</span><span>Swiss fintechs with EU market ambitions: Integrate once and offer EU wallet-based onboarding to EU customers from day one.</span></li><li><span class="li-arrow">›</span><span>Swiss government digital services: Accept EU Digital Identity Wallet credentials for digital service access by EU residents and cross-border workers.</span></li><li><span class="li-arrow">›</span><span>Swiss insurance companies: Accept EUDIW credentials for policyholder onboarding, particularly for cross-border workers and EU residents in Switzerland.</span></li></ul>
+<h3>Timeline and Availability</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Phase</th>
+<th>Timeline</th>
+<th>Status</th>
+</tr></thead><tbody>
+<tr>
+<td>eIDAS 2.0 regulation published</td>
+<td>2024</td>
+<td>Completed — regulation in force</td>
+</tr>
+<tr class="alt">
+<td>EU member state wallet pilots</td>
+<td>2025</td>
+<td>In progress — multiple countries piloting</td>
+</tr>
+<tr>
+<td>VerfiX eID Gateway early access</td>
+<td>2025</td>
+<td>Available for integration planning and early access</td>
+</tr>
+<tr class="alt">
+<td>EU wallet mandatory availability</td>
+<td>2026</td>
+<td>EU deadline — all member states must offer EUDIW</td>
+</tr>
+<tr>
+<td>Swiss-EU interoperability</td>
+<td>TBD</td>
+<td>Subject to Swiss Federal Council agreements</td>
+</tr>
+</tbody></table></div>
+<h3>Getting Started</h3>
+<p>VerfiX eID Gateway is available for early access and integration planning. Organisations that begin integration planning now will be positioned to accept EU Digital Identity Wallet credentials as they become available across EU member states through 2025 and 2026.</p>
+<ul><li><span class="li-arrow">›</span><span>Contact us to discuss your EU client base and eIDAS 2.0 requirements: contact@verfix.ch</span></li><li><span class="li-arrow">›</span><span>Request a technical briefing on the eID Gateway integration approach</span></li><li><span class="li-arrow">›</span><span>Explore integration alongside VerfiX KYC and Trust Engine for a unified identity and compliance workflow</span></li></ul>
+<p>contact@verfix.ch  |  verfix.ch</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

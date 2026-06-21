@@ -1,0 +1,239 @@
+<!-- @dsCard group="VerfiX Website" viewport="1100x900" name="QA Verification Report (Evidence)" subtitle="Per-page screenshots + navigation, form, link & console test evidence" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VerfiX — QA Verification Report</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--vx-off);font-family:var(--font-body);color:var(--vx-text);line-height:1.6;}
+  .wrap{max-width:1000px;margin:0 auto;background:#fff;}
+  header{background:var(--vx-navy);color:#fff;padding:3rem 3.5rem 2.4rem;}
+  .kick{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--vx-red);margin-bottom:1rem;}
+  .kick::before{content:'';width:16px;height:1.5px;background:var(--vx-red);}
+  header h1{font-size:2.3rem;font-weight:800;letter-spacing:-.04em;margin:0 0 .6rem;}
+  header p{color:rgba(255,255,255,.62);max-width:560px;margin:0;font-size:.95rem;}
+  .hmeta{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);}
+  .hmeta .l{font-family:var(--font-mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+  .hmeta .v{font-weight:700;font-size:.92rem;margin-top:2px;}
+
+  .pad{padding:0 3.5rem;}
+  @media(max-width:700px){.pad{padding:0 1.3rem;}header{padding:2.2rem 1.3rem;}}
+  section{padding:2.6rem 0;border-bottom:1px solid var(--vx-border);}
+  .seclabel{font-family:var(--font-mono);font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vx-red);}
+  h2{font-size:1.55rem;font-weight:800;letter-spacing:-.03em;margin:.35rem 0 1.3rem;}
+
+  /* page evidence cards */
+  .page{border:1px solid var(--vx-border);border-radius:10px;overflow:hidden;margin-bottom:1.6rem;}
+  .page-h{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1.2rem;background:var(--vx-off);border-bottom:1px solid var(--vx-border);flex-wrap:wrap;}
+  .page-h .t{display:flex;align-items:center;gap:.7rem;}
+  .page-h .n{font-size:1rem;font-weight:800;}
+  .page-h .u{font-family:var(--font-mono);font-size:.72rem;color:var(--vx-muted);background:#fff;border:1px solid var(--vx-border);border-radius:4px;padding:.15rem .45rem;}
+  .pass{display:inline-flex;align-items:center;gap:.35rem;font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.22rem .55rem;border-radius:4px;background:var(--vx-success-bg);color:var(--vx-success-fg);}
+  .shots{display:grid;grid-template-columns:1.7fr 1fr;gap:1px;background:var(--vx-border);}
+  @media(max-width:640px){.shots{grid-template-columns:1fr;}}
+  .shot{background:#fff;padding:1rem;}
+  .shot .lab{font-family:var(--font-mono);font-size:.58rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--vx-light);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem;}
+  .shot img{width:100%;height:auto;display:block;border:1px solid var(--vx-border);border-radius:6px;}
+  .shot.mob img{max-width:230px;margin:0 auto;}
+  .issues{padding:.8rem 1.2rem;font-size:.84rem;border-top:1px solid var(--vx-border);background:#fff;}
+  .issues b{font-weight:700;}
+  .issues .ok{color:var(--vx-success);}
+  .issues .note{color:var(--vx-muted);}
+
+  table{width:100%;border-collapse:collapse;font-size:.85rem;}
+  th{text-align:left;font-family:var(--font-mono);font-size:.56rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--vx-light);padding:.5rem .7rem;border-bottom:1px solid var(--vx-border);}
+  td{padding:.6rem .7rem;border-bottom:1px solid var(--vx-off);vertical-align:top;}
+  td code{font-family:var(--font-mono);font-size:.74rem;color:var(--vx-navy);background:var(--vx-off);padding:.1rem .3rem;border-radius:3px;}
+  .yes{color:var(--vx-success);font-weight:700;}
+  .res{display:inline-flex;align-items:center;gap:.3rem;font-size:.7rem;font-weight:800;text-transform:uppercase;color:var(--vx-success);}
+  footer{padding:2rem 3.5rem;background:var(--vx-navy-3);color:rgba(255,255,255,.6);font-size:.76rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kick">QA Verification Report · Evidence</div>
+    <h1>VerfiX Website — Functional Proof</h1>
+    <p>Live evidence captured from the running <code style="color:#fff">ui_kits/website</code> build: desktop &amp; mobile screenshots of every page, plus scripted navigation, form, link, image and console tests. Per-page results, individually.</p>
+    <div class="hmeta">
+      <div><div class="l">Pages</div><div class="v">7 (6 + console)</div></div>
+      <div><div class="l">Screens captured</div><div class="v">14 (7 desktop · 7 mobile)</div></div>
+      <div><div class="l">Console errors</div><div class="v">0</div></div>
+      <div><div class="l">Method</div><div class="v">Scripted DOM probes</div></div>
+      <div><div class="l">Date</div><div class="v">Jun 2026</div></div>
+    </div>
+  </header>
+
+  <!-- 1. URL INVENTORY -->
+  <section class="pad">
+    <div class="seclabel">1 · URL inventory</div>
+    <h2>Every route in the site</h2>
+    <table>
+      <thead><tr><th>#</th><th>Page</th><th>Route (SPA)</th><th>Reachable from</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>Home</b></td><td><code>verfix.swiss/</code></td><td>Logo, direct</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>2</td><td><b>Platform</b></td><td><code>/platform</code></td><td>Nav, footer</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>3</td><td><b>Industries</b></td><td><code>/industries</code></td><td>Nav, footer</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>4</td><td><b>Developers</b></td><td><code>/developers</code></td><td>Nav, footer</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>5</td><td><b>Company</b></td><td><code>/company</code></td><td>Nav, footer</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>6</td><td><b>Sign in</b></td><td><code>/signin</code></td><td>Nav "Sign in", mobile menu</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>7</td><td><b>Verification Console</b></td><td><code>/app</code></td><td>Sign-in submit</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 2. PER-PAGE EVIDENCE -->
+  <section class="pad">
+    <div class="seclabel">2–4 · Per-page evidence · desktop + mobile screenshots</div>
+    <h2>Page-by-page proof</h2>
+
+    <!-- HOME -->
+    <div class="page">
+      <div class="page-h"><div class="t"><span class="n">Home</span><span class="u">verfix.swiss/</span></div><span class="pass"><i class="fas fa-circle-check"></i>Pass</span></div>
+      <div class="shots">
+        <div class="shot"><div class="lab"><i class="fas fa-desktop"></i>Desktop · 1180px</div><img src="../screenshots/evidence/home-desktop.png" alt="Home page desktop screenshot"></div>
+        <div class="shot mob"><div class="lab"><i class="fas fa-mobile-screen"></i>Mobile · 390px</div><img src="../screenshots/evidence/home-mobile.png" alt="Home page mobile screenshot"></div>
+      </div>
+      <div class="issues"><b>Issues found:</b> <span class="ok">None.</span> <span class="note">Hero, live-queue mock, CTAs &amp; compliance badges render; hero text/subhead gap measured 15px (no overlap). Mobile stacks to one column with hamburger menu.</span></div>
+    </div>
+
+    <!-- PLATFORM -->
+    <div class="page">
+      <div class="page-h"><div class="t"><span class="n">Platform</span><span class="u">/platform</span></div><span class="pass"><i class="fas fa-circle-check"></i>Pass</span></div>
+      <div class="shots">
+        <div class="shot"><div class="lab"><i class="fas fa-desktop"></i>Desktop · 1180px</div><img src="../screenshots/evidence/platform-desktop.png" alt="Platform page desktop screenshot"></div>
+        <div class="shot mob"><div class="lab"><i class="fas fa-mobile-screen"></i>Mobile · 390px</div><img src="../screenshots/evidence/platform-mobile.png" alt="Platform page mobile screenshot"></div>
+      </div>
+      <div class="issues"><b>Issues found:</b> <span class="ok">None.</span> <span class="note">Capability cards + Trust Engine signal-bar spotlight render. Hero gap measured 14px (no overlap). Cards collapse to one column on mobile.</span></div>
+    </div>
+
+    <!-- INDUSTRIES -->
+    <div class="page">
+      <div class="page-h"><div class="t"><span class="n">Industries</span><span class="u">/industries</span></div><span class="pass"><i class="fas fa-circle-check"></i>Pass</span></div>
+      <div class="shots">
+        <div class="shot"><div class="lab"><i class="fas fa-desktop"></i>Desktop · 1180px</div><img src="../screenshots/evidence/industries-desktop.png" alt="Industries page desktop screenshot"></div>
+        <div class="shot mob"><div class="lab"><i class="fas fa-mobile-screen"></i>Mobile · 390px</div><img src="../screenshots/evidence/industries-mobile.png" alt="Industries page mobile screenshot"></div>
+      </div>
+      <div class="issues"><b>Issues found:</b> <span class="ok">None.</span> <span class="note">Sector grid with Live / Coming-soon badges renders; 2-up grid collapses to 1-up on mobile.</span></div>
+    </div>
+
+    <!-- DEVELOPERS -->
+    <div class="page">
+      <div class="page-h"><div class="t"><span class="n">Developers</span><span class="u">/developers</span></div><span class="pass"><i class="fas fa-circle-check"></i>Pass</span></div>
+      <div class="shots">
+        <div class="shot"><div class="lab"><i class="fas fa-desktop"></i>Desktop · 1180px</div><img src="../screenshots/evidence/developers-desktop.png" alt="Developers page desktop screenshot"></div>
+        <div class="shot mob"><div class="lab"><i class="fas fa-mobile-screen"></i>Mobile · 390px</div><img src="../screenshots/evidence/developers-mobile.png" alt="Developers page mobile screenshot"></div>
+      </div>
+      <div class="issues"><b>Issues found:</b> <span class="ok">None.</span> <span class="note">API code block, endpoints table &amp; SDK grid render. Hero gap measured 14px — the apparent overlap in a re-rendered thumbnail is a capture artifact, not present in the live DOM.</span></div>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="page">
+      <div class="page-h"><div class="t"><span class="n">Company</span><span class="u">/company</span></div><span class="pass"><i class="fas fa-circle-check"></i>Pass</span></div>
+      <div class="shots">
+        <div class="shot"><div class="lab"><i class="fas fa-desktop"></i>Desktop · 1180px</div><img src="../screenshots/evidence/company-desktop.png" alt="Company page desktop screenshot"></div>
+        <div class="shot mob"><div class="lab"><i class="fas fa-mobile-screen"></i>Mobile · 390px</div><img src="../screenshots/evidence/company-mobile.png" alt="Company page mobile screenshot"></div>
+      </div>
+      <div class="issues"><b>Issues found:</b> <span class="ok">None.</span> <span class="note">Values, stat bar &amp; certification grid render; all stat/value/cert grids collapse to one column on mobile.</span></div>
+    </div>
+
+    <!-- SIGN IN -->
+    <div class="page">
+      <div class="page-h"><div class="t"><span class="n">Sign in</span><span class="u">/signin</span></div><span class="pass"><i class="fas fa-circle-check"></i>Pass</span></div>
+      <div class="shots">
+        <div class="shot"><div class="lab"><i class="fas fa-desktop"></i>Desktop · 1180px</div><img src="../screenshots/evidence/signin-desktop.png" alt="Sign in page desktop screenshot"></div>
+        <div class="shot mob"><div class="lab"><i class="fas fa-mobile-screen"></i>Mobile · 390px</div><img src="../screenshots/evidence/signin-mobile.png" alt="Sign in page mobile screenshot"></div>
+      </div>
+      <div class="issues"><b>Issues found &amp; fixed:</b> <span class="note">Dead-end fixed — the sign-in logo was a no-op; added a working <b>"← Back to site"</b> link + logo route home. Required-field validation confirmed. Brand panel hides on mobile (single-column form).</span></div>
+    </div>
+
+    <!-- CONSOLE -->
+    <div class="page">
+      <div class="page-h"><div class="t"><span class="n">Verification Console</span><span class="u">/app</span></div><span class="pass"><i class="fas fa-circle-check"></i>Pass</span></div>
+      <div class="shots">
+        <div class="shot"><div class="lab"><i class="fas fa-desktop"></i>Desktop · 1180px</div><img src="../screenshots/evidence/console-desktop.png" alt="Verification console desktop screenshot"></div>
+        <div class="shot mob"><div class="lab"><i class="fas fa-mobile-screen"></i>Mobile · 390px</div><img src="../screenshots/evidence/console-mobile.png" alt="Verification console mobile screenshot"></div>
+      </div>
+      <div class="issues"><b>Issues found &amp; fixed:</b> <span class="note">Title/subtitle overlap fixed. Filters (all/approve/review/reject), row drill-in (detail rail + score dial recolor) and sign-out → site all verified. Console is a desktop-first tool; on mobile it scrolls horizontally below an 880px min-width (by design) rather than reflowing into an unusable state.</span></div>
+    </div>
+  </section>
+
+  <!-- 5. NAVIGATION -->
+  <section class="pad">
+    <div class="seclabel">5 · Navigation test results</div>
+    <h2>Navigation</h2>
+    <table>
+      <thead><tr><th>Test</th><th>Expected</th><th>Observed</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Nav → Platform</td><td>Platform hero</td><td>"One platform for ident…"</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Nav → Industries</td><td>Industries hero</td><td>"Built for every regula…"</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Nav → Developers</td><td>Developers hero</td><td>"Trust, in a few lines…"</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Nav → Company</td><td>Company hero</td><td>"Trust is infrastructur…"</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Logo → Home</td><td>Returns home</td><td>"Verify once…"</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Footer "Documentation"</td><td>Routes to a page (no dead link)</td><td>Routed → Developers</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Mobile hamburger menu</td><td>Opens nav drawer</td><td>Menu button shown &lt;760px, drawer toggles</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Sign-out → marketing site</td><td>Leaves console</td><td>Header + "Verify once…" restored</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 6. FORMS -->
+  <section class="pad">
+    <div class="seclabel">6 · Form test results</div>
+    <h2>Forms</h2>
+    <table>
+      <thead><tr><th>Form</th><th>Test</th><th>Observed</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Book a Demo modal</td><td>Opens on CTA</td><td>Modal + 4 fields rendered</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Book a Demo modal</td><td>Submit → confirmation</td><td>"You're all set" state shown</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Book a Demo modal</td><td>Done closes modal</td><td>Modal removed from DOM</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Sign in</td><td>Required fields</td><td><code>email.required = true</code>; empty submit blocked</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Sign in</td><td>Valid submit → console</td><td>Reached "Verification queue"</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Console filters</td><td>reject / approve / all</td><td>Rows filter &amp; restore correctly</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td>Console row drill-in</td><td>Updates detail rail</td><td>Helvetia → "Review" + signal bars</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7-9. LINKS & IMAGES -->
+  <section class="pad">
+    <div class="seclabel">7–9 · Image &amp; link validation</div>
+    <h2>Images &amp; links</h2>
+    <table>
+      <thead><tr><th>Check</th><th>Finding</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td><b>Image validation</b></td><td>0 <code>&lt;img&gt;</code> in the SPA — brand marks are Font Awesome glyphs + CSS, so no broken/missing raster images. Logo raster (<code>assets/verfix-logo-full.png</code>) validated separately on its brand card with <code>alt</code>.</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td><b>Internal links</b></td><td>27 anchors on home; <b>all keyboard-focusable</b> (<code>tabIndex=0</code> + Enter/Space) after fix; every nav (4/4) and footer link (21) routes to a live page. No <code>href="#"</code>, no dead anchors.</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td><b>External links</b></td><td>No outbound <code>&lt;a href&gt;</code> in the kit (social icons are decorative spans ×3). Canonical + OG + JSON-LD reference <code>verfix.swiss</code>. <span class="note">Note: footer "Status" &amp; "Changelog" route to the Developers page until dedicated pages exist — no dead links.</span></td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td><b>Metadata / SEO</b></td><td>description ✓ · canonical ✓ · 6 Open Graph tags ✓ · 2 JSON-LD blocks (Organization + SoftwareApplication) ✓ · viewport ✓ · <code>lang="en"</code> ✓</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+        <tr><td><b>Horizontal overflow</b></td><td>None at 1180px or 390px (<code>scrollWidth ≤ innerWidth</code>).</td><td><span class="res"><i class="fas fa-check"></i>Pass</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 10. CONSOLE -->
+  <section class="pad" style="border-bottom:none">
+    <div class="seclabel">10 · Console error report</div>
+    <h2>Console</h2>
+    <table>
+      <thead><tr><th>Severity</th><th>Message</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td><span class="yes">Errors: 0</span></td><td>—</td><td>No JavaScript errors across home, all pages, demo flow, sign-in, console filters, drill-in &amp; sign-out.</td></tr>
+        <tr><td>Warnings: 1</td><td><code>You are using the in-browser Babel transformer…</code></td><td>Expected for an in-browser JSX prototype; precompile for production. Not a runtime fault.</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:1.2rem;display:inline-flex;align-items:center;gap:.5rem;background:var(--vx-success-bg);color:var(--vx-success-fg);border-radius:100px;padding:.3rem .9rem;font-size:.8rem;font-weight:700;"><i class="fas fa-circle-check"></i> All 7 pages PASS · 0 console errors · navigation, forms &amp; links verified</p>
+  </section>
+
+  <footer>
+    VerfiX Design System · QA Verification Report · Screenshots and test results captured live from <code style="color:#fff">ui_kits/website/index.html</code>. Routes shown as production URLs map to single-page-app states. Mobile screenshots captured at a 390px frame with the site's own responsive breakpoint rules applied.
+  </footer>
+
+</div>
+</body>
+</html>

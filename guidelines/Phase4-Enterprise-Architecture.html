@@ -1,0 +1,291 @@
+<!-- @dsCard group="VerfiX Website" viewport="1100x900" name="Phase 4 — Enterprise Architecture & Due Diligence" subtitle="System/data/sequence/deploy architecture, Trust Engine, workflow, security, compliance, observability, pilot kit & MVP roadmap" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VerfiX — Phase 4 Enterprise Architecture</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--vx-off);font-family:var(--font-body);color:var(--vx-text);line-height:1.6;}
+  .wrap{max-width:1000px;margin:0 auto;background:#fff;}
+  header.top{background:var(--vx-navy);color:#fff;padding:3rem 3.5rem 2.6rem;}
+  .kick{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--vx-red);margin-bottom:1.1rem;}
+  .kick::before{content:'';width:16px;height:1.5px;background:var(--vx-red);}
+  header.top h1{font-size:2.4rem;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin:0 0 .7rem;}
+  header.top p{color:rgba(255,255,255,.62);max-width:600px;margin:0;font-size:.98rem;}
+  .hmeta{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.12);}
+  .hmeta .l{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+  .hmeta .v{font-weight:700;font-size:.95rem;margin-top:2px;}
+  .pad{padding:0 3.5rem;}
+  @media(max-width:700px){.pad{padding:0 1.4rem;}header.top{padding:2.2rem 1.4rem;}.split{grid-template-columns:1fr!important;}.row3,.row4{grid-template-columns:1fr!important;}}
+  section{padding:2.8rem 0;border-bottom:1px solid var(--vx-border);}
+  .seclabel{font-family:var(--font-mono);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--vx-red);}
+  h2{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;margin:.4rem 0 1.2rem;}
+  h3{font-size:1rem;font-weight:800;margin:1.3rem 0 .6rem;}
+  table{width:100%;border-collapse:collapse;font-size:.82rem;}
+  th{text-align:left;font-family:var(--font-mono);font-size:.55rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--vx-light);padding:.5rem .6rem;border-bottom:1px solid var(--vx-border);}
+  td{padding:.55rem .6rem;border-bottom:1px solid var(--vx-off);vertical-align:top;}
+  code,.mono{font-family:var(--font-mono);font-size:.74rem;color:var(--vx-navy);}
+  ul{margin:.3rem 0 0;padding-left:1.1rem;}li{margin-bottom:.38rem;font-size:.85rem;}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+  .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
+  .row4{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;}
+  /* diagram blocks */
+  .layer{border:1px solid var(--vx-border);border-radius:8px;padding:.75rem .9rem;background:#fff;text-align:center;}
+  .layer .n{font-weight:700;font-size:.82rem;}
+  .layer .d{font-size:.68rem;color:var(--vx-light);margin-top:1px;}
+  .layer.red{background:var(--vx-red);border-color:var(--vx-red);color:#fff;}
+  .layer.red .d{color:rgba(255,255,255,.7);}
+  .layer.navy{background:var(--vx-navy);border-color:var(--vx-navy);color:#fff;}
+  .layer.navy .d{color:rgba(255,255,255,.6);}
+  .stack{display:flex;flex-direction:column;gap:.5rem;}
+  .conn{height:16px;width:2px;background:var(--vx-border-2);margin:0 auto;}
+  .pill{display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:.14rem .42rem;border-radius:3px;white-space:nowrap;}
+  .live{background:var(--vx-success-bg);color:var(--vx-success-fg);}
+  .design{background:var(--vx-info-bg);color:var(--vx-info-fg);}
+  .build{background:var(--vx-warn-bg);color:var(--vx-warn-fg);}
+  /* sequence */
+  .seq{display:flex;flex-direction:column;gap:.35rem;font-size:.8rem;}
+  .seqrow{display:flex;align-items:center;gap:.6rem;padding:.4rem 0;border-bottom:1px solid var(--vx-off);}
+  .seqrow .num{font-family:var(--font-mono);font-size:.66rem;color:var(--vx-red);font-weight:700;width:20px;flex-shrink:0;}
+  .seqrow .a{font-family:var(--font-mono);font-size:.7rem;color:var(--vx-navy);background:var(--vx-off);border-radius:4px;padding:.1rem .4rem;white-space:nowrap;}
+  .callout{display:flex;align-items:flex-start;gap:.7rem;background:var(--vx-red-bg);border:1px solid var(--vx-red-line);border-radius:8px;padding:.9rem 1.1rem;font-size:.85rem;margin-top:1.3rem;}
+  .scoregrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;}
+  @media(max-width:700px){.scoregrid{grid-template-columns:1fr 1fr;}}
+  .scard{border:1px solid var(--vx-border);border-top:3px solid var(--vx-red);border-radius:8px;padding:.9rem 1rem;}
+  .scard .dim{font-size:.74rem;font-weight:700;color:var(--vx-muted);}
+  .scard .num{font-family:var(--font-mono);font-size:1.5rem;font-weight:700;letter-spacing:-.03em;margin:.2rem 0;}
+  .bar{height:4px;background:var(--vx-off);border-radius:2px;overflow:hidden;}.bar i{display:block;height:100%;border-radius:2px;}
+  footer{padding:2.2rem 3.5rem;background:var(--vx-navy-3);color:rgba(255,255,255,.6);font-size:.78rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="kick">Phase 4 · Enterprise Architecture &amp; Due Diligence</div>
+    <h1>The platform under the platform</h1>
+    <p>System, data, sequence and deployment architecture; the Trust Engine™ and workflow design; security and compliance architecture; observability; and the pilot deployment kit — the technical package a bank, fintech or regulator's evaluation team reads.</p>
+    <div class="hmeta">
+      <div><div class="l">Architecture layers</div><div class="v">7</div></div>
+      <div><div class="l">Deployment models</div><div class="v">3</div></div>
+      <div><div class="l">Status</div><div class="v">Design + reference UI</div></div>
+      <div><div class="l">Date</div><div class="v">Jun 2026</div></div>
+    </div>
+  </header>
+
+  <!-- legend -->
+  <section class="pad" style="padding-bottom:1.4rem">
+    <div style="display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.78rem;color:var(--vx-muted)">
+      <span><span class="pill live">UI built</span> interactive reference exists</span>
+      <span><span class="pill design">Designed</span> architecture specified here</span>
+      <span><span class="pill build">To build</span> production engineering</span>
+    </div>
+  </section>
+
+  <!-- 1. SYSTEM ARCHITECTURE -->
+  <section class="pad">
+    <div class="seclabel">1 · System architecture</div>
+    <h2>Seven-layer platform</h2>
+    <div class="stack" style="max-width:560px;margin:0 auto">
+      <div class="layer navy"><div class="n">Frontend</div><div class="d">Marketing site · Console · Dev Portal · Orchestration <span class="pill live" style="margin-left:6px">UI built</span></div></div>
+      <div class="conn"></div>
+      <div class="layer red"><div class="n">API Gateway</div><div class="d">Auth, rate limiting, routing, request validation</div></div>
+      <div class="conn"></div>
+      <div class="row3" style="gap:.5rem">
+        <div class="layer"><div class="n">Trust Engine™</div><div class="d">Scoring + decision</div></div>
+        <div class="layer"><div class="n">Workflow Engine</div><div class="d">STP · review · EDD</div></div>
+        <div class="layer"><div class="n">Provider Connectors</div><div class="d">OCR·Face·AML·KYB·Fraud</div></div>
+      </div>
+      <div class="conn"></div>
+      <div class="split" style="gap:.5rem">
+        <div class="layer navy"><div class="n">Audit Layer</div><div class="d">Immutable, tamper-evident log</div></div>
+        <div class="layer navy"><div class="n">Reporting Layer</div><div class="d">Evidence packs · exports</div></div>
+      </div>
+    </div>
+    <p style="font-size:.8rem;color:var(--vx-light);margin-top:1rem;text-align:center">Each layer is independently scalable and replaceable. The orchestration layer (Provider Connectors) is what keeps VerfiX vendor-neutral.</p>
+  </section>
+
+  <!-- 2. DATA FLOW -->
+  <section class="pad">
+    <div class="seclabel">2 · Data flow</div>
+    <h2>A verification, end to end</h2>
+    <div class="row4">
+      <div class="layer"><div class="n">1 · Capture</div><div class="d">Document + selfie via hosted or SDK</div></div>
+      <div class="layer"><div class="n">2 · Orchestrate</div><div class="d">Route to providers per rules</div></div>
+      <div class="layer"><div class="n">3 · Score</div><div class="d">Trust Engine fuses signals</div></div>
+      <div class="layer"><div class="n">4 · Decide</div><div class="d">Approve / Review / Reject + webhook</div></div>
+    </div>
+    <h3>Data classification &amp; residency</h3>
+    <table>
+      <thead><tr><th>Data class</th><th>Example</th><th>At rest</th><th>Retention</th></tr></thead>
+      <tbody>
+        <tr><td>Identity document</td><td>Passport image</td><td>AES-256, CH/EU</td><td>5y or per policy</td></tr>
+        <tr><td>Biometric template</td><td>Face vector</td><td>AES-256, CH/EU</td><td>30d after decision</td></tr>
+        <tr><td>Decision metadata</td><td>Score, signals, verdict</td><td>AES-256, CH/EU</td><td>10y (AMLA)</td></tr>
+        <tr><td>Audit record</td><td>Who did what, when</td><td>Append-only store</td><td>10y</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. SEQUENCE -->
+  <section class="pad">
+    <div class="seclabel">3 · Sequence diagram</div>
+    <h2>Request → decision</h2>
+    <div class="seq">
+      <div class="seqrow"><span class="num">1</span><span class="a">Client</span><i class="fas fa-arrow-right" style="color:var(--vx-light);font-size:.7rem"></i><span class="a">API Gateway</span><span style="color:var(--vx-muted)">POST /v2/verifications (Bearer key)</span></div>
+      <div class="seqrow"><span class="num">2</span><span class="a">Gateway</span><i class="fas fa-arrow-right" style="color:var(--vx-light);font-size:.7rem"></i><span class="a">Workflow</span><span style="color:var(--vx-muted)">Create case, pick policy</span></div>
+      <div class="seqrow"><span class="num">3</span><span class="a">Workflow</span><i class="fas fa-arrow-right" style="color:var(--vx-light);font-size:.7rem"></i><span class="a">Connectors</span><span style="color:var(--vx-muted)">Route to OCR · Face · AML providers (+ failover)</span></div>
+      <div class="seqrow"><span class="num">4</span><span class="a">Connectors</span><i class="fas fa-arrow-right" style="color:var(--vx-light);font-size:.7rem"></i><span class="a">Trust Engine</span><span style="color:var(--vx-muted)">Return signals → fuse to score</span></div>
+      <div class="seqrow"><span class="num">5</span><span class="a">Trust Engine</span><i class="fas fa-arrow-right" style="color:var(--vx-light);font-size:.7rem"></i><span class="a">Workflow</span><span style="color:var(--vx-muted)">Score + tier → STP / review / EDD</span></div>
+      <div class="seqrow"><span class="num">6</span><span class="a">Workflow</span><i class="fas fa-arrow-right" style="color:var(--vx-light);font-size:.7rem"></i><span class="a">Audit + Client</span><span style="color:var(--vx-muted)">Log decision · emit webhook</span></div>
+    </div>
+  </section>
+
+  <!-- 4. DEPLOYMENT -->
+  <section class="pad">
+    <div class="seclabel">4 · Deployment architecture</div>
+    <h2>Three deployment models</h2>
+    <div class="row3">
+      <div class="layer" style="text-align:left;padding:1.1rem"><i class="fas fa-cloud" style="color:var(--vx-red)"></i><div class="n" style="margin-top:.5rem">VerfiX Cloud</div><div style="font-size:.8rem;color:var(--vx-muted);margin-top:.3rem">Multi-tenant SaaS in CH/EU regions. Fastest to launch; VerfiX-managed.</div></div>
+      <div class="layer" style="text-align:left;padding:1.1rem"><i class="fas fa-server" style="color:var(--vx-red)"></i><div class="n" style="margin-top:.5rem">Private Cloud</div><div style="font-size:.8rem;color:var(--vx-muted);margin-top:.3rem">Single-tenant in a dedicated CH/EU VPC. Isolation + custom terms.</div></div>
+      <div class="layer" style="text-align:left;padding:1.1rem"><i class="fas fa-building-shield" style="color:var(--vx-red)"></i><div class="n" style="margin-top:.5rem">On-Premise</div><div style="font-size:.8rem;color:var(--vx-muted);margin-top:.3rem">Inside your infrastructure. Data never leaves your perimeter.</div></div>
+    </div>
+  </section>
+
+  <!-- 5. TRUST ENGINE + WORKFLOW -->
+  <section class="pad">
+    <div class="seclabel">5 · Trust Engine™ &amp; Workflow Engine</div>
+    <h2>Scoring and routing</h2>
+    <div class="split">
+      <div>
+        <h3 style="margin-top:0">Trust Engine inputs → outputs</h3>
+        <p style="font-size:.84rem;color:var(--vx-muted);margin:0 0 .5rem">Signals in: OCR, face match, liveness, AML, KYB, device, fraud. Out: <b>0–100 score</b>, <b>risk tier</b>, <b>decision</b> — with an explainability record naming the contributing signals.</p>
+        <ul><li>Weighted, configurable per policy (Rules Builder).</li><li>Every score change is traceable + regulator-explainable.</li><li>Deterministic in sandbox for testing.</li></ul>
+        <span class="pill live">UI built</span> <span class="pill build" style="margin-left:6px">Engine to build</span>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Workflow routing</h3>
+        <table>
+          <thead><tr><th>Risk tier</th><th>Path</th></tr></thead>
+          <tbody>
+            <tr><td><b>Low</b></td><td>Straight-through → auto-approve</td></tr>
+            <tr><td><b>Medium</b></td><td>Manual review → analyst</td></tr>
+            <tr><td><b>High</b></td><td>Enhanced due diligence → escalate</td></tr>
+            <tr><td><b>Critical</b></td><td>Supervisor review + hold</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SECURITY ARCHITECTURE -->
+  <section class="pad">
+    <div class="seclabel">6 · Security architecture</div>
+    <h2>Defense in depth</h2>
+    <div class="row3">
+      <div class="layer" style="text-align:left;padding:1rem"><div class="n">Authentication</div><div style="font-size:.78rem;color:var(--vx-muted);margin-top:.3rem">SSO / SAML / OAuth · MFA · session controls · IP allow-lists</div></div>
+      <div class="layer" style="text-align:left;padding:1rem"><div class="n">Encryption</div><div style="font-size:.78rem;color:var(--vx-muted);margin-top:.3rem">TLS 1.3 in transit · AES-256 at rest · per-env key isolation</div></div>
+      <div class="layer" style="text-align:left;padding:1rem"><div class="n">Secrets &amp; keys</div><div style="font-size:.78rem;color:var(--vx-muted);margin-top:.3rem">Managed secrets store · rotation · KMS-backed key management</div></div>
+    </div>
+    <h3>Multi-tenant RBAC</h3>
+    <table>
+      <thead><tr><th>Role</th><th>Can do</th></tr></thead>
+      <tbody>
+        <tr><td><b>Admin</b></td><td>Manage org, workspaces, teams, keys, billing</td></tr>
+        <tr><td><b>Compliance Officer</b></td><td>Set policies, approve/reject, export evidence</td></tr>
+        <tr><td><b>Investigator</b></td><td>Work cases, escalate, add notes</td></tr>
+        <tr><td><b>Analyst</b></td><td>Review queue, recommend decisions</td></tr>
+        <tr><td><b>Viewer</b></td><td>Read-only dashboards &amp; reports</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.8rem;color:var(--vx-light);margin-top:.6rem">Organizations → workspaces → teams, with role-based access at each level.</p>
+  </section>
+
+  <!-- 7. COMPLIANCE + OBSERVABILITY -->
+  <section class="pad">
+    <div class="seclabel">7 · Compliance &amp; observability</div>
+    <h2>Audit, evidence, monitoring</h2>
+    <div class="split">
+      <div>
+        <h3 style="margin-top:0">Compliance engine</h3>
+        <ul>
+          <li><b>Immutable audit</b> of user actions, decisions, policy changes.</li>
+          <li><b>Reporting</b> mapped to GDPR, nFADP, AMLA.</li>
+          <li><b>Evidence packs</b> — PDF reports, audit + regulatory exports.</li>
+        </ul>
+        <span class="pill live">UI built</span> <span class="pill design" style="margin-left:6px">Engine designed</span>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Observability</h3>
+        <p style="font-size:.84rem;color:var(--vx-muted);margin:0 0 .5rem">Monitoring, logging, metrics and alerts across:</p>
+        <ul><li>Verification volume &amp; error rates</li><li>Provider failures &amp; failover events</li><li>Latency per signal / provider</li><li>SLA &amp; uptime (surfaced on the Status Page)</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PILOT KIT + DUE DILIGENCE -->
+  <section class="pad">
+    <div class="seclabel">8 · Pilot deployment kit &amp; due-diligence package</div>
+    <h2>What a pilot customer receives</h2>
+    <div class="split">
+      <div>
+        <h3 style="margin-top:0">Pilot deployment kit</h3>
+        <table><tbody>
+          <tr><td>Pilot environment</td><td><span class="pill build">Provision</span></td></tr>
+          <tr><td>Demo environment</td><td><span class="pill live">UI built</span></td></tr>
+          <tr><td>Sandbox environment</td><td><span class="pill live">UI built</span></td></tr>
+          <tr><td>Customer onboarding pack</td><td><span class="pill design">Designed</span></td></tr>
+          <tr><td>Technical deployment guide</td><td><span class="pill design">Designed</span></td></tr>
+        </tbody></table>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Enterprise due-diligence package</h3>
+        <ul>
+          <li>Security architecture (this doc, §6)</li>
+          <li>Compliance architecture (§7)</li>
+          <li>Technical &amp; product architecture (§1–5)</li>
+          <li>Data-flow documentation (§2)</li>
+          <li>Vendor assessment + sub-processor list (Trust Center)</li>
+        </ul>
+        <p style="font-size:.78rem;color:var(--vx-light)">Suitable for banks, fintechs, insurers and government evaluation teams.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. MVP ROADMAP + SCORES -->
+  <section class="pad" style="border-bottom:none">
+    <div class="seclabel">9 · MVP build roadmap &amp; readiness</div>
+    <h2>From reference to production</h2>
+    <table>
+      <thead><tr><th>Milestone</th><th>Scope</th><th>State</th></tr></thead>
+      <tbody>
+        <tr><td><b>M0 · Reference UI</b></td><td>All surfaces, flows, architecture specified</td><td><span class="pill live">Done</span></td></tr>
+        <tr><td><b>M1 · Core API + 1 provider</b></td><td>Gateway, auth, one OCR + one AML provider, Trust Engine v1</td><td><span class="pill build">Build</span></td></tr>
+        <tr><td><b>M2 · Orchestration + failover</b></td><td>Provider registry, routing, fallback live</td><td><span class="pill build">Build</span></td></tr>
+        <tr><td><b>M3 · Workflow + case mgmt</b></td><td>STP/review/EDD, analyst console wired to real data</td><td><span class="pill build">Build</span></td></tr>
+        <tr><td><b>M4 · Pilot hardening</b></td><td>Multi-tenant, RBAC, audit, observability, SLA</td><td><span class="pill build">Build</span></td></tr>
+        <tr><td><b>M5 · Certification</b></td><td>ISO 27001 → SOC 2; pen-test</td><td><span class="pill build">Roadmap</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Enterprise architecture readiness</h3>
+    <div class="scoregrid">
+      <div class="scard"><div class="dim">Architecture clarity</div><div class="num" style="color:var(--vx-success)">88</div><div class="bar"><i style="width:88%;background:var(--vx-success)"></i></div></div>
+      <div class="scard"><div class="dim">Security design</div><div class="num" style="color:var(--vx-success)">84</div><div class="bar"><i style="width:84%;background:var(--vx-success)"></i></div></div>
+      <div class="scard"><div class="dim">Reference UI depth</div><div class="num" style="color:var(--vx-success)">92</div><div class="bar"><i style="width:92%;background:var(--vx-success)"></i></div></div>
+      <div class="scard"><div class="dim">Production build</div><div class="num" style="color:var(--vx-reject)">15</div><div class="bar"><i style="width:15%;background:var(--vx-reject)"></i></div></div>
+    </div>
+    <div class="callout"><i class="fas fa-circle-info" style="color:var(--vx-red);margin-top:2px"></i><div><b>Honest framing.</b> Phase 4 delivers the <b>architecture and reference UI</b> of an enterprise platform — not running production code. Nothing here claims VerfiX processes live verifications today. "To build" marks the real engineering ahead; "UI built" marks the clickable reference that exists. No fake certifications, customers or traction were added.</div></div>
+  </section>
+
+  <footer>
+    VerfiX Design System · Phase 4 Enterprise Architecture &amp; Due Diligence · Architecture specifications + interactive reference build. Production engineering is scoped, not implemented.
+  </footer>
+
+</div>
+</body>
+</html>

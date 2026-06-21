@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Technical Architecture Document | VerfiX AG</title>
+  <meta name="description" content="Platform components, data layers, deployment models, and design principles">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 20 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › Technical Architecture Document</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 20 of 30</div>
+    <h1>Technical Architecture Document</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">Platform components, data layers, deployment models, and design principles</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>Technical Architecture Document</p>
+<p>Platform Architecture and Design Principles</p>
+<h2>VerfiX Technical Architecture</h2>
+<p>This document describes the technical architecture of the VerfiX identity verification platform, including its components, data flows, deployment models, and design principles. It is intended for technical evaluators and enterprise architects assessing VerfiX for integration into regulated environments.</p>
+<h3>Architecture Principles</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Principle</th>
+<th>Description</th>
+</tr></thead><tbody>
+<tr>
+<td>API-first</td>
+<td>Every capability is exposed through a documented REST API. No capability exists that is not API-accessible. This ensures full integration flexibility and eliminates vendor lock-in to proprietary interfaces.</td>
+</tr>
+<tr class="alt">
+<td>Stateless services</td>
+<td>Each API request is self-contained and does not depend on server-side session state. This enables horizontal scaling and geographic redundancy within Switzerland.</td>
+</tr>
+<tr>
+<td>Data minimisation by default</td>
+<td>The platform is configured by default to process the minimum biometric data necessary for the verification purpose. Raw biometric data (document images, facial photographs) is not retained beyond the session unless explicitly configured.</td>
+</tr>
+<tr class="alt">
+<td>Immutable audit trail</td>
+<td>Every significant platform event generates an immutable audit record that cannot be modified or deleted through normal application paths. Records are cryptographically linked to enable tamper detection.</td>
+</tr>
+<tr>
+<td>Defence in depth</td>
+<td>Security controls are applied at multiple layers: network, application, data, and audit. No single control failure results in a security breach.</td>
+</tr>
+<tr class="alt">
+<td>Swiss residency</td>
+<td>All compute, storage, and network traffic handling personal data is confined to Swiss territory. No cross-border routing of personal data.</td>
+</tr>
+</tbody></table></div>
+<h3>Component Architecture</h3>
+<div class="diagram"><i class="icon">⬡</i> <em>Diagram: VerfiX Platform Components — External Layer: Customer Applications (Web / Mobile / API Client) → API Gateway Layer: Load Balancer → API Gateway (Authentication, Rate Limiting, Request Routing) → Service Layer: KYC Service | KYB Service | AML Screening Service | Trust Engine Service | eID Gateway Service → Data Layer: Identity Processing (ephemeral) | Audit Trail Store (immutable) | Configuration Store | Event Queue → Infrastructure Layer: Swiss Data Centre Primary | Swiss Data Centre Secondary (HA)</em></div>
+<h3>API Gateway</h3>
+<p>All external requests pass through the API Gateway layer, which handles:</p>
+<ul><li><span class="li-arrow">›</span><span>TLS termination (TLS 1.3 minimum)</span></li><li><span class="li-arrow">›</span><span>API key authentication and scoping</span></li><li><span class="li-arrow">›</span><span>Rate limiting and throttling</span></li><li><span class="li-arrow">›</span><span>Request logging (metadata only — no personal data in logs)</span></li><li><span class="li-arrow">›</span><span>Request routing to appropriate service</span></li><li><span class="li-arrow">›</span><span>Response caching for non-personal-data responses</span></li></ul>
+<h3>Service Architecture</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Service</th>
+<th>Function</th>
+<th>Data handled</th>
+</tr></thead><tbody>
+<tr>
+<td>KYC Service</td>
+<td>Document verification, OCR, MRZ extraction, NFC chip reading, face match, liveness detection</td>
+<td>Document images (ephemeral), biometric data (ephemeral by default), verification results (retained)</td>
+</tr>
+<tr class="alt">
+<td>KYB Service</td>
+<td>Company registry lookup, ownership mapping, UBO identification, director verification</td>
+<td>Company data, UBO identity data, registry responses</td>
+</tr>
+<tr>
+<td>AML Screening Service</td>
+<td>Sanctions, PEP, and adverse media screening against external list providers</td>
+<td>Name, DOB, nationality (query parameters). No full identity record transmitted to list providers.</td>
+</tr>
+<tr class="alt">
+<td>Trust Engine Service</td>
+<td>Risk score aggregation, decision rule application, fraud signal processing</td>
+<td>Verification signals from other services. No direct personal data — operates on derived scores.</td>
+</tr>
+<tr>
+<td>eID Gateway Service</td>
+<td>EU Digital Identity Wallet credential validation and attribute extraction</td>
+<td>EU EUDIW credential presentation. Credential validated; attributes extracted and standardised.</td>
+</tr>
+<tr class="alt">
+<td>Audit Service</td>
+<td>Immutable event logging, audit trail generation, audit record export</td>
+<td>Audit metadata, verification outcomes, screening results. Cryptographic linking.</td>
+</tr>
+</tbody></table></div>
+<h3>Data Architecture</h3>
+<h4>Ephemeral Processing Layer</h4>
+<p>Raw biometric data (document images, selfie photographs) is processed in an isolated ephemeral environment. This data is:</p>
+<ul><li><span class="li-arrow">›</span><span>Not written to persistent storage in raw form (by default)</span></li><li><span class="li-arrow">›</span><span>Processed in memory and immediately discarded after verification is complete</span></li><li><span class="li-arrow">›</span><span>Never accessible via API after the verification session closes</span></li><li><span class="li-arrow">›</span><span>Encrypted in transit using TLS 1.3 during transmission to and within the processing layer</span></li></ul>
+<h4>Persistent Data Layer</h4>
+<p>Verification results, risk scores, AML screening results, and audit trail records are stored in the persistent data layer. These records:</p>
+<ul><li><span class="li-arrow">›</span><span>Are encrypted at rest using AES-256-GCM</span></li><li><span class="li-arrow">›</span><span>Are access-controlled by RBAC — only the owning organisation's API keys can retrieve their own records</span></li><li><span class="li-arrow">›</span><span>Are retained for the period specified in the customer's DPA (default: 10 years for GwG compliance)</span></li><li><span class="li-arrow">›</span><span>Are cryptographically linked to enable tamper detection</span></li></ul>
+<h3>Deployment Models</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Model</th>
+<th>Architecture</th>
+<th>Data control</th>
+<th>Recommended for</th>
+</tr></thead><tbody>
+<tr>
+<td>Swiss Cloud</td>
+<td>Multi-tenant managed service in certified Swiss data centres</td>
+<td>VerfiX manages infrastructure; customer data logically isolated</td>
+<td>Most organisations — fastest time to value</td>
+</tr>
+<tr class="alt">
+<td>Private Cloud</td>
+<td>Single-tenant dedicated infrastructure in Swiss data centres</td>
+<td>Customer data on dedicated infrastructure; VerfiX manages platform</td>
+<td>Banks and regulated entities requiring dedicated infrastructure</td>
+</tr>
+<tr>
+<td>On-Premise</td>
+<td>Full platform deployed within customer's own infrastructure</td>
+<td>Customer controls all infrastructure and data</td>
+<td>Organisations with the strictest data sovereignty requirements</td>
+</tr>
+</tbody></table></div>
+<h3>High Availability and Resilience</h3>
+<ul><li><span class="li-arrow">›</span><span>Primary and secondary Swiss data centres in separate geographic locations</span></li><li><span class="li-arrow">›</span><span>Automatic failover between data centre locations — no manual intervention required</span></li><li><span class="li-arrow">›</span><span>Stateless service design enables horizontal scaling under load</span></li><li><span class="li-arrow">›</span><span>API uptime SLA: defined in the service agreement per deployment model</span></li><li><span class="li-arrow">›</span><span>Audit trail: replicated synchronously to secondary location. No risk of audit record loss.</span></li></ul>
+<h3>Network Architecture</h3>
+<ul><li><span class="li-arrow">›</span><span>All external communication over TLS 1.3. HTTP not accepted.</span></li><li><span class="li-arrow">›</span><span>Internal service-to-service communication encrypted and mutually authenticated</span></li><li><span class="li-arrow">›</span><span>Network segmentation: Processing layer, data layer, and audit layer on separate network segments with firewall rules between segments</span></li><li><span class="li-arrow">›</span><span>API IP range available for customer firewall allowlisting on request</span></li><li><span class="li-arrow">›</span><span>DDoS protection applied at the network edge</span></li></ul>
+<p>contact@verfix.ch  |  verfix.ch</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

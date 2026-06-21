@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>API Documentation | VerfiX AG</title>
+  <meta name="description" content="REST API reference v1 — document verification, AML, KYB, Trust Engine">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 08 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › API Documentation</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 08 of 30</div>
+    <h1>API Documentation</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">REST API reference v1 — document verification, AML, KYB, Trust Engine</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>API Documentation</p>
+<p>REST API Reference — v1</p>
+<h2>VerfiX REST API — Reference Documentation</h2>
+<p>The VerfiX API provides programmatic access to all VerfiX platform capabilities through a RESTful interface. All requests and responses use JSON. All endpoints require authentication via Bearer token.</p>
+<h3>Base URL and Environments</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Environment</th>
+<th>Base URL</th>
+<th>Use</th>
+</tr></thead><tbody>
+<tr>
+<td>Production</td>
+<td>https://api.verfix.ch/v1</td>
+<td>Live verification. Billed.</td>
+</tr>
+<tr class="alt">
+<td>Sandbox</td>
+<td>https://sandbox.api.verfix.ch/v1</td>
+<td>Integration testing. Not billed. Test data only.</td>
+</tr>
+</tbody></table></div>
+<h3>Authentication</h3>
+<p>All API requests must include a Bearer token in the Authorization header:</p>
+<pre><code>Authorization: Bearer vfx_live_xxxxxxxxxxxxxxxxxxxxxxxx</code></pre>
+<p>API keys are issued per deployment and can be rotated from the VerfiX dashboard. Use vfx_test_ prefix for sandbox keys. API keys are environment-scoped — sandbox keys cannot be used in production.</p>
+<h3>Endpoints Overview</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr></thead><tbody>
+<tr>
+<td>POST</td>
+<td>/v1/verify/document</td>
+<td>Verify an identity document (OCR, MRZ, security features)</td>
+</tr>
+<tr class="alt">
+<td>POST</td>
+<td>/v1/verify/face</td>
+<td>Biometric face match with liveness detection</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/v1/verify/voice</td>
+<td>Voice biometric verification for telephone authentication</td>
+</tr>
+<tr class="alt">
+<td>POST</td>
+<td>/v1/verify/nfc</td>
+<td>NFC chip data extraction and validation from ePassport</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/v1/kyb/company</td>
+<td>Business verification — company registry lookup and ownership mapping</td>
+</tr>
+<tr class="alt">
+<td>POST</td>
+<td>/v1/kyb/ubo</td>
+<td>Identify and return ultimate beneficial owners above threshold</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/v1/screen/aml</td>
+<td>AML, PEP, and sanctions screening for individual or entity</td>
+</tr>
+<tr class="alt">
+<td>POST</td>
+<td>/v1/trust-score</td>
+<td>Generate composite Trust Score from provided verification IDs</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/v1/verification/{id}</td>
+<td>Retrieve full verification record including audit trail</td>
+</tr>
+<tr class="alt">
+<td>GET</td>
+<td>/v1/audit/{id}</td>
+<td>Retrieve audit trail for a specific verification event</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/v1/webhooks</td>
+<td>Register a webhook endpoint for event notifications</td>
+</tr>
+<tr class="alt">
+<td>GET</td>
+<td>/v1/webhooks</td>
+<td>List all registered webhook endpoints</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>/v1/webhooks/{id}</td>
+<td>Remove a webhook endpoint registration</td>
+</tr>
+</tbody></table></div>
+<h3>Request and Response Format</h3>
+<h4>POST /v1/verify/document — Example Request</h4>
+<pre><code>Content-Type: application/json</code></pre>
+<pre><code>{ &quot;image_front&quot;: &quot;&lt;base64_encoded_image&gt;&quot;, &quot;image_back&quot;: &quot;&lt;base64_encoded_image&gt;&quot;, &quot;country&quot;: &quot;CH&quot;, &quot;document_type&quot;: &quot;national_id&quot; }</code></pre>
+<h4>POST /v1/verify/document — Example Response</h4>
+<pre><code>{ &quot;verification_id&quot;: &quot;vfy_3KvB9cH2mNpQrT&quot;, &quot;status&quot;: &quot;completed&quot;, &quot;result&quot;: &quot;approved&quot;, &quot;document&quot;: { &quot;type&quot;: &quot;national_id&quot;, &quot;country&quot;: &quot;CH&quot;, &quot;first_name&quot;: &quot;Max&quot;, &quot;last_name&quot;: &quot;Mustermann&quot;, &quot;date_of_birth&quot;: &quot;1985-03-14&quot;, &quot;document_number&quot;: &quot;X1234567&quot;, &quot;expiry_date&quot;: &quot;2030-06-15&quot;, &quot;mrz_valid&quot;: true }, &quot;fraud_signals&quot;: { &quot;is_tampered&quot;: false, &quot;fraud_score&quot;: 3 }, &quot;audit_id&quot;: &quot;aud_7mK2pR9xQv&quot;, &quot;processing_time_ms&quot;: 1247 }</code></pre>
+<h3>Error Codes</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>HTTP Code</th>
+<th>Error Code</th>
+<th>Meaning</th>
+<th>Action</th>
+</tr></thead><tbody>
+<tr>
+<td>400</td>
+<td>invalid_request</td>
+<td>Request body is malformed or missing required fields</td>
+<td>Check request body against API documentation</td>
+</tr>
+<tr class="alt">
+<td>401</td>
+<td>unauthorized</td>
+<td>Missing or invalid API key</td>
+<td>Verify Authorization header and key prefix</td>
+</tr>
+<tr>
+<td>403</td>
+<td>forbidden</td>
+<td>API key does not have permission for this endpoint</td>
+<td>Check key scopes in dashboard</td>
+</tr>
+<tr class="alt">
+<td>422</td>
+<td>unprocessable_image</td>
+<td>Image quality too low or format not supported</td>
+<td>Retry with higher quality image. Minimum 640x480px.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>rate_limited</td>
+<td>Rate limit exceeded</td>
+<td>Retry after X-RateLimit-Reset header timestamp</td>
+</tr>
+<tr class="alt">
+<td>500</td>
+<td>internal_error</td>
+<td>Server error</td>
+<td>Retry with exponential backoff. Contact support if persistent.</td>
+</tr>
+</tbody></table></div>
+<h3>Rate Limits</h3>
+<p>Default rate limits apply per API key. All responses include rate limit headers:</p>
+<ul><li><span class="li-arrow">›</span><span>X-RateLimit-Limit: Maximum requests per window</span></li><li><span class="li-arrow">›</span><span>X-RateLimit-Remaining: Requests remaining in current window</span></li><li><span class="li-arrow">›</span><span>X-RateLimit-Reset: Unix timestamp when window resets</span></li></ul>
+<p>Default limit: 100 requests per minute per API key. Enterprise limits are negotiated as part of the service agreement. Contact sales for volume requirements.</p>
+<h3>Webhooks</h3>
+<p>VerfiX supports webhook notifications for asynchronous events. Register an endpoint via POST /v1/webhooks with a URL and event filter. VerfiX sends a POST request to the registered URL on each matching event.</p>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Event</th>
+<th>Trigger</th>
+</tr></thead><tbody>
+<tr>
+<td>verification.completed</td>
+<td>Any verification (KYC, KYB, voice, NFC) has completed processing</td>
+</tr>
+<tr class="alt">
+<td>verification.failed</td>
+<td>A verification could not be completed due to image quality or technical error</td>
+</tr>
+<tr>
+<td>aml.hit</td>
+<td>An AML, PEP, or sanctions screening has returned a potential match</td>
+</tr>
+<tr class="alt">
+<td>trust_score.generated</td>
+<td>A Trust Score has been generated for a set of verification results</td>
+</tr>
+<tr>
+<td>monitoring.alert</td>
+<td>An ongoing monitoring rescan has detected a new match for an existing customer</td>
+</tr>
+</tbody></table></div>
+<p>Webhook requests include an X-VerfiX-Signature header containing an HMAC-SHA256 signature of the request body, signed with the webhook secret configured at registration. Verify this signature before processing webhook events.</p>
+<h3>SDKs and Integration Resources</h3>
+<ul><li><span class="li-arrow">›</span><span>REST API reference (this document)</span></li><li><span class="li-arrow">›</span><span>Postman collection: available on request from contact@verfix.ch</span></li><li><span class="li-arrow">›</span><span>Sandbox environment: available within 24 hours of request</span></li><li><span class="li-arrow">›</span><span>Python SDK: planned roadmap item</span></li><li><span class="li-arrow">›</span><span>JavaScript SDK: planned roadmap item</span></li><li><span class="li-arrow">›</span><span>Java SDK: planned roadmap item</span></li><li><span class="li-arrow">›</span><span>Integration support: technical team available during integration. Contact contact@verfix.ch</span></li></ul>
+<p>contact@verfix.ch  |  verfix.ch</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

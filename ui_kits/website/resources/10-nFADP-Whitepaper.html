@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Data Protection &amp; nFADP Whitepaper | VerfiX AG</title>
+  <meta name="description" content="nFADP compliance for biometric identity verification in Switzerland">
+  <meta name="robots" content="noindex">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#f9fafb;color:#4B5563;line-height:1.7}
+    a{color:#C8252A;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .doc-header{background:#1A1F2E;padding:0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .doc-header-inner{max-width:1000px;margin:0 auto;padding:.875rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font-size:1.2rem;font-weight:900;color:#fff;letter-spacing:-.03em}
+    .brand span{color:#C8252A}
+    .doc-badge{font-size:.68rem;font-weight:700;background:rgba(200,37,42,.2);color:#C8252A;border:1px solid rgba(200,37,42,.3);padding:.25rem .75rem;border-radius:100px}
+    .conf-badge{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.05em}
+
+    /* Cover */
+    .cover{background:#1A1F2E;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(200,37,42,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+    .doc-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:.75rem}
+    .cover-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.7}
+    .cover-line{height:4px;background:#C8252A;width:60px;margin:1.5rem 0;border-radius:2px}
+    .cover-meta{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
+    .cover-meta-item{font-size:.75rem;color:rgba(255,255,255,.35)}
+    .cover-meta-item strong{display:block;color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.15rem}
+
+    /* Content */
+    .content{max-width:1000px;margin:0 auto;padding:3rem 2rem 5rem}
+
+    h2{font-size:1.5rem;font-weight:800;color:#1A1F2E;letter-spacing:-.025em;margin:2.5rem 0 .75rem;padding-bottom:.5rem;border-bottom:2px solid #C8252A}
+    h2:first-child{margin-top:0}
+    h3{font-size:1.1rem;font-weight:700;color:#C8252A;margin:1.75rem 0 .5rem}
+    h4{font-size:.95rem;font-weight:700;color:#1A1F2E;margin:1.25rem 0 .4rem}
+    p{font-size:.93rem;color:#4B5563;line-height:1.85;margin-bottom:.875rem}
+
+    ul{list-style:none;padding:0;margin:.75rem 0 1.25rem}
+    ul li{display:flex;gap:.6rem;align-items:flex-start;padding:.4rem 0;font-size:.92rem;color:#4B5563;line-height:1.75;border-bottom:1px solid #f0f0f0}
+    ul li:last-child{border-bottom:none}
+    .li-arrow{color:#C8252A;font-size:.7rem;margin-top:.35rem;flex-shrink:0;font-weight:700}
+
+    ol{padding-left:1.5rem;margin:.75rem 0 1.25rem}
+    ol li{font-size:.92rem;color:#4B5563;line-height:1.8;margin-bottom:.5rem;padding-left:.25rem}
+
+    /* Tables */
+    .tbl-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.08)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:400px}
+    thead tr{background:#1A1F2E}
+    th{text-align:left;padding:.75rem 1rem;color:#fff;font-weight:700;font-size:.78rem;border-right:1px solid rgba(255,255,255,.1)}
+    th:last-child{border-right:none}
+    td{padding:.7rem 1rem;color:#4B5563;vertical-align:top;border-bottom:1px solid #eee;border-right:1px solid #f0f0f0}
+    td:last-child{border-right:none}
+    tr.alt{background:#F3F4F6}
+    tr:hover td{background:#f0f4ff}
+
+    /* Code */
+    pre{background:#0f1523;color:#e2e8f0;border-radius:8px;padding:1.1rem 1.25rem;font-size:.78rem;font-family:'Courier New',monospace;line-height:1.65;overflow-x:auto;margin:1rem 0}
+    code{font-family:'Courier New',monospace;background:#F3F4F6;padding:.1rem .4rem;border-radius:4px;font-size:.85em;color:#C8252A}
+
+    /* Diagram */
+    .diagram{background:#F3F4F6;border-left:3px solid #C8252A;border-radius:0 8px 8px 0;padding:.875rem 1.25rem;margin:1.25rem 0;font-size:.87rem;color:#4B5563;font-style:italic;line-height:1.7}
+    .diagram .icon{font-style:normal;margin-right:.4rem}
+
+    /* Print button */
+    .print-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .print-bar-inner{max-width:1000px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .breadcrumb{font-size:.75rem;color:#9ca3af}
+    .breadcrumb a{color:#C8252A}
+    .btn-print{background:#C8252A;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem}
+    .btn-print:hover{background:#a61e22}
+    .btn-download{background:#1A1F2E;color:#fff;border:none;padding:.45rem 1.1rem;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:.4rem;text-decoration:none}
+
+    /* Footer */
+    .doc-footer{background:#1A1F2E;padding:1.5rem 2rem;text-align:center}
+    .doc-footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+    .doc-footer p{font-size:.75rem;color:rgba(255,255,255,.35);margin:0}
+    .doc-footer a{color:rgba(255,255,255,.5);font-size:.75rem}
+
+    /* Confidentiality box */
+    .conf-box{background:#fff3f3;border:1px solid #fecaca;border-radius:8px;padding:1rem 1.25rem;margin-top:3rem;font-size:.78rem;color:#7f1d1d;line-height:1.65}
+
+    @media print{
+      .doc-header,.print-bar,.doc-footer,.btn-print,.btn-download{display:none}
+      .content{padding:0}
+      body{background:#fff}
+    }
+    @media(max-width:640px){
+      .cover{padding:3rem 1.25rem 2.5rem}
+      .content{padding:2rem 1.25rem 3rem}
+      .print-bar{padding:.6rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="brand">Verfi<span>X</span> AG</div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <span class="doc-badge">Document 10 of 30</span>
+      <span class="conf-badge">CONFIDENTIAL</span>
+    </div>
+  </div>
+</header>
+
+<div class="print-bar">
+  <div class="print-bar-inner">
+    <span class="breadcrumb"><a href="index.html">← All Documents</a> › Data Protection &amp; nFADP Whitepaper</span>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-print" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</div>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="doc-num">Document 10 of 30</div>
+    <h1>Data Protection &amp; nFADP Whitepaper</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">nFADP compliance for biometric identity verification in Switzerland</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Company</strong>VerfiX AG, Switzerland</div>
+      <div class="cover-meta-item"><strong>Date</strong>June 2025</div>
+      <div class="cover-meta-item"><strong>Version</strong>1.0</div>
+      <div class="cover-meta-item"><strong>Classification</strong>Confidential</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<p>Data Protection &amp; nFADP Whitepaper</p>
+<p>Obligations for Biometric Identity Verification Under Swiss Law</p>
+<h2>Data Protection and nFADP Compliance in Identity Verification</h2>
+<p>This whitepaper provides a practical analysis of the data protection obligations arising from the revised Swiss Federal Act on Data Protection (nFADP, revDSG) as they apply to organisations conducting identity verification using biometric technology. It describes how VerfiX AG has designed its platform to support customer compliance with these obligations.</p>
+<p>Note: This document is provided for informational purposes only. It does not constitute legal advice. Organisations should consult qualified legal counsel for advice specific to their situation.</p>
+<h3>1. Background: The nFADP in Context</h3>
+<p>The revised Federal Act on Data Protection (Bundesgesetz über den Datenschutz, revDSG) entered into force on 1 September 2023. It replaced the Federal Act on Data Protection of 1992 and substantially aligned Swiss data protection law with the EU General Data Protection Regulation (GDPR) while retaining Swiss-specific provisions.</p>
+<p>The revision is significant for identity verification because of two specific changes:</p>
+<ul><li><span class="li-arrow">›</span><span>Biometric data is now classified as a sensitive personal data category (nFADP Art. 5 lit. c), subject to enhanced obligations and requiring explicit justification for processing.</span></li><li><span class="li-arrow">›</span><span>Data Processing Agreements (DPAs) with processors are now mandatory under nFADP, not simply best practice.</span></li></ul>
+<p>For regulated financial institutions conducting KYC using biometric verification, the nFADP creates a compliance programme that must be layered onto their existing GwG and FINMA obligations.</p>
+<h3>2. Biometric Data Under nFADP</h3>
+<p>nFADP Art. 5 lit. c defines sensitive personal data to include &quot;biometric data that uniquely identifies a natural person.&quot; Biometric data processed in identity verification — including facial photographs used for biometric matching, biometric templates derived from those photographs, and voice biometric data — falls squarely within this definition.</p>
+<p>Processing sensitive personal data requires justification. The applicable justifications for biometric KYC data are:</p>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Justification</th>
+<th>nFADP Basis</th>
+<th>Application in KYC</th>
+</tr></thead><tbody>
+<tr>
+<td>Statutory obligation</td>
+<td>Art. 31 para. 2 lit. a</td>
+<td>GwG Art. 3 (identification obligation) provides a statutory basis for processing biometric data in the context of legally required KYC. Applicable to GwG-scope entities.</td>
+</tr>
+<tr class="alt">
+<td>Consent</td>
+<td>Art. 31 para. 1</td>
+<td>Explicit, informed consent from the data subject. Valid for non-GwG entities without a statutory basis. Must be freely given, specific, and revocable.</td>
+</tr>
+<tr>
+<td>Legitimate interests</td>
+<td>Art. 31 para. 2 lit. b</td>
+<td>Processing is necessary and the controller's legitimate interest outweighs the data subject's interest. Not recommended as sole basis for biometric KYC due to risk of challenge.</td>
+</tr>
+</tbody></table></div>
+<p>Organisations should document the legal basis for each type of biometric processing in their records of processing activities (Article 12 nFADP) before deploying a biometric KYC solution.</p>
+<h3>3. Privacy by Design and Data Minimisation</h3>
+<p>nFADP Art. 7 requires that organisations design data processing systems with data protection built in from the outset (privacy by design) and that the default settings of processing systems are the most privacy-protective available (privacy by default).</p>
+<p>For biometric KYC, privacy by design requires:</p>
+<ul><li><span class="li-arrow">›</span><span>Processing only the biometric data necessary for the verification purpose — typically the biometric match score, not the raw biometric template or source photograph beyond the minimum retention period</span></li><li><span class="li-arrow">›</span><span>Automatic deletion of raw biometric data after the verification is complete (unless a longer retention is justified)</span></li><li><span class="li-arrow">›</span><span>Access controls that prevent biometric data from being accessed by personnel who do not require it</span></li><li><span class="li-arrow">›</span><span>Documented data flow mapping showing exactly what biometric data is collected, where it is processed, how long it is retained, and when it is deleted</span></li></ul>
+<p>VerfiX implements privacy by design through configurable retention policies that separate compliance records (retained for GwG Art. 8 ten-year period) from biometric processing data (deleted at session end by default).</p>
+<h3>4. Data Retention Obligations</h3>
+<p>The interaction between nFADP data minimisation and GwG retention obligations creates a nuanced requirement:</p>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Data Type</th>
+<th>GwG Retention</th>
+<th>nFADP Requirement</th>
+<th>VerfiX Approach</th>
+</tr></thead><tbody>
+<tr>
+<td>KYC compliance record (outcome, decision, evidence reference)</td>
+<td>10 years (GwG Art. 8)</td>
+<td>Retain for GwG period</td>
+<td>Retained for 10 years by default. Configurable.</td>
+</tr>
+<tr class="alt">
+<td>Raw document images</td>
+<td>Not specified by GwG</td>
+<td>Minimise — delete after verification</td>
+<td>Configurable: session-only or short retention. Not retained beyond 30 days by default.</td>
+</tr>
+<tr>
+<td>Biometric template / facial photograph</td>
+<td>Not specified by GwG</td>
+<td>Delete immediately after session — most privacy-protective default</td>
+<td>Not retained beyond session by default.</td>
+</tr>
+<tr class="alt">
+<td>Voice biometric template</td>
+<td>Not specified by GwG</td>
+<td>Delete after authentication event</td>
+<td>Not retained beyond session by default unless persistent voiceprint enabled.</td>
+</tr>
+<tr>
+<td>AML screening results</td>
+<td>Retain with KYC record</td>
+<td>Retain for GwG period</td>
+<td>Retained as part of KYC audit trail for 10 years.</td>
+</tr>
+</tbody></table></div>
+<h3>5. Controller-Processor Relationships</h3>
+<p>When a regulated organisation uses VerfiX to process personal data on its behalf, VerfiX AG acts as a data processor and the regulated organisation acts as data controller. nFADP Art. 9 requires that this relationship be governed by a written Data Processing Agreement.</p>
+<p>VerfiX provides a standard DPA to all customers as a baseline. The DPA specifies:</p>
+<ul><li><span class="li-arrow">›</span><span>The scope and purpose of processing</span></li><li><span class="li-arrow">›</span><span>The technical and organisational security measures VerfiX applies</span></li><li><span class="li-arrow">›</span><span>The sub-processors VerfiX uses, with a commitment to notify of changes 30 days in advance</span></li><li><span class="li-arrow">›</span><span>VerfiX's obligations regarding data subject rights requests</span></li><li><span class="li-arrow">›</span><span>Arrangements for breach notification</span></li><li><span class="li-arrow">›</span><span>Confirmation of Swiss data residency</span></li><li><span class="li-arrow">›</span><span>Arrangements for audit rights (one audit per calendar year)</span></li></ul>
+<p>Enterprise customers may request a customised DPA addendum to address specific requirements. Contact privacy@verfix.ch.</p>
+<h3>6. Cross-Border Data Transfers</h3>
+<p>nFADP restricts the transfer of personal data to countries that do not provide an adequate level of data protection unless specific safeguards are in place. Switzerland maintains its own adequacy list, separate from the EU list.</p>
+<p>VerfiX does not transfer personal data outside Switzerland. All processing and storage occurs within Switzerland. This eliminates the cross-border transfer compliance risk for customers who use the Swiss-hosted cloud or private cloud deployment options.</p>
+<p>For on-premise deployments, the customer's own infrastructure policies govern data residency. VerfiX recommends that on-premise customers maintain Swiss data residency for consistency with their overall compliance posture.</p>
+<h3>7. nFADP Compliance Checklist for KYC Operators</h3>
+<div class="tbl-wrap"><table>
+<thead><tr>
+<th>Obligation</th>
+<th>Action Required</th>
+<th>Status with VerfiX</th>
+</tr></thead><tbody>
+<tr>
+<td>Legal basis for biometric processing</td>
+<td>Document legal basis (GwG statutory obligation or consent) in records of processing activities before deployment</td>
+<td>VerfiX provides guidance. Legal basis must be determined by customer.</td>
+</tr>
+<tr class="alt">
+<td>Privacy notice</td>
+<td>Update privacy notice to disclose biometric data processing, legal basis, retention periods, and processor details</td>
+<td>VerfiX provides DPA and sub-processor list for disclosure.</td>
+</tr>
+<tr>
+<td>Data Processing Agreement</td>
+<td>Execute written DPA with VerfiX before processing begins</td>
+<td>VerfiX standard DPA available. Enterprise DPA on request.</td>
+</tr>
+<tr class="alt">
+<td>Privacy by design review</td>
+<td>Document how VerfiX configuration implements data minimisation and privacy by default</td>
+<td>VerfiX supports configurable retention policies and data minimisation.</td>
+</tr>
+<tr>
+<td>DPIA</td>
+<td>Conduct Data Protection Impact Assessment for large-scale biometric processing</td>
+<td>VerfiX provides security documentation to support DPIA completion.</td>
+</tr>
+<tr class="alt">
+<td>Sub-processor review</td>
+<td>Review and document VerfiX sub-processor list annually</td>
+<td>VerfiX maintains current sub-processor list. Available on request.</td>
+</tr>
+<tr>
+<td>Data subject rights</td>
+<td>Document procedure for handling access, rectification, and deletion requests</td>
+<td>VerfiX supports data export and deletion API endpoints.</td>
+</tr>
+<tr class="alt">
+<td>Breach notification procedure</td>
+<td>Document 72-hour notification procedure in event of breach</td>
+<td>VerfiX commits to 72-hour notification to customers. Customer responsible for FDPIC notification.</td>
+</tr>
+</tbody></table></div>
+<p>privacy@verfix.ch  |  verfix.ch</p>
+  <div class="conf-box">
+    <strong>Confidentiality Notice:</strong> This document contains proprietary and confidential information of VerfiX AG. It is provided solely for evaluation purposes and may not be reproduced or disclosed without prior written consent. Statements about planned or designed-for capabilities represent current roadmap intentions and are not contractual commitments.
+  </div>
+</div>
+
+<footer class="doc-footer">
+  <div class="doc-footer-inner">
+    <p>© 2025 VerfiX AG, Switzerland · All rights reserved</p>
+    <a href="mailto:contact@verfix.ch">contact@verfix.ch</a>
+    <a href="https://verfix.ch">verfix.ch</a>
+  </div>
+</footer>
+
+</body>
+</html>

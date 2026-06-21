@@ -1,6 +1,0 @@
-# Netlify redirects
-/home         /            301
-/en/*         /            200
-/de/*         /            200
-/fr/*         /            200
-/*            /index.html  200

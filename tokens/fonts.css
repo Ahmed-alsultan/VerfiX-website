@@ -1,0 +1,8 @@
+/* ════════════════════════════════════════════════════════════
+   VerfiX — Webfonts
+   Bricolage Grotesque  → display + UI + body (variable optical size)
+   IBM Plex Mono        → mono labels, kickers, numerals, code
+   Loaded from Google Fonts. If you need self-hosted binaries,
+   drop them in assets/fonts/ and add @font-face rules here.
+════════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
