@@ -1,917 +1,408 @@
-var FORMSPREE_CONTACT = 'YOUR_FORMSPREE_ID';
-var FORMSPREE_DEMO    = 'YOUR_FORMSPREE_ID';
-var GA4_ID     = 'G-XXXXXXXXXX';
-var GSC_VERIFY = '';
-var _gaLoaded = false;
-function loadGA4() {
-if (_gaLoaded || !window.ANALYTICS_CONSENT) return;
-_gaLoaded = true;
-var s = document.createElement('script');
-s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
-document.head.appendChild(s);
-window.dataLayer = window.dataLayer || [];
-function gtag(){ dataLayer.push(arguments); }
-window.gtag = gtag;
-gtag('js', new Date());
-gtag('config', GA4_ID, { anonymize_ip: true, cookie_flags: 'SameSite=None;Secure' });
-}
-function trackEvent(action, category, label) {
-try { if (window.gtag) window.gtag('event', action, { event_category: category, event_label: label }); } catch(e){}
-}
-function trackCTA(label) { trackEvent('cta_click', 'conversion', label); }
-var _PAGE_URLS = {
-home:       '/',
-solutions:  '/solutions',
-industries: '/industries',
-gateway:    '/gateway',
-trustcenter:'/trust-center',
-apidocs:    '/api',
-resources:  '/resources',
-casestudies:'/case-studies',
-about:      '/about',
-contact:    '/contact',
-careers:    '/careers',
-press:      '/press',
-privacy:    '/privacy',
-terms:      '/terms',
-impressum:  '/impressum',
-datenschutz:'/datenschutz',
-mentions:   '/mentions-legales',
-politique:  '/politique-confidentialite'
+/* ═══ INDUSTRY DATA ═══ */
+var IND = {
+  banking:{n:'Banking & Wealth',uses:['Customer KYC onboarding','Telephone banking authentication','Account recovery','Fraud prevention'],stack:['Document Verification','Face Verification','Voice Verification','AML Screening','Trust Engine™'],benefits:['Faster customer onboarding','Lower fraud exposure','Stronger compliance posture'],dep:'Private Cloud or On-Premise'},
+  fintech:{n:'Fintech',uses:['Digital customer onboarding','Merchant onboarding','KYC automation','API-based AML'],stack:['Document Verification','Face Verification','AML Screening','Risk Rules Engine','Trust Engine™'],benefits:['Faster growth','Lower operational cost','Scalable compliance'],dep:'SaaS or Swiss Dedicated'},
+  crypto:{n:'Crypto & Digital Assets',uses:['Exchange onboarding','Wallet verification','KYB for VASPs','Sanctions screening'],stack:['Document Verification','KYB Verification','Sanctions Screening','Fraud Intelligence','Trust Engine™'],benefits:['VASP compliance','Fraud prevention','Regulatory confidence'],dep:'SaaS or Swiss Dedicated'},
+  insurance:{n:'Insurance',uses:['Customer onboarding','Claims identity verification','Voice authentication','Fraud prevention'],stack:['Document Verification','Face Verification','Voice Verification','AML Screening','Trust Engine™'],benefits:['Reduced claims fraud','Better customer experience','Audit-ready records'],dep:'Private Cloud or On-Premise'},
+  gov:{n:'Government',uses:['Citizen identity verification','Digital service onboarding','Secure access control','Audit-ready workflows'],stack:['Document Verification','Face Verification','Trust Engine™','Audit Logs'],benefits:['Secure digital services','Full audit compliance','Data sovereignty'],dep:'On-Premise'},
+  health:{n:'Healthcare',uses:['Patient identity verification','Secure access management','Identity-linked compliance'],stack:['Document Verification','Face Verification','Trust Engine™'],benefits:['Secure patient access','Compliance support','Audit trail'],dep:'Private Cloud or On-Premise'},
+  telecom:{n:'Telecom',uses:['SIM registration','Remote customer onboarding','SIM-swap prevention'],stack:['Document Verification','Face Verification','Voice Verification'],benefits:['Regulatory compliance','Fraud reduction','Remote onboarding'],dep:'SaaS or Swiss Dedicated'},
+  mobility:{n:'Mobility & Transportation',uses:['Driver identity verification','Fleet user onboarding','Identity-based access control'],stack:['Document Verification','Face Verification','Trust Engine™'],benefits:['Faster onboarding','Access security','Fraud prevention'],dep:'SaaS'},
+  mkt:{n:'Marketplaces',uses:['Seller onboarding','Merchant verification','Fraud prevention','Trust &amp; safety'],stack:['Document Verification','KYB Verification','AML Screening','Trust Engine™'],benefits:['Platform trust','Fraud reduction','Seller compliance'],dep:'SaaS'},
+  re:{n:'Real Estate',uses:['Tenant identity verification','Residence permit checks','Business verification','Application audit trail'],stack:['Document Verification','Face Verification','KYB Verification'],benefits:['Tenant trust','Fraud reduction','Audit trail'],dep:'SaaS or Swiss Dedicated'}
 };
-var curPage = (function() {
-var path = window.location.pathname.replace(/^\//, '').replace(/\.html$/, '') || '';
-var map  = {'':'home','solutions':'solutions','industries':'industries',
-'gateway':'gateway','trust-center':'trustcenter','api':'apidocs',
-'resources':'resources','case-studies':'casestudies','about':'about',
-'contact':'contact','careers':'careers','press':'press',
-'privacy':'privacy','terms':'terms','impressum':'impressum',
-'datenschutz':'datenschutz','mentions-legales':'mentions',
-'politique-confidentialite':'politique'};
-return map[path] || 'home';
-})();
-function nav(id) {
-var url = _PAGE_URLS[id] || ('/' + id);
-trackEvent('page_view', 'navigation', id);
-window.location.href = url;
-}
-function navClose(id) {
-closeAll();
-nav(id);
-}
-function toggleMenu(id) {
-var ni = document.getElementById('ni-' + id);
-if (!ni) return;
-if (ni.classList.contains('open')) {
-_closeMenu(id);
-} else {
-_openMenu(id);
-}
-}
-function _openMenu(id) {
-if (_openM && _openM !== id) _closeMenu(_openM);
-var ni = document.getElementById('ni-' + id);
-if (!ni) return;
-ni.classList.add('open');
-_openM = id;
-if (_menuTimer) { clearTimeout(_menuTimer); _menuTimer = null; }
-/* show backdrop */
-var bd = document.getElementById('nav-backdrop');
-if (bd) bd.classList.add('active');
-}
-function _closeMenu(id) {
-var ni = document.getElementById('ni-' + id);
-if (ni) ni.classList.remove('open');
-if (_openM === id) _openM = null;
-}
-function closeAll() {
-if (_menuTimer) { clearTimeout(_menuTimer); _menuTimer = null; }
-document.querySelectorAll('.ni.open').forEach(function(el) {
-el.classList.remove('open');
-});
-_openM = null;
-/* hide backdrop */
-var bd = document.getElementById('nav-backdrop');
-if (bd) bd.classList.remove('active');
-}
-function _startCloseTimer(id) {
-_menuTimer = setTimeout(function() {
-_closeMenu(id);
-}, 200);
-}
-function _cancelCloseTimer() {
-if (_menuTimer) { clearTimeout(_menuTimer); _menuTimer = null; }
-}
-function _initMenuHover() {
-_checkMobile();
-document.querySelectorAll('.ni[id]').forEach(function(ni) {
-var id = ni.id.replace('ni-', '');
-ni.addEventListener('mouseenter', function() {
-if (_isMobile) return;
-_cancelCloseTimer();
-_openMenu(id);
-});
-ni.addEventListener('mouseleave', function() {
-if (_isMobile) return;
-_startCloseTimer(id);
-});
-var mega = ni.querySelector('.mega');
-if (mega) {
-mega.addEventListener('mouseenter', function() {
-if (_isMobile) return;
-_cancelCloseTimer();
-});
-mega.addEventListener('mouseleave', function() {
-if (_isMobile) return;
-_startCloseTimer(id);
-});
-}
-});
-document.addEventListener('click', function(e) {
-if (!e.target.closest('.ni') && !e.target.closest('.mega')) {
-closeAll();
-}
-});
-document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape') { closeAll(); closeMob(); }
-});
-window.addEventListener('scroll', function() {
-if (!_isMobile && _openM) closeAll();
-}, { passive: true });
-window.addEventListener('resize', function() {
-_checkMobile();
-if (_isMobile) closeAll();
-});
-}
-function closeMob() {
-var m = document.getElementById('mob');
-if (m) { m.classList.remove('open'); m.style.display = 'none'; }
-}
-function toggleMob() {
-  var m = document.getElementById('mob');
-  var btn = document.getElementById('ham-btn');
-  if (!m) return;
-  if (m.classList.contains('open')) {
-    closeMob();
-    if (btn) btn.setAttribute('aria-expanded', 'false');
-  } else {
-    m.classList.add('open');
-    m.style.display = 'flex';
-    if (btn) btn.setAttribute('aria-expanded', 'true');
-    closeAll();
-  }
+
+function showInd(id){
+  var d=IND[id];
+  if(!d)return;
+  document.querySelectorAll('.mi-item').forEach(function(el){el.classList.toggle('active',el.dataset.ind===id);});
+  var p=document.getElementById('mi-panel');
+  p.innerHTML=
+    '<div style="font-size:.82rem;font-weight:800;letter-spacing:-.01em;color:var(--t);margin-bottom:.875rem;">'+d.n+'</div>'+
+    '<div class="mi-sec" style="margin-top:0;">Use Cases</div>'+
+    d.uses.map(function(u){return '<div class="mi-li">'+u+'</div>';}).join('')+
+    '<div class="mi-sec" style="margin-top:.72rem;">Recommended Stack</div>'+
+    d.stack.map(function(s){return '<div class="mi-check"><i class="fas fa-check"></i>'+s+'</div>';}).join('')+
+    '<div class="mi-sec" style="margin-top:.72rem;">Key Benefits</div>'+
+    d.benefits.map(function(b){return '<div class="mi-check"><i class="fas fa-check"></i>'+b+'</div>';}).join('')+
+    '<div class="mi-dep-badge" style="margin-top:.72rem;"><i class="fas fa-server" style="font-size:.55rem;"></i>'+d.dep+'</div>'+
+    '<div style="margin-top:.875rem;"><a onclick="navClose(\'contact\')" class="btn btn-r btn-sm" style="font-size:.74rem;">Get Industry Demo</a></div>';
 }
 
-function setDep(id) {
-['saas','swiss','private','onprem'].forEach(function(k,i){
-var tab   = document.querySelectorAll('.dep-tab')[i];
-var panel = document.getElementById('dep-' + k);
-if (tab)   tab.classList.toggle('on', k === id);
-if (panel) panel.classList.toggle('on', k === id);
-});
+/* ═══ PAGES ═══ */
+var curPg='home';
+function nav(id){
+  document.querySelectorAll('.pg').forEach(function(p){p.classList.remove('on');});
+  var t=document.getElementById('pg-'+id);
+  if(t){t.classList.add('on');curPg=id;}
+  else{document.getElementById('pg-home').classList.add('on');curPg='home';}
+  window.scrollTo({top:0,behavior:'smooth'});
+  closeMob();closeAll();
+  setTimeout(initRv,60);
 }
-var _openInd = null;
-function toggleInd(el, key) {
-var panel = document.getElementById('idp-' + key);
-if (!panel) return;
-if (_openInd === key) {
-panel.classList.remove('open'); el.classList.remove('open'); _openInd = null; return;
+function navClose(id){closeAll();nav(id);}
+
+/* ═══ MENUS ═══ */
+var openM=null;
+function toggleMenu(id){
+  var ni=document.getElementById('ni-'+id);
+  if(!ni)return;
+  if(ni.classList.contains('open')){closeAll();return;}
+  closeAll();
+  ni.classList.add('open');
+  openM=id;
 }
-document.querySelectorAll('.ind-detail-panel.open').forEach(function(p){ p.classList.remove('open'); });
-document.querySelectorAll('.ipc.open').forEach(function(c){ c.classList.remove('open'); });
-panel.classList.add('open'); el.classList.add('open'); _openInd = key;
-setTimeout(function(){ panel.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 60);
+function closeAll(){
+  document.querySelectorAll('.ni').forEach(function(el){el.classList.remove('open');});
+  openM=null;
 }
-function activateSig(el) {
-document.querySelectorAll('.ts-sig').forEach(function(s){ s.classList.remove('active'); });
-el.classList.add('active');
-}
-var IND_DATA = {
-banking:{n:'Banking & Wealth',uses:['Digital onboarding & KYC refresh','Telephone banking authentication','Fraud prevention & AML screening','On-premise deployment'],stack:['Document Verification','Face Verification','Voice Verification','AML Screening','Trust Engine™'],dep:'Private Cloud / On-Premise'},
-fintech:{n:'Fintech',uses:['Fast customer onboarding','Merchant onboarding','AML automation','Trust scoring'],stack:['Document Verification','Face Verification','AML Screening','Risk Rules Engine'],dep:'SaaS / Swiss Dedicated'},
-crypto:{n:'Crypto & Digital Assets',uses:['Exchange & wallet onboarding','High-risk user review','Sanctions screening','VASP compliance'],stack:['Document Verification','KYB Verification','Sanctions Screening','Fraud Intelligence'],dep:'SaaS / Swiss Dedicated'},
-insurance:{n:'Insurance',uses:['Policyholder onboarding','Claims identity verification','Voice authentication','Fraud prevention'],stack:['Document Verification','Face Verification','Voice Verification','AML Screening'],dep:'Private Cloud / On-Premise'},
-gov:{n:'Government',uses:['Citizen identity verification','Digital service onboarding','Audit-ready records','Secure access control'],stack:['Document Verification','Face Verification','Trust Engine™','Audit Logs'],dep:'On-Premise'},
-health:{n:'Healthcare',uses:['Patient verification','Secure access management','Identity compliance','Staff verification'],stack:['Document Verification','Face Verification','Trust Engine™'],dep:'Private Cloud / On-Premise'},
-telecom:{n:'Telecom',uses:['SIM registration','SIM-swap prevention','Subscriber verification','Regulatory compliance'],stack:['Document Verification','Face Verification','Voice Verification'],dep:'SaaS / Swiss Dedicated'},
-mobility:{n:'Mobility',uses:['Driver verification','Fleet user onboarding','Identity-based access'],stack:['Document Verification','Face Verification','Trust Engine™'],dep:'SaaS'},
-mkt:{n:'Marketplaces',uses:['Seller & merchant onboarding','KYB for business sellers','Fraud prevention','Trust & safety'],stack:['Document Verification','KYB Verification','AML Screening','Trust Engine™'],dep:'SaaS'},
-re:{n:'Real Estate',uses:['Tenant identity verification','Permit & licence checks','Business verification'],stack:['Document Verification','Face Verification','KYB Verification'],dep:'SaaS / Swiss Dedicated'},
-edu:{n:'Education',uses:['Student identity verification','Online exam supervision','Certificate verification','Prevent fake credentials'],stack:['Document Verification','Face Verification','Trust Engine™'],dep:'SaaS'},
-ecom:{n:'E-Commerce & Retail',uses:['Buyer & seller trust checks','Merchant verification','Age verification','Fraud prevention'],stack:['Document Verification','Age Verification','Trust Engine™','Fraud Intelligence'],dep:'SaaS'},
-age:{n:'Age-Restricted Sales',uses:['Age verification for alcohol, tobacco & vape','Online checkout age checks','In-store digital age verification'],stack:['Age Estimation','Age Validation','Document Verification'],dep:'SaaS'},
-forex:{n:'Forex & Trading',uses:['Trader onboarding & KYC','Source of funds verification','High-risk user review','AML & sanctions screening'],stack:['Document Verification','KYB Verification','AML Screening','Trust Engine™'],dep:'SaaS / Swiss Dedicated'},
-pay:{n:'Payments',uses:['PSP customer onboarding','Merchant identity verification','Fraud intelligence','Compliance automation'],stack:['Document Verification','KYB Verification','Fraud Intelligence','Trust Engine™'],dep:'SaaS / Swiss Dedicated'},
-rem:{n:'Remittance',uses:['Sender & recipient verification','Transaction risk scoring','AML & sanctions checks'],stack:['Document Verification','AML Screening','Risk Rules Engine','Trust Engine™'],dep:'SaaS'},
-wealth:{n:'Wealth Management',uses:['HNW client onboarding','Enhanced due diligence','Source of wealth verification','Ongoing AML monitoring'],stack:['Document Verification','Face Verification','KYB Verification','AML Screening','Trust Engine™'],dep:'Private Cloud / On-Premise'},
-super:{n:'Supermarkets',uses:['Age verification at self-checkout','Age checks for online delivery','Restricted goods verification'],stack:['Age Estimation','Age Validation','Document Verification'],dep:'SaaS'}
-};
-function showInd(id) {
-var d = IND_DATA[id]; if (!d) return;
-document.querySelectorAll('.mi-item').forEach(function(el){ el.classList.toggle('active', el.dataset.ind === id); });
-var p = document.getElementById('mi-panel'); if (!p) return;
-p.innerHTML =
-'<div style="font-size:.85rem;font-weight:800;color:var(--t);margin-bottom:.875rem;">' + d.n + '</div>' +
-'<div class="mi-sec">Use Cases</div>' + d.uses.map(function(u){ return '<div class="mi-li">' + u + '</div>'; }).join('') +
-'<div class="mi-sec" style="margin-top:.72rem;">Recommended Stack</div>' + d.stack.map(function(s){ return '<div class="mi-check"><i class="fas fa-check"></i>' + s + '</div>'; }).join('') +
-'<div class="mi-dep-badge" style="margin-top:.72rem;"><i class="fas fa-server" style="font-size:.55rem;margin-right:.35rem;"></i>' + d.dep + '</div>' +
-'<div style="margin-top:.875rem;"><a onclick="navClose(\'contact\')" class="btn btn-r btn-sm" style="font-size:.74rem;" onclick="trackCTA(\'industry_demo\')">Get Industry Demo</a></div>';
-}
-var T = {
-en:{
-nav_industries:'Industries',nav_products:'Products',nav_solutions:'Solutions',nav_resources:'Resources',nav_company:'Company',nav_sales:'Talk to Sales',nav_demo:'Book a Demo',
-h_kicker:'Swiss-Built · Enterprise-Grade',
-h_title:'Verify Identity.<br/>Prevent Fraud.<br/>Automate Compliance.<br/><em>One Infrastructure Layer.</em>',
-h_sub:'VerfiX unifies identity verification, fraud intelligence, AML compliance, and trust scoring into one platform for banks, fintechs, insurers, governments, and other regulated organizations.',
-h_cta1:'Book a Demo',h_cta2:'Explore Platform',
-te_label:'Trust Engine™',te_title:'The decision layer behind trusted digital onboarding.',
-te_sub:'Every identity signal, compliance check, and fraud indicator converges into one structured decision — Approve, Review, or Reject.',
-te_approve:'Approve',te_review:'Review',te_reject:'Reject',
-gw_label:'New Product',gw_title:'VerfiX Gateway',gw_sub:'One API to verify trusted digital identities across Europe.',
-gw_m1_n:'~3s',gw_m1_l:'Credential verification',gw_m1_s:'Designed for real-time decisioning',
-gw_m2_n:'27+',gw_m2_l:'EU country coverage',gw_m2_s:'Built for eIDAS 2.0 compatibility',
-gw_m3_n:'1 API',gw_m3_l:'One integration',gw_m3_s:'For banks and regulated organizations',
-gw_m4_n:'1 layer',gw_m4_l:'Trust verification',gw_m4_s:'Issuer, credential, signature, revocation',
-ts_label:'Interactive Demo',ts_title:'See how VerfiX builds a trust decision.',
-ts_sub:'Click any signal to understand what VerfiX checks — then see how it combines into one final decision.',ts_live:'Live Trust Decision',
-sig_doc:'Document Verification',sig_doc_desc:'Checks document authenticity, OCR data, expiry date, forgery signals, and issuing authority.',
-sig_face:'Face Match & Liveness',sig_face_desc:'Confirms the person matches the submitted identity document. Liveness check detects deepfakes.',
-sig_voice:'Voice Verification',sig_voice_desc:'Adds biometric voice identity signal for call centres and telephone banking.',
-sig_aml:'AML Screening',sig_aml_desc:'Screens against global sanctions, PEP registries, adverse media, and watchlists.',
-sig_kyb:'KYB / Business Check',sig_kyb_desc:'Verifies business registration, directors, UBO structure against registries and AML lists.',
-sig_fraud:'Fraud Intelligence',sig_fraud_desc:'Detects synthetic identities, document forgery, device anomalies, and behavioral signals.',
-sig_risk:'Risk Rules Engine',sig_risk_desc:'Configurable thresholds combine all signals into an automated trust decision.',
-ts_aml:'AML Status',ts_clear:'Clear',ts_kyb:'KYB Check',ts_verified:'Verified',ts_risk:'Risk Level',ts_low:'Low',ts_score_lbl:'Trust Score',ts_decision_lbl:'Decision',ts_approved:'APPROVED',
-tfp_doc:'Document verified',tfp_face:'Face matched',tfp_voice:'Voice verified',tfp_aml:'AML clear',tfp_risk:'Risk low',
-tfp_audit:'Decision logged · Audit trail generated · Exportable on demand',
-ind_label:'Industries',ind_title:'Built for regulated sectors',ind_sub:'Click any industry to see VerfiX use cases, recommended stack, and deployment options.',
-sec_label:'Security & Compliance',sec_title:'Enterprise security at every layer',sec_sub:'Hover or tap each card to see what it means, how VerfiX helps, and why it matters.',
-rd_label:'Product Roadmap',rd_title:'VerfiX Roadmap',rd_sub:'Where we are, where we are going, and where the infrastructure is headed.',
-rd_today:'Today',rd_today_lbl:'Available Now',rd_next:'Next',rd_next_lbl:'In Development',rd_future:'Future',rd_future_lbl:'Vision & Direction',
-rd_note:'Roadmap is indicative. Timelines and features may evolve based on regulatory developments and customer requirements.',
-foot_copy:'© 2025 VerfiX AG · Switzerland · All rights reserved',
-ck_txt:'We use cookies to improve your experience. See our',ck_policy:'Privacy Policy'
-},
-de:{
-nav_industries:'Branchen',nav_products:'Produkte',nav_solutions:'Lösungen',nav_resources:'Ressourcen',nav_company:'Unternehmen',nav_sales:'Vertrieb kontaktieren',nav_demo:'Demo buchen',
-h_kicker:'Schweizer Qualität · Enterprise-Grade',
-h_title:'Identität prüfen.<br/>Betrug verhindern.<br/>Compliance automatisieren.<br/><em>Eine Infrastruktur-Schicht.</em>',
-h_sub:'VerfiX vereint Identitätsprüfung, Betrugsbekämpfung, AML-Compliance und Trust-Scoring in einer Plattform für Banken, Fintechs, Versicherungen und Regierungsbehörden.',
-h_cta1:'Demo buchen',h_cta2:'Plattform erkunden',
-te_label:'Trust Engine™',te_title:'Die Entscheidungsschicht hinter vertrauenswürdigem digitalem Onboarding.',
-te_sub:'Jedes Identitätssignal, jede Compliance-Prüfung und jeder Betrugsindiktor fließt in eine strukturierte Entscheidung — Genehmigen, Prüfen oder Ablehnen.',
-te_approve:'Genehmigen',te_review:'Prüfen',te_reject:'Ablehnen',
-gw_label:'Neues Produkt',gw_title:'VerfiX Gateway',gw_sub:'Eine API zur Prüfung digitaler Identitäten in ganz Europa.',
-gw_m1_n:'~3s',gw_m1_l:'Credential-Verifizierung',gw_m1_s:'Für Echtzeit-Entscheidungen konzipiert',
-gw_m2_n:'27+',gw_m2_l:'EU-Länderabdeckung',gw_m2_s:'Für eIDAS 2.0-Kompatibilität entwickelt',
-gw_m3_n:'1 API',gw_m3_l:'Eine Integration',gw_m3_s:'Für Banken und regulierte Organisationen',
-gw_m4_n:'1 Schicht',gw_m4_l:'Trust-Verifizierung',gw_m4_s:'Aussteller, Credential, Signatur, Widerruf',
-ts_label:'Interaktive Demo',ts_title:'So trifft VerfiX eine Vertrauensentscheidung.',
-ts_sub:'Klicken Sie auf ein Signal, um zu verstehen, was VerfiX prüft.',ts_live:'Live Trust-Entscheidung',
-sig_doc:'Dokumentenprüfung',sig_doc_desc:'Prüft Dokumentechtheit, OCR-Daten, Ablaufdatum und Fälschungssignale.',
-sig_face:'Gesichtsabgleich & Liveness',sig_face_desc:'Bestätigt, dass die Person mit dem vorgelegten Ausweisdokument übereinstimmt.',
-sig_voice:'Sprachverifizierung',sig_voice_desc:'Biometrisches Sprachidentitätssignal für Call-Center und Telefonbanking.',
-sig_aml:'AML-Screening',sig_aml_desc:'Prüfung gegen globale Sanktionslisten, PEP-Register und Beobachtungslisten.',
-sig_kyb:'KYB / Unternehmenscheck',sig_kyb_desc:'Prüft Handelsregistereintrag, Direktoren und UBO-Struktur.',
-sig_fraud:'Betrugsintelligenz',sig_fraud_desc:'Erkennt synthetische Identitäten, Dokumentenfälschungen und Geräteanomalien.',
-sig_risk:'Risikoregeln-Engine',sig_risk_desc:'Konfigurierbare Schwellenwerte kombinieren alle Signale zu einer automatisierten Entscheidung.',
-ts_aml:'AML-Status',ts_clear:'Klar',ts_kyb:'KYB-Prüfung',ts_verified:'Verifiziert',ts_risk:'Risikoniveau',ts_low:'Niedrig',ts_score_lbl:'Trust Score',ts_decision_lbl:'Entscheidung',ts_approved:'GENEHMIGT',
-tfp_doc:'Dokument verifiziert',tfp_face:'Gesicht abgeglichen',tfp_voice:'Stimme verifiziert',tfp_aml:'AML klar',tfp_risk:'Risiko niedrig',
-tfp_audit:'Entscheidung protokolliert · Prüfpfad erstellt · Exportierbar',
-ind_label:'Branchen',ind_title:'Für regulierte Sektoren entwickelt',ind_sub:'Klicken Sie auf eine Branche für Details.',
-sec_label:'Sicherheit & Compliance',sec_title:'Enterprise-Sicherheit auf jeder Ebene',sec_sub:'Mauszeiger über eine Karte für Details.',
-rd_label:'Produkt-Roadmap',rd_title:'VerfiX Roadmap',rd_sub:'Wo wir stehen, wohin wir gehen.',
-rd_today:'Heute',rd_today_lbl:'Verfügbar jetzt',rd_next:'Als nächstes',rd_next_lbl:'In Entwicklung',rd_future:'Zukunft',rd_future_lbl:'Vision & Ausrichtung',
-rd_note:'Die Roadmap ist indikativ.',
-foot_copy:'© 2025 VerfiX AG · Schweiz · Alle Rechte vorbehalten',
-ck_txt:'Wir verwenden Cookies. Weitere Informationen in unserer',ck_policy:'Datenschutzerklärung'
-},
-fr:{
-nav_industries:'Secteurs',nav_products:'Produits',nav_solutions:'Solutions',nav_resources:'Ressources',nav_company:'Entreprise',nav_sales:'Contacter les ventes',nav_demo:'Réserver une démo',
-h_kicker:'Qualité suisse · Grade entreprise',
-h_title:"Vérifier l'identité.<br/>Prévenir la fraude.<br/>Automatiser la conformité.<br/><em>Une couche d'infrastructure.</em>",
-h_sub:"VerfiX unifie la vérification d'identité, l'intelligence anti-fraude, la conformité AML et le scoring de confiance en une seule plateforme.",
-h_cta1:'Réserver une démo',h_cta2:'Explorer la plateforme',
-te_label:'Trust Engine™',te_title:"La couche de décision derrière l'onboarding numérique de confiance.",
-te_sub:"Chaque signal d'identité converge vers une décision structurée — Approuver, Réviser ou Rejeter.",
-te_approve:'Approuver',te_review:'Réviser',te_reject:'Rejeter',
-gw_label:'Nouveau produit',gw_title:'VerfiX Gateway',gw_sub:"Une API pour vérifier les identités numériques à travers l'Europe.",
-gw_m1_n:'~3s',gw_m1_l:'Vérification de credential',gw_m1_s:'Conçu pour les décisions en temps réel',
-gw_m2_n:'27+',gw_m2_l:'Couverture UE',gw_m2_s:'Conçu pour la compatibilité eIDAS 2.0',
-gw_m3_n:'1 API',gw_m3_l:'Une intégration',gw_m3_s:'Pour banques et organisations réglementées',
-gw_m4_n:'1 couche',gw_m4_l:'Vérification de confiance',gw_m4_s:'Émetteur, credential, signature, révocation',
-ts_label:'Démo interactive',ts_title:'Voir comment VerfiX construit une décision de confiance.',
-ts_sub:"Cliquez sur un signal pour comprendre ce que VerfiX vérifie.",ts_live:'Décision de confiance en direct',
-sig_doc:'Vérification de document',sig_doc_desc:"Vérifie l'authenticité du document, OCR, date d'expiration.",
-sig_face:'Correspondance faciale & Liveness',sig_face_desc:"Confirme que la personne correspond au document d'identité soumis.",
-sig_voice:'Vérification vocale',sig_voice_desc:"Signal biométrique vocal pour centres d'appels.",
-sig_aml:'Screening AML',sig_aml_desc:'Vérification contre les listes de sanctions et registres PEP.',
-sig_kyb:'KYB / Vérification entreprise',sig_kyb_desc:'Vérifie immatriculation, dirigeants et structure UBO.',
-sig_fraud:'Intelligence anti-fraude',sig_fraud_desc:'Détecte identités synthétiques et contrefaçons de documents.',
-sig_risk:'Moteur de règles de risque',sig_risk_desc:'Les seuils configurables combinent tous les signaux.',
-ts_aml:'Statut AML',ts_clear:'Clair',ts_kyb:'Vérification KYB',ts_verified:'Vérifié',ts_risk:'Niveau de risque',ts_low:'Faible',ts_score_lbl:'Score de confiance',ts_decision_lbl:'Décision',ts_approved:'APPROUVÉ',
-tfp_doc:'Document vérifié',tfp_face:'Visage correspondant',tfp_voice:'Voix vérifiée',tfp_aml:'AML clair',tfp_risk:'Risque faible',
-tfp_audit:"Décision enregistrée · Piste d'audit générée · Exportable sur demande",
-ind_label:'Secteurs',ind_title:'Conçu pour les secteurs réglementés',ind_sub:"Cliquez sur un secteur pour les détails.",
-sec_label:'Sécurité & Conformité',sec_title:'Sécurité entreprise à chaque couche',sec_sub:'Survolez une carte pour les détails.',
-rd_label:'Feuille de route',rd_title:'Roadmap VerfiX',rd_sub:'Où nous en sommes et où nous allons.',
-rd_today:"Aujourd'hui",rd_today_lbl:'Disponible maintenant',rd_next:'Prochain',rd_next_lbl:'En développement',rd_future:'Futur',rd_future_lbl:'Vision & Direction',
-rd_note:'La roadmap est indicative.',
-foot_copy:'© 2025 VerfiX AG · Suisse · Tous droits réservés',
-ck_txt:'Nous utilisons des cookies. Consultez notre',ck_policy:'Politique de confidentialité'
-}
-};
-function applyLang(l) {
-var tr = T[l] || T.en;
-document.querySelectorAll('[data-i18n]').forEach(function(el) {
-var k = el.getAttribute('data-i18n');
-if (tr[k] !== undefined) {
-if (el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder=tr[k];
-else el.innerHTML=tr[k];
-}
-});
-var ckPage={en:'privacy',de:'datenschutz',fr:'politique'};
-var ckEl=document.getElementById('ck-txt');
-if(ckEl) ckEl.innerHTML=tr.ck_txt+' <a onclick="nav(\''+ckPage[l]+'\')" style="color:var(--r);cursor:pointer;">'+tr.ck_policy+'</a>.';
-var fc=document.getElementById('foot-c'); if(fc) fc.textContent=tr.foot_copy;
-['imp','dat'].forEach(function(x){var e=document.getElementById('f-'+x);if(e)e.style.display=(l==='de')?'block':'none';});
-['men','pol'].forEach(function(x){var e=document.getElementById('f-'+x);if(e)e.style.display=(l==='fr')?'block':'none';});
-var titles={en:'VerfiX — Swiss Trust Infrastructure for Regulated Industries',de:'VerfiX — Schweizer Trust-Infrastruktur für regulierte Branchen',fr:'VerfiX — Infrastructure de confiance suisse'};
-var pt=document.getElementById('pg-title'); if(pt) pt.textContent=titles[l]||titles.en;
-}
-var _lang='en';
-function setLang(l){
-_lang=l;
-var root=document.getElementById('html-root');
-if(root) root.setAttribute('lang',l);
-document.querySelectorAll('.lb,.mlb').forEach(function(b){b.classList.toggle('on',b.textContent.trim().toLowerCase()===l);});
-applyLang(l);
-trackEvent('language_switch','engagement',l);
-}
-window.ANALYTICS_CONSENT = false;
-window.MARKETING_CONSENT = false;
-function _submitToFormspree(formId, data, successId, errorId, btn) {
-fetch('https://formspree.io/f/' + formId, {
-method:'POST',
-headers:{'Content-Type':'application/json','Accept':'application/json'},
-body:JSON.stringify(data)
-})
-.then(function(r){ return r.json().then(function(d){return{ok:r.ok,d:d};}); })
-.then(function(res){
-if(res.ok){
-var s=document.getElementById(successId);
-if(s){s.style.display='flex';setTimeout(function(){s.style.display='none';},6000);}
-trackEvent('form_submit','conversion',formId);
-} else { throw new Error('failed'); }
-})
-.catch(function(){
-var e=document.getElementById(errorId); if(e) e.style.display='flex';
-setTimeout(function(){ var e2=document.getElementById(errorId); if(e2) e2.style.display='none'; },5000);
-})
-.finally(function(){ if(btn){btn.disabled=false;btn.innerHTML=btn.dataset.orig||'Send';} });
-}
-function _validateForm(formEl) {
-var ok=true;
-formEl.querySelectorAll('[data-required]').forEach(function(f){
-f.classList.remove('field-err');
-var v=f.value.trim();
-if(!v){f.classList.add('field-err');ok=false;}
-else if(f.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){f.classList.add('field-err');ok=false;}
-});
-return ok;
-}
-function submitContactForm(e) {
-if(e) e.preventDefault();
-var form=document.getElementById('contact-form');
-if(!form||!_validateForm(form)) return;
-var btn=form.querySelector('[type=submit]');
-if(btn){btn.dataset.orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending…';}
-var data={
-name:    (document.getElementById('cf-name')||{}).value||'',
-company: (document.getElementById('cf-company')||{}).value||'',
-email:   (document.getElementById('cf-email')||{}).value||'',
-industry:(document.getElementById('cf-industry')||{}).value||'',
-message: (document.getElementById('cf-message')||{}).value||''
-};
-_submitToFormspree(FORMSPREE_CONTACT,data,'form-success','form-error',btn);
-if(form) form.reset();
-}
-function submitDemoForm(e) {
-if(e) e.preventDefault();
-var form=document.getElementById('demo-form');
-if(!form||!_validateForm(form)) return;
-var btn=form.querySelector('[type=submit]');
-if(btn){btn.dataset.orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending…';}
-var data={
-name:    (document.getElementById('df-name')||{}).value||'',
-company: (document.getElementById('df-company')||{}).value||'',
-email:   (document.getElementById('df-email')||{}).value||'',
-phone:   (document.getElementById('df-phone')||{}).value||''
-};
-_submitToFormspree(FORMSPREE_DEMO,data,'demo-success','demo-error',btn);
-if(form) form.reset();
-}
-function ckSavePrefs() {
-var a=document.getElementById('ck-analytics'), m=document.getElementById('ck-marketing');
-var prefs={necessary:true,analytics:a?a.checked:false,marketing:m?m.checked:false,ts:new Date().toISOString()};
-try{localStorage.setItem('vx-ck',JSON.stringify(prefs));}catch(e){}
-window.ANALYTICS_CONSENT=prefs.analytics;
-window.MARKETING_CONSENT=prefs.marketing;
-var bar=document.getElementById('ck-bar');
-if(bar) bar.classList.remove('show');
-if(prefs.analytics) loadGA4();
-}
-function ckOk(){
-var a=document.getElementById('ck-analytics'),m=document.getElementById('ck-marketing');
-if(a)a.checked=true; if(m)m.checked=true;
-ckSavePrefs();
-}
-function ckNo(){
-var a=document.getElementById('ck-analytics'),m=document.getElementById('ck-marketing');
-if(a)a.checked=false; if(m)m.checked=false;
-ckSavePrefs();
-}
-function ckToggle(){
-var p=document.getElementById('ck-prefs'); if(!p) return;
-p.style.display=p.style.display==='block'?'none':'block';
-}
-function initRv() {
-if('IntersectionObserver' in window) {
-var obs=new IntersectionObserver(function(entries){
-entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
-},{threshold:0,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.pg.on .rv').forEach(function(el){obs.observe(el);});
-} else {
-document.querySelectorAll('.pg.on .rv').forEach(function(el){el.classList.add('in');});
-}
-setTimeout(function(){document.querySelectorAll('.pg.on .rv').forEach(function(el){el.classList.add('in');});},200);
-}
-function initScrollNav() {
-var n=document.querySelector('.nav'); if(!n) return;
-var prev=0;
-window.addEventListener('scroll',function(){
-var s=window.scrollY;
-n.classList.toggle('scrolled',s>8);
-prev=s;
-},{passive:true});
-}
-function tapCard(el) {
-var already=el.classList.contains('tapped');
-document.querySelectorAll('.lc.tapped').forEach(function(c){c.classList.remove('tapped');});
-if(!already) el.classList.add('tapped');
-}
-function apiNav(id) {
-document.querySelectorAll('.api-nav-link').forEach(function(l){l.classList.remove('active');});
-var a=document.querySelector('[data-sec="'+id+'"]'); if(a) a.classList.add('active');
-var t=document.getElementById('api-'+id); if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-}
-function _markActiveNav() {
-var path = window.location.pathname;
-document.querySelectorAll('a[href]').forEach(function(a) {
-var href = a.getAttribute('href');
-if (!href) return;
-if (href === path || (path === '/' && href === '/')) {
-a.classList.add('nav-current');
-var ni = a.closest('.ni');
-if (ni) ni.classList.add('nav-active');
-}
-});
-}
-document.addEventListener('DOMContentLoaded',function(){
-var bl=(navigator.language||'').toLowerCase();
-if(bl.startsWith('de')) setLang('de');
-else if(bl.startsWith('fr')) setLang('fr');
-else setLang('en');
-_initMenuHover();
-var ham=document.getElementById('ham-btn');
-if(ham) ham.addEventListener('click',function(){
-var m=document.getElementById('mob');
-if(!m) return;
-if(m.classList.contains('open')){closeMob();}
-else{m.classList.add('open');m.style.display='flex';}
-});
-document.addEventListener('click',function(e){if(!e.target.closest('.ni')) closeAll();});
+document.addEventListener('click',function(e){if(!e.target.closest('.ni'))closeAll();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();closeMob();}});
-initScrollNav(); initRv();
-showInd('banking');
-var stored; try{stored=localStorage.getItem('vx-ck');}catch(e){}
-if(!stored){
-setTimeout(function(){var b=document.getElementById('ck-bar');if(b)b.classList.add('show');},1500);
-} else {
-try{
-var p=JSON.parse(stored);
-window.ANALYTICS_CONSENT=p.analytics||false;
-window.MARKETING_CONSENT=p.marketing||false;
-if(p.analytics) loadGA4();
-}catch(e){}
-}
-var cf=document.getElementById('contact-form');
-if(cf) cf.addEventListener('submit',submitContactForm);
-var df=document.getElementById('demo-form');
-if(df) df.addEventListener('submit',submitDemoForm);
-setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});},600);
-applyLang(_lang);
-_markActiveNav();
-});
-window.addEventListener('load',function(){
-document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
-});
 
-/* ── Floating Demo Button ── */
-(function () {
-  var btn = document.getElementById('float-demo-btn');
-  if (!btn) return;
-  var shown = false;
-  function checkScroll() {
-    if (window.scrollY > 300 && !shown) {
-      btn.classList.add('visible');
-      shown = true;
-    }
+/* ═══ MOBILE ═══ */
+document.getElementById('ham-btn').addEventListener('click',function(){
+  var m=document.getElementById('mob');
+  if(m.classList.contains('open')){closeMob();}
+  else{m.classList.add('open');m.style.display='flex';}
+});
+function closeMob(){var m=document.getElementById('mob');m.classList.remove('open');m.style.display='none';}
+
+/* ═══ DEPLOYMENT TABS ═══ */
+function setDep(id){
+  var ids=['saas','swiss','private','onprem'];
+  document.querySelectorAll('.dep-tab').forEach(function(t,i){t.classList.toggle('on',ids[i]===id);});
+  document.querySelectorAll('.dep-panel').forEach(function(p){p.classList.remove('on');});
+  var panel=document.getElementById('dep-'+id);
+  if(panel)panel.classList.add('on');
+}
+
+
+/* ═══ TRANSLATIONS ═══ */
+var T = {
+  en: {
+    /* Nav */
+    nav_industries:'Industries', nav_products:'Products', nav_solutions:'Solutions',
+    nav_resources:'Resources', nav_company:'Company',
+    nav_sales:'Talk to Sales', nav_demo:'Book a Demo',
+    /* Hero */
+    h_kicker:'Swiss-Built · Enterprise-Grade',
+    h_title:'Verify Identity.<br/>Prevent Fraud.<br/>Automate Compliance.<br/><em>One Infrastructure Layer.</em>',
+    h_sub:'VerfiX unifies identity verification, fraud intelligence, AML compliance, and trust scoring into one platform for banks, fintechs, insurers, governments, and other regulated organizations.',
+    h_cta1:'Book a Demo', h_cta2:'Explore Platform',
+    /* Trust Engine */
+    te_label:'Trust Engine™', te_title:'The decision layer behind trusted digital onboarding.',
+    te_sub:'Every identity signal, compliance check, and fraud indicator converges into one structured decision — Approve, Review, or Reject.',
+    te_approve:'Approve', te_review:'Review', te_reject:'Reject',
+    /* Gateway */
+    gw_label:'New Product', gw_title:'VerfiX Gateway',
+    gw_sub:'One API to verify trusted digital identities across Europe.',
+    gw_m1_n:'~3s', gw_m1_l:'Credential verification', gw_m1_s:'Designed for real-time decisioning',
+    gw_m2_n:'27+', gw_m2_l:'EU country coverage', gw_m2_s:'Built for eIDAS 2.0 compatibility',
+    gw_m3_n:'1 API', gw_m3_l:'One integration', gw_m3_s:'For banks and regulated organizations',
+    gw_m4_n:'1 layer', gw_m4_l:'Trust verification', gw_m4_s:'Issuer, credential, signature, revocation',
+    /* Trust Score Demo */
+    ts_label:'Interactive Demo', ts_title:'See how VerfiX builds a trust decision.',
+    ts_sub:'Click any signal to understand what VerfiX checks — then see how it combines into one final decision.',
+    ts_live:'Live Trust Decision',
+    sig_doc:'Document Verification', sig_doc_desc:'Checks document authenticity, OCR data, expiry date, forgery signals, and issuing authority.',
+    sig_face:'Face Match & Liveness', sig_face_desc:'Confirms the person matches the submitted identity document. Liveness check detects deepfakes.',
+    sig_voice:'Voice Verification', sig_voice_desc:'Adds biometric voice identity signal for call centres and telephone banking.',
+    sig_aml:'AML Screening', sig_aml_desc:'Screens against global sanctions, PEP registries, adverse media, and watchlists.',
+    sig_kyb:'KYB / Business Check', sig_kyb_desc:'Verifies business registration, directors, UBO structure against registries and AML lists.',
+    sig_fraud:'Fraud Intelligence', sig_fraud_desc:'Detects synthetic identities, document forgery, device anomalies, and behavioral signals.',
+    sig_risk:'Risk Rules Engine', sig_risk_desc:'Configurable thresholds combine all signals into an automated trust decision.',
+    ts_aml:'AML Status', ts_clear:'Clear', ts_kyb:'KYB Check', ts_verified:'Verified',
+    ts_risk:'Risk Level', ts_low:'Low', ts_score_lbl:'Trust Score',
+    ts_decision_lbl:'Decision', ts_approved:'APPROVED',
+    tfp_doc:'Document verified', tfp_face:'Face matched', tfp_voice:'Voice verified',
+    tfp_aml:'AML clear', tfp_risk:'Risk low',
+    tfp_audit:'Decision logged · Audit trail generated · Exportable on demand',
+    /* Industries */
+    ind_label:'Industries', ind_title:'Built for regulated sectors',
+    ind_sub:'Click any industry to see VerfiX use cases, recommended stack, and deployment options.',
+    /* Security */
+    sec_label:'Security & Compliance', sec_title:'Enterprise security at every layer',
+    sec_sub:'Hover or tap each card to see what it means, how VerfiX helps, and why it matters.',
+    /* Roadmap */
+    rd_label:'Product Roadmap', rd_title:'VerfiX Roadmap',
+    rd_sub:'Where we are, where we are going, and where the infrastructure is headed.',
+    rd_today:'Today', rd_today_lbl:'Available Now',
+    rd_next:'Next', rd_next_lbl:'In Development',
+    rd_future:'Future', rd_future_lbl:'Vision & Direction',
+    rd_note:'Roadmap is indicative. Timelines and features may evolve based on regulatory developments and customer requirements.',
+    /* Footer / Legal */
+    foot_copy:'© 2027 VerfiX AG · Switzerland · All rights reserved',
+    ck_txt:'We use cookies to improve your experience. See our',
+    ck_policy:'Privacy Policy'
+  },
+  de: {
+    nav_industries:'Branchen', nav_products:'Produkte', nav_solutions:'Lösungen',
+    nav_resources:'Ressourcen', nav_company:'Unternehmen',
+    nav_sales:'Vertrieb kontaktieren', nav_demo:'Demo buchen',
+    h_kicker:'Schweizer Qualität · Enterprise-Grade',
+    h_title:'Identität prüfen.<br/>Betrug verhindern.<br/>Compliance automatisieren.<br/><em>Eine Infrastruktur-Schicht.</em>',
+    h_sub:'VerfiX vereint Identitätsprüfung, Betrugsbekämpfung, AML-Compliance und Trust-Scoring in einer Plattform für Banken, Fintechs, Versicherungen und Regierungsbehörden.',
+    h_cta1:'Demo buchen', h_cta2:'Plattform erkunden',
+    te_label:'Trust Engine™', te_title:'Die Entscheidungsschicht hinter vertrauenswürdigem digitalem Onboarding.',
+    te_sub:'Jedes Identitätssignal, jede Compliance-Prüfung und jeder Betrugsindiktor fließt in eine strukturierte Entscheidung — Genehmigen, Prüfen oder Ablehnen.',
+    te_approve:'Genehmigen', te_review:'Prüfen', te_reject:'Ablehnen',
+    gw_label:'Neues Produkt', gw_title:'VerfiX Gateway',
+    gw_sub:'Eine API zur Prüfung digitaler Identitäten in ganz Europa.',
+    gw_m1_n:'~3s', gw_m1_l:'Credential-Verifizierung', gw_m1_s:'Für Echtzeit-Entscheidungen konzipiert',
+    gw_m2_n:'27+', gw_m2_l:'EU-Länderabdeckung', gw_m2_s:'Für eIDAS 2.0-Kompatibilität entwickelt',
+    gw_m3_n:'1 API', gw_m3_l:'Eine Integration', gw_m3_s:'Für Banken und regulierte Organisationen',
+    gw_m4_n:'1 Schicht', gw_m4_l:'Trust-Verifizierung', gw_m4_s:'Aussteller, Credential, Signatur, Widerruf',
+    ts_label:'Interaktive Demo', ts_title:'So trifft VerfiX eine Vertrauensentscheidung.',
+    ts_sub:'Klicken Sie auf ein Signal, um zu verstehen, was VerfiX prüft — und wie alles zu einer Entscheidung kombiniert wird.',
+    ts_live:'Live Trust-Entscheidung',
+    sig_doc:'Dokumentenprüfung', sig_doc_desc:'Prüft Dokumentechtheit, OCR-Daten, Ablaufdatum und Fälschungssignale.',
+    sig_face:'Gesichtsabgleich & Liveness', sig_face_desc:'Bestätigt, dass die Person mit dem vorgelegten Ausweisdokument übereinstimmt.',
+    sig_voice:'Sprachverifizierung', sig_voice_desc:'Biometrisches Sprachidentitätssignal für Call-Center und Telefonbanking.',
+    sig_aml:'AML-Screening', sig_aml_desc:'Prüfung gegen globale Sanktionslisten, PEP-Register und Beobachtungslisten.',
+    sig_kyb:'KYB / Unternehmenscheck', sig_kyb_desc:'Prüft Handelsregistereintrag, Direktoren und UBO-Struktur.',
+    sig_fraud:'Betrugsintelligenz', sig_fraud_desc:'Erkennt synthetische Identitäten, Dokumentenfälschungen und Geräteanomalie.',
+    sig_risk:'Risikoregeln-Engine', sig_risk_desc:'Konfigurierbare Schwellenwerte kombinieren alle Signale zu einer automatisierten Entscheidung.',
+    ts_aml:'AML-Status', ts_clear:'Klar', ts_kyb:'KYB-Prüfung', ts_verified:'Verifiziert',
+    ts_risk:'Risikoniveau', ts_low:'Niedrig', ts_score_lbl:'Trust Score',
+    ts_decision_lbl:'Entscheidung', ts_approved:'GENEHMIGT',
+    tfp_doc:'Dokument verifiziert', tfp_face:'Gesicht abgeglichen', tfp_voice:'Stimme verifiziert',
+    tfp_aml:'AML klar', tfp_risk:'Risiko niedrig',
+    tfp_audit:'Entscheidung protokolliert · Prüfpfad erstellt · Exportierbar',
+    ind_label:'Branchen', ind_title:'Für regulierte Sektoren entwickelt',
+    ind_sub:'Klicken Sie auf eine Branche für Anwendungsfälle, Stack und Deployment-Optionen.',
+    sec_label:'Sicherheit & Compliance', sec_title:'Enterprise-Sicherheit auf jeder Ebene',
+    sec_sub:'Bewegen Sie den Mauszeiger über eine Karte oder tippen Sie darauf für Details.',
+    rd_label:'Produkt-Roadmap', rd_title:'VerfiX Roadmap',
+    rd_sub:'Wo wir stehen, wohin wir gehen und die Infrastruktur-Vision.',
+    rd_today:'Heute', rd_today_lbl:'Verfügbar jetzt',
+    rd_next:'Als nächstes', rd_next_lbl:'In Entwicklung',
+    rd_future:'Zukunft', rd_future_lbl:'Vision & Ausrichtung',
+    rd_note:'Die Roadmap ist indikativ. Zeitpläne können sich aufgrund regulatorischer Entwicklungen ändern.',
+    foot_copy:'© 2027 VerfiX AG · Schweiz · Alle Rechte vorbehalten',
+    ck_txt:'Wir verwenden Cookies. Weitere Informationen in unserer',
+    ck_policy:'Datenschutzerklärung'
+  },
+  fr: {
+    nav_industries:'Secteurs', nav_products:'Produits', nav_solutions:'Solutions',
+    nav_resources:'Ressources', nav_company:'Entreprise',
+    nav_sales:'Contacter les ventes', nav_demo:'Réserver une démo',
+    h_kicker:'Qualité suisse · Grade entreprise',
+    h_title:"Vérifier l'identité.<br/>Prévenir la fraude.<br/>Automatiser la conformité.<br/><em>Une couche d'infrastructure.</em>",
+    h_sub:"VerfiX unifie la vérification d'identité, l'intelligence anti-fraude, la conformité AML et le scoring de confiance en une seule plateforme pour les banques, fintechs, assureurs et gouvernements.",
+    h_cta1:'Réserver une démo', h_cta2:'Explorer la plateforme',
+    te_label:'Trust Engine™', te_title:"La couche de décision derrière l'onboarding numérique de confiance.",
+    te_sub:"Chaque signal d'identité, vérification de conformité et indicateur de fraude converge vers une décision structurée — Approuver, Réviser ou Rejeter.",
+    te_approve:'Approuver', te_review:'Réviser', te_reject:'Rejeter',
+    gw_label:'Nouveau produit', gw_title:'VerfiX Gateway',
+    gw_sub:"Une API pour vérifier les identités numériques de confiance à travers l'Europe.",
+    gw_m1_n:'~3s', gw_m1_l:'Vérification de credential', gw_m1_s:'Conçu pour les décisions en temps réel',
+    gw_m2_n:'27+', gw_m2_l:'Couverture UE', gw_m2_s:'Conçu pour la compatibilité eIDAS 2.0',
+    gw_m3_n:'1 API', gw_m3_l:'Une intégration', gw_m3_s:'Pour banques et organisations réglementées',
+    gw_m4_n:'1 couche', gw_m4_l:'Vérification de confiance', gw_m4_s:'Émetteur, credential, signature, révocation',
+    ts_label:'Démo interactive', ts_title:'Voir comment VerfiX construit une décision de confiance.',
+    ts_sub:"Cliquez sur un signal pour comprendre ce que VerfiX vérifie — puis comment tout se combine en une décision finale.",
+    ts_live:'Décision de confiance en direct',
+    sig_doc:'Vérification de document', sig_doc_desc:"Vérifie l'authenticité du document, OCR, date d'expiration et signaux de fraude.",
+    sig_face:'Correspondance faciale & Liveness', sig_face_desc:"Confirme que la personne correspond au document d'identité soumis.",
+    sig_voice:'Vérification vocale', sig_voice_desc:"Signal biométrique vocal pour centres d'appels et banque téléphonique.",
+    sig_aml:'Screening AML', sig_aml_desc:'Vérification contre les listes de sanctions, registres PEP et médias défavorables.',
+    sig_kyb:'KYB / Vérification entreprise', sig_kyb_desc:'Vérifie immatriculation, dirigeants et structure UBO.',
+    sig_fraud:'Intelligence anti-fraude', sig_fraud_desc:'Détecte identités synthétiques, contrefaçons de documents et anomalies.',
+    sig_risk:'Moteur de règles de risque', sig_risk_desc:'Les seuils configurables combinent tous les signaux en une décision automatisée.',
+    ts_aml:'Statut AML', ts_clear:'Clair', ts_kyb:'Vérification KYB', ts_verified:'Vérifié',
+    ts_risk:'Niveau de risque', ts_low:'Faible', ts_score_lbl:'Score de confiance',
+    ts_decision_lbl:'Décision', ts_approved:'APPROUVÉ',
+    tfp_doc:'Document vérifié', tfp_face:'Visage correspondant', tfp_voice:'Voix vérifiée',
+    tfp_aml:'AML clair', tfp_risk:'Risque faible',
+    tfp_audit:'Décision enregistrée · Piste d\'audit générée · Exportable sur demande',
+    ind_label:'Secteurs', ind_title:'Conçu pour les secteurs réglementés',
+    ind_sub:"Cliquez sur un secteur pour voir les cas d'usage, la stack recommandée et les options de déploiement.",
+    sec_label:'Sécurité & Conformité', sec_title:'Sécurité entreprise à chaque couche',
+    sec_sub:'Survolez ou appuyez sur une carte pour voir les détails.',
+    rd_label:'Feuille de route', rd_title:'Roadmap VerfiX',
+    rd_sub:'Où nous en sommes, où nous allons, et la vision infrastructure.',
+    rd_today:"Aujourd'hui", rd_today_lbl:'Disponible maintenant',
+    rd_next:'Prochain', rd_next_lbl:'En développement',
+    rd_future:'Futur', rd_future_lbl:'Vision & Direction',
+    rd_note:'La roadmap est indicative. Les délais peuvent évoluer selon les développements réglementaires.',
+    foot_copy:'© 2027 VerfiX AG · Suisse · Tous droits réservés',
+    ck_txt:'Nous utilisons des cookies. Consultez notre',
+    ck_policy:'Politique de confidentialité'
   }
-  window.addEventListener('scroll', checkScroll, { passive: true });
-  // Show after 4 seconds regardless of scroll (catches mobile users)
-  setTimeout(function () {
-    if (!shown) { btn.classList.add('visible'); shown = true; }
-  }, 4000);
-})();
+};
 
-
-/* ── Missing functions added by enterprise upgrade ── */
-
-// industryContent alias (spec name) → maps to existing IND_DATA
-var industryContent = window.IND_DATA || {};
-
-// enableAnalytics / enableMarketing — GA4 consent update
-function enableAnalytics() {
-  window.ANALYTICS_CONSENT = true;
-  if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'granted' });
-  loadGA4();
+function applyLang(l) {
+  var tr = T[l] || T['en'];
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (tr[key] !== undefined) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = tr[key];
+      } else {
+        el.innerHTML = tr[key];
+      }
+    }
+  });
+  // Cookie banner
+  var ckTxtEl = document.getElementById('ck-txt');
+  var ckPolicyPage = {en:'privacy',de:'datenschutz',fr:'politique'};
+  if (ckTxtEl) {
+    ckTxtEl.innerHTML = tr['ck_txt'] + ' <a onclick="nav(\''+ckPolicyPage[l]+'\')" style="color:var(--r);cursor:pointer;">' + tr['ck_policy'] + '</a>.';
+  }
+  // Footer copy
+  var footC = document.getElementById('foot-c');
+  if (footC) footC.textContent = tr['foot_copy'];
+  // Footer legal links visibility
+  var de = l==='de', fr = l==='fr';
+  ['imp','dat'].forEach(function(x){var e=document.getElementById('f-'+x);if(e)e.style.display=de?'block':'none';});
+  ['men','pol'].forEach(function(x){var e=document.getElementById('f-'+x);if(e)e.style.display=fr?'block':'none';});
+  // Page title
+  var titles = {
+    en:'VerfiX — Swiss Trust Infrastructure for Regulated Industries',
+    de:'VerfiX — Schweizer Trust-Infrastruktur für regulierte Branchen',
+    fr:'VerfiX — Infrastructure de confiance suisse pour les secteurs réglementés'
+  };
+  var pgTitleEl = document.getElementById('pg-title');
+  if (pgTitleEl) pgTitleEl.textContent = titles[l] || titles.en;
 }
-function enableMarketing() {
-  window.MARKETING_CONSENT = true;
-  if (window.gtag) window.gtag('consent', 'update', { ad_storage: 'granted' });
+
+/* ═══ LANGUAGE ENTRYPOINT ═══ */
+var lang='en';
+function setLang(l){
+  lang=l;
+  document.getElementById('html-root').setAttribute('lang',l);
+  document.querySelectorAll('.lb').forEach(function(b){b.classList.toggle('on',b.textContent.trim().toLowerCase()===l);});
+  document.querySelectorAll('.mlb').forEach(function(b){b.classList.toggle('on',b.textContent.trim().toLowerCase()===l);});
+  applyLang(l);
 }
 
-// loadCalendlyWidget — consent-aware Calendly loader
-window.loadCalendlyWidget = function() {
-  var consent = localStorage.getItem('vx-ck');
-  var prefs = null;
-  try { prefs = consent ? JSON.parse(consent) : null; } catch(e) {}
-  var allowed = prefs && (prefs.marketing || prefs.analytics);
-  if (!allowed) {
-    // Show inline fallback link instead
-    var fb = document.getElementById('calendly-fallback');
-    if (fb) fb.style.display = 'block';
+/* ═══ COOKIE ═══ */
+function ckOk(){localStorage.setItem('vx-ck','ok');document.getElementById('ck-bar').classList.remove('show');}
+function ckNo(){localStorage.setItem('vx-ck','no');document.getElementById('ck-bar').classList.remove('show');}
+
+/* ═══ FORM ═══ */
+/* ═══ CONTACT FORM ═══ */
+/* Set your Formspree form ID below (https://formspree.io → New form).
+   Until then, submissions fall back to opening the visitor's email client. */
+var FORMSPREE_ID = ''; // e.g. 'xayzabcd'
+
+function submitForm(){
+  var n=document.getElementById('fn').value.trim(),
+      c=document.getElementById('fc').value.trim(),
+      e=document.getElementById('fe').value.trim(),
+      ind=document.getElementById('fi').value,
+      m=document.getElementById('fm').value.trim(),
+      st=document.getElementById('fstatus'),
+      btn=document.getElementById('fbtn');
+  var T={
+    en:{req:'Please fill in your name and a valid work email.',sending:'Sending…',ok:'Thank you! We will be in touch within 24 hours.',err:'Something went wrong. Please email contact@verfix.ch directly.'},
+    de:{req:'Bitte Name und eine gültige Geschäfts-E-Mail angeben.',sending:'Wird gesendet…',ok:'Vielen Dank! Wir melden uns innerhalb von 24 Stunden.',err:'Ein Fehler ist aufgetreten. Bitte schreiben Sie an contact@verfix.ch.'},
+    fr:{req:'Veuillez indiquer votre nom et un e-mail professionnel valide.',sending:'Envoi…',ok:'Merci ! Nous vous contacterons dans les 24 heures.',err:'Une erreur est survenue. Écrivez-nous à contact@verfix.ch.'}
+  }[lang];
+  function show(kind,msg){st.className='form-status show '+kind;st.textContent=msg;}
+  var emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+  if(!n||!emailOk){show('err',T.req);return;}
+
+  var payload={name:n,company:c,email:e,industry:ind,message:m,_subject:'VerfiX demo request — '+(c||n)};
+
+  if(!FORMSPREE_ID){
+    // Graceful fallback: compose an email so the lead is never lost.
+    var body=encodeURIComponent('Name: '+n+'\nCompany: '+c+'\nEmail: '+e+'\nIndustry: '+ind+'\n\n'+m);
+    window.location.href='mailto:sales@verfix.ch?subject='+encodeURIComponent('Demo request — '+(c||n))+'&body='+body;
+    show('ok',T.ok);
     return;
   }
-  var widget = document.getElementById('calendly-inline-widget');
-  if (!widget) return;
-  if (window.Calendly) {
-    window.Calendly.initInlineWidget({
-      url: 'https://calendly.com/ahmed-ahmed-alsultan/30min?hide_gdpr_banner=1',
-      parentElement: widget
-    });
+
+  btn.disabled=true;show('sending',T.sending);
+  fetch('https://formspree.io/f/'+FORMSPREE_ID,{
+    method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  }).then(function(r){
+    btn.disabled=false;
+    if(r.ok){show('ok',T.ok);['fn','fc','fe','fm'].forEach(function(id){document.getElementById(id).value='';});document.getElementById('fi').value='';}
+    else{show('err',T.err);}
+  }).catch(function(){btn.disabled=false;show('err',T.err);});
+}
+
+/* ═══ SCROLL REVEAL — BULLETPROOF ═══ */
+function initRv(){
+  document.body.classList.add('js-ready');
+  var els=document.querySelectorAll('.pg.on .rv');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
+      });
+    },{threshold:0,rootMargin:'20px'});
+    els.forEach(function(el){obs.observe(el);});
   } else {
-    var s = document.createElement('script');
-    s.src = 'https://assets.calendly.com/assets/external/widget.js';
-    s.async = true;
-    s.onload = function() {
-      if (window.Calendly) {
-        window.Calendly.initInlineWidget({
-          url: 'https://calendly.com/ahmed-ahmed-alsultan/30min?hide_gdpr_banner=1',
-          parentElement: widget
-        });
-      }
-    };
-    document.head.appendChild(s);
+    els.forEach(function(el){el.classList.add('in');});
   }
-};
+  /* Hard fallback: force visible after 120ms */
+  setTimeout(function(){
+    document.querySelectorAll('.pg.on .rv').forEach(function(el){el.classList.add('in');});
+  },120);
+}
 
-// Prefers-reduced-motion — add class to <html> so CSS can target it
-(function() {
-  try {
-    var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mq.matches) document.documentElement.classList.add('reduce-motion');
-    mq.addEventListener('change', function(e) {
-      document.documentElement.classList.toggle('reduce-motion', e.matches);
-    });
-  } catch(e) {}
-})();
+/* ═══ NAV SCROLL SHADOW ═══ */
+function initScrollNav(){
+  var n=document.querySelector('.nav');
+  window.addEventListener('scroll',function(){n.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+}
 
-// Cookie consent key bridge — spec uses 'cookie_consent', our code uses 'vx-ck'
-// Expose a unified helper so both keys work
-(function bridgeCookieKeys() {
-  var legacyKey = localStorage.getItem('cookie_consent');
-  if (legacyKey && !localStorage.getItem('vx-ck')) {
-    var prefs = {necessary: true, analytics: legacyKey === 'all', marketing: legacyKey === 'all', ts: new Date().toISOString()};
-    try { localStorage.setItem('vx-ck', JSON.stringify(prefs)); } catch(e) {}
-  }
-  // Also expose spec-compatible getters
-  window.getCookieConsent = function() {
-    try { return JSON.parse(localStorage.getItem('vx-ck') || 'null'); } catch(e) { return null; }
-  };
-})();
-
-/* ═══════════════════════════════════════════════════════════════
-   ENTERPRISE ADDITIONS — v2.0.0
-   Error handling · Monitoring · Accessibility · PWA
-   ═══════════════════════════════════════════════════════════════ */
-
-// ── 1. Global Error Handler ──────────────────────────────────
-window.onerror = function(msg, src, line, col, err) {
-  try {
-    var payload = {
-      message: String(msg).substring(0, 200),
-      source:  String(src).substring(0, 100),
-      line:    line,
-      col:     col,
-      stack:   err && err.stack ? String(err.stack).substring(0, 400) : ''
-    };
-    // Send to GA4 as exception event (non-fatal)
-    if (window.gtag) {
-      gtag('event', 'exception', {
-        description: payload.message + ' @ ' + payload.source + ':' + payload.line,
-        fatal: false
-      });
-    }
-    console.error('[VerfiX Error]', payload);
-  } catch(e) { /* fail silently */ }
-  return false; // don't suppress default browser handling
-};
-
-// Unhandled promise rejections
-window.addEventListener('unhandledrejection', function(e) {
-  try {
-    if (window.gtag) {
-      gtag('event', 'exception', {
-        description: 'Unhandled promise: ' + String(e.reason).substring(0, 200),
-        fatal: false
-      });
-    }
-  } catch(ex) { /* fail silently */ }
+/* ═══ INIT ═══ */
+document.addEventListener('DOMContentLoaded',function(){
+  var bl=(navigator.language||'').toLowerCase();
+  if(bl.startsWith('de'))setLang('de');
+  else if(bl.startsWith('fr'))setLang('fr');
+  else setLang('en');
+  initRv();
+  initScrollNav();
+  showInd('banking');
+  setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});},500);
+  // Apply translations on load
+  applyLang(lang);
+});
+window.addEventListener('load',function(){
+  if(!localStorage.getItem('vx-ck'))setTimeout(function(){document.getElementById('ck-bar').classList.add('show');},1400);
+  document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
 });
 
 
-// ── 2. Core Web Vitals reporting ────────────────────────────
-(function initWebVitals() {
-  if (!window.gtag) return;
+/* ═══ TRUST SCORE DEMO ═══ */
+function activateSig(el) {
+  document.querySelectorAll('.ts-sig').forEach(function(s){ s.classList.remove('active'); });
+  el.classList.add('active');
+}
 
-  function sendVital(name, value, rating) {
-    gtag('event', name, {
-      event_category: 'Web Vitals',
-      value:          Math.round(name === 'CLS' ? value * 1000 : value),
-      metric_rating:  rating || 'unknown',
-      non_interaction: true
-    });
+/* ═══ INDUSTRIES INTERACTIVE ═══ */
+var openIndKey = null;
+function toggleInd(el, key) {
+  var panel = document.getElementById('idp-' + key);
+  if (!panel) return;
+  var allPanels = document.querySelectorAll('.ind-detail-panel');
+  var allCards  = document.querySelectorAll('.ipc');
+  if (openIndKey === key) {
+    // close
+    panel.classList.remove('open');
+    el.classList.remove('open');
+    openIndKey = null;
+    return;
   }
+  allPanels.forEach(function(p){ p.classList.remove('open'); });
+  allCards.forEach(function(c){ c.classList.remove('open'); });
+  panel.classList.add('open');
+  el.classList.add('open');
+  openIndKey = key;
+  // Scroll panel into view smoothly
+  setTimeout(function(){
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 60);
+}
 
-  // Largest Contentful Paint (LCP)
-  try {
-    var lcpObserver = new PerformanceObserver(function(list) {
-      var entries = list.getEntries();
-      var lcp = entries[entries.length - 1];
-      var v = lcp.startTime;
-      sendVital('LCP', v, v < 2500 ? 'good' : v < 4000 ? 'needs-improvement' : 'poor');
-      lcpObserver.disconnect();
-    });
-    lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-  } catch(e) {}
-
-  // Cumulative Layout Shift (CLS)
-  try {
-    var clsValue = 0;
-    var clsObserver = new PerformanceObserver(function(list) {
-      list.getEntries().forEach(function(entry) {
-        if (!entry.hadRecentInput) clsValue += entry.value;
-      });
-    });
-    clsObserver.observe({ type: 'layout-shift', buffered: true });
-    // Report CLS on page hide/unload
-    document.addEventListener('visibilitychange', function() {
-      if (document.visibilityState === 'hidden') {
-        sendVital('CLS', clsValue, clsValue < 0.1 ? 'good' : clsValue < 0.25 ? 'needs-improvement' : 'poor');
-        clsObserver.disconnect();
-      }
-    }, { once: true });
-  } catch(e) {}
-
-  // Interaction to Next Paint (INP) — via Event Timing API
-  try {
-    var maxInp = 0;
-    var inpObserver = new PerformanceObserver(function(list) {
-      list.getEntries().forEach(function(entry) {
-        var dur = entry.duration;
-        if (dur > maxInp) maxInp = dur;
-      });
-    });
-    inpObserver.observe({ type: 'event', durationThreshold: 40, buffered: true });
-    document.addEventListener('visibilitychange', function() {
-      if (document.visibilityState === 'hidden' && maxInp > 0) {
-        sendVital('INP', maxInp, maxInp < 200 ? 'good' : maxInp < 500 ? 'needs-improvement' : 'poor');
-        inpObserver.disconnect();
-      }
-    }, { once: true });
-  } catch(e) {}
-})();
-
-
-// ── 3. Outbound Link & Interaction Tracking ──────────────────
-(function initOutboundTracking() {
-  document.addEventListener('click', function(e) {
-    try {
-      var link = e.target.closest('a[href]');
-      if (!link) return;
-      var href = link.href || '';
-
-      // External links
-      if (href && !href.startsWith(location.origin) && !href.startsWith('javascript')) {
-        var category = href.includes('calendly.com') ? 'Calendly' :
-                       href.includes('linkedin.com')  ? 'LinkedIn'  :
-                       href.includes('mailto:')        ? 'Email'    :
-                       href.includes('tel:')           ? 'Phone'    : 'Outbound';
-        if (window.gtag) {
-          gtag('event', 'click', {
-            event_category: category,
-            event_label:    href.substring(0, 150),
-            transport_type: 'beacon'
-          });
-        }
-      }
-
-      // CTA tracking — already handled by trackCTA() but catch any missed ones
-      if (link.classList.contains('btn') && !link.hasAttribute('data-tracked')) {
-        link.setAttribute('data-tracked', '1');
-        if (window.gtag) {
-          gtag('event', 'cta_click', {
-            event_category: 'CTA',
-            event_label: (link.textContent || '').trim().substring(0, 80)
-          });
-        }
-      }
-    } catch(ex) {}
-  }, { passive: true });
-})();
-
-
-// ── 4. Scroll Depth Tracking ────────────────────────────────
-(function initScrollDepth() {
-  if (!window.gtag) return;
-  var milestones = [25, 50, 75, 100];
-  var reached    = {};
-  var ticking    = false;
-
-  function checkDepth() {
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
-    var docHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight
-    );
-    var viewHeight = window.innerHeight;
-    var pct = Math.round(((scrollTop + viewHeight) / docHeight) * 100);
-
-    milestones.forEach(function(m) {
-      if (pct >= m && !reached[m]) {
-        reached[m] = true;
-        gtag('event', 'scroll', {
-          event_category: 'Engagement',
-          event_label:    m + '%',
-          value:          m,
-          non_interaction: m < 50
-        });
-      }
-    });
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      requestAnimationFrame(checkDepth);
-      ticking = true;
-    }
-  }, { passive: true });
-})();
-
-
-// ── 5. Focus Management for Mega Menus ──────────────────────
-(function initFocusManagement() {
-  // When a mega menu opens, the first focusable item inside gets focus
-  // When it closes, focus returns to the trigger
-  var _lastFocused = null;
-
-  document.querySelectorAll('.ni').forEach(function(ni) {
-    var trigger = ni.querySelector('span[role="button"], span[onclick]');
-    var mega    = ni.querySelector('.mega');
-    if (!trigger || !mega) return;
-
-    // Store last focused element when opening
-    trigger.addEventListener('keydown', function(e) {
-      if ((e.key === 'Enter' || e.key === ' ') && !ni.classList.contains('open')) {
-        e.preventDefault();
-        _lastFocused = document.activeElement;
-        // Focus first focusable item in mega
-        setTimeout(function() {
-          var first = mega.querySelector('a[href], button, [tabindex="0"]');
-          if (first) first.focus();
-        }, 50);
-      }
-    });
-
-    // Escape closes and returns focus
-    mega.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeAll();
-        if (_lastFocused) { _lastFocused.focus(); _lastFocused = null; }
-      }
-      // Tab trap: wrap within mega
-      if (e.key === 'Tab') {
-        var focusable = Array.from(mega.querySelectorAll('a[href], button, [tabindex="0"]'));
-        if (!focusable.length) return;
-        var first = focusable[0], last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault(); last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          closeAll();
-          if (_lastFocused) { _lastFocused.focus(); _lastFocused = null; }
-        }
-      }
-    });
-  });
-})();
-
-
-// ── 6. PWA Service Worker Registration ──────────────────────
-(function registerSW() {
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js').then(function(reg) {
-        // Check for updates
-        reg.addEventListener('updatefound', function() {
-          var newWorker = reg.installing;
-          if (newWorker) {
-            newWorker.addEventListener('statechange', function() {
-              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                // New content available — could show a "refresh" toast here
-                console.info('[SW] New version available. Refresh to update.');
-              }
-            });
-          }
-        });
-      }).catch(function(err) {
-        // SW registration failure is non-critical
-        console.warn('[SW] Registration failed:', err.message);
-      });
-    });
-  }
-})();
-
-
-// ── 7. Safe DOM Helper — use throughout for robustness ───────
-window.vfx = window.vfx || {};
-window.vfx.$ = function(sel, ctx) {
-  try { return (ctx || document).querySelector(sel); } catch(e) { return null; }
-};
-window.vfx.$$ = function(sel, ctx) {
-  try { return Array.from((ctx || document).querySelectorAll(sel)); } catch(e) { return []; }
-};
-window.vfx.on = function(el, evt, fn, opts) {
-  try { if (el) el.addEventListener(evt, fn, opts || false); } catch(e) {}
-};
-
-
-// ── 8. Calendly Fallback (strengthen existing) ──────────────
-(function ensureCalendlyFallback() {
-  // If Calendly widget doesn't load within 5s on the contact page,
-  // show the fallback link
-  var widget = document.getElementById('calendly-inline-widget');
-  if (!widget) return;
-
-  var fallback = document.getElementById('calendly-fallback');
-  if (!fallback) {
-    fallback = document.createElement('div');
-    fallback.id = 'calendly-fallback';
-    fallback.style.cssText = 'display:none;text-align:center;padding:1.5rem;';
-    fallback.innerHTML = '<p style="color:var(--m);margin-bottom:.75rem;font-size:.9rem;">Calendar failed to load.</p>'
-      + '<a href="https://calendly.com/ahmed-ahmed-alsultan/30min" target="_blank" rel="noopener noreferrer" class="btn btn-r">'
-      + '<i class="fas fa-calendar-check"></i> Open Calendly directly</a>';
-    widget.parentNode && widget.parentNode.insertBefore(fallback, widget.nextSibling);
-  }
-
-  setTimeout(function() {
-    var iframe = widget.querySelector('iframe');
-    if (!iframe || iframe.offsetHeight < 100) {
-      widget.style.display = 'none';
-      fallback.style.display = 'block';
-      if (window.gtag) gtag('event', 'calendly_fallback', { event_category: 'Error' });
-    }
-  }, 6000);
-})();
-
-
-// Backdrop click closes all menus
-(function() {
-  var bd = document.getElementById('nav-backdrop');
-  if (bd) {
-    bd.addEventListener('click', function() { closeAll(); });
-  }
-})();
+/* ═══ MOBILE TAP FOR LEADER CARDS ═══ */
+function tapCard(el){
+  var already=el.classList.contains('tapped');
+  document.querySelectorAll('.lc.tapped').forEach(function(c){c.classList.remove('tapped');});
+  if(!already)el.classList.add('tapped');
+}
