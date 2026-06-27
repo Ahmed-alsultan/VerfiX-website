@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>Datenschutzerklärung | VerfiX</title>
-<meta name="description" content="Datenschutzerklärung der VerfiX AG nach Schweizer DSG und nFADP.">
+<title>Documentation — API, SDKs, Guides | VerfiX</title>
+<meta name="description" content="VerfiX Documentation Center — quick start, authentication, API reference for KYC, KYB, AML, webhooks, SDKs, error codes and rate limits.">
 <meta name="author" content="VerfiX AG">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <meta name="theme-color" content="#1A1F2E">
-<link rel="canonical" href="https://verfix.swiss/datenschutz.html">
+<link rel="canonical" href="https://verfix.swiss/docs.html">
 <link rel="alternate" hreflang="en" href="https://verfix.swiss/en/">
 <link rel="alternate" hreflang="de" href="https://verfix.swiss/de/">
 <link rel="alternate" hreflang="fr" href="https://verfix.swiss/fr/">
 <link rel="alternate" hreflang="x-default" href="https://verfix.swiss/en/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://verfix.swiss/datenschutz.html">
-<meta property="og:title" content="Datenschutzerklärung | VerfiX">
-<meta property="og:description" content="Datenschutzerklärung der VerfiX AG nach Schweizer DSG und nFADP.">
+<meta property="og:url" content="https://verfix.swiss/docs.html">
+<meta property="og:title" content="Documentation — API, SDKs, Guides | VerfiX">
+<meta property="og:description" content="VerfiX unifies identity verification, fraud intelligence, AML compliance, and trust scoring into one Swiss infrastructure platform for banks, fintechs, insurers, and governments."/>
 <meta property="og:site_name" content="VerfiX">
 <meta property="og:image" content="https://verfix.swiss/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Datenschutzerklärung | VerfiX">
-<meta name="twitter:description" content="Datenschutzerklärung der VerfiX AG nach Schweizer DSG und nFADP.">
+<meta name="twitter:title" content="Documentation — API, SDKs, Guides | VerfiX">
+<meta name="twitter:description" content="VerfiX unifies identity verification, fraud intelligence, AML compliance, and trust scoring into one Swiss infrastructure platform for banks, fintechs, insurers, and governments."/>
 <meta name="twitter:site" content="@verfix">
 <script type="application/ld+json">
 {
@@ -63,6 +63,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/main.css">
 <style id="seo-reveal-fix">.rv{opacity:1 !important;transform:none !important;}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://verfix.swiss/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://verfix.swiss/docs.html"}]}</script>
 </head>
 <body>
 
@@ -257,16 +258,162 @@
      HOME PAGE
 ═══════════════════════════════════════ -->
 
-<div id="pg-datenschutz" class="pg on">
-<div class="legal-wrap"><div class="W"><div class="legal-bd">
-<h1>Datenschutzerklärung</h1><p class="l-date">Stand: Januar 2025</p>
-<div class="info-box"><p><strong>VerfiX AG</strong> · Schweiz · <a href="mailto:privacy@verfix.ch">privacy@verfix.ch</a></p></div>
-<h2>1. Verantwortliche Stelle</h2><p>VerfiX AG verarbeitet personenbezogene Daten gemäß dem Schweizer Datenschutzgesetz (nDSG) und, soweit anwendbar, der DSGVO.</p>
-<h2>2. Erhobene Daten</h2><p>Technische Daten der Website-Nutzung sowie über das Kontaktformular übermittelte Angaben. Verifizierungsdaten werden ausschließlich im Auftrag unserer Kunden verarbeitet.</p>
-<h2>3. Datenstandort</h2><p>Die Verifizierungsverarbeitung erfolgt ausschließlich in der Schweiz.</p>
-<h2>4. Ihre Rechte</h2><p>Auskunft, Berichtigung, Löschung — <a href="mailto:privacy@verfix.ch">privacy@verfix.ch</a>.</p></div></div></div>
-</div>
-<!-- SOCIAL BAR -->
+<div id="pg-docs" class="pg on">
+<section class="docs-hero"><div class="W">
+  <span class="label" style="color:rgba(255,255,255,.4);">Documentation Center</span>
+  <h1>Integrate VerfiX in minutes</h1>
+  <p>Everything developers and compliance teams need — quick-start guides, a single REST API for KYC, KYB and AML, webhooks, SDKs, and a full error reference. Swiss-hosted, eIDAS 2.0 and nFADP-ready.</p>
+  <div class="docs-hero-cta">
+    <a href="contact.html" class="btn btn-r btn-lg">Request API access</a>
+    <a href="#docs-quickstart" class="btn btn-wo btn-lg">Quick start</a>
+  </div>
+</div></section>
+
+<div class="W"><div class="docs-layout">
+  <aside class="docs-nav">
+    <h4>Get started</h4>
+    <a href="#docs-quickstart">Quick start</a>
+    <a href="#docs-auth">Authentication</a>
+    <a href="#docs-env">Environments</a>
+    <h4>API reference</h4>
+    <a href="#docs-kyc">KYC — Verify a person</a>
+    <a href="#docs-kyb">KYB — Verify a company</a>
+    <a href="#docs-aml">AML — Screening</a>
+    <a href="#docs-webhooks">Webhooks</a>
+    <h4>Reference</h4>
+    <a href="#docs-sdks">SDKs</a>
+    <a href="#docs-errors">Error codes</a>
+    <a href="#docs-limits">Rate limits</a>
+  </aside>
+  <div class="docs-body">
+
+    <section id="docs-quickstart" class="docs-sec">
+      <span class="docs-kicker">01 · Quick start</span>
+      <h2>Make your first verification</h2>
+      <p>Create a sandbox API key from your VerfiX dashboard, then call the verification endpoint. Every request is authenticated with a bearer token and returns a Trust Score with an explainable signal breakdown.</p>
+      <div class="docs-code"><div class="docs-code-bar"><span>cURL</span><span class="docs-code-tag">POST /v1/verifications</span></div><pre><code>curl https://api.verfix.ch/v1/verifications \
+  -H "Authorization: Bearer sk_sandbox_..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "kyc",
+    "person": { "first_name": "Anna", "last_name": "Keller", "country": "CH" },
+    "checks": ["document", "face", "aml"]
+  }'</code></pre></div>
+    </section>
+
+    <section id="docs-auth" class="docs-sec">
+      <span class="docs-kicker">02 · Authentication</span>
+      <h2>Bearer tokens</h2>
+      <p>VerfiX uses API keys scoped per environment. Pass your secret key in the <code>Authorization</code> header. Never expose secret keys in client-side code — use the publishable key for hosted flows and the secret key server-side only.</p>
+      <div class="docs-table"><table>
+        <tr><th>Key prefix</th><th>Scope</th><th>Use</th></tr>
+        <tr><td><code>pk_live_</code></td><td>Publishable</td><td>Hosted verification widget</td></tr>
+        <tr><td><code>sk_live_</code></td><td>Secret</td><td>Server-side API calls</td></tr>
+        <tr><td><code>sk_sandbox_</code></td><td>Sandbox</td><td>Testing — no real data</td></tr>
+      </table></div>
+    </section>
+
+    <section id="docs-env" class="docs-sec">
+      <span class="docs-kicker">03 · Environments</span>
+      <h2>Sandbox &amp; production</h2>
+      <p>The sandbox mirrors production behaviour with deterministic test fixtures so you can simulate approvals, reviews, and rejections. All data is hosted in Switzerland.</p>
+      <div class="docs-table"><table>
+        <tr><th>Environment</th><th>Base URL</th></tr>
+        <tr><td>Sandbox</td><td><code>https://api.sandbox.verfix.ch</code></td></tr>
+        <tr><td>Production</td><td><code>https://api.verfix.ch</code></td></tr>
+      </table></div>
+    </section>
+
+    <section id="docs-kyc" class="docs-sec">
+      <span class="docs-kicker">04 · API reference</span>
+      <h2>KYC — Verify a person</h2>
+      <p>Run document verification, face match, liveness, and AML screening in a single call. Returns a verification object with a Trust Score and per-signal results.</p>
+      <div class="docs-code"><div class="docs-code-bar"><span>Response</span><span class="docs-code-tag">200 OK</span></div><pre><code>{
+  "id": "ver_8f2a...",
+  "type": "kyc",
+  "status": "approved",
+  "trust_score": 92,
+  "signals": {
+    "document": "pass",
+    "face_match": "pass",
+    "liveness": "pass",
+    "aml": "clear"
+  },
+  "created_at": "2027-06-19T10:24:00Z"
+}</code></pre></div>
+    </section>
+
+    <section id="docs-kyb" class="docs-sec">
+      <span class="docs-kicker">04 · API reference</span>
+      <h2>KYB — Verify a company</h2>
+      <p>Resolve a legal entity against commercial registries, extract directors and ultimate beneficial owners, and screen the structure for sanctions and adverse media.</p>
+      <div class="docs-code"><div class="docs-code-bar"><span>cURL</span><span class="docs-code-tag">POST /v1/companies</span></div><pre><code>curl https://api.verfix.ch/v1/companies \
+  -H "Authorization: Bearer sk_live_..." \
+  -d '{ "name": "Example AG", "country": "CH", "registry_id": "CHE-123.456.789" }'</code></pre></div>
+    </section>
+
+    <section id="docs-aml" class="docs-sec">
+      <span class="docs-kicker">04 · API reference</span>
+      <h2>AML — Screening</h2>
+      <p>Screen names against sanctions lists, PEP databases, and adverse media. Configure match thresholds and ongoing monitoring through the Rules Builder.</p>
+      <div class="docs-code"><div class="docs-code-bar"><span>cURL</span><span class="docs-code-tag">POST /v1/screenings</span></div><pre><code>curl https://api.verfix.ch/v1/screenings \
+  -H "Authorization: Bearer sk_live_..." \
+  -d '{ "name": "Anna Keller", "country": "CH", "lists": ["sanctions","pep","adverse_media"] }'</code></pre></div>
+    </section>
+
+    <section id="docs-webhooks" class="docs-sec">
+      <span class="docs-kicker">05 · Webhooks</span>
+      <h2>Event notifications</h2>
+      <p>Subscribe to verification lifecycle events. VerfiX signs every payload with an HMAC signature in the <code>VerfiX-Signature</code> header — verify it before trusting the body.</p>
+      <div class="docs-table"><table>
+        <tr><th>Event</th><th>Fired when</th></tr>
+        <tr><td><code>verification.approved</code></td><td>Decision resolves to approve</td></tr>
+        <tr><td><code>verification.review</code></td><td>Routed to manual review</td></tr>
+        <tr><td><code>verification.rejected</code></td><td>Decision resolves to reject</td></tr>
+        <tr><td><code>screening.match</code></td><td>An AML/PEP match is found</td></tr>
+      </table></div>
+    </section>
+
+    <section id="docs-sdks" class="docs-sec">
+      <span class="docs-kicker">06 · SDKs</span>
+      <h2>Official libraries</h2>
+      <div class="docs-sdk-grid">
+        <div class="docs-sdk"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+        <div class="docs-sdk"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="docs-sdk"><i class="fab fa-java"></i><span>Java</span></div>
+        <div class="docs-sdk"><i class="fas fa-hashtag"></i><span>.NET</span></div>
+        <div class="docs-sdk"><i class="fab fa-php"></i><span>PHP</span></div>
+        <div class="docs-sdk"><i class="fab fa-react"></i><span>React (hosted)</span></div>
+      </div>
+    </section>
+
+    <section id="docs-errors" class="docs-sec">
+      <span class="docs-kicker">07 · Error codes</span>
+      <h2>Error reference</h2>
+      <div class="docs-table"><table>
+        <tr><th>Code</th><th>Meaning</th></tr>
+        <tr><td><code>400</code></td><td>Invalid request — check required fields</td></tr>
+        <tr><td><code>401</code></td><td>Missing or invalid API key</td></tr>
+        <tr><td><code>403</code></td><td>Key not permitted for this resource</td></tr>
+        <tr><td><code>429</code></td><td>Rate limit exceeded</td></tr>
+        <tr><td><code>5xx</code></td><td>Service error — retry with backoff</td></tr>
+      </table></div>
+    </section>
+
+    <section id="docs-limits" class="docs-sec">
+      <span class="docs-kicker">08 · Rate limits</span>
+      <h2>Throughput</h2>
+      <p>Sandbox is limited to 60 requests/minute. Production limits are set per contract — enterprise plans include burst capacity and dedicated throughput. A <code>429</code> response includes a <code>Retry-After</code> header.</p>
+      <div class="docs-cta-card">
+        <h3>Ready to build?</h3>
+        <p>Request sandbox access and we'll provision your keys and a solutions engineer.</p>
+        <a href="contact.html" class="btn btn-r btn-lg">Request API access</a>
+      </div>
+    </section>
+
+  </div>
+</div></div>
+</div><!-- SOCIAL BAR -->
 <div class="social-bar">
   <div class="social-inner">
     <div>
@@ -304,7 +451,7 @@
         <a href="tel:+41765465642"><i class="fas fa-phone"></i>0041 76 546 56 42</a>
       </div>
       <div class="foot-social">
-        <a class="foot-soc-ico li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" title="VerfiX on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="foot-soc-ico li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a class="foot-soc-ico yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
         <a class="foot-soc-ico gh" href="https://github.com/Ahmed-alsultan/VerfiX" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
         <a class="foot-soc-ico ph" href="https://www.producthunt.com/products/verfix?launch=verfix" target="_blank" rel="noopener" title="Product Hunt"><i class="fab fa-product-hunt"></i></a>
