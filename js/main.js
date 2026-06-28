@@ -276,9 +276,22 @@ function setLang(l){
   applyLang(l);
 }
 
-/* ═══ COOKIE ═══ */
-function ckOk(){localStorage.setItem('vx-ck','ok');document.getElementById('ck-bar').classList.remove('show');}
-function ckNo(){localStorage.setItem('vx-ck','no');document.getElementById('ck-bar').classList.remove('show');}
+/* ═══ COOKIE CONSENT (gates analytics) ═══ */
+function vxConsent(){return localStorage.getItem('vx-ck');}
+function vxLoadAnalytics(){
+  // Only runs after explicit accept. Tracking scripts go here — gated by consent.
+  if(window.__vxAnalyticsLoaded)return;
+  window.__vxAnalyticsLoaded=true;
+  /* Example (uncomment & set your ID when you add analytics):
+  var s=document.createElement('script');
+  s.defer=true; s.dataset.domain='verfix.swiss';
+  s.src='https://plausible.io/js/script.js';
+  document.head.appendChild(s);
+  */
+}
+function ckOk(){localStorage.setItem('vx-ck','ok');document.getElementById('ck-bar').classList.remove('show');vxLoadAnalytics();}
+function ckNo(){localStorage.setItem('vx-ck','no');document.getElementById('ck-bar').classList.remove('show');/* analytics NOT loaded */}
+function vxReopenConsent(){document.getElementById('ck-bar').classList.add('show');}
 
 /* ═══ FORM ═══ */
 /* ═══ CONTACT FORM ═══ */
@@ -365,6 +378,7 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 window.addEventListener('load',function(){
   if(!localStorage.getItem('vx-ck'))setTimeout(function(){document.getElementById('ck-bar').classList.add('show');},1400);
+  else if(localStorage.getItem('vx-ck')==='ok')vxLoadAnalytics();
   document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
 });
 
