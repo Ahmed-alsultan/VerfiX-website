@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VerfiX — Investor Pitch Deck</title>
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --r:#C8252A; --r2:#9a1d22; --n:#1A1F2E; --n2:#12161f; --off:#F5F6F8;
+    --fd:'Bricolage Grotesque',system-ui,sans-serif;
+    --fb:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --fm:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  deck-stage:not(:defined){visibility:hidden;}
+  body{background:#0a0c11;font-family:var(--fb);}
+  section{
+    width:1920px;height:1080px;position:relative;overflow:hidden;
+    padding:96px 120px;display:flex;flex-direction:column;
+    background:var(--n);color:#fff;font-family:var(--fb);
+  }
+  section.light{background:var(--off);color:var(--n);}
+  .ey{font-family:var(--fm);font-size:21px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--r);}
+  h1{font-family:var(--fd);font-weight:800;letter-spacing:-.025em;line-height:1.04;font-size:96px;}
+  h2{font-family:var(--fd);font-weight:800;letter-spacing:-.02em;line-height:1.06;font-size:74px;}
+  h3{font-family:var(--fd);font-weight:700;letter-spacing:-.01em;line-height:1.1;}
+  em{font-style:normal;color:var(--r);}
+  .wm{font-family:var(--fd);font-weight:800;font-size:32px;letter-spacing:-.02em;color:#fff;}
+  .light .wm{color:var(--n);}
+  .wm b{color:var(--r);font-weight:800;}
+  .sub{font-size:33px;line-height:1.55;color:rgba(255,255,255,.66);font-weight:400;}
+  .light .sub{color:#4a5568;}
+  .foot{position:absolute;left:120px;right:120px;bottom:54px;display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--fm);font-size:18px;letter-spacing:.06em;color:rgba(255,255,255,.32);text-transform:uppercase;}
+  .light .foot{color:rgba(26,31,46,.4);border-top:1px solid rgba(26,31,46,.1);padding-top:18px;}
+  .foot{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;}
+  .accent{position:absolute;top:0;left:0;width:10px;height:100%;background:var(--r);}
+  /* helpers */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:38px;}
+  .light .card{background:#fff;border:1px solid #e4e7ec;box-shadow:0 10px 30px rgba(26,31,46,.05);}
+  .card .ico{width:74px;height:74px;border-radius:16px;background:rgba(200,37,42,.14);color:var(--r);
+    display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:24px;}
+  .card h3{font-size:33px;margin-bottom:12px;color:#fff;}
+  .light .card h3{color:var(--n);}
+  .card p{font-size:24px;line-height:1.5;color:rgba(255,255,255,.6);}
+  .light .card p{color:#4a5568;}
+  .big{font-family:var(--fd);font-weight:800;color:var(--r);line-height:1;}
+  .pill{display:inline-flex;align-items:center;gap:12px;font-family:var(--fm);font-size:20px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(200,37,42,.16);border:1px solid rgba(200,37,42,.4);
+    border-radius:100px;padding:14px 26px;}
+  ul.ck{list-style:none;display:flex;flex-direction:column;gap:22px;}
+  ul.ck li{display:flex;gap:18px;align-items:flex-start;font-size:30px;line-height:1.45;color:rgba(255,255,255,.82);}
+  .light ul.ck li{color:#2a3142;}
+  ul.ck li i{color:var(--r);font-size:26px;margin-top:6px;flex-shrink:0;}
+  .note{font-size:19px;color:rgba(255,255,255,.4);line-height:1.5;}
+  .light .note{color:#8a93a3;}
+</style>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+
+  <!-- 1 · COVER -->
+  <section data-label="Cover" style="justify-content:center;background:radial-gradient(120% 100% at 80% 0%,#222a3d,#12161f);">
+    <div class="accent"></div>
+    <div class="wm" style="position:absolute;top:96px;left:120px;">Verfi<b>X</b></div>
+    <div class="pill" style="margin-bottom:40px;align-self:flex-start;"><i class="fas fa-flag"></i> Swiss Identity &amp; Payment Infrastructure</div>
+    <h1 style="max-width:1500px;">The European identity &amp; payment infrastructure of the future.</h1>
+    <p class="sub" style="margin-top:38px;max-width:1180px;">Swiss-made, privacy-first verification that runs <em>on-premise</em> and <em>on-chip</em> — so sensitive biometric data never leaves the device.</p>
+    <div style="display:flex;gap:48px;margin-top:64px;font-family:var(--fm);font-size:22px;color:rgba(255,255,255,.55);letter-spacing:.04em;">
+      <span><b style="color:#fff;">Stage</b> &nbsp;Pre-seed</span>
+      <span><b style="color:#fff;">Status</b> &nbsp;Prototype in development</span>
+      <span><b style="color:#fff;">Base</b> &nbsp;Trust Valley, Lausanne</span>
+    </div>
+    <div class="foot"><span>VerfiX AG · Investor Deck</span><span>Confidential</span></div>
+  </section>
+
+  <!-- 2 · PROBLEM -->
+  <section data-label="Problem">
+    <div class="ey">The problem</div>
+    <h2 style="margin:26px 0 16px;max-width:1500px;">Europe's identity &amp; payment rails are fragmented and dependent.</h2>
+    <p class="sub" style="max-width:1300px;margin-bottom:54px;">Banks stitch together many vendors, per market — creating gaps, cost, and compliance risk at every seam.</p>
+    <div class="grid4" style="flex:1;align-content:center;">
+      <div class="card"><div class="ico"><i class="fas fa-puzzle-piece"></i></div><h3>Fragmented</h3><p>A different vendor and API for identity, AML, KYB and fraud — in every country.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-globe"></i></div><h3>Non-European</h3><p>Core payment &amp; verification rails sit outside Europe — a sovereignty risk.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-cloud"></i></div><h3>Privacy-exposed</h3><p>Most biometric checks ship sensitive data to external clouds.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-coins"></i></div><h3>Costly</h3><p>Interchange and per-check fees stack up; every market is a new integration.</p></div>
+    </div>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 02</span><span>The problem</span></div>
+  </section>
+
+  <!-- 3 · SOLUTION -->
+  <section data-label="Solution" class="light">
+    <div class="ey">The solution</div>
+    <h2 style="margin:26px 0 16px;max-width:1500px;">One Swiss-made platform — on-premise and on-chip.</h2>
+    <p class="sub" style="max-width:1300px;margin-bottom:54px;">VerfiX unifies identity, business, AML and fraud behind a single trust layer — deployed where your data must stay.</p>
+    <div class="grid3" style="flex:1;align-content:center;">
+      <div class="card"><div class="ico"><i class="fas fa-server"></i></div><h3>On-premise</h3><p>Verification runs inside the bank's own environment — data stays in Switzerland.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-microchip"></i></div><h3>On-chip</h3><p>Face &amp; voice templates are matched on a secure element; raw biometrics never leave the device.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-plug"></i></div><h3>API-first</h3><p>KYC, KYB, AML, Gateway and SDK behind one orchestration layer and one integration.</p></div>
+    </div>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 03</span><span>The solution</span></div>
+  </section>
+
+  <!-- 4 · WHY NOW -->
+  <section data-label="Why now">
+    <div class="ey">Why now</div>
+    <h2 style="margin:26px 0 54px;max-width:1500px;">Regulation is forcing a once-in-a-decade reset.</h2>
+    <div class="grid3" style="flex:1;align-content:center;">
+      <div class="card"><div class="ico"><i class="fas fa-id-card-clip"></i></div><h3>eIDAS 2.0</h3><p>The EU mandates a European Digital Identity Wallet for every member state — rolling out toward 2026.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-shield-halved"></i></div><h3>Swiss nFADP</h3><p>Switzerland's revised data-protection law (in force Sept 2023) raises the bar on biometric data.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-passport"></i></div><h3>Swiss e-ID Act</h3><p>Switzerland's federal e-ID law was approved in 2024, with a state-issued e-ID planned.</p></div>
+    </div>
+    <p class="note" style="margin-top:40px;">Sources: EU Regulation 2024/1183 (eIDAS 2.0); Swiss nFADP (in force 1 Sept 2023); Swiss Federal Act on Electronic Identity (2024). Timelines per published government materials.</p>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 04</span><span>Why now</span></div>
+  </section>
+
+  <!-- 5 · PRODUCT -->
+  <section data-label="Product" class="light">
+    <div class="ey">Product</div>
+    <h2 style="margin:26px 0 54px;">Four products, one trust layer.</h2>
+    <div class="grid4" style="flex:1;align-content:center;">
+      <div class="card"><div class="ico"><i class="fas fa-user-check"></i></div><h3>KYC / KYB</h3><p>Document, face &amp; voice biometrics, liveness, video, AML and business verification in one flow.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-network-wired"></i></div><h3>Gateway</h3><p>One API to accept trusted European digital identity wallets (eIDAS 2.0).</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-microchip"></i></div><h3>Chip Element</h3><p>On-device face &amp; voice verification for ATMs, POS and access points.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-code"></i></div><h3>SDK &amp; Trust Engine</h3><p>Embed verification and explainable trust scoring into any app.</p></div>
+    </div>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 05</span><span>Product</span></div>
+  </section>
+
+  <!-- 6 · VERFIX CHIP (MVP) -->
+  <section data-label="VerfiX Chip">
+    <div class="ey">Flagship MVP</div>
+    <h2 style="margin:26px 0 16px;max-width:1500px;">VerfiX Chip — pay with your face and voice.</h2>
+    <p class="sub" style="max-width:1300px;margin-bottom:48px;">A Swiss-made secure element that verifies face and voice <em>on the device itself</em> — the foundation for cardless, sovereign, privacy-first payments at the ATM and POS.</p>
+    <div class="grid2" style="flex:1;align-content:center;gap:30px;">
+      <ul class="ck">
+        <li><i class="fas fa-face-viewfinder"></i><span>Authorize a withdrawal or payment with a glance and a phrase — no card, no PIN.</span></li>
+        <li><i class="fas fa-lock"></i><span>Biometric templates are processed and matched on the chip — never sent to a cloud.</span></li>
+      </ul>
+      <ul class="ck">
+        <li><i class="fas fa-flag"></i><span>Swiss data residency and nFADP / GDPR alignment by design.</span></li>
+        <li><i class="fas fa-building-columns"></i><span>Built for banks, ATMs and POS terminals across regulated industries.</span></li>
+      </ul>
+    </div>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 06</span><span>VerfiX Chip · MVP</span></div>
+  </section>
+
+  <!-- 7 · TRUST ENGINE -->
+  <section data-label="Trust Engine">
+    <div class="ey">Trust Engine™</div>
+    <h2 style="margin:26px 0 16px;max-width:1500px;">Every signal fused into one explainable decision.</h2>
+    <p class="sub" style="max-width:1280px;margin-bottom:48px;">Document, face, voice, AML, device and risk signals combine into a single weighted trust score — with configurable rules and a full audit trail.</p>
+    <div class="grid4" style="flex:1;align-content:center;">
+      <div class="card"><div class="ico"><i class="fas fa-layer-group"></i></div><h3>Signal fusion</h3><p>Every verification signal weighted into one 0–100 score.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-sliders"></i></div><h3>Configurable rules</h3><p>Tune thresholds per product, market and segment.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-diagram-project"></i></div><h3>Automated routing</h3><p>Approve, review or reject — straight-through for low risk.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-clipboard-check"></i></div><h3>Audit-ready</h3><p>The exact signals and points behind every decision.</p></div>
+    </div>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 07</span><span>Trust Engine™</span></div>
+  </section>
+
+  <!-- 8 · MARKET -->
+  <section data-label="Market" class="light">
+    <div class="ey">Market opportunity</div>
+    <h2 style="margin:26px 0 50px;">A large, regulation-driven market.</h2>
+    <div class="grid3" style="flex:1;align-content:center;">
+      <div class="card"><div class="big" style="font-size:40px;margin-bottom:14px;">TAM</div><h3 style="font-size:30px;margin-bottom:12px;">Global identity verification</h3><p>Estimated in the low tens of billions USD, growing double-digit CAGR through the decade.</p><p class="note" style="margin-top:16px;">Source: Statista / industry reports</p></div>
+      <div class="card"><div class="big" style="font-size:40px;margin-bottom:14px;">SAM</div><h3 style="font-size:30px;margin-bottom:12px;">European KYC / KYB / AML</h3><p>European banks, fintechs, crypto and insurers — a multi-billion EUR served market.</p><p class="note" style="margin-top:16px;">Source: McKinsey / BCG compliance studies</p></div>
+      <div class="card"><div class="big" style="font-size:40px;margin-bottom:14px;">SOM</div><h3 style="font-size:30px;margin-bottom:12px;">Swiss + DACH beachhead</h3><p>Swiss banks first, then DACH — a realistic early slice in the low hundreds of millions CHF.</p><p class="note" style="margin-top:16px;">Source: Swiss Bankers Assoc. / SIX / COMCO</p></div>
+    </div>
+    <p class="note" style="margin-top:36px;">Indicative ranges drawn from published third-party reports — not VerfiX projections. Methodology in the data room.</p>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 08</span><span>Market</span></div>
+  </section>
+
+  <!-- 9 · BUSINESS MODEL -->
+  <section data-label="Business model">
+    <div class="ey">Business model</div>
+    <h2 style="margin:26px 0 50px;">Flexible deployment for regulated buyers.</h2>
+    <div class="grid4" style="flex:1;align-content:center;">
+      <div class="card"><div class="ico"><i class="fas fa-cloud"></i></div><h3>Hosted</h3><p>White-label verification, managed by VerfiX.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-server"></i></div><h3>On-premise</h3><p>Deployed inside the bank's environment for full data residency.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-plug"></i></div><h3>API &amp; SDK</h3><p>Per-verification and platform licensing for developers.</p></div>
+      <div class="card"><div class="ico"><i class="fas fa-gear"></i></div><h3>Professional services</h3><p>Integration, compliance and pilot enablement.</p></div>
+    </div>
+    <p class="note" style="margin-top:36px;">Pricing is enterprise, contract-based. We publish no per-unit prices publicly; commercial terms are shared with qualified prospects.</p>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 09</span><span>Business model</span></div>
+  </section>
+
+  <!-- 10 · TRACTION / ROADMAP -->
+  <section data-label="Traction">
+    <div class="ey">Where we are</div>
+    <h2 style="margin:26px 0 50px;max-width:1400px;">Honest status — building toward first pilots.</h2>
+    <div class="grid3" style="flex:1;align-content:center;">
+      <div class="card" style="border-color:rgba(200,37,42,.45);"><h3 style="color:#fff;display:flex;align-items:center;gap:14px;"><span style="width:14px;height:14px;border-radius:50%;background:var(--r);box-shadow:0 0 0 6px rgba(200,37,42,.2);"></span>Today</h3><ul class="ck" style="margin-top:24px;gap:16px;"><li style="font-size:25px;"><i class="fas fa-check"></i>Prototype in development (biometric ATM MVP)</li><li style="font-size:25px;"><i class="fas fa-check"></i>Innosuisse coaching voucher secured</li><li style="font-size:25px;"><i class="fas fa-check"></i>Discussions with Idiap &amp; CSEM in progress</li></ul></div>
+      <div class="card"><h3 style="color:#fff;display:flex;align-items:center;gap:14px;"><span style="width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.4);"></span>Next</h3><ul class="ck" style="margin-top:24px;gap:16px;"><li style="font-size:25px;"><i class="fas fa-arrow-right"></i>Complete working MVP on ATM hardware</li><li style="font-size:25px;"><i class="fas fa-arrow-right"></i>First bank pilot — targeted</li><li style="font-size:25px;"><i class="fas fa-arrow-right"></i>Pre-seed raise</li></ul></div>
+      <div class="card"><h3 style="color:#fff;display:flex;align-items:center;gap:14px;"><span style="width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.4);"></span>Future</h3><ul class="ck" style="margin-top:24px;gap:16px;"><li style="font-size:25px;"><i class="fas fa-circle-arrow-up"></i>Gateway for EU identity wallets</li><li style="font-size:25px;"><i class="fas fa-circle-arrow-up"></i>Expansion across DACH</li><li style="font-size:25px;"><i class="fas fa-circle-arrow-up"></i>Verification marketplace</li></ul></div>
+    </div>
+    <p class="note" style="margin-top:34px;">No customers, revenue, funding rounds or certifications are claimed. VerfiX holds no FINMA approval, PCI or eIDAS certification at this stage. Collaboration discussions are exploratory.</p>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 10</span><span>Traction</span></div>
+  </section>
+
+  <!-- 11 · TEAM -->
+  <section data-label="Team" class="light">
+    <div class="ey">Team</div>
+    <h2 style="margin:26px 0 50px;">Founders</h2>
+    <div class="grid3" style="flex:1;align-content:center;">
+      <div class="card" style="text-align:center;"><img src="assets/team/ahmed-alsultan.jpeg" alt="Ahmed Alsultan" style="width:150px;height:150px;border-radius:50%;object-fit:cover;margin:0 auto 24px;display:block;"><h3 style="font-size:32px;">Ahmed Alsultan</h3><div style="font-family:var(--fm);font-size:21px;color:var(--r);font-weight:600;margin:8px 0 16px;">Founder &amp; CEO</div><p>Vision, strategy, partnerships and go-to-market.</p></div>
+      <div class="card" style="text-align:center;"><img src="assets/team/manel-mhamdi.jpeg" alt="Manel Mhamdi" style="width:150px;height:150px;border-radius:50%;object-fit:cover;margin:0 auto 24px;display:block;"><h3 style="font-size:32px;">Manel Mhamdi</h3><div style="font-family:var(--fm);font-size:21px;color:var(--r);font-weight:600;margin:8px 0 16px;">Co-Founder &amp; Business Dev</div><p>Partnerships, market expansion and commercial execution.</p></div>
+      <div class="card" style="text-align:center;"><img src="assets/team/petter-stahle.jpeg" alt="Petter Stahle" style="width:150px;height:150px;border-radius:50%;object-fit:cover;margin:0 auto 24px;display:block;"><h3 style="font-size:32px;">Petter Stahle</h3><div style="font-family:var(--fm);font-size:21px;color:var(--r);font-weight:600;margin:8px 0 16px;">Co-Founder &amp; Technology Lead</div><p>Platform architecture, APIs and technical foundations.</p></div>
+    </div>
+    <div class="foot"><span>Verfi<b style="color:var(--r)">X</b> · 11</span><span>Team</span></div>
+  </section>
+
+  <!-- 12 · THE ASK -->
+  <section data-label="The ask" style="justify-content:center;background:radial-gradient(120% 100% at 20% 100%,#2a1416,#12161f);">
+    <div class="accent"></div>
+    <div class="ey">The ask</div>
+    <h1 style="margin:26px 0 28px;max-width:1400px;font-size:84px;">Raising a pre-seed round.</h1>
+    <p class="sub" style="max-width:1200px;margin-bottom:50px;">To complete the MVP, run our first bank pilot, and formalize technology collaborations. Round size and terms are shared under NDA in the data room.</p>
+    <div class="grid4" style="gap:22px;">
+      <div class="card" style="padding:30px;"><div class="ico" style="width:60px;height:60px;font-size:26px;margin-bottom:18px;"><i class="fas fa-flask"></i></div><p style="color:#fff;font-size:25px;font-weight:600;">Product &amp; MVP completion</p></div>
+      <div class="card" style="padding:30px;"><div class="ico" style="width:60px;height:60px;font-size:26px;margin-bottom:18px;"><i class="fas fa-vial"></i></div><p style="color:#fff;font-size:25px;font-weight:600;">First pilot deployment</p></div>
+      <div class="card" style="padding:30px;"><div class="ico" style="width:60px;height:60px;font-size:26px;margin-bottom:18px;"><i class="fas fa-people-group"></i></div><p style="color:#fff;font-size:25px;font-weight:600;">Core team &amp; engineering</p></div>
+      <div class="card" style="padding:30px;"><div class="ico" style="width:60px;height:60px;font-size:26px;margin-bottom:18px;"><i class="fas fa-scale-balanced"></i></div><p style="color:#fff;font-size:25px;font-weight:600;">Compliance &amp; security</p></div>
+    </div>
+    <div style="margin-top:54px;display:flex;align-items:center;gap:40px;font-size:26px;color:rgba(255,255,255,.7);">
+      <span class="wm">Verfi<b>X</b></span>
+      <span><i class="fas fa-envelope" style="color:var(--r);margin-right:12px;"></i>ahmed@verfix.ch</span>
+      <span><i class="fas fa-location-dot" style="color:var(--r);margin-right:12px;"></i>Trust Valley, Lausanne</span>
+    </div>
+    <div class="foot"><span>VerfiX AG · Investor Deck</span><span>Confidential</span></div>
+  </section>
+
+</deck-stage>
+<button id="dl-pdf" onclick="window.print()" style="position:fixed;top:20px;right:20px;z-index:9999;display:inline-flex;align-items:center;gap:9px;background:#C8252A;color:#fff;border:none;border-radius:100px;padding:12px 22px;font-family:system-ui,sans-serif;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35);"><i class="fas fa-file-arrow-down"></i> Download PDF</button>
+<style>@media print{#dl-pdf{display:none!important;}}</style>
+<script>if(location.search.indexOf('print=1')>-1){window.addEventListener('load',function(){setTimeout(function(){window.print();},900);});}</script>
+<script src="deck-stage.js"></script>
+</body>
+</html>

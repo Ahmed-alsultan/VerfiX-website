@@ -36,4 +36,6 @@
   <url><loc>https://verfix.swiss/datenschutz.html</loc><lastmod>2026-06-19</lastmod><priority>0.4</priority></url>
   <url><loc>https://verfix.swiss/mentions.html</loc><lastmod>2026-06-19</lastmod><priority>0.4</priority></url>
   <url><loc>https://verfix.swiss/politique.html</loc><lastmod>2026-06-19</lastmod><priority>0.4</priority></url>
+  <url><loc>https://verfix.swiss/investors.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://verfix.swiss/data-room.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

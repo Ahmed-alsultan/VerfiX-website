@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title id="pg-title">VerfiX — Swiss Trust Infrastructure for Regulated Industries</title>
+<meta name="description" content="VerfiX is building Swiss-made, on-premise and on-chip identity verification infrastructure aligned with eIDAS 2.0, nFADP and the Swiss e-ID Act. Investor information and data-room access.">
+<meta name="author" content="VerfiX AG">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta name="theme-color" content="#1A1F2E">
+<link rel="canonical" href="https://verfix.swiss/"/>
+<link rel="alternate" hreflang="en" href="https://verfix.swiss/en/">
+<link rel="alternate" hreflang="de" href="https://verfix.swiss/de/">
+<link rel="alternate" hreflang="fr" href="https://verfix.swiss/fr/">
+<link rel="alternate" hreflang="x-default" href="https://verfix.swiss/en/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://verfix.swiss/"/>
+<meta property="og:title" content="VerfiX — Swiss Trust Infrastructure for Regulated Industries"/>
+<meta property="og:description" content="VerfiX unifies identity verification, fraud intelligence, AML compliance, and trust scoring into one Swiss infrastructure platform for banks, fintechs, insurers, and governments."/>
+<meta property="og:site_name" content="VerfiX">
+<meta property="og:image" content="https://verfix.swiss/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VerfiX — Swiss Trust Infrastructure for Regulated Industries"/>
+<meta name="twitter:description" content="VerfiX unifies identity verification, fraud intelligence, AML compliance, and trust scoring into one Swiss infrastructure platform for banks, fintechs, insurers, and governments."/>
+<meta name="twitter:site" content="@verfix">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "VerfiX AG",
+  "url": "https://verfix.swiss",
+  "logo": "https://verfix.swiss/logo.png",
+  "description": "Swiss Trust Infrastructure for Regulated Industries — KYC, KYB, AML, Fraud Intelligence, and Trust Engine™",
+  "foundingLocation": {
+    "@type": "Place",
+    "addressCountry": "CH",
+    "addressLocality": "Switzerland"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CH"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@verfix.swiss",
+    "contactType": "sales",
+    "availableLanguage": ["English", "German", "French"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/verfix/",
+    "https://www.youtube.com/@verfix"
+  ],
+  "areaServed": "Europe"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/main.css">
+<style id="seo-reveal-fix">.rv{opacity:1 !important;transform:none !important;}</style>
+</head>
+<body>
+
+
+
+<!-- COOKIE -->
+<div id="ck-bar">
+  <span id="ck-txt">We use cookies to improve your experience. See our <a href="privacy.html">Privacy Policy</a>.</span>
+  <div class="ckb"><button class="ck-ok" onclick="ckOk()">Accept</button><button class="ck-no" onclick="ckNo()">Decline</button></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav-i">
+    <!-- Logo -->
+    <a class="logo" href="index.html">
+      <img src="assets/images/verfix-logo--footer.png" alt="VerfiX" loading="lazy" style="height:44px;width:auto;display:block;">
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      <!-- VERFIX CHIP (flagship MVP) -->
+      <div class="ni" id="ni-chip">
+        <a href="chip.html"><span style="display:inline-flex;align-items:center;gap:.4rem;">VerfiX Chip <span class="nav-pill-new">MVP</span></span></a>
+      </div>
+      <!-- VISION -->
+      <div class="ni" id="ni-vision">
+        <a href="vision.html">Vision</a>
+      </div>
+      <!-- INDUSTRIES (most prominent, first) -->
+      <div class="ni" id="ni-ind">
+        <span onclick="toggleMenu('ind')"><span data-i18n="nav_industries">Industries</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-ind" id="mega-ind">
+          <div class="mi-left">
+            <div class="mi-item active" data-ind="banking" onmouseenter="showInd('banking')">
+              <div class="mi-ico"><i class="fas fa-landmark"></i></div><div><h4>Banking</h4></div>
+            </div>
+            <div class="mi-item" data-ind="fintech" onmouseenter="showInd('fintech')">
+              <div class="mi-ico"><i class="fas fa-bolt"></i></div><div><h4>Fintech</h4></div>
+            </div>
+            <div class="mi-item" data-ind="crypto" onmouseenter="showInd('crypto')">
+              <div class="mi-ico"><i class="fas fa-coins"></i></div><div><h4>Crypto</h4></div>
+            </div>
+            <div class="mi-item" data-ind="insurance" onmouseenter="showInd('insurance')">
+              <div class="mi-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Insurance</h4></div>
+            </div>
+            <div class="mi-item" data-ind="gov" onmouseenter="showInd('gov')">
+              <div class="mi-ico"><i class="fas fa-building-columns"></i></div><div><h4>Government</h4></div>
+            </div>
+            <div class="mi-item" data-ind="health" onmouseenter="showInd('health')">
+              <div class="mi-ico"><i class="fas fa-hospital"></i></div><div><h4>Healthcare</h4></div>
+            </div>
+            <div class="mi-item" data-ind="telecom" onmouseenter="showInd('telecom')">
+              <div class="mi-ico"><i class="fas fa-signal"></i></div><div><h4>Telecom</h4></div>
+            </div>
+            <div class="mi-item" data-ind="mobility" onmouseenter="showInd('mobility')">
+              <div class="mi-ico"><i class="fas fa-car"></i></div><div><h4>Mobility</h4></div>
+            </div>
+            <div class="mi-item" data-ind="mkt" onmouseenter="showInd('mkt')">
+              <div class="mi-ico"><i class="fas fa-store"></i></div><div><h4>Marketplaces</h4></div>
+            </div>
+            <div class="mi-item" data-ind="re" onmouseenter="showInd('re')">
+              <div class="mi-ico"><i class="fas fa-building"></i></div><div><h4>Real Estate</h4></div>
+            </div>
+          </div>
+          <div class="mi-right" id="mi-panel"><!-- populated by JS --></div>
+        </div>
+      </div>
+
+      <!-- PRODUCTS (business-centric) -->
+      <div class="ni" id="ni-products">
+        <span onclick="toggleMenu('products')"><span data-i18n="nav_products">Products</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-products" id="mega-products">
+          <div class="mp-left">
+            <div class="mp-col">
+              <h5>Customer Onboarding</h5>
+              <a class="ml" href="solutions.html"><i class="fas fa-id-card"></i>Document Verification</a>
+              <a class="ml" href="solutions.html"><i class="fas fa-face-smile"></i>Face Verification</a>
+              <a class="ml" href="aml.html"><i class="fas fa-magnifying-glass-dollar"></i>AML Screening</a>
+              <h5>Business Verification</h5>
+              <a class="ml" href="kyb.html"><i class="fas fa-building"></i>KYB Verification</a>
+              <a class="ml" href="solutions.html"><i class="fas fa-sitemap"></i>UBO Verification</a>
+              <h5>Age Verification</h5>
+              <a class="ml" href="solutions.html"><i class="fas fa-user-check"></i>Age Validation</a>
+              <a class="ml" href="solutions.html"><i class="fas fa-user"></i>Age Estimation</a>
+            </div>
+            <div class="mp-col">
+              <h5>Telephone Banking</h5>
+              <a class="ml" href="solutions.html"><i class="fas fa-waveform-lines"></i>Voice Biometrics</a>
+              <a class="ml" href="solutions.html"><i class="fas fa-microphone-slash"></i>Voice Anti-Spoofing</a>
+              <h5>Fraud Intelligence</h5>
+              <a class="ml" href="solutions.html"><i class="fas fa-robot"></i>Deepfake Detection</a>
+              <a class="ml" href="solutions.html"><i class="fas fa-user-slash"></i>Synthetic Identity Detection</a>
+              <a class="ml" href="solutions.html"><i class="fas fa-file-shield"></i>Document Fraud Detection</a>
+              <h5>Infrastructure</h5>
+              <a class="ml" href="chip.html"><i class="fas fa-microchip"></i>VerfiX Chip — Biometric ATM</a>
+              <a class="ml" href="trustengine.html"><i class="fas fa-gauge-high"></i>Trust Engine™</a>
+              <a class="ml" href="solutions.html"><i class="fas fa-sliders"></i>Risk Rules Engine</a>
+              <a class="ml" href="solutions.html"><i class="fas fa-shuffle"></i>Multi-Provider Orchestration</a>
+            </div>
+          </div>
+          <div class="mp-right">
+            <h5>Trust Infrastructure</h5>
+            <div class="mp-feat"><h4>One API for all identity</h4><p>Document, face, voice, AML, KYB, and risk — orchestrated through a single endpoint.</p></div>
+            <div class="mp-feat"><h4>Swiss-first deployment</h4><p>SaaS, Swiss dedicated, private cloud, or on-premise.</p></div>
+            <div class="mp-gw">
+              <div class="mp-gw-tag">New Product</div>
+              <h4>VerfiX Gateway</h4>
+              <p>The trust layer between digital identity ecosystems and regulated organizations.</p>
+              <a href="gateway.html" class="btn btn-r btn-sm">Explore Gateway</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOLUTIONS -->
+      <div class="ni" id="ni-sol">
+        <span onclick="toggleMenu('sol')"><span data-i18n="nav_solutions">Solutions</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-sol" style="min-width:520px;padding:1.5rem 1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+          <div class="sol-card" onclick="navClose('solutions')"><div class="sol-ico"><i class="fas fa-user-plus"></i></div><div><h4>Digital Onboarding</h4><p>KYC, face match, AML in one hosted flow.</p></div></div>
+          <div class="sol-card" onclick="navClose('kyb')"><div class="sol-ico"><i class="fas fa-building"></i></div><div><h4>Business Verification</h4><p>KYB, directors, and UBO checks.</p></div></div>
+          <div class="sol-card" onclick="navClose('solutions')"><div class="sol-ico"><i class="fas fa-headset"></i></div><div><h4>Telephone Banking Auth</h4><p>Voice biometrics for call centres.</p></div></div>
+          <div class="sol-card" onclick="navClose('aml')"><div class="sol-ico"><i class="fas fa-scale-balanced"></i></div><div><h4>AML &amp; Compliance</h4><p>Automated screening + audit trail.</p></div></div>
+          <div class="sol-card" onclick="navClose('solutions')"><div class="sol-ico"><i class="fas fa-shield-halved"></i></div><div><h4>Fraud Intelligence Suite</h4><p>Deepfakes, synthetic IDs, voice cloning.</p></div></div>
+          <div class="sol-card" onclick="navClose('trustengine')"><div class="sol-ico"><i class="fas fa-gauge-high"></i></div><div><h4>Trust Engine™</h4><p>Multi-signal risk decision framework.</p></div></div>
+        </div>
+      </div>
+
+      <!-- RESOURCES -->
+      <div class="ni" id="ni-res">
+        <span onclick="toggleMenu('res')"><span data-i18n="nav_resources">Resources</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-res" style="min-width:300px;padding:1.5rem 1.75rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Resources</h5>
+          <a class="ml" href="cases.html"><i class="fas fa-file-lines"></i>Case Studies</a>
+          <a class="ml" href="trustcenter.html"><i class="fas fa-shield-halved"></i>Trust Center</a>
+          <a class="ml" href="resources.html"><i class="fas fa-book"></i>Documentation</a>
+          <a class="ml" href="resources.html"><i class="fas fa-file-lines"></i>Compliance Guides</a>
+          <a class="ml" href="resources.html"><i class="fas fa-file-pdf"></i>Whitepapers</a>
+          <a class="ml" href="resources.html"><i class="fas fa-newspaper"></i>Product Updates</a>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="ni" id="ni-co">
+        <span onclick="toggleMenu('co')"><span data-i18n="nav_company">Company</span> <i class="arr fas fa-chevron-down"></i></span>
+        <div class="mega mega-sm" id="mega-co" style="min-width:280px;padding:1.5rem 1.75rem;">
+          <h5 style="font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lt);margin-bottom:.6rem;">Company</h5>
+          <a class="ml" href="about.html"><i class="fas fa-building"></i>About VerfiX</a>
+          <a class="ml" href="about.html"><i class="fas fa-users"></i>Leadership</a>
+          <a class="ml" href="investors.html"><i class="fas fa-chart-line"></i>Investors</a>
+          <a class="ml" href="partners.html"><i class="fas fa-handshake"></i>Partners</a>
+          <a class="ml" href="careers.html"><i class="fas fa-briefcase"></i>Careers</a>
+          <a class="ml" href="contact.html"><i class="fas fa-envelope"></i>Contact</a>
+        </div>
+      </div>
+
+      <div class="ni"><a href="contact.html">Contact</a></div>
+    </div>
+
+    <div class="nav-r">
+      <div class="lang-sw">
+        <button class="lb on" onclick="setLang('en')">EN</button>
+        <button class="lb" onclick="setLang('de')">DE</button>
+        <button class="lb" onclick="setLang('fr')">FR</button>
+      </div>
+      <a href="contact.html" class="btn btn-o" style="font-size:.79rem;padding:.44rem .95rem;"><span data-i18n="nav_sales">Talk to Sales</span></a>
+      <a href="contact.html" class="btn btn-r"><span data-i18n="nav_demo">Book a Demo</span></a>
+      <button class="ham" id="ham-btn"><i class="fas fa-bars" style="font-size:.75rem;pointer-events:none;"></i></button>
+    </div>
+  </div>
+
+  <div id="mob">
+    <a href="chip.html">VerfiX Chip — Biometric ATM</a>
+    <a href="cases.html">Case Studies</a>
+    <a href="industries.html">Industries</a>
+    <a href="solutions.html">Products &amp; Solutions</a>
+    <a href="gateway.html" style="color:var(--r);font-weight:600;">VerfiX Gateway <span style="font-size:.6rem;background:var(--r);color:#fff;padding:.08rem .32rem;border-radius:3px;margin-left:.3rem;">NEW</span></a>
+    <a href="trustcenter.html">Trust Center</a>
+    <a href="resources.html">Resources</a>
+    <a href="about.html">Company</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-r" style="justify-content:center;margin-top:.2rem;">Book a Demo</a>
+    <div class="mob-lang">
+      <button class="mlb on" onclick="setLang('en')">EN</button>
+      <button class="mlb" onclick="setLang('de')">DE</button>
+      <button class="mlb" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════ -->
+
+<div id="pg-investors" class="pg on">
+
+<!-- HERO -->
+<section class="hero" style="padding-top:8rem;"><div class="hero-grid"></div><div class="W"><div class="hero-g">
+  <div class="rv">
+    <div class="h-kicker"><i class="fas fa-chart-line"></i> Investor Information</div>
+    <h1>The European identity &amp; payment infrastructure of the future.</h1>
+    <p class="h-sub">VerfiX is building Swiss-made, privacy-first identity verification that runs <em>on-premise</em> and <em>on-chip</em> — so sensitive biometric data never leaves the device. We are early-stage, building toward our first bank pilots.</p>
+    <div class="h-cta">
+      <a href="data-room.html" class="btn btn-r">Request data-room access</a>
+      <a href="investor-pitch-deck.html" class="btn btn-o">View pitch deck</a>
+      <a href="investor-pitch-deck.html?print=1" class="btn btn-o" title="Opens the deck and saves it as PDF"><i class="fas fa-file-arrow-down" style="margin-right:.4rem;"></i>Download PDF</a>
+    </div>
+    <p style="font-size:.78rem;color:var(--mut);margin-top:1.1rem;"><i class="fas fa-circle-info" style="color:var(--r);margin-right:.4rem;"></i>Pre-seed · Prototype in development · Innosuisse coaching voucher secured</p>
+  </div>
+  <div class="rv rv-d1"><div class="prod-art"><div class="prod-art-ico"><i class="fas fa-shield-halved"></i></div></div></div>
+</div></div></section>
+
+<!-- AT A GLANCE -->
+<section style="padding:3rem 0;background:var(--n);"><div class="W">
+  <div class="gw-why" style="grid-template-columns:repeat(4,1fr);">
+    <div class="gw-why-item"><div class="gw-why-ic"><i class="fas fa-flag-checkered"></i></div><div><b style="color:#fff;">Stage</b><span style="color:rgba(255,255,255,.6);">Pre-seed</span></div></div>
+    <div class="gw-why-item"><div class="gw-why-ic"><i class="fas fa-microchip"></i></div><div><b style="color:#fff;">Product</b><span style="color:rgba(255,255,255,.6);">Prototype in development</span></div></div>
+    <div class="gw-why-item"><div class="gw-why-ic"><i class="fas fa-location-dot"></i></div><div><b style="color:#fff;">Base</b><span style="color:rgba(255,255,255,.6);">Trust Valley, Lausanne</span></div></div>
+    <div class="gw-why-item"><div class="gw-why-ic"><i class="fas fa-handshake-angle"></i></div><div><b style="color:#fff;">Support</b><span style="color:rgba(255,255,255,.6);">Innosuisse coaching voucher</span></div></div>
+  </div>
+</div></section>
+
+<!-- PROBLEM -->
+<section><div class="W">
+  <div class="sh rv" style="max-width:680px;"><span class="label">The problem</span><h2>Europe's identity and payment rails are fragmented and dependent.</h2></div>
+  <div class="pillars4 rv">
+    <div class="pillar"><div class="pl-ico"><i class="fas fa-puzzle-piece"></i></div><h3>Fragmented</h3><p>Banks integrate many verification vendors per market, each with its own API, contract and data model.</p></div>
+    <div class="pillar"><div class="pl-ico"><i class="fas fa-globe"></i></div><h3>Non-European</h3><p>Core payment and verification infrastructure is largely controlled outside Europe, raising sovereignty concerns.</p></div>
+    <div class="pillar"><div class="pl-ico"><i class="fas fa-cloud"></i></div><h3>Privacy-exposed</h3><p>Most biometric checks send sensitive data to external clouds — a growing tension with nFADP and GDPR.</p></div>
+    <div class="pillar"><div class="pl-ico"><i class="fas fa-coins"></i></div><h3>Costly</h3><p>Interchange and per-check fees stack up, and every new market means another integration.</p></div>
+  </div>
+</div></section>
+
+<!-- SOLUTION -->
+<section style="background:var(--bg2);"><div class="W">
+  <div class="sh rv" style="max-width:680px;"><span class="label">The solution</span><h2>One Swiss-made platform — on-premise and on-chip.</h2></div>
+  <div class="gw-why" style="grid-template-columns:repeat(3,1fr);">
+    <div class="gw-why-item"><div class="gw-why-ic"><i class="fas fa-server"></i></div><div><b>On-premise</b><span>Verification runs inside the bank's own environment — data stays in Switzerland.</span></div></div>
+    <div class="gw-why-item"><div class="gw-why-ic"><i class="fas fa-microchip"></i></div><div><b>On-chip</b><span>Face and voice templates are processed on a secure element; raw biometrics never leave the device.</span></div></div>
+    <div class="gw-why-item"><div class="gw-why-ic"><i class="fas fa-plug"></i></div><div><b>API-first</b><span>KYC, KYB, AML, Gateway and SDK behind one orchestration layer and one integration.</span></div></div>
+  </div>
+</div></section>
+
+<!-- WHY NOW -->
+<section><div class="W">
+  <div class="sh rv" style="max-width:680px;"><span class="label">Why now</span><h2>Regulation is forcing a once-in-a-decade reset.</h2></div>
+  <div class="pillars4 rv" style="grid-template-columns:repeat(3,1fr);">
+    <div class="pillar"><div class="pl-ico"><i class="fas fa-id-card-clip"></i></div><h3>eIDAS 2.0</h3><p>The EU framework mandates member states to offer a European Digital Identity Wallet — adoption is rolling out toward 2026.</p></div>
+    <div class="pillar"><div class="pl-ico"><i class="fas fa-shield-halved"></i></div><h3>Swiss nFADP</h3><p>Switzerland's revised data-protection law (in force since Sept 2023) raises the bar for how biometric data is handled.</p></div>
+    <div class="pillar"><div class="pl-ico"><i class="fas fa-passport"></i></div><h3>Swiss e-ID Act</h3><p>Switzerland's federal e-ID law was approved in 2024, with a state-issued e-ID planned — creating demand for compliant verification.</p></div>
+  </div>
+  <p style="font-size:.76rem;color:var(--mut);margin-top:1.4rem;">Sources: EU Regulation 2024/1183 (eIDAS 2.0); Swiss Federal Act on Data Protection (nFADP, in force 1 Sept 2023); Swiss Federal Act on Electronic Identity (e-ID, adopted 2024). Timelines per published government materials and may evolve.</p>
+</div></section>
+
+<!-- MARKET -->
+<section style="background:var(--n);color:#fff;"><div class="W">
+  <div class="sh rv c" style="max-width:680px;margin:0 auto;"><span class="label" style="color:rgba(255,255,255,.45);">Market opportunity</span><h2 style="color:#fff;">A large, regulation-driven market — sized as ranges.</h2></div>
+  <div class="inv-market rv">
+    <div class="inv-mkt"><div class="inv-mkt-tag">TAM</div><div class="inv-mkt-n">Global identity verification</div><p>The global identity verification market is estimated in the low tens of billions USD and projected to grow double-digit CAGR through the decade.</p><span class="inv-mkt-src">Source ranges: Statista / industry reports</span></div>
+    <div class="inv-mkt"><div class="inv-mkt-tag">SAM</div><div class="inv-mkt-n">European regulated KYC/KYB/AML</div><p>European banks, fintechs, crypto and insurers spending on compliant onboarding and AML screening — a multi-billion EUR served market.</p><span class="inv-mkt-src">Source ranges: McKinsey / BCG compliance-cost studies</span></div>
+    <div class="inv-mkt"><div class="inv-mkt-tag">SOM</div><div class="inv-mkt-n">Swiss + DACH beachhead</div><p>Initial focus: Swiss banks and regulated institutions, then DACH — a realistic early obtainable slice measured in the low hundreds of millions CHF.</p><span class="inv-mkt-src">Source ranges: Swiss Bankers Association / SIX / COMCO</span></div>
+  </div>
+  <p style="font-size:.74rem;color:rgba(255,255,255,.45);margin-top:1.4rem;text-align:center;max-width:780px;margin-left:auto;margin-right:auto;">Figures are indicative ranges drawn from published third-party reports, not VerfiX projections. Exact sizing and methodology are provided in the data room.</p>
+</div></section>
+
+<!-- PRODUCT -->
+<section><div class="W">
+  <div class="sh rv c" style="max-width:680px;margin:0 auto;"><span class="label">Product</span><h2>Four products, one trust layer.</h2></div>
+  <div class="inv-prod rv">
+    <a href="solutions.html" class="inv-pcard"><div class="inv-pc-ic"><i class="fas fa-user-check"></i></div><h3>VerfiX KYC / KYB</h3><p>Document, face &amp; voice biometrics, AML and fraud in one workflow.</p><span class="inv-pc-go">Explore <i class="fas fa-arrow-right"></i></span></a>
+    <a href="gateway.html" class="inv-pcard"><div class="inv-pc-ic"><i class="fas fa-network-wired"></i></div><h3>VerfiX Gateway</h3><p>One API for European Digital Identity Wallets (eIDAS 2.0).</p><span class="inv-pc-go">Explore <i class="fas fa-arrow-right"></i></span></a>
+    <a href="chip.html" class="inv-pcard"><div class="inv-pc-ic"><i class="fas fa-microchip"></i></div><h3>VerfiX Chip Element</h3><p>On-device face &amp; voice verification for ATMs, POS and access points.</p><span class="inv-pc-go">Explore <i class="fas fa-arrow-right"></i></span></a>
+    <a href="trustengine.html" class="inv-pcard"><div class="inv-pc-ic"><i class="fas fa-gauge-high"></i></div><h3>VerfiX SDK &amp; Trust Engine</h3><p>Embed verification and explainable trust scoring into any app. Try the live demo.</p><span class="inv-pc-go">Try it live <i class="fas fa-arrow-right"></i></span></a>
+  </div>
+</div></section>
+
+<!-- TRACTION / ROADMAP -->
+<section style="background:var(--bg2);"><div class="W">
+  <div class="sh rv" style="max-width:680px;"><span class="label">Where we are</span><h2>Honest status — building toward first pilots.</h2></div>
+  <div class="inv-road rv">
+    <div class="inv-rstage inv-now"><div class="inv-rh"><span class="inv-rdot"></span>Today</div><ul><li>Prototype in development (biometric ATM MVP)</li><li>Innosuisse coaching voucher secured</li><li>Discussions with Idiap and CSEM in progress</li><li>Based in Trust Valley, Lausanne</li></ul></div>
+    <div class="inv-rstage"><div class="inv-rh"><span class="inv-rdot"></span>Next</div><ul><li>Complete working MVP on ATM hardware</li><li>First bank pilot — <em>pilot in progress / targeted</em></li><li>Formalize technology collaborations</li><li>Pre-seed raise</li></ul></div>
+    <div class="inv-rstage"><div class="inv-rh"><span class="inv-rdot"></span>Future</div><ul><li>Gateway for EU Digital Identity Wallets</li><li>Expansion across DACH</li><li>Verification marketplace &amp; Trust Engine as standalone</li></ul></div>
+  </div>
+  <p style="font-size:.76rem;color:var(--mut);margin-top:1.2rem;">We do not claim customers, revenue, funding rounds, or regulatory certifications. VerfiX holds no FINMA approval, PCI or eIDAS certification at this stage. Collaboration discussions are exploratory and non-binding.</p>
+</div></section>
+
+<!-- TEAM -->
+<section><div class="W">
+  <div class="sh rv c" style="max-width:680px;margin:0 auto;"><span class="label">Team</span><h2>Founders</h2></div>
+  <div class="lead-grid rv">
+    <div class="lc"><div class="lc-photo"><img src="assets/team/ahmed-alsultan.jpeg" alt="Ahmed Alsultan, Founder &amp; CEO" loading="lazy"></div><div class="lc-body"><h3>Ahmed Alsultan</h3><div class="lc-role">Founder &amp; CEO</div><p>Leads vision, strategy, partnerships and go-to-market.</p><div class="lc-contacts"><a href="mailto:ahmed@verfix.ch" title="Email"><i class="fas fa-envelope"></i></a><a href="https://www.ahmed-alsultan.me" target="_blank" rel="noopener" title="Website"><i class="fas fa-globe"></i></a><a href="https://www.linkedin.com/in/ahmedalsultan" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div></div>
+    <div class="lc"><div class="lc-photo"><img src="assets/team/manel-mhamdi.jpeg" alt="Manel Mhamdi, Co-Founder &amp; Business Development" loading="lazy"></div><div class="lc-body"><h3>Manel Mhamdi</h3><div class="lc-role">Co-Founder &amp; Business Development</div><p>Drives partnerships, market expansion and commercial execution.</p><div class="lc-contacts"><a href="mailto:manel@verfix.ch" title="Email"><i class="fas fa-envelope"></i></a><a href="https://www.linkedin.com/in/manel-mhamdi-97019b111/?locale=en" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div></div>
+    <div class="lc"><div class="lc-photo"><img src="assets/team/petter-stahle.jpeg" alt="Petter Stahle, Co-Founder &amp; Technology Lead" loading="lazy"></div><div class="lc-body"><h3>Petter Stahle</h3><div class="lc-role">Co-Founder &amp; Technology Lead</div><p>Leads platform architecture, APIs and the technical foundations.</p><div class="lc-contacts"><a href="mailto:petter@verfix.ch" title="Email"><i class="fas fa-envelope"></i></a><a href="https://www.linkedin.com/in/petter-stahle/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div></div>
+  </div>
+</div></section>
+
+<!-- ASK -->
+<section style="background:var(--n);color:#fff;"><div class="W">
+  <div class="inv-ask rv">
+    <div class="inv-ask-l">
+      <span class="label" style="color:rgba(255,255,255,.45);">The ask</span>
+      <h2 style="color:#fff;">Raising a pre-seed round.</h2>
+      <p style="color:rgba(255,255,255,.65);">We are raising pre-seed capital to complete the MVP, run our first bank pilot, and formalize technology collaborations. Round size and terms are shared under NDA in the data room.</p>
+      <a href="data-room.html" class="btn btn-r" style="margin-top:1rem;">Request data-room access</a>
+    </div>
+    <div class="inv-ask-r">
+      <div class="inv-use"><div class="inv-use-h">Use of funds</div>
+        <div class="inv-use-row"><span><i class="fas fa-flask"></i> Product &amp; MVP completion</span></div>
+        <div class="inv-use-row"><span><i class="fas fa-vial"></i> First pilot deployment</span></div>
+        <div class="inv-use-row"><span><i class="fas fa-people-group"></i> Core team &amp; engineering</span></div>
+        <div class="inv-use-row"><span><i class="fas fa-scale-balanced"></i> Compliance &amp; security groundwork</span></div>
+        <p class="inv-use-note">Exact allocation provided in the data room.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- DATA ROOM CTA -->
+<section><div class="W">
+  <div class="inv-dr rv">
+    <div><h2>Investor data room</h2><p>Cap table, financial model, technical documentation and pilot plan — available to qualified investors on request.</p></div>
+    <a href="data-room.html" class="btn btn-r">Request access</a>
+  </div>
+</div></section>
+
+</div>
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <div class="social-inner">
+    <div>
+      <div class="soc-label" style="margin-bottom:.38rem;">Follow VerfiX</div>
+      <span class="social-copy">Swiss Trust Infrastructure · @verfix</span>
+    </div>
+    <div class="social-links">
+      <a class="soc-btn soc-li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
+      </a>
+      <div class="soc-divider"></div>
+      <a class="soc-btn soc-yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube Channel</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <img src="assets/images/verfix-logo.png" alt="VerfiX" loading="lazy" style="height:44px;width:auto;display:block;">
+      <div class="foot-org">VerfiX AG</div>
+      <div class="foot-org-sub">Swiss Identity Infrastructure for Regulated Organizations</div>
+      <div class="foot-addr">
+        <i class="fas fa-location-dot"></i>
+        <span>Trust Valley, Bâtiment C<br>Route Cantonale<br>CH-1015 Lausanne, Switzerland</span>
+      </div>
+      <div class="foot-emails">
+        <a href="mailto:info@verfix.ch"><i class="fas fa-envelope"></i>info@verfix.ch</a>
+        <a href="mailto:chip@verfix.ch"><i class="fas fa-microchip"></i>chip@verfix.ch</a>
+        <a href="mailto:security@verfix.ch"><i class="fas fa-shield-halved"></i>security@verfix.ch</a>
+        <a href="tel:+41765465642"><i class="fas fa-phone"></i>0041 76 546 56 42</a>
+      </div>
+      <div class="foot-social">
+        <a class="foot-soc-ico li" href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="foot-soc-ico yt" href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a class="foot-soc-ico gh" href="https://github.com/Ahmed-alsultan/VerfiX" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+        <a class="foot-soc-ico ph" href="https://www.producthunt.com/products/verfix?launch=verfix" target="_blank" rel="noopener" title="Product Hunt"><i class="fab fa-product-hunt"></i></a>
+      </div>
+      <div class="swiss-made"><span class="sm-flag"></span> Swiss Made</div>
+    </div>
+    <div class="foot-col">
+      <h4>Platform</h4>
+      <a href="chip.html">VerfiX Chip — Biometric ATM</a>
+      <a href="solutions.html">Identity Verification</a>
+      <a href="aml.html">AML Screening</a>
+      <a href="kyb.html">KYB Verification</a>
+      <a href="trustengine.html">Trust Engine™</a>
+      <a href="solutions.html">Fraud Intelligence</a>
+      <a href="resources.html">Developer API</a>
+    </div>
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <a href="cases.html">Case Studies</a>
+      <a href="resources.html">Documentation</a>
+      <a href="trustcenter.html">Trust Center</a>
+      <a href="trustcenter.html">Compliance</a>
+      <a href="trustcenter.html">Security</a>
+      <a href="whitepaper.html">nFADP Whitepaper</a>
+      <a href="resources.html">AML Whitepaper</a>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="investors.html">Investors</a>
+      <a href="partners.html">Partners</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="dpa.html">Data Processing Agreement</a>
+      <a href="cookies.html">Cookie Policy</a>
+      <a href="javascript:void(0)" onclick="vxReopenConsent()">Cookie Preferences</a>
+      <a href="liability.html">Liability &amp; Disclaimer</a>
+      <a id="f-imp" href="impressum.html" style="display:none;">Impressum</a>
+      <a id="f-dat" href="datenschutz.html" style="display:none;">Datenschutz</a>
+      <a id="f-men" href="mentions.html" style="display:none;">Mentions légales</a>
+      <a id="f-pol" href="politique.html" style="display:none;">Politique de conf.</a>
+      <div style="margin-top:.6rem;display:flex;gap:.38rem;flex-wrap:wrap;">
+        <button class="mlb on" onclick="setLang('en')">EN</button>
+        <button class="mlb" onclick="setLang('de')">DE</button>
+        <button class="mlb" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Ecosystem</h4>
+      <a href="https://www.trust-valley.ch" target="_blank" rel="noopener">Trust Valley</a>
+      <a href="https://www.innosuisse.admin.ch" target="_blank" rel="noopener">Innosuisse</a>
+      <span class="eco-note">Ecosystem &amp; support</span>
+      <a href="partners.html">Technology partners</a>
+      <a href="partners.html">Research collaboration</a>
+      <span class="eco-note">In discussion</span>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span class="foot-copy" id="foot-c">© 2027 VerfiX AG · Switzerland · All rights reserved</span>
+    <div class="foot-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:info@verfix.ch">info@verfix.ch</a>
+      <a href="https://www.linkedin.com/company/verfix/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-linkedin-in" style="font-size:.72rem;"></i>LinkedIn</a>
+      <a href="https://youtube.com/playlist?list=PLOENtMm5HXQu0nxIcnmBwiT_oVgRCSxH1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.3rem;"><i class="fab fa-youtube" style="font-size:.72rem;color:#f87171;"></i>YouTube</a>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>window.nav=function(id){location.href=(id==='home'?'index.html':id+'.html');};window.navClose=window.nav;</script>
+</body>
+</html>
+<script src="js/main.js"></script>
+</body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VerfiX — Company Fact Sheet</title>
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--r:#C8252A;--n:#1A1F2E;--off:#F5F6F8;--bd:#e4e7ec;--m:#4a5568;--fd:'Bricolage Grotesque',system-ui,sans-serif;--fb:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--fm:'IBM Plex Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--fb);color:var(--n);background:#e9ebf0;line-height:1.5;-webkit-font-smoothing:antialiased;}
+.page{width:794px;min-height:1123px;margin:24px auto;background:#fff;padding:54px 58px;box-shadow:0 10px 40px rgba(26,31,46,.14);position:relative;}
+.wm{font-family:var(--fd);font-weight:800;font-size:26px;letter-spacing:-.02em;}.wm b{color:var(--r);}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--r);padding-bottom:18px;margin-bottom:26px;}
+.tag{font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--r);font-weight:600;}
+h1{font-family:var(--fd);font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1.1;margin-bottom:10px;}
+.lead{font-size:15px;color:var(--m);max-width:62ch;margin-bottom:28px;}
+h2{font-family:var(--fm);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--r);font-weight:600;margin:24px 0 12px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.box{border:1px solid var(--bd);border-radius:10px;padding:14px 16px;background:var(--off);}
+.box h3{font-family:var(--fd);font-size:15px;margin-bottom:4px;}.box p{font-size:12.5px;color:var(--m);}
+.box i{color:var(--r);margin-right:7px;}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;}
+.facts div{padding:9px 12px;background:var(--off);border:1px solid var(--bd);border-radius:8px;}
+.facts span{display:block;font-family:var(--fm);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#8a93a3;margin-bottom:2px;}
+.team{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.tm{text-align:center;border:1px solid var(--bd);border-radius:10px;padding:14px;}
+.tm img{width:62px;height:62px;border-radius:50%;object-fit:cover;margin:0 auto 8px;display:block;}
+.tm b{font-family:var(--fd);font-size:14px;}.tm span{display:block;font-size:11px;color:var(--r);font-weight:600;margin-top:2px;}
+.foot{margin-top:30px;padding-top:16px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;font-size:11px;color:#8a93a3;font-family:var(--fm);}
+.note{font-size:10.5px;color:#8a93a3;margin-top:14px;line-height:1.5;}
+#dl{position:fixed;top:18px;right:18px;background:var(--r);color:#fff;border:none;border-radius:100px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.2);font-family:var(--fb);}
+@media print{body{background:#fff;}.page{box-shadow:none;margin:0;width:auto;min-height:auto;padding:0;}#dl{display:none;}@page{size:A4;margin:14mm;}}
+</style></head><body>
+<button id="dl" onclick="window.print()"><i class="fas fa-file-arrow-down"></i> Download PDF</button>
+<div class="page">
+  <div class="top"><div class="wm">Verfi<b>X</b></div><div class="tag">Company Fact Sheet</div></div>
+  <h1>Swiss identity &amp; payment infrastructure.</h1>
+  <p class="lead">VerfiX unifies identity verification, business verification, AML screening, fraud intelligence and trust scoring into one Swiss-made platform — deployable <b>on-premise</b> and <b>on-chip</b>, so sensitive biometric data never leaves the device.</p>
+
+  <h2>What we do</h2>
+  <div class="grid2">
+    <div class="box"><h3><i class="fas fa-user-check"></i>KYC / KYB</h3><p>Document, face &amp; voice biometrics, liveness, video, AML and business verification in one flow.</p></div>
+    <div class="box"><h3><i class="fas fa-network-wired"></i>Gateway</h3><p>One API to accept trusted European digital identity wallets (eIDAS 2.0).</p></div>
+    <div class="box"><h3><i class="fas fa-microchip"></i>VerfiX Chip</h3><p>On-device face &amp; voice verification for ATMs, POS and access points.</p></div>
+    <div class="box"><h3><i class="fas fa-gauge-high"></i>Trust Engine™</h3><p>Every signal fused into one explainable, configurable trust decision.</p></div>
+  </div>
+
+  <h2>Why now</h2>
+  <div class="grid3">
+    <div class="box"><h3>eIDAS 2.0</h3><p>EU digital identity wallets rolling out toward 2026.</p></div>
+    <div class="box"><h3>Swiss nFADP</h3><p>Revised data-protection law in force since Sept 2023.</p></div>
+    <div class="box"><h3>Swiss e-ID Act</h3><p>Federal e-ID approved 2024; state e-ID planned.</p></div>
+  </div>
+
+  <h2>At a glance</h2>
+  <div class="facts">
+    <div><span>Stage</span>Pre-seed</div>
+    <div><span>Status</span>Prototype in development</div>
+    <div><span>Headquarters</span>Trust Valley, Lausanne (CH)</div>
+    <div><span>Support</span>Innosuisse coaching voucher</div>
+  </div>
+
+  <h2>Team</h2>
+  <div class="team">
+    <div class="tm"><img src="assets/team/ahmed-alsultan.jpeg" alt="Ahmed Alsultan"><b>Ahmed Alsultan</b><span>Founder &amp; CEO</span></div>
+    <div class="tm"><img src="assets/team/manel-mhamdi.jpeg" alt="Manel Mhamdi"><b>Manel Mhamdi</b><span>Co-Founder · BD</span></div>
+    <div class="tm"><img src="assets/team/petter-stahle.jpeg" alt="Petter Stahle"><b>Petter Stahle</b><span>Co-Founder · Tech</span></div>
+  </div>
+
+  <p class="note">VerfiX makes no fundraising, revenue, customer or certification claims. VerfiX holds no FINMA, PCI or eIDAS certification at this stage. Collaboration discussions are exploratory and non-binding.</p>
+  <div class="foot"><span>VerfiX AG · Trust Valley, Lausanne</span><span>info@verfix.ch · verfix.swiss</span></div>
+</div>
+</body></html>

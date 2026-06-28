@@ -1,0 +1,266 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "VerfiX Verification API",
+    "version": "2.0.0",
+    "description": "VerfiX unifies KYC, KYB, AML and Trust Engine scoring behind one API. Illustrative specification for evaluation.",
+    "contact": {
+      "name": "VerfiX",
+      "email": "info@verfix.ch",
+      "url": "https://verfix.swiss"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.verfix.ch/v2",
+      "description": "Production"
+    },
+    {
+      "url": "https://sandbox.verfix.ch/v2",
+      "description": "Sandbox"
+    }
+  ],
+  "paths": {
+    "/verifications": {
+      "post": {
+        "summary": "Create a verification",
+        "description": "Runs document, biometric, AML and Trust Engine checks and returns a decision.",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerificationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerificationResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/verifications/{id}": {
+      "get": {
+        "summary": "Get a verification",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerificationResult"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
+    "/businesses": {
+      "post": {
+        "summary": "Create a KYB business verification",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BusinessRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/webhooks": {
+      "post": {
+        "summary": "Register a webhook",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "Bearer API key: 'Authorization: Bearer sk_live_...'"
+      }
+    },
+    "schemas": {
+      "VerificationRequest": {
+        "type": "object",
+        "required": [
+          "type",
+          "person"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "kyc",
+              "kyb"
+            ]
+          },
+          "person": {
+            "type": "object",
+            "properties": {
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string",
+                "example": "CHE"
+              },
+              "document_type": {
+                "type": "string",
+                "enum": [
+                  "passport",
+                  "id_card",
+                  "residence_permit"
+                ]
+              }
+            }
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "document",
+                "face",
+                "liveness",
+                "voice",
+                "aml"
+              ]
+            }
+          }
+        }
+      },
+      "BusinessRequest": {
+        "type": "object",
+        "required": [
+          "name",
+          "country"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string",
+            "example": "CHE"
+          },
+          "registration_number": {
+            "type": "string"
+          }
+        }
+      },
+      "VerificationResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "ver_8f2a1c"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "review",
+              "rejected"
+            ]
+          },
+          "trust_score": {
+            "type": "integer",
+            "example": 92
+          },
+          "risk_tier": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "checks": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "string"
+              },
+              "face": {
+                "type": "string"
+              },
+              "aml": {
+                "type": "string"
+              }
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}
